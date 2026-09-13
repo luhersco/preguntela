@@ -2138,8 +2138,11 @@ function bindAuth(){
     var mail = (el("authMail").value||"").trim();
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)){ setMsg("authMsg","Escribí un mail válido.", true); return; }
     setMsg("authMsg","Enviando…");
+    /* Sin "#" al final: Supabase pega el token en el fragmento, y si la
+       dirección ya traía uno quedan dos y la librería no lo encuentra.
+       El sitio detecta solo la vuelta del login y abre Comunidad. */
     var r = await sb.auth.signInWithOtp({ email: mail,
-      options:{ emailRedirectTo: location.href.split("#")[0] + "#/comunidad" } });
+      options:{ emailRedirectTo: location.origin + location.pathname } });
     setMsg("authMsg", r.error ? "No se pudo enviar: "+r.error.message
       : "Listo. Te llegó un enlace a "+mail+". Revisá también el correo no deseado.", !!r.error);
   });
@@ -2218,6 +2221,18 @@ function comListas(){
   pintarTodo();
 }
 
+/* Enlaces viejos vuelven con dos almohadillas: "#/comunidad#access_token=…".
+   La librería no lee eso, así que lo rescatamos a mano. */
+async function rescatarSesionDelHash(){
+  var h = location.hash || "";
+  if(h.indexOf("access_token=") < 0) return;
+  try{
+    var p = new URLSearchParams(h.slice(h.lastIndexOf("#")+1));
+    var at = p.get("access_token"), rt = p.get("refresh_token");
+    if(at && rt) await sb.auth.setSession({ access_token: at, refresh_token: rt });
+  }catch(e){}
+}
+
 async function comInit(){
   comListas();
   if(!window.PREGUNTELA_CONFIG || !PREGUNTELA_CONFIG.url || !PREGUNTELA_CONFIG.anonKey){
@@ -2233,6 +2248,7 @@ async function comInit(){
   sb = window.supabase.createClient(PREGUNTELA_CONFIG.url, PREGUNTELA_CONFIG.anonKey);
   bindAuth(); bindFormularios();
   sb.auth.onAuthStateChange(function(_e, s){ comSesion(s); });
+  await rescatarSesionDelHash();
   var s = await sb.auth.getSession();
   comSesion(s.data.session);
   if(vueltaDeLogin){
