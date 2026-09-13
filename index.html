@@ -138,6 +138,18 @@ nav.tabs::-webkit-scrollbar{display:none}
 }
 .tab:hover{color:var(--ink);background:var(--surface-2)}
 .tab[aria-selected="true"]{color:var(--accent-ink);border-bottom-color:var(--accent)}
+.menu-toggle{display:none}
+@media(max-width:760px){
+  .masthead-in{position:relative;padding-bottom:12px}
+  .brandrow{padding-right:90px;min-height:42px}
+  .brandsub{display:none}
+  .menu-toggle{display:block;position:absolute;right:20px;top:12px;min-height:44px;
+    font:inherit;font-weight:600;border:1px solid var(--line);border-radius:8px;padding:6px 14px;
+    color:var(--ink);background:var(--surface);cursor:pointer}
+  nav.tabs{display:none;overflow:visible}
+  nav.tabs.open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+  .tab{white-space:normal;text-align:left;min-height:44px;font-size:1rem;padding:10px}
+}
 
 main{max-width:1080px;margin:0 auto;padding:30px 20px 90px}
 .view{display:none}
@@ -353,6 +365,25 @@ label.check input{margin-top:4px;width:18px;height:18px;flex:none}
   border:1px solid var(--line);color:var(--ink-2);padding:5px 11px;border-radius:6px;min-height:32px}
 .mini:hover{border-color:var(--accent);color:var(--accent-ink)}
 .mini.danger:hover{border-color:var(--clay);color:var(--clay);background:var(--clay-soft)}
+.mini{min-height:44px;font-size:.875rem}
+.aacc{flex-wrap:wrap}
+.community-status{margin:16px 0;color:var(--ink-2)}
+.community-status:empty{display:none}
+.attachment-list{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.attachment{display:flex;align-items:center;gap:8px;max-width:100%;flex-wrap:wrap}
+.attachment button{overflow-wrap:anywhere;text-align:left}
+.file-input{display:block;width:100%;margin:8px 0;font-size:.9rem}
+.admin-list{margin-top:14px}
+.admin-item{border-top:1px solid var(--line);padding:16px 0;overflow-wrap:anywhere}
+.admin-item p{margin-bottom:8px}
+.community-dialog{width:min(620px,calc(100% - 32px));max-height:85vh;overflow:auto;
+  color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
+.community-dialog::backdrop{background:rgba(0,0,0,.4)}
+.community-dialog h3{margin-bottom:18px}
+.community-dialog textarea,.community-dialog input,.community-dialog select{max-width:100%}
+.community-dialog .askbar{position:sticky;bottom:-24px;background:var(--surface);padding:12px 0}
+button:disabled{cursor:wait;opacity:.65}
+#answer{scroll-margin-top:125px}
 .aporte .contact{margin-top:11px}
 .aporte .pill{appearance:none;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:.78rem;
   background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);
@@ -366,6 +397,12 @@ code{font-family:"IBM Plex Mono",monospace;font-size:.85em;background:var(--surf
   font-weight:600;font-size:.94rem;color:var(--ink-3);padding:9px 14px;cursor:pointer;white-space:nowrap}
 .subtab:hover{color:var(--ink)}
 .subtab.on{color:var(--accent-ink);border-bottom-color:var(--accent)}
+@media(max-width:620px){
+  .subnav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;border:0;overflow:visible}
+  .subtab{white-space:normal;text-align:left;min-height:48px;font-size:1rem;
+    border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:10px}
+  .subtab.on{border-color:var(--accent);background:var(--accent-soft)}
+}
 .catgrupo{margin-bottom:30px}
 .cath{font-family:"IBM Plex Mono",monospace;font-size:.73rem;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink-3);font-weight:500;margin:0 0 11px;padding-bottom:7px;border-bottom:1px solid var(--line-soft)}
@@ -428,7 +465,8 @@ ul.plain li{margin-bottom:.5em}
       <span class="brand">Pregunt<em>ELA</em></span>
       <span class="brandsub">Lo que aprendieron cinco años de pacientes y familias</span>
     </a>
-    <nav class="tabs" role="tablist" aria-label="Secciones">
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menú</button>
+    <nav class="tabs" id="mainNav" role="tablist" aria-label="Secciones">
       <button class="tab" role="tab" aria-selected="true" data-v="preguntar">Preguntar</button>
       <button class="tab" role="tab" aria-selected="false" data-v="empezar">Primeros pasos</button>
       <button class="tab" role="tab" aria-selected="false" data-v="guias">Guías</button>
@@ -868,23 +906,26 @@ ul.plain li{margin-bottom:.5em}
   <div class="col" id="comNoConfig" hidden>
     <div class="panel">
       <h3 class="sec">Todavía no está conectada</h3>
-      <p>Los aportes necesitan una base de datos. Las instrucciones están en <code>CONFIGURAR-COMUNIDAD.md</code>, junto a los archivos del sitio.</p>
+      <p>Los aportes no están disponibles en este momento. Podés consultar los catálogos e intentar de nuevo más tarde.</p>
       <p class="hint">Mientras tanto podés ver los catálogos completos, y el resto del sitio funciona sin conexión.</p>
     </div>
   </div>
 
   <div class="col" id="comLogin" hidden>
     <div class="panel">
-      <h3 class="sec">Entrá para comentar y ver los aportes</h3>
-      <p>Los aportes están detrás de una cuenta porque incluyen experiencias personales y datos de contacto que no queremos dejar abiertos a internet. No hay contraseña: te llega un enlace al mail.</p>
+      <h3 class="sec">Entrá o solicitá acceso a la comunidad</h3>
+      <p>Te enviamos un enlace al correo, sin contraseña. Si es tu primera vez, un administrador debe aprobar tu acceso antes de que puedas ver o compartir aportes.</p>
+      <div class="formrow"><label for="authNombre">Tu nombre (opcional)</label>
+        <input type="text" id="authNombre" maxlength="60" autocomplete="name" placeholder="Como querés que te conozca el grupo"></div>
       <div class="formrow">
         <label for="authMail">Tu mail</label>
         <input type="email" id="authMail" placeholder="nombre@ejemplo.com" autocomplete="email">
       </div>
       <div class="askbar">
         <button class="btn" id="authSend">Enviarme el enlace</button>
-        <span class="hint" id="authMsg"></span>
+        <span class="hint" id="authMsg" role="status" aria-live="polite"></span>
       </div>
+      <p class="hint" style="margin-top:12px">El correo y los aportes se guardan en el servicio de Comunidad. Solo las personas aprobadas pueden ver los aportes.</p>
     </div>
   </div>
 
@@ -904,19 +945,45 @@ ul.plain li{margin-bottom:.5em}
           <option>Familiar</option><option>Cuidador/a</option><option>Profesional de la salud</option></select></div>
       <div class="formrow"><label for="meContacto">Tu contacto (opcional)</label>
         <input type="text" id="meContacto" maxlength="120" placeholder="Teléfono o mail"></div>
-      <label class="check"><input type="checkbox" id="meMostrar"> Mostrar mi contacto a los demás miembros</label>
-      <p class="hint">Solo lo ven quienes iniciaron sesión. Nunca aparece en la web abierta ni en buscadores.</p>
-      <div class="askbar"><button class="btn" id="meSave">Guardar</button><span class="hint" id="meMsg"></span></div>
+      <label class="check"><input type="checkbox" id="meMostrar"> Mostrar mi contacto a los miembros aprobados</label>
+      <p class="hint">Si lo mantenés privado, solo vos y los administradores pueden verlo.</p>
+      <div class="askbar"><button class="btn" id="meSave">Guardar</button><span class="hint" id="meMsg" role="status"></span></div>
     </div>
   </div>
 
+  <div class="col panel" id="comAccess" hidden style="margin-bottom:20px">
+    <h3 class="sec" id="accessTitle">Tu acceso está pendiente de aprobación</h3>
+    <p id="accessText">Un administrador revisará tu solicitud. Mientras tanto, podés consultar las guías y los catálogos públicos.</p>
+    <button class="btn ghost" id="accessRefresh">Comprobar mi acceso</button>
+  </div>
+  <div class="col"><p class="community-status" id="comStatus" role="status" aria-live="polite"></p>
+    <button class="btn ghost" id="comRetry" hidden>Volver a intentar</button></div>
+  <div class="col panel" id="comAdmin" hidden style="margin:20px 0">
+    <h3 class="sec">Administrar la comunidad</h3>
+    <details open><summary>Solicitudes de acceso y miembros</summary>
+      <p class="hint">Aprobá solo a las personas que puedan participar del grupo.</p>
+      <div class="formrow"><label for="memberFilter">Mostrar miembros</label>
+        <select id="memberFilter"><option value="pendiente">Pendientes</option><option value="aprobada">Aprobados</option><option value="suspendida">Suspendidos</option><option value="">Todos</option></select></div>
+      <div id="adminMembers" class="admin-list"></div>
+    </details>
+    <details open><summary>Correcciones pendientes</summary><div id="adminCorrections" class="admin-list"></div></details>
+  </div>
+  <dialog class="community-dialog" id="communityDialog" aria-labelledby="dialogTitle">
+    <form id="communityDialogForm">
+      <h3 class="sec" id="dialogTitle"></h3><div id="dialogFields"></div>
+      <p id="dialogMsg" role="status" aria-live="polite"></p>
+      <div class="askbar"><button class="btn" id="dialogSubmit" type="submit">Guardar</button>
+        <button class="btn ghost" id="dialogCancel" type="button">Cancelar</button></div>
+    </form>
+  </dialog>
+
   <div class="col">
-    <div class="subnav" id="comNav" role="tablist"></div>
+    <div class="subnav" id="comNav" aria-label="Tipos de aporte"></div>
   </div>
 
   <!-- insumos -->
   <div class="col pane" id="pane-insumo">
-    <div class="filterbar"><input type="search" id="qInsumo" placeholder="Buscar un insumo o equipo…"></div>
+    <div class="filterbar"><input type="search" id="qInsumo" aria-label="Buscar un insumo o equipo" placeholder="Buscar un insumo o equipo…"></div>
     <div class="relrow" id="filtroEtapa" style="margin-bottom:18px"></div>
     <div id="listaInsumo"></div>
   </div>
@@ -926,7 +993,7 @@ ul.plain li{margin-bottom:.5em}
     <div class="alert" style="margin-bottom:18px">
       <div><strong>Esto no es una recomendación.</strong> Es la lista de lo que se nombró en el grupo a lo largo de cinco años, con el número de veces que apareció. Que alguien la haya usado no significa que te sirva a vos. Ninguna medicación se empieza, se cambia ni se suspende sin tu médico.</div>
     </div>
-    <div class="filterbar"><input type="search" id="qMed" placeholder="Buscar una medicación…"></div>
+    <div class="filterbar"><input type="search" id="qMed" aria-label="Buscar una medicación" placeholder="Buscar una medicación…"></div>
     <div class="relrow" id="filtroMed" style="margin-bottom:18px"></div>
     <div id="listaMed"></div>
   </div>
@@ -962,8 +1029,8 @@ ul.plain li{margin-bottom:.5em}
         <span class="hint" id="eMsg"></span></div>
     </form>
     <div class="filterbar">
-      <input type="search" id="qEsp" placeholder="Buscar por nombre, especialidad o ciudad…">
-      <select id="filtroProv" style="flex:0 0 auto;min-width:200px"></select>
+      <input type="search" id="qEsp" aria-label="Buscar especialistas" placeholder="Buscar por nombre, especialidad o ciudad…">
+      <select id="filtroProv" aria-label="Filtrar especialistas por provincia" style="flex:0 0 auto;min-width:200px"></select>
     </div>
     <div id="listaEsp"></div>
   </div>
@@ -1011,7 +1078,7 @@ ul.plain li{margin-bottom:.5em}
 
     <h3 class="sec">Qué se hizo con los datos personales</h3>
     <p>De los mensajes se quitaron <strong>los nombres y los teléfonos de quienes escribieron</strong>: en el archivo solo quedan la fecha y el texto. En el directorio, en cambio, sí figuran teléfonos de profesionales, comercios, estudios jurídicos y fundaciones, porque se compartieron en el grupo justamente para que circularan.</p>
-    <p>Nada de lo que escribas en el buscador sale de tu navegador. No hay servidor, no hay cuentas, no hay estadísticas de uso, no hay cookies.</p>
+    <p>Las búsquedas en el archivo se procesan en tu navegador. Comunidad usa un servicio en línea para el ingreso por correo, las solicitudes de acceso y los aportes. Los aportes están disponibles solo para miembros aprobados; los administradores revisan las solicitudes y las correcciones.</p>
 
     <h3 class="sec">Qué no es</h3>
     <ul class="plain">
@@ -1042,10 +1109,10 @@ ul.plain li{margin-bottom:.5em}
     </div>
     <div>
       <p class="footh">Privacidad</p>
-      <p>Los mensajes están anonimizados: no se muestran nombres ni teléfonos de participantes. Nada de lo que escribas acá se envía a ningún servidor.</p>
+      <p>Las búsquedas en el archivo se procesan en tu navegador. El correo y los aportes de Comunidad se guardan en su servicio en línea y requieren acceso aprobado.</p>
     </div>
   </div>
-  <p class="footnote">Todo el contenido está dentro de esta página y funciona sin conexión · Última actualización: septiembre de 2026 · <a href="#/acerca" data-v="acerca">Acerca de este sitio</a></p>
+  <p class="footnote">El archivo y las guías se pueden consultar después de cargar esta página. Comunidad necesita internet · Última actualización: septiembre de 2026 · <a href="#/acerca" data-v="acerca">Acerca de este sitio</a></p>
 </footer>
 
 </main>
@@ -1159,8 +1226,12 @@ var TITLES = {preguntar:"PreguntELA", empezar:"Primeros pasos · PreguntELA", gu
   archivo:"Archivo del grupo · PreguntELA", comunidad:"Comunidad · PreguntELA", acerca:"Acerca de · PreguntELA"};
 function show(v, push){
   if(VIEWS.indexOf(v)<0) v="preguntar";
-  tabs.forEach(function(t){ t.setAttribute("aria-selected", String(t.dataset.v===v)); });
+  var desdeMenu=document.getElementById("mainNav").classList.contains("open");
+  tabs.forEach(function(t){ t.setAttribute("aria-selected", String(t.dataset.v===v));t.tabIndex=t.dataset.v===v?0:-1; });
   document.querySelectorAll(".view").forEach(function(s){ s.classList.toggle("on", s.id==="v-"+v); });
+  document.getElementById("mainNav").classList.remove("open");
+  document.getElementById("menuToggle").setAttribute("aria-expanded","false");
+  if(desdeMenu){var heading=document.querySelector("#v-"+v+" .big");if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}}
   document.title = TITLES[v] || "PreguntELA";
   if(push!==false && location.hash !== "#/"+v){
     try{ history.pushState(null,"","#/"+v); }catch(e){ location.hash = "#/"+v; }
@@ -1178,7 +1249,20 @@ function routeFromHash(push){
   var h=(location.hash||"").replace(/^#\/?/,"");
   show(h||"preguntar", push);
 }
-tabs.forEach(function(t){ t.addEventListener("click", function(){ show(t.dataset.v); }); });
+tabs.forEach(function(t,i){
+  t.id="tab-"+t.dataset.v;t.setAttribute("aria-controls","v-"+t.dataset.v);
+  document.getElementById("v-"+t.dataset.v).setAttribute("aria-labelledby",t.id);
+  t.addEventListener("click", function(){ show(t.dataset.v); });
+  t.addEventListener("keydown",function(e){
+    var dest=e.key==="Home"?0:e.key==="End"?tabs.length-1:
+      (e.key==="ArrowRight"||e.key==="ArrowDown")?(i+1)%tabs.length:
+      (e.key==="ArrowLeft"||e.key==="ArrowUp")?(i+tabs.length-1)%tabs.length:null;
+    if(dest!==null){e.preventDefault();tabs.forEach(function(b){b.tabIndex=-1;});tabs[dest].tabIndex=0;tabs[dest].focus();}
+  });
+});
+document.getElementById("menuToggle").addEventListener("click",function(){
+  var opened=document.getElementById("mainNav").classList.toggle("open");this.setAttribute("aria-expanded",String(opened));
+});
 document.addEventListener("click", function(e){
   var a=e.target.closest("a[data-v]");
   if(!a) return;
@@ -1885,8 +1969,33 @@ var TEMAS = ["Respiratorio","Nutrición y deglución","Comunicación","Equipamie
 var ETIQ_ETAPA = {temprana:"etapa temprana", intermedia:"etapa intermedia", avanzada:"etapa avanzada"};
 
 /* ---------------- comunidad ---------------- */
-var sb = null, ME = null, APORTES = [], SEC = "insumo", abierto = {};
+var sb = null, ME = null, APORTES = [], ARCHIVOS = [], CORRECCIONES = [], MIEMBROS = [], SEC = "insumo", abierto = {};
 var fEtapa = "", fMedCat = "", fProv = "", fTema = "";
+var sessionEpoch = 0, sessionUser = null, dialogAction = null, dialogReturnFocus = null;
+var FILE_TYPES = {"image/jpeg":"jpg","image/png":"png","image/webp":"webp","image/heic":"heic","application/pdf":"pdf"};
+var FILE_ACCEPT = ".jpg,.jpeg,.png,.webp,.heic,.pdf";
+function aprobado(){ return !!(ME && (ME.rol === "admin" || ME.membresia === "aprobada")); }
+function admin(){ return aprobado() && ME.rol === "admin"; }
+function attr(s){ return esc(s).replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
+function comprobar(r){ if(r.error) throw r.error; return r.data; }
+function mensajeError(error){
+  if(error && error.userMessage) return error.userMessage;
+  var code = error && (error.code || error.status);
+  if(code === "P0001") return error.message;
+  if(code === 429 || code === "over_email_send_rate_limit" || code === "over_request_rate_limit")
+    return "Se alcanzó el límite de intentos. Esperá unos minutos y volvé a intentar.";
+  if(code === "email_address_not_authorized") return "El envío de correo todavía necesita configuración. Avisale a un administrador.";
+  if(code === "42501" || code === 403) return "No tenés permiso para esta acción. Comprobá si tu acceso sigue aprobado.";
+  return "No pudimos completar la acción. Revisá tu conexión y volvé a intentar.";
+}
+function estadoComunidad(texto, error, retry){
+  setMsg("comStatus", texto, error); el("comRetry").hidden = !retry;
+}
+function archivoInput(id){
+  return '<div class="formrow"><label for="'+attr(id)+'">Fotos o documentos (opcional)</label>'+
+    '<input class="file-input" id="'+attr(id)+'" type="file" multiple accept="'+FILE_ACCEPT+'" aria-describedby="'+attr(id)+'-hint">'+
+    '<p class="hint" id="'+attr(id)+'-hint">Hasta cinco archivos de 10 MB: JPG, PNG, WebP, HEIC o PDF. Compartí solo archivos que tengas permiso de mostrar al grupo.</p></div>';
+}
 
 function el(id){ return document.getElementById(id); }
 function fill(id, arr, first){
@@ -1899,33 +2008,47 @@ function fechaCorta(iso){
   try{ return new Date(iso).toLocaleDateString("es-AR",{day:"numeric",month:"short",year:"numeric"}); }
   catch(e){ return (iso||"").slice(0,10); }
 }
-function deSeccion(s){ return APORTES.filter(function(a){ return a.seccion === s; }); }
-function deItem(s, k){ return APORTES.filter(function(a){ return a.seccion===s && a.item===k; }); }
+function deSeccion(s){ return aprobado() ? APORTES.filter(function(a){ return a.seccion === s; }) : []; }
+function deItem(s, k){ return deSeccion(s).filter(function(a){ return a.item===k; }); }
 
 var SECCIONES = [["insumo","Insumos y equipamiento"],["medicacion","Medicaciones"],
                  ["especialista","Especialistas"],["consejo","Consejos"]];
 
 /* ---------- firma y acciones de cada aporte ---------- */
 function firmaHTML(a){
-  var admin = ME && ME.rol === "admin", acc = "";
-  if(admin) acc = '<button class="mini" data-ocultar="'+a.id+'">'+(a.estado==="oculto"?"Publicar":"Ocultar")+
+  var acc = "", pendiente = CORRECCIONES.some(function(c){ return String(c.aporte)===String(a.id) && !c.resuelta && c.autor===ME.id; });
+  if(admin()) acc = '<button class="mini" data-editar="'+a.id+'">Editar</button><button class="mini" data-ocultar="'+a.id+'">'+(a.estado==="oculto"?"Publicar":"Ocultar")+
                   '</button><button class="mini danger" data-borrar="'+a.id+'">Borrar</button>';
-  else if(ME && a.autor === ME.id) acc = '<button class="mini" data-corregir="'+a.id+'">Pedir corrección</button>';
-  return '<div class="afirma"><span class="aquien">'+esc(a.autor_nombre||"Miembro")+
+  else if(aprobado() && a.autor === ME.id) acc = pendiente ? '<span>Corrección pendiente</span>' : '<button class="mini" data-corregir="'+a.id+'">Pedir corrección</button>';
+  if(aprobado() && (a.autor===ME.id || admin()) && ARCHIVOS.filter(function(f){return String(f.aporte)===String(a.id);}).length<5)
+    acc+='<button class="mini" data-adjuntar="'+a.id+'">Adjuntar archivos</button>';
+  return archivosHTML(a)+'<div class="afirma"><span class="aquien">'+esc(a.autor_nombre||"Miembro")+
     (a.autor_rol?' · '+esc(a.autor_rol):"")+(a.autor_es_admin?' · admin':"")+'</span>'+
     '<span class="date">'+fechaCorta(a.creado)+'</span>'+
     (a.autor_contacto?'<span class="acont">'+esc(a.autor_contacto)+'</span>':"")+
     '<span class="aacc">'+acc+'</span></div>';
 }
 function comentarioHTML(a){
-  return '<div class="coment'+(a.estado==="oculto"?" oculto":"")+'">'+
+  return '<div data-aporte="'+a.id+'" class="coment'+(a.estado==="oculto"?" oculto":"")+'">'+
     '<p class="atexto">'+esc(a.texto||"").replace(/\n+/g,"<br>")+'</p>'+ firmaHTML(a) +'</div>';
 }
 function cajaAporte(sec, item){
-  if(!ME) return '<p class="hint">Iniciá sesión para contar tu experiencia.</p>';
+  if(!aprobado()) return '<p class="hint">'+(ME ? "Podrás participar cuando un administrador apruebe tu acceso." : "Iniciá sesión y solicitá acceso para contar tu experiencia.")+'</p>';
+  var id = "aporte-"+sec+"-"+item;
   return '<form class="micro" data-sec="'+sec+'" data-item="'+esc(item)+'">'+
-    '<textarea rows="3" maxlength="2000" placeholder="Contá tu experiencia: qué usaste, cómo lo conseguiste, si te sirvió y para qué."></textarea>'+
-    '<div class="askbar"><button class="btn" type="submit">Publicar</button><span class="hint"></span></div></form>';
+    '<label for="'+id+'">Tu experiencia</label><textarea id="'+id+'" rows="3" required minlength="10" maxlength="2000" placeholder="Contá tu experiencia: qué usaste, cómo lo conseguiste, si te sirvió y para qué."></textarea>'+
+    archivoInput(id+"-files")+'<div class="askbar"><button class="btn" type="submit">Publicar</button><span class="hint" role="status"></span></div></form>';
+}
+
+function archivosHTML(a){
+  var files = ARCHIVOS.filter(function(f){ return String(f.aporte)===String(a.id); });
+  if(!files.length) return "";
+  return '<div class="attachment-list" aria-label="Archivos adjuntos">'+files.map(function(f){
+    if(f.estado!=="listo") return '<span class="attachment">'+esc(f.nombre)+' · carga pendiente <button class="mini" data-finalizar="'+f.id+'">Finalizar carga</button>'+
+      (f.subido_por===ME.id?'<button class="mini" data-descartar="'+f.id+'">Descartar reserva sin archivo</button>':"")+'</span>';
+    return '<span class="attachment"><button class="mini" data-archivo="'+f.id+'">Abrir '+esc(f.nombre)+
+      ' · '+Math.ceil(f.tamano/1024)+' KB</button>'+(admin()?'<button class="mini danger" data-borrar-archivo="'+f.id+'" aria-label="Borrar '+attr(f.nombre)+'">Borrar archivo</button>':"")+'</span>';
+  }).join("")+'</div>';
 }
 
 /* ---------- insumos ---------- */
@@ -1941,7 +2064,7 @@ function pintarInsumos(){
     items.forEach(function(it){
       var n = deItem("insumo", it.k).length;
       out += '<div class="cat'+(abierto["insumo:"+it.k]?" open":"")+'" data-open="insumo:'+it.k+'">'+
-        '<button class="catcab" data-toggle="insumo:'+it.k+'">'+
+        '<button class="catcab" aria-expanded="'+!!abierto["insumo:"+it.k]+'" data-toggle="insumo:'+it.k+'">'+
           '<span class="catn">'+esc(it.n)+'</span>'+
           '<span class="tag etapa '+it.e+'">'+ETIQ_ETAPA[it.e]+'</span>'+
           (n?'<span class="cuenta">'+n+(n===1?" experiencia":" experiencias")+'</span>':"")+
@@ -1965,7 +2088,7 @@ function pintarMeds(){
   el("listaMed").innerHTML = items.length ? items.map(function(m){
     var n = deItem("medicacion", m.k).length;
     return '<div class="cat'+(abierto["medicacion:"+m.k]?" open":"")+'" data-open="medicacion:'+m.k+'">'+
-      '<button class="catcab" data-toggle="medicacion:'+m.k+'">'+
+      '<button class="catcab" aria-expanded="'+!!abierto["medicacion:"+m.k]+'" data-toggle="medicacion:'+m.k+'">'+
         '<span class="catn">'+esc(m.n)+'</span>'+
         '<span class="tag">'+esc(m.c)+'</span>'+
         '<span class="menciones">'+m.m+' menciones en el grupo</span>'+
@@ -1987,9 +2110,9 @@ function pintarEsp(){
                  a.esp_cobertura,a.texto].filter(Boolean).join(" ")).indexOf(q) >= 0;
   });
   if(!lista.length){
-    el("listaEsp").innerHTML = '<p class="hint">'+(ME
+    el("listaEsp").innerHTML = '<p class="hint">'+(aprobado()
       ? "Todavía no hay especialistas cargados con esos filtros. Agregá el primero con el botón de arriba."
-      : "Iniciá sesión para ver los especialistas que aportó la comunidad.")+'</p>';
+      : "Necesitás acceso aprobado para ver los especialistas que aportó la comunidad.")+'</p>';
     return;
   }
   var porProv = {}, orden = [];
@@ -2003,7 +2126,7 @@ function pintarEsp(){
     return '<div class="catgrupo"><h3 class="cath">'+esc(p)+' <span class="cuenta">'+porProv[p].length+'</span></h3>'+
       porProv[p].map(function(a){
         var L = function(et,v){ return v?'<div class="kv"><span class="k">'+et+'</span><span class="v">'+esc(v)+'</span></div>':""; };
-        return '<article class="aporte'+(a.estado==="oculto"?" oculto":"")+'">'+
+        return '<article data-aporte="'+a.id+'" class="aporte'+(a.estado==="oculto"?" oculto":"")+'">'+
           '<h4 class="ah">'+esc(a.esp_nombre||"—")+'</h4>'+
           '<div class="ataglist">'+(a.esp_tipo?'<span class="tag">'+esc(a.esp_tipo)+'</span>':"")+
             (a.esp_calificacion?'<span class="tag califica">'+esc(a.esp_calificacion)+'</span>':"")+'</div>'+
@@ -2018,165 +2141,24 @@ function pintarEsp(){
 function pintarConsejos(){
   var lista = deSeccion("consejo").filter(function(a){ return !fTema || a.tema === fTema; });
   el("listaCon").innerHTML = lista.length ? lista.map(function(a){
-    return '<article class="aporte'+(a.estado==="oculto"?" oculto":"")+'">'+
+    return '<article data-aporte="'+a.id+'" class="aporte'+(a.estado==="oculto"?" oculto":"")+'">'+
       (a.tema?'<div class="ameta"><span class="tag">'+esc(a.tema)+'</span></div>':"")+
       '<p class="atexto">'+esc(a.texto||"").replace(/\n+/g,"<br>")+'</p>'+ firmaHTML(a)+'</article>';
-  }).join("") : '<p class="hint">'+(ME
+  }).join("") : '<p class="hint">'+(aprobado()
     ? "Todavía no hay consejos sobre este tema. Dejá el primero."
-    : "Iniciá sesión para ver los consejos de la comunidad.")+'</p>';
+    : "Necesitás acceso aprobado para ver los consejos de la comunidad.")+'</p>';
 }
 
 function pintarTodo(){
   pintarInsumos(); pintarMeds(); pintarEsp(); pintarConsejos();
+  el("espNuevo").hidden = !aprobado(); el("conNuevo").hidden = !aprobado();
 }
 
 /* ---------- navegación interna ---------- */
 function mostrarSeccion(s){
   SEC = s;
   document.querySelectorAll("#v-comunidad .pane").forEach(function(p){ p.hidden = p.id !== "pane-"+s; });
-  el("comNav").querySelectorAll("button").forEach(function(b){ b.classList.toggle("on", b.dataset.s===s); });
-}
-
-/* ---------- eventos delegados ---------- */
-function bindDelegado(){
-  var cont = el("v-comunidad");
-  cont.addEventListener("click", async function(ev){
-    var t = ev.target.closest("[data-toggle]");
-    if(t){ var k=t.dataset.toggle; abierto[k]=!abierto[k];
-           t.parentElement.classList.toggle("open", abierto[k]); return; }
-
-    var o = ev.target.closest("[data-ocultar]");
-    if(o){ var a = APORTES.filter(function(x){ return String(x.id)===o.dataset.ocultar; })[0];
-      await sb.from("aportes").update({ estado: a.estado==="oculto"?"publicado":"oculto",
-        editado: new Date().toISOString(), editado_por: ME.id }).eq("id", a.id);
-      return cargarAportes(); }
-
-    var b = ev.target.closest("[data-borrar]");
-    if(b){ if(b.dataset.c!=="1"){ b.dataset.c="1"; b.textContent="¿Seguro? Tocá otra vez"; return; }
-      await sb.from("aportes").delete().eq("id", b.dataset.borrar); return cargarAportes(); }
-
-    var c = ev.target.closest("[data-corregir]");
-    if(c){ var m = prompt("¿Qué habría que corregir? Un administrador lo va a revisar.");
-      if(!m) return;
-      await sb.from("correcciones").insert({ aporte: c.dataset.corregir, autor: ME.id, mensaje: m });
-      c.textContent="Corrección pedida"; c.disabled=true; return; }
-  });
-
-  cont.addEventListener("submit", async function(ev){
-    var f = ev.target.closest("form.micro");
-    if(!f) return;
-    ev.preventDefault();
-    var ta = f.querySelector("textarea"), hint = f.querySelector(".hint");
-    var txt = (ta.value||"").trim();
-    if(txt.length < 10){ hint.textContent = "Contanos un poco más."; return; }
-    f.querySelector("button").disabled = true; hint.textContent = "Publicando…";
-    var r = await sb.from("aportes").insert({ autor: ME.id, seccion: f.dataset.sec,
-                                              item: f.dataset.item, texto: txt });
-    f.querySelector("button").disabled = false;
-    if(r.error){ hint.textContent = r.error.message; return; }
-    ta.value = ""; hint.textContent = "";
-    abierto[f.dataset.sec+":"+f.dataset.item] = true;
-    cargarAportes();
-  });
-}
-
-/* ---------- formularios propios ---------- */
-function bindFormularios(){
-  el("espNuevo").addEventListener("click", function(){
-    if(!ME){ alert("Iniciá sesión para agregar un especialista."); return; }
-    el("espForm").hidden = !el("espForm").hidden;
-  });
-  el("eCancel").addEventListener("click", function(){ el("espForm").hidden = true; });
-  var dupT=null;
-  el("eNombre").addEventListener("input", function(){ clearTimeout(dupT); dupT=setTimeout(function(){
-    var caja = el("eDup"), q = (el("eNombre").value||"").trim();
-    if(q.length < 3){ caja.hidden = true; return; }
-    var hits = deSeccion("especialista").filter(function(a){
-      return a.esp_nombre && fold(a.esp_nombre).indexOf(fold(q)) >= 0; }).slice(0,4);
-    if(!hits.length){ caja.hidden = true; return; }
-    caja.hidden = false;
-    caja.innerHTML = '<strong>Ya hay alguien cargado con ese nombre.</strong> Evitemos duplicados: si falta un dato, cargalo igual pero completo, así un administrador puede unificar.<ul>'+
-      hits.map(function(h){ return '<li>'+esc(h.esp_nombre)+(h.esp_tipo?' — '+esc(h.esp_tipo):"")+
-        (h.esp_ciudad?' ('+esc(h.esp_ciudad)+')':"")+'</li>'; }).join("")+'</ul>';
-  }, 400); });
-
-  el("espForm").addEventListener("submit", async function(ev){
-    ev.preventDefault();
-    var v = function(id){ var e=el(id); return e&&e.value?e.value.trim():""; };
-    if(!v("eNombre")){ setMsg("eMsg","Poné el nombre.", true); return; }
-    setMsg("eMsg","Publicando…");
-    var r = await sb.from("aportes").insert({ autor: ME.id, seccion:"especialista",
-      esp_nombre:v("eNombre"), esp_tipo:v("eTipo"), esp_institucion:v("eInst"),
-      esp_provincia:v("eProv"), esp_ciudad:v("eCiudad"), esp_cobertura:v("eCob"),
-      esp_contacto:v("eCont"), esp_calificacion:v("eCalif")||null, texto:v("eComent") });
-    if(r.error){ setMsg("eMsg", r.error.message, true); return; }
-    el("espForm").reset(); el("espForm").hidden = true; el("eDup").hidden = true; setMsg("eMsg","");
-    cargarAportes();
-  });
-
-  el("conNuevo").addEventListener("click", function(){
-    if(!ME){ alert("Iniciá sesión para dejar un consejo."); return; }
-    el("conForm").hidden = !el("conForm").hidden;
-  });
-  el("cCancel").addEventListener("click", function(){ el("conForm").hidden = true; });
-  el("conForm").addEventListener("submit", async function(ev){
-    ev.preventDefault();
-    var txt = (el("cTexto").value||"").trim();
-    if(txt.length < 15){ setMsg("cMsg","Contanos un poco más.", true); return; }
-    setMsg("cMsg","Publicando…");
-    var r = await sb.from("aportes").insert({ autor: ME.id, seccion:"consejo",
-                                              tema: el("cTema").value || null, texto: txt });
-    if(r.error){ setMsg("cMsg", r.error.message, true); return; }
-    el("conForm").reset(); el("conForm").hidden = true; setMsg("cMsg","");
-    cargarAportes();
-  });
-}
-
-/* ---------- sesión ---------- */
-function bindAuth(){
-  el("authSend").addEventListener("click", async function(){
-    var mail = (el("authMail").value||"").trim();
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)){ setMsg("authMsg","Escribí un mail válido.", true); return; }
-    setMsg("authMsg","Enviando…");
-    /* Sin "#" al final: Supabase pega el token en el fragmento, y si la
-       dirección ya traía uno quedan dos y la librería no lo encuentra.
-       El sitio detecta solo la vuelta del login y abre Comunidad. */
-    var r = await sb.auth.signInWithOtp({ email: mail,
-      options:{ emailRedirectTo: location.origin + location.pathname } });
-    setMsg("authMsg", r.error ? "No se pudo enviar: "+r.error.message
-      : "Listo. Te llegó un enlace a "+mail+". Revisá también el correo no deseado.", !!r.error);
-  });
-  el("meOut").addEventListener("click", async function(){ await sb.auth.signOut(); location.reload(); });
-  el("meEdit").addEventListener("click", function(){ el("mePanel").hidden = !el("mePanel").hidden; });
-  el("meSave").addEventListener("click", async function(){
-    setMsg("meMsg","Guardando…");
-    var r = await sb.from("perfiles").update({
-      nombre:(el("meNombre").value||"Miembro").trim().slice(0,60),
-      rol_comunidad: el("meRolC").value||null,
-      contacto:(el("meContacto").value||"").trim()||null,
-      mostrar_contacto: el("meMostrar").checked }).eq("id", ME.id);
-    if(r.error){ setMsg("meMsg", r.error.message, true); return; }
-    setMsg("meMsg","Guardado.");
-    var s = await sb.auth.getSession(); comSesion(s.data.session);
-  });
-}
-
-async function comSesion(session){
-  if(!session){ el("comLogin").hidden=false; el("comYo").hidden=true; ME=null; pintarTodo(); return; }
-  el("comLogin").hidden=true; el("comYo").hidden=false;
-  var r = await sb.from("perfiles").select("*").eq("id", session.user.id).single();
-  ME = r.data || { id:session.user.id, nombre:"Miembro", rol:"miembro" };
-  el("meName").textContent = ME.nombre || "Miembro";
-  el("meRole").textContent = ME.rol==="admin" ? "administrador" : (ME.rol_comunidad||"");
-  el("meNombre").value = ME.nombre||""; el("meRolC").value = ME.rol_comunidad||"";
-  el("meContacto").value = ME.contacto||""; el("meMostrar").checked = !!ME.mostrar_contacto;
-  cargarAportes();
-}
-
-async function cargarAportes(){
-  var r = await sb.from("aportes_publicos").select("*").order("creado",{ascending:false}).limit(2000);
-  APORTES = r.error ? [] : (r.data||[]);
-  pintarTodo();
+  el("comNav").querySelectorAll("button").forEach(function(b){ b.classList.toggle("on", b.dataset.s===s); b.setAttribute("aria-pressed",String(b.dataset.s===s)); });
 }
 
 /* ---------- arranque ---------- */
@@ -2221,50 +2203,403 @@ function comListas(){
   pintarTodo();
 }
 
-/* Enlaces viejos vuelven con dos almohadillas: "#/comunidad#access_token=…".
-   La librería no lee eso, así que lo rescatamos a mano. */
-async function rescatarSesionDelHash(){
-  var h = location.hash || "";
-  if(h.indexOf("access_token=") < 0) return;
+/* Sesión, aportes, archivos y administración. Se integra en el HTML al compilar. */
+function falla(texto){ return {userMessage:texto}; }
+function archivosSeleccionados(input){
+  var files = Array.from(input && input.files || []);
+  if(files.length>5) throw falla("Podés adjuntar hasta cinco archivos por aporte.");
+  return files.map(function(file){
+    var extension = file.name.split('.').pop().toLowerCase();
+    var inferido = {jpg:"image/jpeg",jpeg:"image/jpeg",png:"image/png",webp:"image/webp",heic:"image/heic",pdf:"application/pdf"}[extension];
+    var tipo = file.type || inferido;
+    if(!FILE_TYPES[tipo] || !inferido || tipo!==inferido) throw falla("Elegí imágenes JPG, PNG, WebP, HEIC o documentos PDF.");
+    if(file.size<1 || file.size>10485760) throw falla("Cada archivo debe pesar entre 1 byte y 10 MB.");
+    if(file.name.length>180) throw falla("Acortá el nombre del archivo a menos de 181 caracteres.");
+    return {file:file,tipo:tipo,reserva:null,subido:false,listo:false};
+  });
+}
+function bloquearFormulario(form, block){
+  form.querySelectorAll("input,select,textarea,button").forEach(function(e){e.disabled=block;});
+}
+async function subirArchivos(carga, hint){
+  for(var i=0;i<carga.archivos.length;i++){
+    var f=carga.archivos[i]; if(f.listo) continue;
+    hint.textContent="Subiendo archivo "+(i+1)+" de "+carga.archivos.length+"…";
+    if(!f.reserva){
+      var data=comprobar(await sb.rpc("reservar_archivo",{p_aporte:carga.aporte,p_nombre:f.file.name,p_tipo:f.tipo,p_tamano:f.file.size}));
+      f.reserva=Array.isArray(data)?data[0]:data;
+    }
+    if(!f.subido){
+      var r=await sb.storage.from("aportes").upload(f.reserva.ruta,f.file,{contentType:f.tipo,upsert:false});
+      // Una respuesta perdida puede dejar el objeto guardado. Confirmar la
+      // reserva verifica su existencia sin reemplazar un archivo existente.
+      if(r.error && String(r.error.statusCode||r.error.status)!=="409") throw r.error;
+      f.subido=true;
+    }
+    comprobar(await sb.rpc("confirmar_archivo",{p_id:f.reserva.id})); f.listo=true;
+  }
+}
+async function publicarFormulario(form, datos, existente){
+  if(!aprobado()) throw falla("Necesitás acceso aprobado para participar.");
+  var hint=form.querySelector("[role=status]");
+  if(!form._carga){ form._carga={aporte:existente||null,archivos:archivosSeleccionados(form.querySelector("input[type=file]"))}; }
+  var carga=form._carga, epoch=sessionEpoch;
+  bloquearFormulario(form,true);
   try{
-    var p = new URLSearchParams(h.slice(h.lastIndexOf("#")+1));
-    var at = p.get("access_token"), rt = p.get("refresh_token");
-    if(at && rt) await sb.auth.setSession({ access_token: at, refresh_token: rt });
-  }catch(e){}
+    if(!carga.aporte){
+      hint.textContent="Guardando el aporte…";
+      carga.aporte=comprobar(await sb.from("aportes").insert(datos).select("id").single()).id;
+    }
+    await subirArchivos(carga,hint);
+    if(epoch!==sessionEpoch) return false;
+    form.reset(); form._carga=null;bloquearFormulario(form,false);
+    try{await cargarAportes(epoch);estadoComunidad("El aporte quedó guardado.",false,false);}
+    catch(e){estadoComunidad("El aporte quedó guardado, pero no pudimos actualizar la lista. Volvé a intentar la carga de la lista.",true,true);}
+    return true;
+  }catch(error){
+    if(epoch!==sessionEpoch) return false;
+    hint.textContent=(carga.aporte?"El aporte ya está guardado. Faltan archivos por completar. ":"")+mensajeError(error);
+    var button=form.querySelector('button[type="submit"]');
+    button.disabled=false;
+    button.textContent=carga.aporte?"Reintentar archivos":"Volver a intentar";
+    // Si ya se guardó el texto, reintentar solo los archivos evita duplicar el aporte.
+    if(!carga.aporte){form._carga=null; bloquearFormulario(form,false);}
+    return false;
+  }
 }
 
+function abrirDialogo(titulo, fields, action, label){
+  dialogReturnFocus=document.activeElement;
+  el("communityDialogForm").reset(); el("communityDialogForm")._carga=null;
+  el("dialogTitle").textContent=titulo; el("dialogFields").innerHTML=fields;
+  el("dialogMsg").textContent=""; el("dialogSubmit").textContent=label||"Guardar";
+  bloquearFormulario(el("communityDialogForm"),false); dialogAction=action;
+  el("communityDialog").showModal();
+}
+function campoDialogo(name,label,value,max,multiline){
+  var id="edit-"+name;
+  return '<div class="formrow"><label for="'+id+'">'+label+'</label>'+
+    (multiline?'<textarea id="'+id+'" name="'+name+'" rows="4" maxlength="'+max+'">'+esc(value||"")+'</textarea>':
+      '<input type="text" id="'+id+'" name="'+name+'" maxlength="'+max+'" value="'+attr(value||"")+'">')+'</div>';
+}
+function aportePorId(id){return APORTES.find(function(a){return String(a.id)===String(id);});}
+function editarAporte(a){
+  if(!admin() || !a) return;
+  var fields="", keys=["texto"], html;
+  if(a.seccion==="especialista"){
+    var spec=[["esp_nombre","Nombre",150],["esp_tipo","Especialidad o servicio",150],["esp_institucion","Institución",150],
+      ["esp_provincia","Provincia o zona",100],["esp_ciudad","Ciudad",80],["esp_cobertura","Cobertura",150],["esp_contacto","Contacto laboral",500]];
+    spec.forEach(function(k){keys.push(k[0]);fields+=campoDialogo(k[0],k[1],a[k[0]],k[2],false);});
+    keys.push("esp_calificacion");
+    fields+='<div class="formrow"><label for="edit-esp_calificacion">Calificación</label><select id="edit-esp_calificacion" name="esp_calificacion">'+
+      ["","Excelente","Muy bueno","Bueno","Regular"].map(function(v){return '<option value="'+v+'"'+(v===(a.esp_calificacion||"")?' selected':'')+'>'+(v||"Sin calificar")+'</option>';}).join("")+'</select></div>';
+  }
+  if(a.seccion==="consejo"){keys.push("tema");fields+=campoDialogo("tema","Tema",a.tema,100,false);}
+  fields+=campoDialogo("texto","Contenido del aporte",a.texto,2500,true);
+  abrirDialogo("Editar aporte",fields,async function(form){
+    var values=new FormData(form), patch={editado:new Date().toISOString(),editado_por:ME.id};
+    keys.forEach(function(k){patch[k]=String(values.get(k)||"").trim()||null;});
+    if(a.seccion==="especialista" && !patch.esp_nombre) throw falla("Completá el nombre.");
+    if(a.seccion!=="especialista" && !patch.texto) throw falla("El aporte no puede quedar vacío.");
+    comprobar(await sb.from("aportes").update(patch).eq("id",a.id).select("id").single());
+    await cargarAportes(sessionEpoch); estadoComunidad("Los cambios quedaron guardados.",false,false);
+  });
+}
+function pedirCorreccion(a){
+  if(!aprobado() || !a || a.autor!==ME.id) return;
+  abrirDialogo("Pedir una corrección",campoDialogo("mensaje","¿Qué necesitás corregir?","",2000,true),async function(form){
+    var mensaje=String(new FormData(form).get("mensaje")||"").trim();
+    if(mensaje.length<5) throw falla("Explicá brevemente qué necesitás corregir.");
+    comprobar(await sb.from("correcciones").insert({aporte:a.id,autor:ME.id,mensaje:mensaje}));
+    await cargarAportes(sessionEpoch); estadoComunidad("Tu pedido quedó registrado para que lo revise un administrador.",false,false);
+  },"Enviar pedido");
+}
+function adjuntarAporte(a){
+  if(!aprobado() || !a || (a.autor!==ME.id && !admin())) return;
+  abrirDialogo("Adjuntar archivos",archivoInput("extra-files"),async function(form){
+    if(!form._carga && !form.querySelector("input[type=file]").files.length) throw falla("Elegí un archivo.");
+    return publicarFormulario(form,null,a.id);
+  },"Subir archivos");
+}
+async function borrarArchivo(f){
+  comprobar(await sb.storage.from("aportes").remove([f.ruta]));
+  comprobar(await sb.from("archivos").delete().eq("id",f.id).select("id").single());
+}
+async function abrirArchivo(f){
+  if(!f || !aprobado()) return;
+  var target=window.open("about:blank","_blank"); if(target) target.opener=null;
+  try{
+    var r=comprobar(await sb.storage.from("aportes").createSignedUrl(f.ruta,120));
+    var url=new URL(r.signedUrl);
+    if(url.origin!==new URL(PREGUNTELA_CONFIG.url).origin || !url.pathname.startsWith("/storage/")) throw falla("No pudimos abrir este archivo.");
+    if(target) target.location.href=url.href;
+    else abrirDialogo("Abrir archivo",'<p><a href="'+attr(url.href)+'" target="_blank" rel="noopener noreferrer">Abrir '+esc(f.nombre)+'</a></p><p class="hint">El enlace vence en dos minutos.</p>',async function(){},"Listo");
+  }catch(e){if(target) target.close();estadoComunidad(mensajeError(e),true,false);}
+}
+
+function pintarMiembros(){
+  if(!admin()) return;
+  var filtro=el("memberFilter").value, lista=MIEMBROS.filter(function(m){return !filtro || (m.rol!=="admin" && m.membresia===filtro);});
+  el("adminMembers").innerHTML=lista.length?lista.map(function(m){
+    var label=m.rol==="admin"?"Administrador":({pendiente:"Pendiente",aprobada:"Aprobado",suspendida:"Suspendido"}[m.membresia]||"Pendiente");
+    return '<article class="admin-item"><p><strong>'+esc(m.nombre)+'</strong> · '+esc(m.email)+'</p><p class="hint">'+label+'</p>'+
+      (m.rol==="admin"?"":'<div class="askbar">'+(m.membresia!=="aprobada"?'<button class="mini" data-miembro="'+m.id+'" data-estado="aprobada">Aprobar acceso</button>':"")+
+        (m.membresia!=="suspendida"?'<button class="mini danger" data-miembro="'+m.id+'" data-estado="suspendida">'+(m.membresia==="pendiente"?"Rechazar solicitud":"Suspender acceso")+'</button>':"")+'</div>')+'</article>';
+  }).join(""):'<p class="hint">No hay miembros en este estado.</p>';
+}
+function pintarCorrecciones(){
+  if(!admin()) return;
+  el("adminCorrections").innerHTML=CORRECCIONES.length?CORRECCIONES.map(function(c){
+    var a=aportePorId(c.aporte);
+    return '<article class="admin-item"><p><strong>'+esc(a && a.autor_nombre || "Miembro")+'</strong> · '+fechaCorta(c.creado)+'</p>'+
+      '<p>'+esc(c.mensaje)+'</p><div class="askbar">'+(a?'<button class="mini" data-editar="'+a.id+'">Revisar y editar aporte</button>':"")+
+      '<button class="mini" data-resolver="'+c.id+'">Marcar como resuelta</button></div></article>';
+  }).join(""):'<p class="hint">No hay correcciones pendientes.</p>';
+}
+async function cargarMiembros(epoch){
+  var data=comprobar(await sb.rpc("listar_miembros"));
+  if(epoch!==sessionEpoch || !admin()) return;
+  MIEMBROS=data||[]; pintarMiembros();
+}
+async function todasLasFilas(query){
+  var out=[];
+  for(var offset=0;;offset+=500){
+    var data=comprobar(await query().range(offset,offset+499))||[]; out=out.concat(data);
+    if(data.length<500) return out;
+  }
+}
+async function cargarAportes(epoch){
+  if(!aprobado()) return;
+  estadoComunidad("Cargando aportes…",false,false);
+  try{
+    var result=await Promise.all([
+      todasLasFilas(function(){return sb.from("aportes_publicos").select("*").order("creado",{ascending:false}).order("id",{ascending:false});}),
+      todasLasFilas(function(){return sb.from("archivos").select("*").order("id");}),
+      todasLasFilas(function(){return sb.from("correcciones").select("*").eq("resuelta",false).order("creado").order("id");})
+    ]);
+    if(epoch!==sessionEpoch || !aprobado()) return;
+    APORTES=result[0];ARCHIVOS=result[1];CORRECCIONES=result[2];pintarTodo();pintarCorrecciones();
+    estadoComunidad("",false,false);
+  }catch(e){
+    if(epoch!==sessionEpoch) return;
+    estadoComunidad("No pudimos actualizar los aportes. "+mensajeError(e),true,true);
+    throw e;
+  }
+}
+
+function limpiarPrivado(){
+  ME=null;APORTES=[];ARCHIVOS=[];CORRECCIONES=[];MIEMBROS=[];
+  el("comAdmin").hidden=true;el("comAccess").hidden=true;el("mePanel").hidden=true;
+  el("espForm").hidden=true;el("conForm").hidden=true;
+  el("espForm").reset();el("conForm").reset();el("espForm")._carga=null;el("conForm")._carga=null;
+  bloquearFormulario(el("espForm"),false);bloquearFormulario(el("conForm"),false);
+  ["meNombre","meContacto","meRolC"].forEach(function(id){el(id).value="";});el("meMostrar").checked=false;
+  el("meName").textContent="";el("meRole").textContent="";
+  el("adminMembers").textContent="";el("adminCorrections").textContent="";
+  if(el("communityDialog").open) el("communityDialog").close();
+  el("dialogFields").textContent="";el("communityDialogForm")._carga=null;dialogAction=null;
+  pintarTodo();
+}
+async function comSesion(session, force){
+  var id=session && session.user.id;
+  if(!force && id===sessionUser && ME) return;
+  var epoch=++sessionEpoch;sessionUser=id||null;limpiarPrivado();
+  el("comLogin").hidden=!!id;el("comYo").hidden=!id;
+  el("meName").textContent="Mi cuenta";el("meRole").textContent="";el("meEdit").disabled=true;
+  if(!id){estadoComunidad("",false,false);return;}
+  try{
+    estadoComunidad("Comprobando tu acceso…",false,false);
+    var profile=comprobar(await sb.from("perfiles").select("id,nombre,rol,rol_comunidad,contacto,mostrar_contacto,membresia").eq("id",id).single());
+    if(epoch!==sessionEpoch) return;
+    ME=profile;el("meName").textContent=ME.nombre||"Miembro";el("meEdit").disabled=false;
+    el("meRole").textContent=admin()?"administrador":(aprobado()?"miembro aprobado":"acceso pendiente");
+    el("meNombre").value=ME.nombre||"";el("meRolC").value=ME.rol_comunidad||"";
+    el("meContacto").value=ME.contacto||"";el("meMostrar").checked=!!ME.mostrar_contacto;
+    if(!aprobado()){
+      el("comAccess").hidden=false;
+      var suspended=ME.membresia==="suspendida";
+      el("meRole").textContent=suspended?"sin acceso":"acceso pendiente";
+      el("accessTitle").textContent=suspended?"Tu cuenta no tiene acceso a los aportes":"Tu acceso está pendiente de aprobación";
+      el("accessText").textContent=suspended?"Contactá a un administrador del grupo si necesitás revisar esta decisión.":"Un administrador revisará tu solicitud. Mientras tanto, podés consultar las guías y los catálogos públicos.";
+      pintarTodo();estadoComunidad("",false,false);return;
+    }
+    el("comAdmin").hidden=!admin();
+    await cargarAportes(epoch); if(admin()) await cargarMiembros(epoch);
+  }catch(e){if(epoch===sessionEpoch) estadoComunidad("No pudimos comprobar o cargar tu acceso. "+mensajeError(e),true,true);}
+}
+async function refrescarSesion(){
+  try{var s=comprobar(await sb.auth.getSession());await comSesion(s.session,true);}
+  catch(e){estadoComunidad(mensajeError(e),true,true);}
+}
+
+function bindDelegado(){
+  el("v-comunidad").addEventListener("click",async function(ev){
+    var b=ev.target.closest("button");if(!b || b.disabled) return;
+    if(b.dataset.toggle){abierto[b.dataset.toggle]=!abierto[b.dataset.toggle];b.parentElement.classList.toggle("open",abierto[b.dataset.toggle]);b.setAttribute("aria-expanded",String(!!abierto[b.dataset.toggle]));return;}
+    if(!aprobado()) return;
+    var a,id,f;
+    if(b.dataset.editar){editarAporte(aportePorId(b.dataset.editar));return;}
+    if(b.dataset.corregir){pedirCorreccion(aportePorId(b.dataset.corregir));return;}
+    if(b.dataset.adjuntar){adjuntarAporte(aportePorId(b.dataset.adjuntar));return;}
+    if(b.dataset.archivo){await abrirArchivo(ARCHIVOS.find(function(x){return String(x.id)===b.dataset.archivo;}));return;}
+    if(b.dataset.finalizar){
+      b.disabled=true;
+      try{comprobar(await sb.rpc("confirmar_archivo",{p_id:b.dataset.finalizar}));await cargarAportes(sessionEpoch);estadoComunidad("El archivo quedó disponible.",false,false);}
+      catch(e){estadoComunidad(mensajeError(e),true,false);}finally{b.disabled=false;}return;
+    }
+    if(b.dataset.descartar){
+      b.disabled=true;
+      try{comprobar(await sb.rpc("descartar_reserva",{p_id:b.dataset.descartar}));await cargarAportes(sessionEpoch);}
+      catch(e){estadoComunidad(mensajeError(e),true,false);}finally{b.disabled=false;}return;
+    }
+    if(!admin()) return;
+    if(b.dataset.ocultar){
+      a=aportePorId(b.dataset.ocultar);if(!a) return;b.disabled=true;
+      try{comprobar(await sb.from("aportes").update({estado:a.estado==="oculto"?"publicado":"oculto",editado:new Date().toISOString(),editado_por:ME.id}).eq("id",a.id).select("id").single());await cargarAportes(sessionEpoch);}
+      catch(e){estadoComunidad(mensajeError(e),true,false);}finally{b.disabled=false;}return;
+    }
+    if(b.dataset.borrar){
+      a=aportePorId(b.dataset.borrar);if(!a) return;
+      abrirDialogo("Borrar aporte",'<p>Se borrarán definitivamente este aporte, sus archivos y sus pedidos de corrección. Podés ocultarlo si querés conservarlo.</p>',async function(){
+        var files=ARCHIVOS.filter(function(x){return String(x.aporte)===String(a.id);});
+        if(files.length) comprobar(await sb.storage.from("aportes").remove(files.map(function(x){return x.ruta;})));
+        comprobar(await sb.from("aportes").delete().eq("id",a.id).select("id").single());
+        await cargarAportes(sessionEpoch);estadoComunidad("El aporte fue borrado.",false,false);
+      },"Borrar definitivamente");return;
+    }
+    if(b.dataset.borrarArchivo){
+      f=ARCHIVOS.find(function(x){return String(x.id)===b.dataset.borrarArchivo;});if(!f) return;
+      abrirDialogo("Borrar archivo",'<p>Se borrará definitivamente '+esc(f.nombre)+'. El aporte se conservará.</p>',async function(){await borrarArchivo(f);await cargarAportes(sessionEpoch);},"Borrar archivo");return;
+    }
+    if(b.dataset.resolver){
+      id=b.dataset.resolver;
+      abrirDialogo("Resolver corrección",'<p>Marcá el pedido como resuelto después de revisar el aporte y realizar los cambios necesarios.</p>',async function(){
+        comprobar(await sb.from("correcciones").update({resuelta:true}).eq("id",id).select("id").single());
+        await cargarAportes(sessionEpoch);estadoComunidad("La corrección quedó resuelta.",false,false);
+      },"Marcar como resuelta");return;
+    }
+    if(b.dataset.miembro){
+      var m=MIEMBROS.find(function(x){return x.id===b.dataset.miembro;}), next=b.dataset.estado;if(!m) return;
+      abrirDialogo(next==="aprobada"?"Aprobar acceso":"Suspender acceso",'<p>'+esc(m.nombre)+' · '+esc(m.email)+'</p><p>'+
+        (next==="aprobada"?"Esta persona podrá ver y agregar aportes de la comunidad.":"Esta persona dejará de ver y agregar aportes. Sus aportes anteriores se conservarán.")+'</p>',async function(){
+          comprobar(await sb.rpc("gestionar_miembro",{p_id:m.id,p_estado:next}));await cargarMiembros(sessionEpoch);
+          estadoComunidad("El acceso quedó actualizado.",false,false);
+        },next==="aprobada"?"Aprobar acceso":"Suspender acceso");
+    }
+  });
+  el("v-comunidad").addEventListener("submit",async function(ev){
+    var form=ev.target.closest("form.micro");if(!form) return;ev.preventDefault();
+    try{
+      var text=form.querySelector("textarea").value.trim();if(text.length<10) throw falla("Contanos un poco más.");
+      abierto[form.dataset.sec+":"+form.dataset.item]=true;
+      await publicarFormulario(form,{autor:ME.id,seccion:form.dataset.sec,item:form.dataset.item,texto:text});
+    }catch(e){form.querySelector("[role=status]").textContent=mensajeError(e);}
+  });
+}
+
+function bindFormularios(){
+  el("espForm").querySelector(".askbar").insertAdjacentHTML("beforebegin",archivoInput("espFiles"));
+  el("conForm").querySelector(".askbar").insertAdjacentHTML("beforebegin",archivoInput("conFiles"));
+  el("eMsg").setAttribute("role","status");el("cMsg").setAttribute("role","status");
+  el("espNuevo").addEventListener("click",function(){if(aprobado()){el("espForm").hidden=false;el("eNombre").focus();}});
+  el("conNuevo").addEventListener("click",function(){if(aprobado()){el("conForm").hidden=false;el("cTexto").focus();}});
+  el("eCancel").addEventListener("click",function(){el("espForm").hidden=true;el("espNuevo").focus();});
+  el("cCancel").addEventListener("click",function(){el("conForm").hidden=true;el("conNuevo").focus();});
+  el("eNombre").addEventListener("input",function(){
+    var q=fold(this.value.trim()),hits=q.length<3?[]:deSeccion("especialista").filter(function(a){return fold(a.esp_nombre||"").includes(q);}).slice(0,4);
+    el("eDup").hidden=!hits.length;
+    el("eDup").innerHTML='<strong>Ya hay nombres parecidos.</strong><ul>'+hits.map(function(a){return '<li>'+esc(a.esp_nombre)+(a.esp_ciudad?' · '+esc(a.esp_ciudad):"")+'</li>';}).join("")+'</ul>';
+  });
+  el("espForm").addEventListener("submit",async function(ev){
+    ev.preventDefault();var form=this;
+    try{
+      if(!aprobado()) throw falla("Necesitás acceso aprobado.");
+      function v(id){return el(id).value.trim();}
+      if(!v("eNombre")) throw falla("Completá el nombre.");
+      if(await publicarFormulario(form,{autor:ME.id,seccion:"especialista",esp_nombre:v("eNombre"),esp_tipo:v("eTipo"),esp_institucion:v("eInst"),esp_provincia:v("eProv"),esp_ciudad:v("eCiudad"),esp_cobertura:v("eCob"),esp_contacto:v("eCont"),esp_calificacion:v("eCalif")||null,texto:v("eComent")})){
+        bloquearFormulario(form,false);form.hidden=true;el("eDup").hidden=true;
+      }
+    }catch(e){setMsg("eMsg",mensajeError(e),true);}
+  });
+  el("conForm").addEventListener("submit",async function(ev){
+    ev.preventDefault();var form=this;
+    try{
+      if(!aprobado()) throw falla("Necesitás acceso aprobado.");
+      var txt=el("cTexto").value.trim();if(txt.length<15) throw falla("Contanos un poco más.");
+      if(await publicarFormulario(form,{autor:ME.id,seccion:"consejo",tema:el("cTema").value||null,texto:txt})) {bloquearFormulario(form,false);form.hidden=true;}
+    }catch(e){setMsg("cMsg",mensajeError(e),true);}
+  });
+  el("dialogCancel").addEventListener("click",function(){el("communityDialog").close();});
+  el("communityDialog").addEventListener("close",function(){if(dialogReturnFocus && dialogReturnFocus.isConnected) dialogReturnFocus.focus();});
+  el("communityDialogForm").addEventListener("submit",async function(ev){
+    ev.preventDefault();if(this._saving || !dialogAction) return;
+    var form=this, action=dialogAction;form._saving=true;
+    el("dialogMsg").textContent="Guardando…";el("dialogSubmit").disabled=true;el("dialogCancel").disabled=true;
+    try{var result=await action(form);if(result!==false) el("communityDialog").close();}
+    catch(e){el("dialogMsg").textContent=mensajeError(e);}
+    finally{form._saving=false;el("dialogSubmit").disabled=false;el("dialogCancel").disabled=false;}
+  });
+  el("communityDialog").addEventListener("cancel",function(e){if(el("communityDialogForm")._saving) e.preventDefault();});
+  el("memberFilter").addEventListener("change",pintarMiembros);
+}
+
+function bindAuth(){
+  el("authSend").addEventListener("click",async function(){
+    var mail=el("authMail").value.trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)){setMsg("authMsg","Escribí un correo válido.",true);return;}
+    this.disabled=true;setMsg("authMsg","Enviando el enlace…",false);
+    try{
+      var options={emailRedirectTo:location.origin+location.pathname};
+      var nombre=el("authNombre").value.trim();if(nombre) options.data={nombre:nombre};
+      comprobar(await sb.auth.signInWithOtp({email:mail,options:options}));
+      setMsg("authMsg","Revisá tu correo y la carpeta de spam. Al abrir el enlace podrás ingresar o dejar tu solicitud de acceso.",false);
+    }catch(e){setMsg("authMsg",mensajeError(e),true);}finally{this.disabled=false;}
+  });
+  el("meOut").addEventListener("click",async function(){
+    this.disabled=true;
+    try{comprobar(await sb.auth.signOut());sessionUser=null;++sessionEpoch;limpiarPrivado();el("comYo").hidden=true;el("comLogin").hidden=false;estadoComunidad("Cerraste la sesión.",false,false);}
+    catch(e){estadoComunidad(mensajeError(e),true,false);}finally{this.disabled=false;}
+  });
+  el("meEdit").addEventListener("click",function(){el("mePanel").hidden=!el("mePanel").hidden;if(!el("mePanel").hidden) el("meNombre").focus();});
+  el("meSave").addEventListener("click",async function(){
+    if(!ME) return;this.disabled=true;
+    try{
+      var nombre=el("meNombre").value.trim();if(!nombre) throw falla("Completá tu nombre.");
+      comprobar(await sb.from("perfiles").update({nombre:nombre.slice(0,60),rol_comunidad:el("meRolC").value||null,
+        contacto:el("meContacto").value.trim()||null,mostrar_contacto:el("meMostrar").checked}).eq("id",ME.id).select("id").single());
+      await refrescarSesion();estadoComunidad("Tu cuenta quedó actualizada.",false,false);
+    }catch(e){setMsg("meMsg",mensajeError(e),true);}finally{this.disabled=false;}
+  });
+  el("accessRefresh").addEventListener("click",refrescarSesion);el("comRetry").addEventListener("click",refrescarSesion);
+}
 async function comInit(){
   comListas();
-  if(!window.PREGUNTELA_CONFIG || !PREGUNTELA_CONFIG.url || !PREGUNTELA_CONFIG.anonKey){
-    el("comNoConfig").hidden = false; return;
+  if(!window.PREGUNTELA_CONFIG || !PREGUNTELA_CONFIG.url || !PREGUNTELA_CONFIG.anonKey || !window.supabase){
+    el("comNoConfig").hidden=false;return;
   }
-  if(!window.supabase || !window.supabase.createClient){
-    el("comNoConfig").hidden = false;
-    el("comNoConfig").querySelector(".sec").textContent = "No se pudo cargar";
-    el("comNoConfig").querySelector("p").textContent =
-      "Esta sección necesita conexión a internet. Los catálogos se ven igual.";
-    return;
-  }
-  sb = window.supabase.createClient(PREGUNTELA_CONFIG.url, PREGUNTELA_CONFIG.anonKey);
-  bindAuth(); bindFormularios();
-  sb.auth.onAuthStateChange(function(_e, s){ comSesion(s); });
-  await rescatarSesionDelHash();
-  var s = await sb.auth.getSession();
-  comSesion(s.data.session);
-  if(vueltaDeLogin){
-    try{ history.replaceState(null,"","#/comunidad"); }catch(e){}
-    if(!s.data.session){
-      el("authMsg").textContent = "No pudimos abrir la sesión. Pedí el enlace de nuevo.";
+  sb=window.supabase.createClient(PREGUNTELA_CONFIG.url,PREGUNTELA_CONFIG.anonKey);
+  bindDelegado();bindFormularios();bindAuth();
+  // La llamada asíncrona se programa fuera del callback de Auth para evitar
+  // bloquear la misma sesión al consultar perfiles con el cliente Supabase.
+  sb.auth.onAuthStateChange(function(event,session){
+    if(event==="SIGNED_OUT"){sessionUser=null;++sessionEpoch;limpiarPrivado();el("comYo").hidden=true;el("comLogin").hidden=false;return;}
+    if(event!=="TOKEN_REFRESHED") setTimeout(function(){comSesion(session,false);},0);
+  });
+  try{
+    var h=location.hash||"";
+    if(h.includes("access_token=")){
+      var params=new URLSearchParams(h.slice(h.lastIndexOf("#")+1));
+      if(params.get("access_token") && params.get("refresh_token")) comprobar(await sb.auth.setSession({access_token:params.get("access_token"),refresh_token:params.get("refresh_token")}));
     }
-  }
+    var s=comprobar(await sb.auth.getSession());await comSesion(s.session,false);
+    if(vueltaDeLogin){
+      history.replaceState(null,"","#/comunidad");
+      if(!s.session) setMsg("authMsg","El enlace no pudo abrir la sesión. Pedí uno nuevo.",true);
+    }
+  }catch(e){estadoComunidad(mensajeError(e),true,true);el("comLogin").hidden=false;}
 }
-
-(function(){
-  if(!el("comNav")) return;
-  bindDelegado();
-  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", comInit);
-  else comInit();
-})();
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",comInit);
+else comInit();
 
 if("requestIdleCallback" in window) requestIdleCallback(buildIndex, {timeout:3000});
 else setTimeout(buildIndex, 800);
