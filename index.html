@@ -1167,7 +1167,14 @@ function show(v, push){
   }
   window.scrollTo({top:0,behavior:"instant"});
 }
+var vueltaDeLogin = false;
+function esVueltaDeLogin(){
+  var h = location.hash || "", q = location.search || "";
+  return /access_token=|refresh_token=|type=(magiclink|signup|recovery)|error_code=/.test(h) ||
+         /[?&]code=/.test(q);
+}
 function routeFromHash(push){
+  if(esVueltaDeLogin()){ vueltaDeLogin = true; show("comunidad", false); return; }
   var h=(location.hash||"").replace(/^#\/?/,"");
   show(h||"preguntar", push);
 }
@@ -2228,6 +2235,12 @@ async function comInit(){
   sb.auth.onAuthStateChange(function(_e, s){ comSesion(s); });
   var s = await sb.auth.getSession();
   comSesion(s.data.session);
+  if(vueltaDeLogin){
+    try{ history.replaceState(null,"","#/comunidad"); }catch(e){}
+    if(!s.data.session){
+      el("authMsg").textContent = "No pudimos abrir la sesión. Pedí el enlace de nuevo.";
+    }
+  }
 }
 
 (function(){
