@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PreguntELA</title>
 <meta name="description" content="Información práctica sobre ELA: medicamentos, equipamiento, comunicación, alimentación, respiración, consejos y trámites. Una comunidad de pacientes y familias en Argentina.">
-<meta name="author" content="Marcela · Familia de Marisa · Comunidad La ELA no nos Define">
+<meta name="author" content="Comunidad de PreguntELA">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#101820" media="(prefers-color-scheme: dark)">
@@ -17,15 +17,15 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PreguntELA">
 <meta property="og:locale" content="es_AR">
-<meta property="og:title" content="PreguntELA — lo que aprendieron cinco años de pacientes y familias">
+<meta property="og:title" content="PreguntELA — hecho por todos, para todos">
 <meta property="og:description" content="Información práctica sobre ELA: medicamentos, equipamiento, comunicación, alimentación, respiración, consejos y trámites. Una comunidad de pacientes y familias en Argentina.">
-<meta property="og:image" content="https://luhersco.github.io/preguntela/og-image.png?v=marisa-2">
+<meta property="og:image" content="https://luhersco.github.io/preguntela/og-image.png?v=comunidad-3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PreguntELA">
 <meta name="twitter:description" content="Información práctica sobre ELA: medicamentos, equipamiento, comunicación, alimentación, respiración, consejos y trámites. Una comunidad de pacientes y familias en Argentina.">
-<meta name="twitter:image" content="https://luhersco.github.io/preguntela/og-image.png?v=marisa-2">
+<meta name="twitter:image" content="https://luhersco.github.io/preguntela/og-image.png?v=comunidad-3">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -36,7 +36,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 </style>
 <style>
 :root{
-  /* Shared with MarisApp: styles.ts, components.tsx and approved artwork. */
+  /* Paleta de PreguntELA y diseño aprobado por la comunidad. */
   --ground:#FFFFFF;
   --surface:#FFFFFF;
   --surface-2:#EDF0EC;
@@ -434,16 +434,15 @@ footer.foot{border-top:1px solid var(--line);margin-top:64px;padding-top:26px;fo
 .footbrand{display:flex;align-items:center;gap:8px;color:var(--brand-ink);line-height:1.2}
 .footbrand .brandlockup{width:210px}
 
-/* ---------- family story and Marisa's paintings ---------- */
+/* ---------- comunidad y homenaje a Marisa ---------- */
 .about-intro{max-width:800px;margin-bottom:30px}
 .about-intro h2{font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-.035em;margin-bottom:18px}
 .about-intro .lede{font-size:1.15rem;max-width:65ch}
-.family-story{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:28px 0 46px}
-.family-story article{padding:26px;border:1px solid var(--line);border-top:4px solid var(--brand-gold);border-radius:var(--radius);background:var(--surface)}
-.family-story article:first-child{border-top-color:#1674BC}
-.family-story h3{font-size:1.45rem;margin-bottom:14px}
-.family-story p{color:var(--ink-2)}
-.family-story p:last-child{margin-bottom:0}
+.community-story{max-width:76ch;margin:28px 0 46px}
+.community-story h3{font-size:1.4rem;margin:28px 0 12px}
+.community-story p{color:var(--ink-2)}
+.community-story .community-motto{border-left:4px solid var(--brand-gold);padding:18px 22px;margin:26px 0;background:var(--accent-soft);border-radius:0 16px 16px 0;color:var(--ink);font-weight:600}
+.community-story .btn{display:inline-block;text-decoration:none}
 .about-section{margin:44px 0}
 .about-section h3{font-size:1.7rem;margin-bottom:10px}
 .about-section>.lede{max-width:70ch}
@@ -453,17 +452,10 @@ footer.foot{border-top:1px solid var(--line);margin-top:64px;padding-top:26px;fo
 .artwork img{display:block;width:100%;height:100%;object-fit:contain}
 .artwork figcaption{display:flex;justify-content:space-between;gap:12px;padding:14px 18px;font-size:.87rem;color:var(--ink-2)}
 .artwork figcaption a{font-weight:600;white-space:nowrap}
-.press-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
-.press-link{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:22px;border:1px solid var(--line);border-radius:18px;text-decoration:none;background:var(--surface);color:var(--ink)}
-.press-link:hover{border-color:var(--accent);background:var(--accent-soft)}
-.press-link .press-source{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
-.press-link strong{font-size:1.06rem;line-height:1.4}
-.press-link .press-action{margin-top:auto;font-size:.85rem;text-decoration:underline;text-underline-offset:3px;color:var(--accent-ink)}
 .about-details{border-top:1px solid var(--line);padding-top:34px;margin-top:44px}
 .about-details h3.sec{margin-top:30px}
 @media(max-width:600px){
-  .family-story,.art-gallery,.press-list{grid-template-columns:1fr}
-  .family-story article{padding:22px}
+  .art-gallery{grid-template-columns:1fr}
   .artwork>a{aspect-ratio:auto;padding:12px}
   .artwork img{height:auto}
   .artwork figcaption{padding:12px 14px}
@@ -546,11 +538,11 @@ nav.tabs{flex-wrap:wrap;overflow:visible}.tab{font-size:.88rem;padding:10px 11px
 <main>
 <!-- practical views start -->
 <section class="view on" id="v-inicio" role="tabpanel" aria-label="Inicio">
-  <div class="topic-intro"><p class="eyebrow">De familia a familia</p><h2 class="big">¿Qué necesitás resolver hoy?</h2><p class="lede">Información y experiencias para acompañar la vida con ELA. Elegí lo que necesitás y encontrá por dónde empezar.</p></div>
+  <div class="topic-intro"><p class="eyebrow">De todos, para todos</p><h2 class="big">¿Qué necesitás resolver hoy?</h2><p class="lede">Información y experiencias para acompañar la vida con ELA. Elegí lo que necesitás y encontrá por dónde empezar.</p></div>
   <div class="start-callout"><div><h3>Me diagnosticaron ELA</h3><p>Los primeros pasos, el equipo de salud y cómo tramitar el CUD.</p></div><a class="btn" href="#/empezar" data-v="empezar">Por dónde empezar →</a></div>
   <div class="need-grid" id="needGrid"></div>
   <div class="topic-note"><strong>Lo que una familia aprendió puede ayudar a otra.</strong><p>Dentro de cada tema podés leer y compartir experiencias si tenés acceso aprobado a la comunidad. La información general está abierta para todos.</p><a href="#/comunidad" data-v="comunidad">Entrar o solicitar acceso</a></div>
-  <div class="topic-links"><a href="#/preguntar" data-v="preguntar">Buscar con mis palabras</a><a href="#/directorio" data-v="directorio">Buscar un profesional o proveedor</a><a href="#/acerca" data-v="acerca">La historia de Marisa y nuestra familia</a></div>
+  <div class="topic-links"><a href="#/preguntar" data-v="preguntar">Buscar con mis palabras</a><a href="#/directorio" data-v="directorio">Buscar un profesional o proveedor</a><a href="#/acerca" data-v="acerca">En memoria de Marisa: cómo nació PreguntELA</a></div>
   <p class="hint">Las experiencias de otras familias no reemplazan una evaluación del equipo de salud. Ante una urgencia, contactá al servicio de emergencias.</p>
 </section>
 <section class="view" id="v-medicamentos" role="tabpanel" aria-label="Tratamientos farmacológicos" data-community-scope></section>
@@ -697,7 +689,7 @@ nav.tabs{flex-wrap:wrap;overflow:visible}.tab{font-size:.88rem;padding:10px 11px
     </div>
     <div class="panel" id="mePanel" hidden style="margin-bottom:22px">
       <div class="formrow"><label for="meNombre">Cómo aparece tu nombre en lo que aportás</label>
-        <input type="text" id="meNombre" maxlength="60" placeholder="Ej: Marcela C."></div>
+        <input type="text" id="meNombre" maxlength="60" placeholder="Ej: Ana G."></div>
       <div class="formrow"><label for="meRolC">Sos…</label>
         <select id="meRolC"><option value="">Prefiero no decirlo</option><option>Paciente</option>
           <option>Familiar</option><option>Cuidador/a</option><option>Profesional de la salud</option></select></div>
@@ -816,29 +808,29 @@ nav.tabs{flex-wrap:wrap;overflow:visible}.tab{font-size:.88rem;padding:10px 11px
 <!-- ============ ACERCA ============ -->
 <section class="view" id="v-acerca" role="tabpanel">
   <div class="about-intro">
-    <p class="eyebrow">Acerca de</p>
-    <h2>Marisa, el origen de una ayuda compartida</h2>
-    <p class="lede">MarisApp y PreguntELA nacen en la familia de Marisa, con una misma intención: acompañar a las personas con ELA y a quienes las cuidan.</p>
+    <p class="eyebrow">En memoria de Marisa</p>
+    <h2 class="big">Hecho por todos, para todos.</h2>
+    <p class="lede">PreguntELA nace en homenaje a Marisa, que vivió con ELA y falleció. Su recuerdo nos inspira a convertir lo aprendido en ayuda para otras personas y sus familias.</p>
   </div>
 
-  <div class="family-story">
-    <article>
-      <p class="eyebrow">Andy · su nieto</p>
-      <h3>MarisApp: seguir comunicándose con su voz</h3>
-      <p>Cuando la ELA empezó a afectar el habla de Marisa, su nieto Andrés, a quien la familia llama Andy, buscó una forma de ayudarla a comunicarse. Reunió grabaciones de su abuela y creó MarisApp: una herramienta que permite escribir un mensaje y escucharlo con una voz reconstruida a partir de esos audios.</p>
-      <p>Lo que empezó para ayudar a su abuela abrió un camino para acompañar también a otras personas que necesitan apoyo para comunicarse.</p>
-    </article>
-    <article>
-      <p class="eyebrow">Marcela · su hija y mamá de Andy</p>
-      <h3>PreguntELA: compartir lo que vamos aprendiendo</h3>
-      <p>Este sitio también fue creado por la familia de Marisa. Su hija Marcela, mamá de Andy, creó PreguntELA para ayudar a la comunidad de ELA a encontrar información y compartir experiencias.</p>
-      <p>El sitio reúne lo aprendido por pacientes, familiares y cuidadores del grupo <em>La ELA no nos Define</em>, para que cada nueva familia pueda apoyarse en lo que otras ya atravesaron.</p>
-    </article>
+  <div class="community-story">
+    <h3>Cuando necesitábamos respuestas</h3>
+    <p>Durante la enfermedad de Marisa, encontrar información cuando necesitábamos ayuda fue una de las grandes dificultades. Había preguntas nuevas, decisiones por tomar y trámites que no sabíamos cómo resolver. Muchas veces, lo que más necesitábamos era hablar con alguien que ya hubiera pasado por lo mismo.</p>
+
+    <h3>Una comunidad que nos acompañó</h3>
+    <p>En el grupo de WhatsApp de la Fundación Bullrich encontramos esa ayuda. Pacientes y familiares respondían con amabilidad, compartían lo que les había servido y acompañaban desde su propia experiencia. Entre todos, hicimos que el proceso de la enfermedad fuera más llevadero.</p>
+    <p>Cada respuesta, cada consejo y cada dato compartido nos ayudaron a sentirnos menos solos. Esa generosidad es el corazón de este sitio.</p>
+
+    <h3>Compartir lo aprendido para ayudar a quienes llegan</h3>
+    <p>PreguntELA reúne y ordena la información de ese grupo para que sea más fácil encontrarla cuando hace falta. Queremos que los nuevos pacientes y sus familias puedan apoyarse en lo que otros ya aprendieron, y que quienes seguimos formando parte de esta comunidad podamos continuar ayudándonos.</p>
+    <p>Este espacio se construye y se completa entre todos: con experiencias, preguntas, aportes y correcciones. Cada persona tiene algo valioso para compartir, y cada contribución puede ayudar a otra familia.</p>
+    <p class="community-motto">Con la información de todos, las contribuciones de todos y la intención de ayudarnos entre todos.</p>
+    <a class="btn" href="#/comunidad" data-v="comunidad">Sumate a la comunidad</a>
   </div>
 
   <section class="about-section" aria-labelledby="marisa-art-title">
     <h3 id="marisa-art-title">Los cuadros de Marisa</h3>
-    <p class="lede">Compartimos también algo de su mundo a través de estos cuatro cuadros. Su obra forma parte de la historia y de la identidad de esta familia.</p>
+    <p class="lede">Estos cuadros nos acercan a algo de su mundo. Compartirlos es también una forma de recordar a Marisa y mantener presente su creatividad.</p>
     <div class="art-gallery">
       <figure class="artwork">
         <a href="marisa-obra-01.jpg" target="_blank" rel="noopener" aria-label="Ampliar el cuadro de Marisa con fondo amarillo (abre otra pestaña)"><img src="marisa-obra-01.jpg" width="897" height="908" loading="lazy" decoding="async" alt="Cuadro de Marisa: fondo amarillo, una forma suspendida y figuras vegetales y animales sobre un suelo ocre."></a>
@@ -859,24 +851,6 @@ nav.tabs{flex-wrap:wrap;overflow:visible}.tab{font-size:.88rem;padding:10px 11px
     </div>
   </section>
 
-  <section class="about-section" aria-labelledby="family-press-title">
-    <h3 id="family-press-title">La historia de MarisApp en los medios</h3>
-    <p class="lede">Estas notas cuentan cómo nació MarisApp y cómo una iniciativa familiar puede ayudar a otras personas.</p>
-    <div class="press-list">
-      <a class="press-link" href="https://www.clarin.com/internacional/17-anos-recupero-voz-abuela-ela-desarrolla-app-habla-adaptada-gratuita-personas-enfermedad_0_JWB2JG02Xr.html" target="_blank" rel="noopener noreferrer">
-        <span class="press-source">Clarín · Internacional</span><strong>Andy y la aplicación que creó para su abuela</strong><span class="press-action">Leer la nota en Clarín ↗</span>
-      </a>
-      <a class="press-link" href="https://www.clarin.com/historias/amor-vuelve-nietos-cambiaron-la-vida-abuelos_0_pMbkm3KK47.html" target="_blank" rel="noopener noreferrer">
-        <span class="press-source">Clarín · Historias</span><strong>El amor que vuelve: nietos que les cambiaron la vida a sus abuelos</strong><span class="press-action">Leer la nota en Clarín ↗</span>
-      </a>
-      <a class="press-link" href="https://www.lanacion.com.ar/sociedad/voces-recuperadas-y-nuevos-desarrollos-el-avance-de-la-ia-en-la-ela-tambien-llega-al-pais-nid20062026/" target="_blank" rel="noopener noreferrer">
-        <span class="press-source">La Nación · Sociedad</span><strong>MarisApp entre las iniciativas argentinas para recuperar la voz</strong><span class="press-action">Leer la nota en La Nación ↗</span>
-      </a>
-      <a class="press-link" href="https://tn.com.ar/sociedad/2026/02/22/tiene-18-anos-y-creo-una-app-para-que-su-abuela-con-ela-vuelva-a-comunicarse-escucharla-fue-emocionante/" target="_blank" rel="noopener noreferrer">
-        <span class="press-source">TN · Sociedad</span><strong>La historia de Andy, Marisa y una nueva forma de comunicarse</strong><span class="press-action">Leer la nota en TN ↗</span>
-      </a>
-    </div>
-  </section>
 
   <div class="col about-details">
     <h3 class="sec">De dónde viene la información de PreguntELA</h3>
@@ -888,7 +862,7 @@ nav.tabs{flex-wrap:wrap;overflow:visible}.tab{font-size:.88rem;padding:10px 11px
     <ul class="plain">
       <li>Se combinaron dos exportaciones del chat y se eliminaron los duplicados: <strong>19.933 mensajes</strong> reales.</li>
       <li>Se descartaron saludos, condolencias, cadenas y mensajes sin información. Quedaron <strong>3.862 mensajes</strong> con contenido útil, que son los que se pueden buscar acá.</li>
-      <li>Se leyeron esos mensajes tema por tema y se escribieron <strong>38 fichas de respuesta</strong> y siete guías, con lo que se repitió y con lo que el grupo corrigió más de una vez.</li>
+      <li>La información se organizó en <strong>siete secciones prácticas</strong>, con fichas, un buscador y acceso a los mensajes originales. Los nuevos aportes de la comunidad permiten seguir completándola.</li>
       <li>De los contactos que circularon en el chat se armó un <strong>directorio de unos cincuenta</strong> profesionales, centros, proveedores, farmacias, abogados y fundaciones.</li>
     </ul>
 
@@ -917,8 +891,8 @@ nav.tabs{flex-wrap:wrap;overflow:visible}.tab{font-size:.88rem;padding:10px 11px
   <div class="footgrid">
     <div>
       <p class="footbrand"><span class="brandlockup"><img src="preguntela-logo-source.png" alt="PreguntELA" width="1462" height="404" decoding="async"></span></p>
-      <p>Junto a MarisApp, una familia de herramientas de ayuda para personas con ELA.</p>
-      <p>Creado por Marcela, hija de Marisa y mamá de Andy. <a href="#/acerca" data-v="acerca">Conocé nuestra historia</a>.</p>
+      <p><strong>Hecho por todos, para todos.</strong></p>
+      <p>En memoria de Marisa, con la experiencia y las contribuciones de toda la comunidad. <a href="#/acerca" data-v="acerca">Conocé cómo nació PreguntELA</a>.</p>
       <p>Hecho con lo que se ayudaron entre sí las familias del grupo <em>La ELA no nos Define</em>, entre octubre de 2021 y febrero de 2026.</p>
     </div>
     <div>
@@ -1807,7 +1781,6 @@ var FUENTES = {
   tobii:['Tobii Dynavox · Seguimiento ocular','https://www.tobiidynavox.com/pages/what-is-eye-tracking'],
   irisbond:['IRISBOND · Soluciones de comunicación','https://www.irisbond.com/comunicacion-aumentativa-alternativa/soluciones/'],
   hablalo:['Háblalo · Sitio oficial','https://www.hablalo.app/'],
-  marisapp:['MarisApp · Abrir la aplicación','https://maris-app.com/'],
   cud:['Argentina.gob.ar · Tramitar el CUD','https://www.argentina.gob.ar/servicio/como-obtener-el-certificado-unico-de-discapacidad-cud'],
   reclamo:['Superintendencia · Reclamos de cobertura','https://www.argentina.gob.ar/servicio/denuncia-por-problematicas-de-cobertura-prestacional'],
   electro:['Argentina.gob.ar · Registro de electrodependientes','https://www.argentina.gob.ar/servicio/inscribirme-en-el-registro-de-electrodependientes-por-cuestiones-de-salud']
@@ -1815,7 +1788,7 @@ var FUENTES = {
 var NECESIDADES = [
  {id:'medicamentos',n:'Tratamientos farmacológicos',short:'Medicamentos',d:'Tratamientos para ELA, opciones en investigación y medicación para síntomas.'},
  {id:'equipamiento',n:'Equipamiento y movilidad',short:'Equipamiento',d:'Sillas, grúas, almohadones, cama, baño y adaptaciones. Qué evaluar con fisiatría.'},
- {id:'comunicacion',n:'Comunicación',short:'Comunicación',d:'MarisApp, Tobii, IRISBOND, Háblalo, tableros y otras formas de expresarte.'},
+ {id:'comunicacion',n:'Comunicación',short:'Comunicación',d:'Tobii, IRISBOND, Háblalo, tableros y otras formas de expresarte.'},
  {id:'alimentacion',n:'Alimentación',short:'Alimentación',d:'Nutrición, suplementos, espesantes, utensilios y botón gástrico.'},
  {id:'respiracion',n:'Asistencia respiratoria',short:'Respiración',d:'BiPAP, traqueostomía, secreciones, equipos y respaldo eléctrico.'},
  {id:'consejos',n:'Otros consejos útiles',short:'Consejos útiles',d:'La vida cotidiana: cuidados, organización, ayuda y experiencias de familiares.'},
@@ -1892,7 +1865,6 @@ var INSUMO_INFO = {
 };
 INSUMOS.forEach(function(g){g.items.forEach(function(i){if(INSUMO_INFO[i.k]) i.d=INSUMO_INFO[i.k];});});
 INSUMOS.find(function(g){return g.g==='Comunicación';}).items.push(
- {k:'marisapp',n:'MarisApp',d:'Creada por Andy para ayudar a su abuela Marisa a comunicarse. Forma parte de la misma historia familiar que PreguntELA, creado por Marcela, hija de Marisa y madre de Andy.'},
  {k:'hablalo',n:'Háblalo',d:'Aplicación de apoyo a la comunicación que incluye herramientas de texto, voz y pictogramas. Probá sus opciones según las necesidades de la persona.'}
 );
 INSUMOS.find(function(g){return g.g==='Alimentación';}).items.push({k:'fortisip',n:'Fortisip',d:'Suplemento nutricional oral de Nutricia. Nutrición debe evaluar la presentación, la cantidad y la tolerancia. No reemplaza por sí solo una evaluación de deglución.'});
@@ -1921,8 +1893,7 @@ function filtroTemaHTML(id,placeholder){return '<label class="topic-filter"><spa
 function itemTemaHTML(i,sec,view){
   var info=sec==='medicacion'?MED_INFO[i.k]:null;
   var sources=info&&info.f?info.f:FUENTES[i.k]?[i.k]:[];
-  var extra=i.k==='marisapp'?'<p>'+enlaceTema('acerca','Conocé la historia de Andy, Marisa y Marcela')+'</p>':'';
-  return '<details class="topic-item" id="'+view+'-'+i.k+'" data-topic-item data-key="'+attr(i.k)+'" data-search="'+attr(fold(i.n+' '+i.d+' '+(info?info.s:'')))+'"><summary>'+esc(i.n)+(info?'<span class="item-status">'+esc(info.s)+'</span>':'')+'</summary><div class="topic-body"><p>'+esc(i.d)+'</p>'+extra+(sources.length?fuenteHTML(sources):'')+'<p class="hint"><a href="#/preguntar" data-history-query="'+attr(i.n)+'">Buscar conversaciones anteriores sobre este tema</a></p><div class="topic-community" data-topic-comments data-sec="'+sec+'" data-item="'+attr(i.k)+'"></div></div></details>';
+  return '<details class="topic-item" id="'+view+'-'+i.k+'" data-topic-item data-key="'+attr(i.k)+'" data-search="'+attr(fold(i.n+' '+i.d+' '+(info?info.s:'')))+'"><summary>'+esc(i.n)+(info?'<span class="item-status">'+esc(info.s)+'</span>':'')+'</summary><div class="topic-body"><p>'+esc(i.d)+'</p>'+(sources.length?fuenteHTML(sources):'')+'<p class="hint"><a href="#/preguntar" data-history-query="'+attr(i.n)+'">Buscar conversaciones anteriores sobre este tema</a></p><div class="topic-community" data-topic-comments data-sec="'+sec+'" data-item="'+attr(i.k)+'"></div></div></details>';
 }
 function grupoTemaHTML(g,view){return '<div class="topic-section" data-topic-group><h3>'+esc(g.g)+'</h3>'+g.items.map(function(i){return itemTemaHTML(i,'insumo',view);}).join('')+'</div>';}
 function atajosProfesionales(types){return '<div class="topic-links">'+types.map(function(t){return '<a href="#/comunidad" data-specialist="'+attr(t)+'">Buscar o recomendar '+esc(t.toLowerCase())+'</a>';}).join('')+enlaceTema('directorio','Directorio de profesionales y proveedores')+'</div>';}
@@ -1951,7 +1922,7 @@ function initPractical(){
   el('v-equipamiento').innerHTML=introTema('equipamiento','<p class="lede">Elementos para moverte, acomodarte y hacer más fácil la vida en casa. Abrí cada uno para ver información y experiencias.</p><div class="topic-note"><strong>Fisiatría y terapia ocupacional te ayudan a elegir.</strong><p>Llevá las medidas de puertas, baño, ascensor y espacios de giro. Pedí probar el equipo y que la orden describa las características que necesitás.</p></div>')+
     atajosProfesionales(['Fisiatra','Terapista ocupacional'])+filtroTemaHTML('equipamiento','Silla, tilt, grúa, almohadón, inodoro…')+INSUMOS.slice(0,3).map(function(g){return grupoTemaHTML(g,'equipamiento');}).join('')+'<div class="topic-links">'+enlaceTema('tramites/pedido','Modelo para pedir cobertura')+enlaceTema('alimentacion','Elementos para comer')+enlaceTema('respiracion','Equipos respiratorios')+'</div>';
   el('v-comunicacion').innerHTML=introTema('comunicacion','<p class="lede">Seguir eligiendo, conversando y diciendo lo que querés. Hay opciones con papel, pantallas, voz y control con la mirada.</p><p>Probá formas de acceso con fonoaudiología y terapia ocupacional. Tener un tablero impreso como respaldo puede ser útil cuando un equipo se queda sin batería.</p>'+fuenteHTML(['cuidados']))+
-    atajosProfesionales(['Fonoaudiólogo','Empresa de comunicación aumentativa'])+filtroTemaHTML('comunicacion','MarisApp, Tobii, IRISBOND, Háblalo…')+grupoTemaHTML({g:'Herramientas para comunicarte',items:INSUMOS.find(function(g){return g.g==='Comunicación';}).items.slice().sort(function(a,b){var order=['marisapp','tobii','irisbond','hablalo','pictogramas','tablet','teclado','soporte-disp'];return order.indexOf(a.k)-order.indexOf(b.k);})},'comunicacion')+'<div class="topic-links">'+enlaceTema('tramites/pedido','Modelo para pedir un dispositivo')+'</div>';
+    atajosProfesionales(['Fonoaudiólogo','Empresa de comunicación aumentativa'])+filtroTemaHTML('comunicacion','Tobii, IRISBOND, Háblalo…')+grupoTemaHTML({g:'Herramientas para comunicarte',items:INSUMOS.find(function(g){return g.g==='Comunicación';}).items.slice().sort(function(a,b){var order=['tobii','irisbond','hablalo','pictogramas','tablet','teclado','soporte-disp'];return order.indexOf(a.k)-order.indexOf(b.k);})},'comunicacion')+'<div class="topic-links">'+enlaceTema('tramites/pedido','Modelo para pedir un dispositivo')+'</div>';
   el('v-alimentacion').innerHTML=introTema('alimentacion','<p class="lede">Comer, hidratarte y sostener la nutrición con los apoyos que necesites.</p><p>Nutrición evalúa los requerimientos y los suplementos; fonoaudiología, la deglución y las texturas. Si comer cansa, hay atragantamientos o baja de peso, consultá para ajustar el plan.</p>'+fuenteHTML(['nutricion']))+
     '<div class="topic-feature"><h3>Botón gástrico y gastrostomía</h3><p>Qué son, cuándo conversar sobre esta opción y qué preguntar al equipo.</p>'+enlaceTema('alimentacion/boton','Ver botón gástrico →')+'</div>'+atajosProfesionales(['Nutricionista','Fonoaudiólogo','Gastroenterólogo'])+filtroTemaHTML('alimentacion','Espesante, Fortisip, botón, suplementos…')+
     grupoTemaHTML(INSUMOS.find(function(g){return g.g==='Alimentación';}),'alimentacion')+
