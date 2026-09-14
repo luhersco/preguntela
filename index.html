@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PreguntELA</title>
-<meta name="description" content="Buscador de experiencia real sobre ELA: BiPAP, botón gástrico, CUD, amparos, internación domiciliaria y equipamiento, con lo que resolvieron cinco años de pacientes y familias en Argentina.">
+<meta name="description" content="Información práctica sobre ELA: medicamentos, equipamiento, comunicación, alimentación, respiración, consejos y trámites. Una comunidad de pacientes y familias en Argentina.">
 <meta name="author" content="Marcela · Familia de Marisa · Comunidad La ELA no nos Define">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
@@ -18,13 +18,13 @@
 <meta property="og:site_name" content="PreguntELA">
 <meta property="og:locale" content="es_AR">
 <meta property="og:title" content="PreguntELA — lo que aprendieron cinco años de pacientes y familias">
-<meta property="og:description" content="Buscador de experiencia real sobre ELA: BiPAP, botón gástrico, CUD, amparos, internación domiciliaria y equipamiento, con lo que resolvieron cinco años de pacientes y familias en Argentina.">
+<meta property="og:description" content="Información práctica sobre ELA: medicamentos, equipamiento, comunicación, alimentación, respiración, consejos y trámites. Una comunidad de pacientes y familias en Argentina.">
 <meta property="og:image" content="https://luhersco.github.io/preguntela/og-image.png?v=marisa-2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PreguntELA">
-<meta name="twitter:description" content="Buscador de experiencia real sobre ELA: BiPAP, botón gástrico, CUD, amparos, internación domiciliaria y equipamiento, con lo que resolvieron cinco años de pacientes y familias en Argentina.">
+<meta name="twitter:description" content="Información práctica sobre ELA: medicamentos, equipamiento, comunicación, alimentación, respiración, consejos y trámites. Una comunidad de pacientes y familias en Argentina.">
 <meta name="twitter:image" content="https://luhersco.github.io/preguntela/og-image.png?v=marisa-2">
 <style>
 *,*::before,*::after{box-sizing:border-box}
@@ -484,34 +484,85 @@ ul.plain li{margin-bottom:.5em}
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#555}
   .panel,.card,.res{break-inside:avoid}
 }
+/* practical styles start */
+.utility-nav{display:flex;flex-wrap:wrap;gap:4px 20px;padding:10px 0;font-size:.84rem;border-top:1px solid var(--line-soft)}
+.utility-nav a{padding:5px 0;min-height:34px;display:inline-flex;align-items:center}
+.utility-nav a[aria-current="page"]{font-weight:700;color:var(--ink)}
+nav.tabs{flex-wrap:wrap;overflow:visible}.tab{font-size:.88rem;padding:10px 11px}
+.need-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}
+.need-card{display:flex;flex-direction:column;gap:12px;text-decoration:none;padding:24px;border:1px solid var(--line);border-radius:var(--radius);color:var(--ink);background:var(--surface);min-width:0}
+.need-card:hover{border-color:var(--accent);background:var(--accent-soft)}
+.need-card strong{font-size:1.22rem;line-height:1.25}.need-card p{color:var(--ink-2);font-size:.94rem;margin:0}
+.need-card .need-number{font-size:.78rem;color:var(--accent);font-weight:700}.need-card .need-go{margin-top:auto;color:var(--accent-ink);font-weight:600;font-size:.87rem}
+.start-callout{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:24px;background:var(--accent-soft);border-radius:var(--radius);margin:26px 0}
+.start-callout p{margin:8px 0 0}.start-callout .btn{flex-shrink:0;text-decoration:none}
+.topic-intro{max-width:78ch;margin-bottom:24px}.topic-intro .lede{margin-bottom:16px}
+.topic-links{display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0 24px;font-size:.91rem}
+.topic-section{margin-top:34px;scroll-margin-top:240px}.topic-section>h3{margin-bottom:10px}
+.topic-item{border:1px solid var(--line);border-radius:16px;margin:12px 0;background:var(--surface);scroll-margin-top:240px;overflow:hidden}
+.topic-item>summary{cursor:pointer;padding:18px 22px;font-weight:600;min-height:60px}.topic-item[open]>summary{background:var(--surface-2)}
+.topic-item>summary .item-status{display:block;color:var(--ink-3);font-size:.8rem;font-weight:400;margin:5px 0 0 18px}
+.topic-body{padding:20px 22px}.topic-body>p{max-width:80ch}
+.topic-community{margin-top:22px;border-top:1px solid var(--line);padding-top:18px}.topic-community h4{margin-bottom:12px;font-size:1rem}
+.topic-source{font-size:.81rem;color:var(--ink-3);margin:14px 0}.topic-source a{overflow-wrap:anywhere}
+.topic-filter{display:block;margin:22px 0}.topic-filter span{display:block;font-weight:600;margin-bottom:8px}
+.topic-filter input{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.topic-note{background:var(--surface-2);border-radius:16px;padding:18px 22px;margin:20px 0}.topic-note p:last-child{margin-bottom:0}
+.topic-status:empty{display:none}.topic-status{position:sticky;top:175px;z-index:2;padding:12px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 4px 16px #0001}
+.template-text{width:100%;min-height:310px;padding:16px;border:1px solid var(--line);border-radius:12px;line-height:1.55;font-size:.94rem;background:var(--surface);resize:vertical}
+.template-hint{font-size:.87rem;color:var(--ink-2);margin:10px 0 16px}.template-controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.topic-feature{border:2px solid var(--accent);padding:22px;border-radius:var(--radius);margin:22px 0}.topic-feature h3{margin-bottom:8px}
+.starter-links{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr));margin:24px 0}.starter-links a{border:1px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;font-weight:600}
+.topic-back{display:inline-block;margin-bottom:18px;font-size:.88rem}
+@media(max-width:760px){.need-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.start-callout{align-items:stretch;flex-direction:column}.utility-nav{gap:2px 16px;padding-bottom:0}.utility-nav a{min-height:44px}.topic-section,.topic-item{scroll-margin-top:230px}.topic-status{top:185px}.tab{font-size:1rem}}
+@media(max-width:480px){.need-grid{grid-template-columns:1fr}.need-card{padding:20px;gap:8px}.starter-links{grid-template-columns:1fr}.topic-body{padding:18px 16px}.topic-item>summary{padding:17px 16px}.brandsub{display:none}.utility-nav{font-size:.8rem;gap:0 13px}h2.big{font-size:1.75rem}}
+@media print{.utility-nav,.topic-filter,.topic-community,.topic-status,.topic-back,.template-controls,.topic-links{display:none!important}.topic-item>.topic-body{display:block!important}.template-text{border:0;min-height:450px}.masthead{display:none!important}}
+/* practical styles end */
 </style>
 
 </head>
 <body>
 <header class="masthead">
   <div class="masthead-in">
-    <a class="brandrow" href="#/preguntar" data-v="preguntar">
+    <a class="brandrow" href="#/inicio" data-v="inicio">
       <span class="brandlockup"><img src="preguntela-logo-source.png" alt="PreguntELA" width="1462" height="404" decoding="async"></span>
       <span class="brandsub">Herramientas de ayuda para personas con ELA</span>
     </a>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menú</button>
     <nav class="tabs" id="mainNav" role="tablist" aria-label="Secciones">
-      <button class="tab" role="tab" aria-selected="true" data-v="preguntar">Preguntar</button>
-      <button class="tab" role="tab" aria-selected="false" data-v="empezar">Primeros pasos</button>
-      <button class="tab" role="tab" aria-selected="false" data-v="guias">Guías</button>
-      <button class="tab" role="tab" aria-selected="false" data-v="tramites">Trámites</button>
-      <button class="tab" role="tab" aria-selected="false" data-v="directorio">Directorio</button>
-      <button class="tab" role="tab" aria-selected="false" data-v="archivo">Archivo del grupo</button>
-      <button class="tab" role="tab" aria-selected="false" data-v="comunidad">Comunidad</button>
-      <button class="tab" role="tab" aria-selected="false" data-v="acerca">Acerca de</button>
-    </nav>
+<button class="tab" role="tab" aria-selected="true" data-v="inicio">Inicio</button>
+<button class="tab" role="tab" aria-selected="false" data-v="medicamentos">Medicamentos</button>
+<button class="tab" role="tab" aria-selected="false" data-v="equipamiento">Equipamiento</button>
+<button class="tab" role="tab" aria-selected="false" data-v="comunicacion">Comunicación</button>
+<button class="tab" role="tab" aria-selected="false" data-v="alimentacion">Alimentación</button>
+<button class="tab" role="tab" aria-selected="false" data-v="respiracion">Respiración</button>
+<button class="tab" role="tab" aria-selected="false" data-v="consejos">Consejos útiles</button>
+<button class="tab" role="tab" aria-selected="false" data-v="tramites">Trámites y cartas</button>
+</nav>
+<nav class="utility-nav" aria-label="Otros accesos"><a href="#/empezar" data-v="empezar">Me diagnosticaron ELA</a><a href="#/preguntar" data-v="preguntar">Buscar</a><a href="#/directorio" data-v="directorio">Directorio</a><a href="#/archivo" data-v="archivo">Archivo</a><a href="#/comunidad" data-v="comunidad">Mi cuenta / Comunidad</a><a href="#/acerca" data-v="acerca">Acerca de</a></nav>
   </div>
 </header>
 
 <main>
+<!-- practical views start -->
+<section class="view on" id="v-inicio" role="tabpanel" aria-label="Inicio">
+  <div class="topic-intro"><p class="eyebrow">De familia a familia</p><h2 class="big">¿Qué necesitás resolver hoy?</h2><p class="lede">Información y experiencias para acompañar la vida con ELA. Elegí lo que necesitás y encontrá por dónde empezar.</p></div>
+  <div class="start-callout"><div><h3>Me diagnosticaron ELA</h3><p>Los primeros pasos, el equipo de salud y cómo tramitar el CUD.</p></div><a class="btn" href="#/empezar" data-v="empezar">Por dónde empezar →</a></div>
+  <div class="need-grid" id="needGrid"></div>
+  <div class="topic-note"><strong>Lo que una familia aprendió puede ayudar a otra.</strong><p>Dentro de cada tema podés leer y compartir experiencias si tenés acceso aprobado a la comunidad. La información general está abierta para todos.</p><a href="#/comunidad" data-v="comunidad">Entrar o solicitar acceso</a></div>
+  <div class="topic-links"><a href="#/preguntar" data-v="preguntar">Buscar con mis palabras</a><a href="#/directorio" data-v="directorio">Buscar un profesional o proveedor</a><a href="#/acerca" data-v="acerca">La historia de Marisa y nuestra familia</a></div>
+  <p class="hint">Las experiencias de otras familias no reemplazan una evaluación del equipo de salud. Ante una urgencia, contactá al servicio de emergencias.</p>
+</section>
+<section class="view" id="v-medicamentos" role="tabpanel" aria-label="Tratamientos farmacológicos" data-community-scope></section>
+<section class="view" id="v-equipamiento" role="tabpanel" aria-label="Equipamiento y movilidad" data-community-scope></section>
+<section class="view" id="v-comunicacion" role="tabpanel" aria-label="Comunicación" data-community-scope></section>
+<section class="view" id="v-alimentacion" role="tabpanel" aria-label="Alimentación" data-community-scope></section>
+<section class="view" id="v-respiracion" role="tabpanel" aria-label="Asistencia respiratoria" data-community-scope></section>
+<section class="view" id="v-consejos" role="tabpanel" aria-label="Otros consejos útiles" data-community-scope></section>
+<!-- practical views end -->
 
 <!-- ============ PREGUNTAR ============ -->
-<section class="view on" id="v-preguntar" role="tabpanel">
+<section class="view" id="v-preguntar" role="tabpanel">
   <div class="col" style="margin-bottom:22px">
     <p class="eyebrow">Buscá</p>
     <h2 class="big">¿Qué necesitás resolver hoy?</h2>
@@ -544,358 +595,36 @@ ul.plain li{margin-bottom:.5em}
 </section>
 
 <!-- ============ EMPEZAR ============ -->
-<section class="view" id="v-empezar" role="tabpanel">
-  <div class="col">
-    <p class="eyebrow">Recién diagnosticado</p>
-    <h2 class="big">Diez cosas que el grupo desearía haber sabido el primer mes</h2>
-    <p class="lede">Este orden no es caprichoso: casi todo lo demás cuelga de los primeros tres pasos, y las demoras que más duelen son las que se podían haber empezado antes.</p>
-
-    <ol class="steps">
-      <li>
-        <div>
-          <h4>Confirmá el diagnóstico donde saben de ELA</h4>
-          <p>El servicio de ELA del Hospital Ramos Mejía (CABA) es gratuito y con mucha experiencia; FLENI tiene clínica de ELA. Varias familias del grupo pasaron años con diagnósticos equivocados —diabetes, tendinitis— antes de llegar a un especialista.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Tramitá el Certificado Único de Discapacidad (CUD)</h4>
-          <p>Es la herramienta más valiosa que vas a tener: con CUD la cobertura es del 100%. Los turnos de junta médica se dan a meses, así que empezá hoy. Se puede hacer a domicilio si la persona no puede trasladarse.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Armá el equipo completo, no solo el neurólogo</h4>
-          <p>Neurología, neumonología, fonoaudiología especializada en deglución, fisiatría, kinesiología motora y respiratoria, terapia ocupacional, nutrición, clínica médica, psicología o psiquiatría, enfermería. El fisiatra es quien pide casi todo el equipamiento; el neumonólogo, todo lo respiratorio.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Pedí el test genético</h4>
-          <p>Alrededor del 2% de los casos tiene mutación en SOD1, y para esos hay un tratamiento específico (Tofersen / Qalsody) que se aplica en Argentina. Muchos neurólogos no lo ofrecen: pedilo vos.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Primera consulta con neumonología antes de tener síntomas</h4>
-          <p>Una espirometría de base sirve para comparar después. El deterioro respiratorio es lo que más rápido cambia la vida, y los trámites del BiPAP tardan meses.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Fonoaudiología temprano, aunque trague bien</h4>
-          <p>Ajustar la consistencia de la comida cambia la vida y evita atragantamientos. Una paciente del grupo lo dijo así: «en mi caso es el profesional más importante».</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Pedí el equipamiento con meses de anticipación</h4>
-          <p>Silla postural, cama ortopédica, grúa, BiPAP, dispositivo de comunicación. Todo tarda, y varios llegaron tarde. La regla del grupo: pedí de más, para que te aprueben lo que necesitás.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Conseguí un abogado que haga amparos</h4>
-          <p>No para pelear siempre, sino para tenerlo. Muchas familias resolvieron rechazos con una carta documento en 48 horas, sin llegar a juicio.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Pedí internación domiciliaria apenas se justifique</h4>
-          <p>Es la llave que abre enfermería, insumos, kinesiología, fonoaudiología y médico a domicilio. Sin ella, cada cosa se pelea por separado.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>No lo hagas solo</h4>
-          <p>Un grupo de pacientes y familias resuelve en horas lo que a un servicio de salud le lleva semanas: quién tiene un aspirador para prestar, qué máscara le funcionó a otro, cómo redactó la orden el médico que sí la hizo bien.</p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
+<section class="view" id="v-empezar" role="tabpanel" aria-label="Me diagnosticaron ELA"><div class="col"><a class="topic-back" href="#/inicio" data-v="inicio">← Volver al inicio</a><p class="eyebrow">Primeros pasos</p><h2 class="big">Me diagnosticaron ELA</h2><p class="lede">No necesitás resolver todo hoy. Estos pasos te ayudan a organizar las primeras consultas y los trámites con apoyo.</p><div class="starter-links"><a href="#/tramites/cud" data-v="tramites/cud">Tramitar el CUD →</a><a href="#/directorio" data-v="directorio">Encontrar profesionales →</a></div><ol class="steps"><li><div><h4>Buscá un equipo con experiencia en ELA</h4><p>Neurología puede confirmar el diagnóstico y coordinar los cuidados. El directorio reúne centros y profesionales que compartieron las familias.</p><a href="#/directorio" data-v="directorio">Ver el directorio →</a></div></li><li><div><h4>Empezá por el certificado de discapacidad</h4><p>El CUD se tramita con una junta evaluadora. Reuní los informes con tu equipo de salud y consultá los requisitos de tu domicilio.</p><a href="#/tramites/cud" data-v="tramites/cud">Cómo tramitar el CUD →</a></div></li><li><div><h4>Conversá sobre los tratamientos y el estudio genético</h4><p>Preguntá qué tratamientos podrían corresponder a tu situación y si hace falta asesoramiento genético. Tofersen está dirigido específicamente a ELA asociada a SOD1.</p><a href="#/medicamentos" data-v="medicamentos">Ver tratamientos →</a></div></li><li><div><h4>Armá un plan de respiración y alimentación</h4><p>No hace falta esperar una urgencia para consultar a neumonología, fonoaudiología y nutrición. El equipo define la evaluación y el seguimiento.</p><a href="#/respiracion" data-v="respiracion">Asistencia respiratoria →</a></div></li><li><div><h4>Anticipá los apoyos para moverte y comunicarte</h4><p>Fisiatría, terapia ocupacional y fonoaudiología ayudan a evaluar equipos y adaptaciones según tus necesidades y preferencias.</p><a href="#/equipamiento" data-v="equipamiento">Equipamiento y movilidad →</a></div></li><li><div><h4>Guardá los pedidos y sus constancias</h4><p>Una carpeta con órdenes, informes, estudios y números de trámite ayuda a seguir las solicitudes. Pedí que cada prestación esté justificada por el profesional.</p><a href="#/tramites/modelos" data-v="tramites/modelos">Modelos y documentación →</a></div></li><li><div><h4>Buscá compañía y repartí las tareas</h4><p>La persona con ELA participa de las decisiones. Familiares, amistades, profesionales y comunidad pueden ayudar a sostener el día a día.</p><a href="#/consejos" data-v="consejos">Consejos de otras familias →</a></div></li></ol><div class="topic-links"><a href="#/alimentacion" data-v="alimentacion">Alimentación</a><a href="#/comunicacion" data-v="comunicacion">Comunicación</a></div><p class="topic-source">Orientación: <a href="https://www.nice.org.uk/guidance/ng42/chapter/Recommendations" target="_blank" rel="noopener noreferrer">NICE · Atención de la enfermedad de motoneurona</a>. Consultá con tu equipo qué pasos priorizar.</p></div></section>
 
 <!-- ============ GUIAS ============ -->
-<section class="view" id="v-guias" role="tabpanel">
-  <div class="col" style="margin-bottom:24px">
-    <p class="eyebrow">Guías</p>
-    <h2 class="big">Lo que el grupo resolvió, ordenado por tema</h2>
-    <p class="lede">Cada guía resume lo que se repitió una y otra vez en el chat entre 2021 y 2026. Es experiencia vivida, no protocolo clínico: usalo para saber qué preguntar y qué pedir, no para decidir solo.</p>
-  </div>
-
-  <div class="col">
-
-  <details class="guide">
-    <summary><span class="gt">Respiratorio</span><span class="gtag">BiPAP · secreciones · traqueostomía</span></summary>
-    <div class="gbody">
-      <h4>El oxígeno no reemplaza al BiPAP</h4>
-      <p>Es el malentendido que más veces se corrigió en el grupo. En la ELA el problema no suele ser falta de oxígeno: son los músculos respiratorios que se debilitan y no logran meter ni sacar aire, así que se acumula dióxido de carbono. De ahí el cansancio extremo, el dolor de cabeza al despertar y el sueño malo. Muchos pacientes saturan bien y aun así necesitan asistencia ventilatoria.</p>
-      <div class="quote">«Ojo con el oxígeno. En general saturan perfecto, pero no pueden inhalar y exhalar bien el aire. Tenés que ver urgente a un neumonólogo.»<span class="who">Grupo La ELA no nos Define · marzo 2025</span></div>
-
-      <h4>Los estudios que te van a pedir</h4>
-      <ul>
-        <li><strong>Espirometría</strong> — mide la capacidad y la fuerza respiratoria. Conviene hacerla al menos una vez por año, aunque dé mal: sirve para comparar.</li>
-        <li><strong>Polisomnografía</strong> u oximetría nocturna — muestra qué pasa mientras duerme, que es cuando aparece primero el problema.</li>
-        <li><strong>Videodeglución o FEES</strong> — no es respiratorio, pero define si hay riesgo de broncoaspiración, que es la principal causa de neumonía.</li>
-      </ul>
-
-      <h4>Conseguir el BiPAP</h4>
-      <ul>
-        <li>La orden la hace el <strong>neumonólogo</strong> (a veces el neurólogo). La obra social o prepaga lo debe cubrir.</li>
-        <li>Mientras se tramita: varios alquilaron y después pidieron reintegro, o consiguieron uno prestado en el grupo, o pidieron uno transitorio al hospital.</li>
-        <li>Pedí en la orden la <strong>máscara</strong> por tipo (nasal, tipo <em>pillow</em>, facial). Si no la especificás, mandan la más incómoda. Las que más se nombraron en el grupo: AirFit 30i y F30.</li>
-        <li>Preguntá si tiene <strong>batería interna</strong> — los equipos con batería dan 8-9 horas de autonomía y permiten salir.</li>
-      </ul>
-
-      <h4>Adaptarse es la parte difícil</h4>
-      <p>Casi todos la pasaron mal los primeros días. Lo más frecuente es que el equipo esté mal seteado: si sopla parejo «como una sopladora de hojas» probablemente esté configurado como CPAP y no como BiPAP. El kinesiólogo respiratorio lo calibra y enseña a usarlo; algunos pacientes terminan con tres seteos distintos según el día. Si no lo tolera, no es que «no le sirve»: hay que ajustarlo.</p>
-
-      <h4>Secreciones: dos aparatos distintos, no uno</h4>
-      <ul>
-        <li><strong>Asistente de tos</strong> (cough assist / insuflador-exuflador): no invasivo, con máscara. Insufla y succiona para forzar la tos y subir las secreciones. Lo puede usar la familia después de que el kine respiratorio les enseñe.</li>
-        <li><strong>Aspirador de secreciones</strong>: invasivo, entra por nariz o boca con una sonda. Lo hace enfermería o el kinesiólogo respiratorio. Con traqueostomía es el imprescindible; el asistente de tos deja de ser necesario.</li>
-        <li>Pedí <strong>dos aspiradores</strong>: uno de red y uno portátil a batería. Varias familias lo consiguieron así.</li>
-        <li>Hidratación abundante (en el grupo se habla de 2 a 3 litros por día) para que las secreciones sean fluidas; nebulizaciones y mucolíticos según indicación médica.</li>
-      </ul>
-
-      <h4>Saliva (sialorrea)</h4>
-      <p>No hay una respuesta que sirva para todos: en el grupo se fue probando. Aparecen gotas de atropina o paratropina entre el labio y los dientes, buscapina, amitriptilina, bromuro de propantelina, toxina botulínica en glándulas salivales cada tres o cuatro meses —algunos con muy buen resultado, otros sin cambio— y radioterapia de glándulas salivales en casos más avanzados. Todo lo decide el médico. Lo que sí es consenso: tener un aspirador en casa.</p>
-
-      <h4>Traqueostomía</h4>
-      <p>Es una decisión del paciente, informada, y el grupo la respeta en las dos direcciones. Lo que insisten quienes ya pasaron por ahí es que el miedo previo suele ser mayor que la realidad: hay integrantes con traqueo desde hace 3, 5 y 10 años que se bañan todos los días, duermen de costado, salen a pasear y viajan en avión.</p>
-      <div class="quote">«Tanto la gastro como la traqueo nos parecían un cuco antes de hacerlas, pero al final resultó que alivianan un montón la diaria con las comidas y con los ahogos y la falta de aire.»<span class="who">Grupo La ELA no nos Define · septiembre 2025</span></div>
-      <ul>
-        <li><strong>Percutánea o quirúrgica</strong>: en un caso del grupo, el primer cambio de cánula con la percutánea fue complicado porque el estoma tiende a cerrarse; con la quirúrgica el recambio es más simple.</li>
-        <li>El recambio de cánula se hace cada uno a tres meses; muchos lo hacen <strong>en el domicilio</strong> con el kinesiólogo respiratorio.</li>
-        <li>Con traqueostomía la asistencia es de 24 horas por ley, y hace falta <strong>enfermería matriculada</strong>, no cuidadores.</li>
-        <li>Si el sanatorio dice que la obra social «no va a dar el respirador» para irse a casa: en el grupo lo desmintieron muchas veces. El respirador domiciliario se entrega en comodato.</li>
-      </ul>
-
-      <h4>Cortes de luz y respaldo</h4>
-      <p>Varias familias usan una UPS potente para el respirador, el aspirador y el concentrador, más un generador. El trámite de <strong>electrodependiente</strong> ante la distribuidora (Edenor, Edesur, Edelap, EPEC) da respaldo de energía y descuento en la boleta; si la distribuidora te pasea, el reclamo se hace en el ENRE y hay que llevar constancia de haber reclamado antes. Y tené siempre un <strong>ambú</strong> en casa: el descartable sirve y dura años.</p>
-    </div>
-  </details>
-
-  <details class="guide">
-    <summary><span class="gt">Nutrición y deglución</span><span class="gtag">disfagia · botón gástrico · intestino</span></summary>
-    <div class="gbody">
-      <h4>Antes del botón: cómo se sostiene la alimentación por boca</h4>
-      <ul>
-        <li><strong>Espesante</strong> (Espesan es el que más circula) hasta consistencia de yogur bebible. Con vaso el líquido se escapa por los costados; con cuchara y espesante, no.</li>
-        <li>Cubitos de jugo de naranja desgranados o agua bien fría mejoran el reflejo de deglución.</li>
-        <li>Mentón hacia el pecho al tragar, bien sentado.</li>
-        <li>Evitar lo dulce: aumenta la saliva.</li>
-        <li>Nada de sorbete si ya no hay fuerza de succión.</li>
-        <li>Licuados, purés, gelatinas, papillas, yogur. Suplementos calóricos (Ensure, Fresubin, Glucerna) cuando baja el peso.</li>
-      </ul>
-
-      <h4>El botón gástrico: la lección más repetida del grupo</h4>
-      <p>Hacerlo <strong>a tiempo</strong>, no cuando ya perdió mucho peso y masa muscular. Es la recomendación que más veces apareció, y casi siempre dicha por alguien que llegó tarde. La cirugía es sencilla —en varios casos ambulatoria, de veinte minutos— y no obliga a dejar de comer por boca: hay pacientes que se alimentan por el botón y siguen tomando purés, yogur y postres con seguimiento de la fonoaudióloga.</p>
-      <div class="quote">«Miguel, es necesario el botón gástrico y mejor a tiempo. Mi mamá no corrió con esa suerte. Y perdió mucha masa muscular.»<span class="who">Grupo La ELA no nos Define · marzo 2025</span></div>
-      <ul>
-        <li>Hay dos tipos: <strong>endoscópico</strong>, cuyo recambio se hace en quirófano cada 6-8 meses, y <strong>percutáneo</strong>, que se cambia de forma muy simple y se puede hacer en el domicilio.</li>
-        <li>Al principio queda una sonda larga de unos 30 cm, incómoda, que después se reemplaza por el botón.</li>
-        <li>Anestesia: con compromiso respiratorio muchas veces no se puede usar anestesia general y se trabaja con sedación. Conviene que neumonología evalúe antes.</li>
-      </ul>
-
-      <h4>Alimentación enteral</h4>
-      <p>Fresubin, Supportan, Nutrison, Glucerna: los provee la obra social a través de una empresa (Nutrihome apareció varias veces), junto con la bomba y las guías. Si cae mal —dolor de estómago, distensión, náuseas— hablalo con el nutricionista: se cambia la fórmula o el ritmo, y varias familias pasan comida casera hervida, procesada y colada con jeringa. Pasá agua con jeringa antes y después de cada medicación.</p>
-
-      <h4>El intestino también es músculo</h4>
-      <p>La constipación es casi universal y se agrava con la medicación para la saliva. En el grupo aparecen citrato de magnesio, lactulón, Barex, cáscara sagrada, fibra incorporada de a poco, enemas cuando ya se formó bolo, y sonda rectal para los gases —que es lo menos invasivo— siempre con indicación médica. También conviene vigilar la orina: la retención y las infecciones urinarias son frecuentes y muchas veces se manifiestan primero como taquicardia o inquietud.</p>
-    </div>
-  </details>
-
-  <details class="guide">
-    <summary><span class="gt">Comunicación</span><span class="gtag">Tobii · Irisbond · pictogramas</span></summary>
-    <div class="gbody">
-      <h4>Pedilo antes de necesitarlo</h4>
-      <p>Es el pedido que más tarda: entre la evaluación, la orden, el rechazo y el amparo pasaron dos años en algunos casos. Cuando la voz todavía se entiende ya conviene iniciar el trámite, porque cuando deje de entenderse el equipo tiene que estar.</p>
-
-      <h4>Los equipos</h4>
-      <ul>
-        <li><strong>Tobii Dynavox</strong> — el más recomendado en el grupo. El software TD Snap alcanza para hablar y es más económico que Communicator; con TD también se maneja Windows. Se puede instalar en cualquier PC descargando el software del sitio. El modelo integrado (TD Pilot, Tobii + iPad) permite montarlo en la silla motorizada.</li>
-        <li><strong>Irisbond</strong> — la alternativa; varias familias lo consiguieron por amparo.</li>
-        <li>Mientras tanto: tablet con brazo articulado o soporte de piso, y <strong>pictogramas y tableros de letras impresos en A3</strong>, que alguien del grupo diseñó y compartió.</li>
-      </ul>
-
-      <h4>Cómo redactar el pedido para que no te lo cambien</h4>
-      <p>El truco que compartió el grupo: en la orden médica no se nombra la marca, se describen las <strong>características técnicas</strong>. Así la obra social no puede ofrecerte algo que no cumple. Lo que se pide, textualmente:</p>
-      <ul>
-        <li>Dispositivo de seguimiento ocular + computadora, todo integrado en un solo equipo, con salida de voz, para permitir el traslado entre ambientes.</li>
-        <li>Método de detección por pupila brillante y pupila oscura.</li>
-        <li>Compensación de movimientos de cabeza.</li>
-        <li>Distancia del usuario al equipo de 45 a 85 cm.</li>
-        <li>Soporte para montaje en silla de ruedas.</li>
-      </ul>
-      <p>Antes de emitir la orden, varios neurólogos piden una evaluación en Clínica Asistiva o en FLENI Escobar, donde se prueba el equipo. Conviene contactar primero al proveedor (Tobii Argentina, Fundación IAN) para que te pasen las especificaciones del último modelo y con eso ir al médico.</p>
-    </div>
-  </details>
-
-  <details class="guide">
-    <summary><span class="gt">Equipamiento y casa</span><span class="gtag">silla · cama · grúa · baño</span></summary>
-    <div class="gbody">
-      <h4>Quién receta qué</h4>
-      <ul>
-        <li><strong>Fisiatra</strong>: silla postural y motorizada, cama ortopédica, grúa, bipedestador, férulas y órtesis, colchón. Es la firma que más vas a necesitar. Buscá uno que sepa anticiparse.</li>
-        <li><strong>Neumonólogo</strong>: BiPAP, respirador, aspiradores, asistente de tos, oxígeno.</li>
-        <li><strong>Fonoaudiología y nutrición</strong>: espesantes, suplementos, alimentación enteral.</li>
-        <li><strong>Neurólogo</strong>: medicación, y en varios casos el dispositivo de comunicación.</li>
-        <li><strong>Terapista ocupacional</strong>: férulas a medida, adaptaciones.</li>
-      </ul>
-
-      <h4>La lista base</h4>
-      <p>Cama ortopédica <em>eléctrica</em> (pedila eléctrica explícitamente), colchón antiescaras, grúa elevapacientes con arnés con soporte cefálico —el abierto en la cola es más práctico porque permite usar la silla higiénica sin sacarlo—, silla postural con sistema tilt, reclinación, apoyacabezas, cinturón pélvico, pechera y almohadón antiescaras, silla de ruedas motorizada, silla de baño con ruedas, eleva-inodoro, ducha manual, barandas, bipedestador, andador y bastones canadienses.</p>
-
-      <h4>Dos errores caros que el grupo cometió</h4>
-      <ul>
-        <li><strong>Medí las puertas y el ascensor antes.</strong> Más de una familia recibió una silla que no entraba en el baño ni en el ascensor. Si la que llega no cumple lo que dice la orden, recibila <em>firmando en disconformidad</em> y pedí otra: si firmás conforme, empezás de cero.</li>
-        <li><strong>Pedí de más y con tiempo.</strong> Todo tarda meses. Varios recomiendan pedir el nivel más alto para que aprueben el intermedio.</li>
-      </ul>
-
-      <h4>Adaptar la casa</h4>
-      <p>Sin escalones, sin bañera, con el dormitorio en planta baja y un baño donde entre la silla. Antes de hacer obra: duchador de mano, silla de baño con ruedas, eleva-inodoro y agarraderas resuelven la primera etapa. Para el auto, hay talleres que instalan elevador para silla y anclajes amurados.</p>
-
-      <h4>Postura y descanso</h4>
-      <p>La ingeniería de almohadones es un tema propio en el grupo: una entre las piernas, otras bajo las rodillas para que no duela la cintura, cuñas en los talones para que no apoyen, almohadones bajo antebrazos y manos para que queden elevadas y no se hinchen, y una almohada triangular para sostener de costado. Para girar sin hacer fuerza, sábana deslizante o zalea. Y la cabecera elevada, que ayuda a respirar.</p>
-    </div>
-  </details>
-
-  <details class="guide">
-    <summary><span class="gt">Medicación y tratamientos</span><span class="gtag">riluzol · test genético · síntomas</span></summary>
-    <div class="gbody">
-      <div class="alert" style="margin-bottom:18px"><div><strong>Nada de esto es una indicación.</strong> Es lo que se conversó en el grupo. Ninguna medicación se inicia, cambia ni suspende sin tu médico.</div></div>
-
-      <h4>De base</h4>
-      <ul>
-        <li><strong>Riluzol</strong> (Rilutek, Teglutik) — el único ampliamente disponible. Enlentece, no cura. Hay que controlar los valores hepáticos: en el grupo hay casos de intoxicación hepática que obligaron a suspenderlo. Algunos lo dejan cuando se hace la traqueostomía. No tiene contraindicación con ventilación mecánica según el neurólogo de FLENI citado en el chat.</li>
-        <li><strong>Edaravone</strong> — fue muy discutido. Ensayos posteriores no mostraron eficacia, y la vía endovenosa implica riesgo de infección y traslados. Vale conversarlo en serio con el neurólogo antes de empezar.</li>
-        <li><strong>Tofersen (Qalsody)</strong> — solo para pacientes con mutación <strong>SOD1</strong>. Se aplica por vía intratecal y hay pacientes del grupo recibiéndolo en Argentina, en FLENI, sin viajar. Por eso el test genético importa tanto.</li>
-      </ul>
-
-      <h4>El test genético</h4>
-      <p>Alrededor del 2% de los pacientes tiene la mutación SOD1, y ese 2% tiene tratamiento. Muchos neurólogos no lo proponen; en el grupo insisten en pedirlo. Se hace en laboratorios locales (aparecen Bitgenia y genetistas particulares) o en el exterior.</p>
-
-      <h4>Sintomáticos que aparecen en el chat</h4>
-      <ul>
-        <li><strong>Gorfetan</strong> — para la labilidad emocional (risa o llanto que no se puede frenar). Varias familias además notaron mejor volumen y claridad de voz y mejor deglución. Cuesta que lo cubran: hubo amparos de meses.</li>
-        <li><strong>Baclofeno / Lioresal</strong> — espasticidad.</li>
-        <li><strong>Citrato de magnesio</strong> — calambres y motilidad intestinal.</li>
-        <li>Para saliva, ver la guía de Respiratorio.</li>
-        <li>Para dolor, desde paracetamol hasta codeína; en el grupo recomiendan consultar con un médico de tratamiento del dolor.</li>
-      </ul>
-
-      <h4>Lo que circula sin consenso</h4>
-      <p>PrimeC (ciprofloxacina + celecoxib, recetado por algunos neurólogos), metilcobalamina en dosis alta —fórmula magistral que se prepara en Farmagen y que las obras sociales suelen no reintegrar por ser magistral—, Ibudilast, HMB, cannabis medicinal. Hay pacientes que reportan mejoras y otros que no notaron nada. Un paciente del grupo, diagnosticado en Estados Unidos, lo puso así: la enfermedad se comporta distinto en cada persona, y ninguno de los que están bien hizo algo diferente de los que no.</p>
-    </div>
-  </details>
-
-  <details class="guide">
-    <summary><span class="gt">Cuidados diarios</span><span class="gtag">piel · higiene · cuidadores</span></summary>
-    <div class="gbody">
-      <h4>Piel</h4>
-      <p>La ELA por sí sola no genera escaras: las genera la inmovilidad. Rotar, hidratar, secar bien, evitar presión en cola, talones y rodillas. Crema con óxido de zinc como prevención; apósitos, Crafine o Iruxol para lesiones ya instaladas —son caros, hacé que los cubra la obra social—. Un spray barrera antes de que haya lesión evita muchos problemas.</p>
-
-      <h4>Higiene bucal</h4>
-      <p>Con disfagia, el enjuague se aplica con jeringa y una sonda como alargue, tirando por el costado entre la mejilla y los dientes, con el aspirador a mano. Para la atención odontológica hay centros que trabajan con pacientes con disfagia y hacen tratamientos integrales en quirófano; el riesgo real es el rociado de agua, avisalo siempre.</p>
-
-      <h4>Cuidadores y enfermeros no son lo mismo</h4>
-      <ul>
-        <li>Un <strong>cuidador</strong> no puede hacer nada invasivo: ni vías, ni sonda vesical, ni aspiración por cánula.</li>
-        <li>Con traqueostomía o gastrostomía hace falta <strong>enfermería matriculada</strong>. Verificá la matrícula: en el grupo hay denuncias de matrículas truchas.</li>
-        <li>Las empresas tercerizadas pagan poco y por eso rotan mucho. La estrategia que funcionó a varias familias: elegir dos o tres personas con las que se empatiza y fidelizarlas —comida en el turno, un extra a fin de mes, capacitación pagada—, o pasar directamente a modalidad reintegro.</li>
-        <li><strong>Libro de actas</strong> por turno, donde cada persona anota novedades y los médicos dejan indicaciones. Es lo que evita que se pierda información entre relevos.</li>
-        <li>La Cruz Roja Argentina dicta un curso de <em>ELA para enfermería</em>; la Fundación Esteban Bulrich otorgó becas a varios equipos del grupo.</li>
-      </ul>
-
-      <h4>Cuidar al que cuida</h4>
-      <p>Es el tema que más veces reaparece sin que nadie lo proponga. Familiares que dejaron de trabajar, que no duermen, que se pelean todos los días con una obra social. El grupo mismo funcionó como sostén: alguien pregunta a las tres de la mañana y a los diez minutos hay tres respuestas. Psicología o psiquiatría para la familia no es un lujo; en la lista del equipo multidisciplinario que circuló en el chat figura como «clave».</p>
-    </div>
-  </details>
-
-  <details class="guide">
-    <summary><span class="gt">Red de ayuda</span><span class="gtag">donaciones · préstamos · fundaciones</span></summary>
-    <div class="gbody">
-      <h4>Lo que circula entre familias</h4>
-      <p>Es, quizás, lo más valioso del grupo: cuando la obra social demora, otra familia presta. En cinco años circularon ampollas de Riluzol y Edaravone, latas de Espesan, sachets de Fresubin y botellas de Ensure próximas a vencer, pañales, aspiradores, BiPAP, sillas de ruedas manuales y eléctricas, camas ortopédicas, grúas, bastones canadienses, colchones antiescaras y hasta un Irisbond que quedó de un paciente que falleció y la familia puso a disposición del grupo.</p>
-      <div class="quote">«Dono este bastón para alguien que no pueda comprárselo, y la condición es que lo done otra vez cuando ya no lo use.»<span class="who">Grupo La ELA no nos Define · enero 2025</span></div>
-
-      <h4>Fundaciones</h4>
-      <ul>
-        <li><strong>Fundación Esteban Bulrich</strong> — la más presente en el grupo. Encuentros virtuales mensuales por Zoom (comunicación y deglución, nutrición, cuidadores), gestión de medicación, acompañamiento con obras sociales, capacitación de enfermería junto a la Cruz Roja y la gala del 21 de junio, Día Mundial de la ELA, con entradas gratuitas para pacientes y acompañante.</li>
-        <li><strong>Fundación IAN</strong> — comunicación aumentativa: provisión, alquiler y capacitación en dispositivos de seguimiento ocular.</li>
-        <li><strong>Fundación Amparando Tu Salud</strong> — asesoramiento en cobertura y trámites.</li>
-        <li><strong>Defensoría del Pueblo</strong> — varias familias resolvieron amparos por esta vía, más rápido y sin costo.</li>
-      </ul>
-
-      <h4>Una advertencia que el grupo repitió</h4>
-      <p>Desconfiá de cualquier intermediario que ofrezca «gestionarte» una cobertura que ya es obligatoria a cambio de exposición pública, fotos o testimonios. Hubo casos concretos denunciados en el chat: medicación donada con las cajas abiertas, aplicaciones ofrecidas en clínicas inexistentes, fotos usadas sin permiso. Lo que te corresponde por ley no se agradece con una foto.</p>
-    </div>
-  </details>
-
-  </div>
-</section>
+<section class="view" id="v-guias" role="tabpanel" aria-label="Guías"><div class="col"><p class="eyebrow">Guías</p><h2 class="big">Las guías ahora están en cada tema</h2><p class="lede">Encontrá la información ordenada por lo que necesitás resolver. Las conversaciones originales siguen disponibles en el archivo.</p><div class="starter-links"><a href="#/medicamentos" data-v="medicamentos">Medicamentos</a><a href="#/equipamiento" data-v="equipamiento">Equipamiento</a><a href="#/comunicacion" data-v="comunicacion">Comunicación</a><a href="#/alimentacion" data-v="alimentacion">Alimentación</a><a href="#/respiracion" data-v="respiracion">Respiración</a><a href="#/consejos" data-v="consejos">Consejos útiles</a><a href="#/tramites" data-v="tramites">Trámites y cartas</a></div><a href="#/archivo" data-v="archivo">Ver el archivo del grupo</a></div></section>
 
 <!-- ============ TRAMITES ============ -->
-<section class="view" id="v-tramites" role="tabpanel">
-  <div class="col">
-    <p class="eyebrow">Trámites y cobertura</p>
-    <h2 class="big">Cómo se consigue lo que ya te corresponde</h2>
-    <p class="lede">De los casi cuatro mil mensajes útiles del grupo, el tema más frecuente no es la enfermedad: es la burocracia. Esto es el método que fue quedando después de cinco años de pelearla.</p>
-
-    <hr class="rule">
-
-    <h3 class="sec">El método, en cuatro movimientos</h3>
-    <ol class="steps">
-      <li>
-        <div>
-          <h4>Pedido médico detallado + resumen de historia clínica</h4>
-          <p>Es el par de papeles del que depende todo. Que el pedido describa características técnicas y no marcas, y que diga <strong>urgente</strong>. Que la historia clínica esté actualizada y liste diagnóstico, medicación con dosis, equipamiento en uso e insumos. Cuanto más completa, menos vueltas.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Presentar y dejar rastro</h4>
-          <p>Cargá el pedido en el sistema o la app y generá un ticket. Si es por teléfono, anotá fecha, hora y nombre de quien te atendió. Las cartas donde explicás la urgencia —y que la falta de respuesta configura abandono de persona— fueron efectivas para varias familias.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Si lo rechazan, pedí el rechazo por escrito</h4>
-          <p>Sin la negativa escrita el amparo se complica. Es el único paso que casi nadie sabe al principio y el que más tiempo ahorra después.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h4>Carta documento, y recién después amparo</h4>
-          <p>Muchos casos se resolvieron con una carta documento de un abogado en 48 horas, sin llegar a juicio. Antes del amparo también están la <strong>Defensoría del Pueblo</strong> y la <strong>Superintendencia de Servicios de Salud</strong>. Si ya hay fallo favorable y no cumplen, se piden <em>astreintes</em>.</p>
-        </div>
-      </li>
-    </ol>
-
-    <hr class="rule">
-
-    <h3 class="sec">CUD — Certificado Único de Discapacidad</h3>
-    <p>Es la herramienta más valiosa que vas a tener: con CUD la cobertura de todo lo relacionado con la enfermedad es del <strong>100%</strong>, incluidos productos de venta libre si están indicados. Se tramita en la agencia de discapacidad o desarrollo social de tu jurisdicción —si cobrás pensión no contributiva, por ANSES—, con junta médica. Llevá epicrisis y estudios; sirve la documentación de una clínica privada. Los turnos se dan a meses, y tanto el DNI como el CUD se pueden tramitar a domicilio si la persona no puede trasladarse. Importante: pedí que el certificado detalle traqueostomía, botón gástrico, BiPAP y bomba de alimentación cuando correspondan, porque de eso dependen otros trámites.</p>
-
-    <h3 class="sec">Internación domiciliaria</h3>
-    <p>Es la llave. Sin ella, cada prestación se pelea por separado; con ella, la obra social está obligada a cubrir a domicilio. La ordena el neurólogo o el médico de cabecera. Suele incluir médico clínico, enfermería, kinesiología motora y respiratoria, fonoaudiología, terapia ocupacional, cuidadores e insumos —alcohol, gasas, guantes, jeringas, paños—. Con traqueostomía, la asistencia de 24 horas es obligatoria.</p>
-    <div class="quote" style="max-width:73ch">«Pedile a su médico que le realice el pedido de internación domiciliaria con todo el equipamiento que requiere. Mi recomendación es que lo hagas junto con la carta de un abogado: eso hicimos nosotras y en 48 horas nos comunicaron que ya estaba asignada la empresa.»<span class="who">Grupo La ELA no nos Define · septiembre 2025</span></div>
-
-    <h3 class="sec">Enfermería: empresa o reintegro</h3>
-    <p>El descubrimiento colectivo más práctico del grupo. Las empresas tercerizadas pagan muy poco por hora, mandan cuidadores donde hacía falta enfermería y rotan sin parar. Varias familias pasaron a <strong>modalidad reintegro o pago directo</strong>: vos elegís a la enfermera, ella factura como monotributista, y la obra social reintegra o le paga directo. El personal gana casi el doble, deja de rotar y la familia recupera el control. Al pedir la internación domiciliaria, aclará desde el inicio que querés esa modalidad y que ya tenés a la persona.</p>
-    <p class="hint">Cuidado con el vínculo laboral: si la persona factura a nombre del paciente y no a la empresa, puede generarse una relación de dependencia. Conviene consultarlo con el abogado.</p>
-
-    <h3 class="sec">Electrodependiente</h3>
-    <p>Si usa respirador, BiPAP, concentrador de oxígeno o bomba de alimentación, corresponde el registro de electrodependiente: da respaldo de energía ante cortes y descuento en la boleta. Se inicia ante la distribuidora (Edenor, Edesur, Edelap, EPEC) y pasa por el ministerio. Si te pasean entre la municipalidad y la empresa, el reclamo formal se hace en el <strong>ENRE</strong>, y ahí piden constancia de haber reclamado antes a la distribuidora: guardá el mail o la captura de la app.</p>
-
-    <h3 class="sec">Viajar</h3>
-    <p>Se puede, y varias familias lo hicieron con respirador. Al sacar el pasaje marcá que necesitás asistencia y después llamá al call center para detallar los equipos. El formulario <strong>MEDIF</strong> tiene que estar completo y enviado a la aerolínea con al menos 72 horas hábiles de anticipación. Si no puede caminar hasta el asiento, la aerolínea tiene una silla angosta que entra en el pasillo. El BiPAP se puede usar a bordo. No hay descuentos por CUD en pasajes aéreos. Si viaja con bomba de alimentación, avisá: en algunos casos no dejan subirla y entregan una en destino.</p>
-
-    <h3 class="sec">Traslados</h3>
-    <p>La obra social debe cubrir el traslado programado y la ambulancia. Si te derivan a donde ellos quieren y no a donde tenés el turno, reclamalo. Si hay un incidente durante un traslado, pedí que quede todo por escrito —ingreso, historia clínica, constatación de lesiones— y consultá con un abogado: la empresa, el chofer y el seguro son responsables solidarios.</p>
+<!-- practical procedures start -->
+<section class="view" id="v-tramites" role="tabpanel" aria-label="Trámites y modelos de cartas">
+  <a class="topic-back" href="#/inicio" data-v="inicio">← Todas las necesidades</a>
+  <div class="topic-intro"><p class="eyebrow">Papeles y cobertura</p><h2 class="big">Trámites y modelos de cartas</h2><p class="lede">Qué reunir, dónde empezar y textos que podés completar para preparar un pedido.</p></div>
+  <div class="topic-links"><a href="#/tramites/cud" data-v="tramites/cud">Certificado de discapacidad</a><a href="#/tramites/modelos" data-v="tramites/modelos">Modelos para completar</a><a href="#/tramites/cobertura" data-v="tramites/cobertura">Si hay una demora o rechazo</a><a href="#/tramites/electrodependencia" data-v="tramites/electrodependencia">Electrodependencia</a></div>
+  <div class="topic-section topic-feature" id="tramites-cud">
+    <h3>Certificado Único de Discapacidad (CUD)</h3>
+    <p>Es un documento válido en todo el país. El trámite es voluntario y gratuito; una junta interdisciplinaria evalúa si corresponde emitirlo.</p>
+    <ol><li>Entrá a la consulta oficial para saber qué documentación te piden y dónde tramitarlo según tu domicilio.</li><li>Reuní los informes, certificados y estudios con tu equipo de salud.</li><li>Pedí el turno y asistí a la evaluación. Si no podés trasladarte, consultá a la junta por las alternativas disponibles.</li><li>Seguí las indicaciones para retirar el certificado y guardá una copia para los trámites.</li></ol>
+    <p>El CUD permite acceder a derechos y a cobertura del 100% de las prestaciones de rehabilitación requeridas en relación con la discapacidad certificada. Cada solicitud debe acompañarse de la indicación y los requisitos correspondientes.</p>
+    <p class="topic-source">Fuente: <a href="https://www.argentina.gob.ar/servicio/como-obtener-el-certificado-unico-de-discapacidad-cud" target="_blank" rel="noopener noreferrer">Guía oficial y consulta de requisitos del CUD</a>.</p>
+    <a href="#/tramites/historia" data-v="tramites/historia">Ver esquema de resumen de historia clínica para tu médico</a>
   </div>
+  <div class="topic-section" id="tramites-modelos"><h3>Modelos para copiar y completar</h3><p>Elegí el texto que necesitás. Reemplazá los campos entre corchetes y revisalo antes de presentarlo. Los formularios oficiales, cuando se exijan, tienen prioridad.</p><div id="modelosCartas"></div></div>
+  <div class="topic-section" id="tramites-cobertura"><h3>Cómo preparar y seguir un pedido</h3><ol><li><strong>Orden y justificación.</strong> Pedí que el profesional detalle características, cantidad, frecuencia y necesidad. La urgencia debe estar clínicamente fundamentada.</li><li><strong>Constancia.</strong> Guardá copia del pedido, adjuntos, fecha de presentación y número de trámite.</li><li><strong>Respuesta escrita.</strong> Ante una demora o rechazo, pedí una respuesta fundada y conservá las comunicaciones.</li><li><strong>Orientación.</strong> Consultá el canal de reclamo que corresponda a tu cobertura. Un abogado o defensoría puede evaluar las alternativas según la urgencia; no hay una secuencia obligatoria universal de carta documento y amparo.</li></ol>
+    <p class="topic-source"><a href="https://www.argentina.gob.ar/servicio/denuncia-por-problematicas-de-cobertura-prestacional" target="_blank" rel="noopener noreferrer">Requisitos y alcance del reclamo ante la Superintendencia de Servicios de Salud</a>. Para otros organismos o coberturas, verificá el canal competente.</p>
+  </div>
+  <details class="topic-item" id="tramites-domicilio"><summary>Internación domiciliaria, enfermería y cuidadores</summary><div class="topic-body"><p>El equipo tratante debe describir qué cuidados hacen falta, con qué frecuencia y qué capacitación requiere cada tarea. Solicitá también los insumos y equipos necesarios para ese plan.</p><p>Las familias del grupo compartieron experiencias con empresas prestadoras y con reintegro o pago directo. Antes de organizarlo, confirmá por escrito qué modalidad autoriza tu cobertura, la documentación y las condiciones de contratación. Verificá la matrícula cuando la tarea requiera un profesional.</p><a href="#/directorio" data-v="directorio">Ver profesionales, empresas y orientación legal</a></div></details>
+  <details class="topic-item" id="tramites-electrodependencia"><summary>Registro de electrodependientes y cortes de luz</summary><div class="topic-body"><p>Si necesitás equipos eléctricos por motivos de salud, consultá la inscripción en el Registro de Electrodependientes por Cuestiones de Salud. La solicitud requiere documentación e indicación médica, y está sujeta a evaluación.</p><p>Prepará además un plan ante cortes con el equipo de salud, el proveedor de los equipos y la distribuidora. Verificá autonomía de baterías y contactos de emergencia.</p><p class="topic-source"><a href="https://www.argentina.gob.ar/servicio/inscribirme-en-el-registro-de-electrodependientes-por-cuestiones-de-salud" target="_blank" rel="noopener noreferrer">Consultar requisitos e iniciar la inscripción oficial</a>.</p><a href="#/respiracion/ups" data-v="respiracion/ups">Ver baterías y respaldo eléctrico</a></div></details>
+  <details class="topic-item" id="tramites-viajes"><summary>Viajes y traslados</summary><div class="topic-body"><p>Antes de reservar, consultá la accesibilidad, la asistencia, los equipos permitidos, las baterías y la documentación médica que exige la empresa. Los formularios MEDIF y sus plazos dependen de la aerolínea y del viaje.</p><p>Para traslados sanitarios programados, pedí la indicación del profesional y consultá la autorización con tu cobertura. Guardá las respuestas por escrito. Las experiencias del grupo y los contactos del directorio pueden ayudarte a preparar las preguntas.</p><a href="#/directorio" data-v="directorio">Buscar contactos para traslados</a></div></details>
+  <div class="topic-links"><a href="#/comunidad" data-specialist="Abogado para amparos">Buscar o recomendar orientación legal</a><a href="#/archivo" data-v="archivo">Consultar experiencias anteriores del grupo</a></div>
+  <p class="hint">Orientación general para Argentina. Los requisitos y la respuesta a cada caso dependen de la jurisdicción y la cobertura. Fuentes consultadas el 13 de septiembre de 2026.</p>
 </section>
+<!-- practical procedures end -->
 
 <!-- ============ DIRECTORIO ============ -->
 <section class="view" id="v-directorio" role="tabpanel">
@@ -1309,23 +1038,26 @@ var DIRECTORY = [
 
 /* ---------------- tabs ---------------- */
 var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
-var VIEWS = ["preguntar","empezar","guias","tramites","directorio","archivo","comunidad","acerca"];
-var TITLES = {preguntar:"PreguntELA", empezar:"Primeros pasos · PreguntELA", guias:"Guías · PreguntELA",
-  tramites:"Trámites y cobertura · PreguntELA", directorio:"Directorio · PreguntELA",
+var VIEWS = ["inicio","medicamentos","equipamiento","comunicacion","alimentacion","respiracion","consejos","preguntar","empezar","guias","tramites","directorio","archivo","comunidad","acerca"];
+var TITLES = {inicio:"Inicio · PreguntELA",medicamentos:"Medicamentos · PreguntELA",equipamiento:"Equipamiento · PreguntELA",comunicacion:"Comunicación · PreguntELA",alimentacion:"Alimentación · PreguntELA",respiracion:"Asistencia respiratoria · PreguntELA",consejos:"Consejos útiles · PreguntELA",preguntar:"PreguntELA", empezar:"Primeros pasos · PreguntELA", guias:"Guías · PreguntELA",
+  tramites:"Trámites y cartas · PreguntELA", directorio:"Directorio · PreguntELA",
   archivo:"Archivo del grupo · PreguntELA", comunidad:"Comunidad · PreguntELA", acerca:"Acerca de · PreguntELA"};
 function show(v, push){
-  if(VIEWS.indexOf(v)<0) v="preguntar";
+  var path=v||"inicio"; v=path.split("/")[0];
+  if(VIEWS.indexOf(v)<0){v="inicio";path=v;}
   var desdeMenu=document.getElementById("mainNav").classList.contains("open");
-  tabs.forEach(function(t){ t.setAttribute("aria-selected", String(t.dataset.v===v));t.tabIndex=t.dataset.v===v?0:-1; });
+  tabs.forEach(function(t){ t.setAttribute("aria-selected", String(t.dataset.v===v));t.tabIndex=t.dataset.v===v||(!tabs.some(function(x){return x.dataset.v===v;})&&t.dataset.v==="inicio")?0:-1; });
   document.querySelectorAll(".view").forEach(function(s){ s.classList.toggle("on", s.id==="v-"+v); });
   document.getElementById("mainNav").classList.remove("open");
   document.getElementById("menuToggle").setAttribute("aria-expanded","false");
   if(desdeMenu){var heading=document.querySelector("#v-"+v+" .big");if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}}
+  document.querySelectorAll(".utility-nav a").forEach(function(a){if(a.dataset.v===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
   document.title = TITLES[v] || "PreguntELA";
-  if(push!==false && location.hash !== "#/"+v){
-    try{ history.pushState(null,"","#/"+v); }catch(e){ location.hash = "#/"+v; }
+  if(push!==false && location.hash !== "#/"+path){
+    try{ history.pushState(null,"","#/"+path); }catch(e){ location.hash = "#/"+path; }
   }
   window.scrollTo({top:0,behavior:"instant"});
+  if(path.indexOf("/")>=0) revealRouteAnchor();
 }
 var vueltaDeLogin = false;
 function esVueltaDeLogin(){
@@ -1336,7 +1068,7 @@ function esVueltaDeLogin(){
 function routeFromHash(push){
   if(esVueltaDeLogin()){ vueltaDeLogin = true; show("comunidad", false); return; }
   var h=(location.hash||"").replace(/^#\/?/,"");
-  show(h||"preguntar", push);
+  show(h||"inicio", push);
 }
 tabs.forEach(function(t,i){
   t.id="tab-"+t.dataset.v;t.setAttribute("aria-controls","v-"+t.dataset.v);
@@ -1358,6 +1090,7 @@ document.addEventListener("click", function(e){
   e.preventDefault(); show(a.dataset.v);
 });
 window.addEventListener("popstate", function(){ routeFromHash(false); });
+window.addEventListener("hashchange", function(){ if(!esVueltaDeLogin()) routeFromHash(false); });
 routeFromHash(false);
 
 /* ---------------- search index ---------------- */
@@ -2058,6 +1791,223 @@ var TEMAS = ["Respiratorio","Nutrición y deglución","Comunicación","Equipamie
 var ETIQ_ETAPA = {temprana:"etapa temprana", intermedia:"etapa intermedia", avanzada:"etapa avanzada"};
 
 /* ---------------- comunidad ---------------- */
+/* Resúmenes de orientación revisados el 13/09/2026. El archivo histórico se conserva. */
+var FUENTES = {
+  ela:['NIH · Tratamientos de la ELA','https://www.ninds.nih.gov/current-research/focus-disorders/focus-amyotrophic-lateral-sclerosis'],
+  riluzol:['MedlinePlus · Riluzol','https://medlineplus.gov/druginfo/meds/a696013.html'],
+  tofersen:['FDA · Aprobación de tofersen para ELA con SOD1','https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-amyotrophic-lateral-sclerosis-associated-mutation-sod1-gene'],
+  edaravone:['ANMAT · Autorización de comercialización de Elavone','https://buscadispo.anmat.gob.ar/BuscaDispoPDF/2025/enero/791-2025-LABORATORIO_ELEA_PHOENIX_S_A-PRIMER_LOTE-M.pdf'],
+  primec:['NeuroSense · Estado del desarrollo de PrimeC','https://www.neurosense-tx.com/primec/'],
+  b12:['Eisai · Aprobación de Rozebalamin en Japón','https://www.eisai.com/news/2024/pdf/enews202469pdf.pdf'],
+  cuidados:['NICE · Atención y manejo de la enfermedad de motoneurona','https://www.nice.org.uk/guidance/ng42/chapter/Recommendations'],
+  nutricion:['ALS Association · Nutrición','https://www.als.org/blog/11-ways-maintain-nutrition-people-als'],
+  boton:['ALS Association · Sondas de alimentación','https://www.als.org/navigating-als/living-with-als/therapies-care/feeding-tubes'],
+  respiracion:['ALS Association · Cambios respiratorios','https://www.als.org/navigating-als/living-with-als/therapies-care/addressing-respiratory-changes'],
+  fortisip:['Nutricia · Fortisip','https://nutricia.com.au/hcp/product/adult/fortisip/fortisip/'],
+  tobii:['Tobii Dynavox · Seguimiento ocular','https://www.tobiidynavox.com/pages/what-is-eye-tracking'],
+  irisbond:['IRISBOND · Soluciones de comunicación','https://www.irisbond.com/comunicacion-aumentativa-alternativa/soluciones/'],
+  hablalo:['Háblalo · Sitio oficial','https://www.hablalo.app/'],
+  marisapp:['MarisApp · Abrir la aplicación','https://maris-app.com/'],
+  cud:['Argentina.gob.ar · Tramitar el CUD','https://www.argentina.gob.ar/servicio/como-obtener-el-certificado-unico-de-discapacidad-cud'],
+  reclamo:['Superintendencia · Reclamos de cobertura','https://www.argentina.gob.ar/servicio/denuncia-por-problematicas-de-cobertura-prestacional'],
+  electro:['Argentina.gob.ar · Registro de electrodependientes','https://www.argentina.gob.ar/servicio/inscribirme-en-el-registro-de-electrodependientes-por-cuestiones-de-salud']
+};
+var NECESIDADES = [
+ {id:'medicamentos',n:'Tratamientos farmacológicos',short:'Medicamentos',d:'Tratamientos para ELA, opciones en investigación y medicación para síntomas.'},
+ {id:'equipamiento',n:'Equipamiento y movilidad',short:'Equipamiento',d:'Sillas, grúas, almohadones, cama, baño y adaptaciones. Qué evaluar con fisiatría.'},
+ {id:'comunicacion',n:'Comunicación',short:'Comunicación',d:'MarisApp, Tobii, IRISBOND, Háblalo, tableros y otras formas de expresarte.'},
+ {id:'alimentacion',n:'Alimentación',short:'Alimentación',d:'Nutrición, suplementos, espesantes, utensilios y botón gástrico.'},
+ {id:'respiracion',n:'Asistencia respiratoria',short:'Respiración',d:'BiPAP, traqueostomía, secreciones, equipos y respaldo eléctrico.'},
+ {id:'consejos',n:'Otros consejos útiles',short:'Consejos útiles',d:'La vida cotidiana: cuidados, organización, ayuda y experiencias de familiares.'},
+ {id:'tramites',n:'Trámites y modelos de cartas',short:'Trámites y cartas',d:'CUD, cobertura, pedidos, reclamos y modelos para completar.'}
+];
+var MED_INFO = {
+ riluzol:{c:'Tratamiento para ELA',s:'Aprobado para ELA · FDA',f:['riluzol'],d:'Tratamiento que puede enlentecer la evolución de la ELA; no la cura. Neurología evalúa la indicación, la presentación y los controles necesarios.'},
+ edaravone:{c:'Tratamiento para ELA',s:'Aprobado para ELA · FDA; Elavone autorizado por ANMAT',f:['ela','edaravone'],d:'También llamado edaravona. Es un tratamiento para ELA que busca reducir el deterioro funcional. La indicación, la vía de administración y el beneficio esperado se conversan con neurología. La disponibilidad y cobertura dependen del lugar y la presentación.'},
+ tofersen:{c:'Tratamiento para ELA',s:'Aprobación acelerada de la FDA · Solo ELA asociada a SOD1',f:['tofersen'],d:'Qalsody está dirigido a adultos con ELA asociada a una mutación en SOD1. No es para todas las formas de ELA genética. Su aprobación acelerada se basó en un biomarcador y requiere confirmar el beneficio clínico. Consultá sobre estudio genético, indicación y acceso local.'},
+ primec:{c:'En investigación',s:'En investigación · No aprobado como tratamiento de ELA',f:['primec'],d:'Combinación en investigación de ciprofloxacina y celecoxib. Una designación de medicamento huérfano no equivale a aprobación para su uso. No se puede reproducir el tratamiento combinando medicamentos por cuenta propia.'},
+ b12:{c:'Aprobación específica en Japón',s:'Rozebalamin aprobado en Japón · No equivale a cualquier B12',f:['b12'],d:'Una formulación inyectable de mecobalamina en dosis altas, Rozebalamin, fue aprobada para ELA en Japón en septiembre de 2024. Ese resultado no se extiende a suplementos comunes ni a todas las preparaciones magistrales. Consultá la indicación y el estado regulatorio local.'},
+ ibudilast:{c:'Opciones mencionadas en el grupo',s:'Mencionado en el archivo · No presentado como tratamiento aprobado',d:'Aparece en conversaciones del grupo sobre tratamientos en estudio. Una experiencia individual no demuestra eficacia ni seguridad para ELA.'},
+ tudca:{c:'Opciones mencionadas en el grupo',s:'Mencionado en el archivo · Beneficio para ELA no establecido aquí',d:'El grupo mencionó TUDCA. Su inclusión permite encontrar esas conversaciones; no constituye una recomendación de uso.'},
+ hmb:{c:'Suplementos',s:'Suplemento · No tratamiento curativo de ELA',d:'Mencionado por familias entre los suplementos. Nutrición debe valorar si existe una necesidad concreta; no se presenta como tratamiento que frene la ELA.'},
+ vitd:{c:'Suplementos',s:'Suplemento · Según necesidad individual',d:'La vitamina D aparece entre los suplementos del grupo. Su indicación depende de la evaluación clínica y nutricional, no del diagnóstico de ELA por sí solo.'},
+ psilocibina:{c:'Opciones mencionadas en el grupo',s:'Mención histórica · No recomendación',d:'Se conserva la referencia a microdosis que apareció en el grupo. No se presenta como un tratamiento probado para la ELA o sus síntomas.'},
+ cannabis:{c:'Síntomas',s:'Dolor, descanso o espasticidad · Consulta individual',d:'El grupo conversó sobre cannabis y CBD. La evaluación debe considerar composición, interacciones, efectos adversos y regulación local; no son tratamientos curativos para ELA.'},
+ gorfetan:{c:'Síntomas',s:'Risa o llanto involuntarios',d:'Nombre comercial mencionado por familias en conversaciones sobre labilidad emocional. Confirmá con el médico y la farmacia la composición y la indicación. Las experiencias sobre voz o deglución no prueban un beneficio general.'},
+ baclofeno:{c:'Síntomas',s:'Espasticidad',d:'Se utiliza en el manejo de la espasticidad. El equipo médico individualiza su uso y controla la respuesta; no ajustes ni suspendas la medicación por tu cuenta.'},
+ atropina:{c:'Saliva',s:'Exceso de saliva',d:'Las familias la mencionaron para la sialorrea. El uso, la presentación y la vía deben ser indicados por el profesional; esta ficha no es una pauta de administración.'},
+ amitriptilina:{c:'Saliva',s:'Saliva y otros síntomas, según indicación',d:'Aparece en el grupo por su uso para distintos síntomas. El médico evalúa efectos adversos e interacciones, incluida la posibilidad de estreñimiento.'},
+ botox:{c:'Saliva',s:'Exceso de saliva',d:'La toxina botulínica puede evaluarse para sialorrea. Requiere un profesional con experiencia, que decida dónde aplicarla y cómo controlar la respuesta.'},
+ propantelina:{c:'Saliva',s:'Mencionada para exceso de saliva',d:'El grupo compartió experiencias con bromuro de propantelina. No todas las personas responden igual y su uso requiere evaluación médica.'},
+ buscapina:{c:'Saliva',s:'Mención del grupo · Confirmar principio activo',d:'Nombre comercial que aparece en conversaciones sobre saliva. No intercambies presentaciones o compuestos por similitud del nombre; verificá qué medicamento indicó el profesional.'},
+ magnesio:{c:'Síntomas',s:'Mencionado para calambres y tránsito intestinal',d:'El grupo habló de citrato de magnesio. Es necesario evaluar si corresponde suplementar y si hay contraindicaciones; no es una recomendación general para toda persona con ELA.'},
+ quinina:{c:'Síntomas',s:'Mención sobre calambres · Requiere evaluación de riesgos',d:'Se conserva porque fue mencionada en el grupo. La quinina puede tener efectos adversos importantes y no debe usarse por cuenta propia para calambres.'},
+ barex:{c:'Intestino',s:'Estreñimiento',d:'Marca mencionada para el tránsito intestinal. Confirmá la formulación: las presentaciones para preparación intestinal no se intercambian con un tratamiento habitual del estreñimiento.'},
+ probioticos:{c:'Intestino',s:'Suplementos para situaciones específicas',d:'Mencionados en el grupo, sin una pauta aplicable a todas las personas. Consultá si aportan algo en tu situación; no reemplazan la evaluación de un problema intestinal.'},
+ antidep:{c:'Ánimo',s:'Salud mental',d:'Escitalopram y sertralina aparecen en conversaciones sobre ánimo. La elección y el seguimiento corresponden al profesional que acompaña la salud mental.'},
+ clonazepam:{c:'Ánimo',s:'Ansiedad o sueño · Precaución respiratoria',d:'Clonazepam y lorazepam requieren prescripción y seguimiento. La sedación y la situación respiratoria deben revisarse con el equipo de salud.'},
+ diclofenac:{c:'Dolor',s:'Dolor e inflamación',d:'Analgésico y antiinflamatorio mencionado en el archivo. No todo dolor tiene el mismo origen; el médico debe revisar beneficios, riesgos e interacciones.'},
+ acemuk:{c:'Respiratorio',s:'Secreciones',d:'Acetilcisteína: mucolítico mencionado por familias. El manejo de secreciones también requiere evaluar la capacidad de toser y el plan respiratorio.'},
+ melatonina:{c:'Ánimo',s:'Sueño',d:'Aparece en las conversaciones sobre descanso. Antes de tratar un mal dormir, conviene evaluar su causa con el equipo de salud.'},
+ lactulon:{c:'Intestino',s:'Estreñimiento',d:'Lactulosa, mencionada en el grupo como Lactulón. La pauta y la tolerancia se ajustan con el profesional.'},
+ omeprazol:{c:'Intestino',s:'Acidez u otra indicación digestiva',d:'Su uso depende del problema digestivo o de una indicación específica. No toda persona con ELA necesita un protector gástrico.'},
+ codeina:{c:'Dolor',s:'Dolor · Precaución respiratoria',d:'La combinación con paracetamol fue mencionada en el grupo. Requiere seguimiento por sus posibles efectos sobre respiración, somnolencia y estreñimiento.'}
+};
+MEDS.forEach(function(m){var x=MED_INFO[m.k];if(x){m.d=x.d;m.c=x.c;}});
+var INSUMO_INFO = {
+ andador:'Apoyo para la marcha. Fisiatría o kinesiología evalúan altura, estabilidad y tipo de ayuda según la persona.',
+ 'silla-postural':'Silla con adaptaciones de postura. El tilt inclina asiento y respaldo en conjunto; la reclinación cambia el ángulo del respaldo. Pedí una evaluación de asiento, apoyos y necesidades de movimiento.',
+ 'silla-motorizada':'Silla eléctrica que se controla con un mando adaptado. Evaluá controles, postura, batería, transporte y espacio de giro; probá el equipo antes de elegirlo.',
+ grua:'Ayuda a trasladar entre cama, silla y otros apoyos. Debe ser compatible con el arnés, el peso y los espacios de la casa; pedí una demostración y capacitación.',
+ arnes:'Se elige junto con la grúa y según postura, soporte de cabeza y tipo de traslado. No todos los arneses son compatibles con todas las grúas.',
+ bipedestador:'Equipo para mantener una posición de pie con apoyo. Requiere evaluación de fisiatría y un plan individual de uso.',
+ cama:'Cama articulada, manual o eléctrica según la necesidad. La orden debe especificar funciones, medidas, accesorios y condiciones del domicilio.',
+ colchon:'Superficies que redistribuyen la presión. La elección depende de la piel, movilidad y postura; no reemplazan el plan de cuidados.',
+ 'barandas-cama':'Accesorio que requiere evaluar seguridad, compatibilidad con la cama y riesgo de atrapamiento.',
+ 'elevador-cabecera':'Apoyo para ajustar la posición en cama. Si acostarse provoca falta de aire, consultá al equipo respiratorio.',
+ 'cremas-ae':'Productos para el cuidado de la piel. Si hay una lesión, enfermería o el equipo tratante deben evaluar el tratamiento.',
+ toallitas:'Elementos para la higiene cotidiana. Revisá tolerancia de la piel y qué insumos contempla el pedido de cuidados.',
+ panales:'Insumos de higiene que se eligen según necesidad, talle y cuidado de la piel. Para cobertura, pedí la indicación correspondiente.',
+ oximetro:'Mide la saturación de oxígeno, pero por sí solo no descarta problemas de ventilación. No reemplaza la evaluación respiratoria.',
+ cpap:'Mantiene una presión continua y se usa, por ejemplo, para apnea obstructiva del sueño. No es equivalente a la ventilación de dos niveles indicada para debilidad respiratoria; el especialista determina qué soporte hace falta.',
+ bipap:'Ventilación no invasiva de dos niveles de presión, habitualmente mediante una máscara. El equipo respiratorio define el modo, los ajustes y el seguimiento; no cambies la configuración por tu cuenta.',
+ 'mascara-nasal':'Interfaz que cubre la nariz. Se selecciona según ajuste, fugas, comodidad y el soporte indicado.',
+ 'mascara-full':'Máscara que puede cubrir nariz y boca. Su elección y ajuste se revisan con el equipo respiratorio.',
+ respirador:'Ventilador que brinda soporte respiratorio según el modo prescrito. El equipo tratante organiza entrenamiento, mantenimiento, asistencia y contingencias.',
+ ambu:'Resucitador manual. Solo debe utilizarse con entrenamiento y siguiendo el plan indicado; respetá las instrucciones de limpieza, vida útil y recambio del fabricante.',
+ aspirador:'Equipo para retirar secreciones. La técnica y el tipo de aspiración requieren indicación y capacitación; no reemplaza a un asistente de tos.',
+ cough:'Asistente mecánico de tos o insuflador-exuflador. Su indicación, interfaz y ajustes son individuales; la familia necesita capacitación para utilizarlo.',
+ concentrador:'Suministra oxígeno cuando está prescrito. El oxígeno no reemplaza el soporte ventilatorio ni debe agregarse por cuenta propia.',
+ 'canula-traqueo':'Insumos para una traqueostomía. El tipo de cánula, los cuidados y el momento de recambio los define el equipo tratante.',
+ ups:'Baterías y respaldo eléctrico compatibles con los equipos. Acordá un plan para cortes con el proveedor y revisá el registro de electrodependientes.',
+ espesante:'Modifica la textura de líquidos. Fonoaudiología evalúa si hace falta y qué consistencia es adecuada; no hay una textura segura para todas las personas.',
+ vasos:'Hay distintas ayudas para beber. La elección depende del control de manos, postura y evaluación de deglución.',
+ suplementos:'Suplementos para completar necesidades nutricionales. Nutrición evalúa fórmula, tolerancia y forma de administración; no todos son intercambiables.',
+ boton:'Dispositivo de bajo perfil para una gastrostomía. La gastrostomía es el acceso al estómago; PEG es una técnica de colocación. No son exactamente lo mismo. Conversá sobre momento, opciones y cuidados con el equipo.',
+ bomba:'Dispositivo para administrar alimentación enteral a la velocidad indicada. Pedí capacitación y un plan de suministro y mantenimiento.',
+ jeringas:'Jeringas enterales para el plan indicado de alimentación, medicación y cuidado de la sonda. Confirmá compatibilidad y procedimiento con el equipo.',
+ pictogramas:'Tableros de letras, palabras o imágenes para señalar o elegir con ayuda de otra persona. También sirven como respaldo sin batería.',
+ tobii:'Dispositivos y programas de comunicación, incluidos sistemas que permiten elegir letras o palabras con la mirada. La evaluación y la prueba ayudan a elegir el acceso adecuado.',
+ irisbond:'Soluciones de control con la mirada y comunicación aumentativa. Probá el sistema, la posición y los programas con un equipo especializado.'
+};
+INSUMOS.forEach(function(g){g.items.forEach(function(i){if(INSUMO_INFO[i.k]) i.d=INSUMO_INFO[i.k];});});
+INSUMOS.find(function(g){return g.g==='Comunicación';}).items.push(
+ {k:'marisapp',n:'MarisApp',d:'Creada por Andy para ayudar a su abuela Marisa a comunicarse. Forma parte de la misma historia familiar que PreguntELA, creado por Marcela, hija de Marisa y madre de Andy.'},
+ {k:'hablalo',n:'Háblalo',d:'Aplicación de apoyo a la comunicación que incluye herramientas de texto, voz y pictogramas. Probá sus opciones según las necesidades de la persona.'}
+);
+INSUMOS.find(function(g){return g.g==='Alimentación';}).items.push({k:'fortisip',n:'Fortisip',d:'Suplemento nutricional oral de Nutricia. Nutrición debe evaluar la presentación, la cantidad y la tolerancia. No reemplaza por sí solo una evaluación de deglución.'});
+INSUMOS.find(function(g){return g.g==='Respiratorio';}).items.push({k:'traqueostomia',n:'Traqueostomía',d:'Abertura en la tráquea que puede permitir ventilación invasiva. Es una decisión personal e informada: conversá sobre objetivos, cuidados, comunicación y apoyos necesarios antes de una urgencia.'});
+var GRUPOS_MEDS = [
+ {id:'aprobados',n:'1. Tratamientos específicos para ELA',d:'Tienen aprobaciones regulatorias para ELA, con indicaciones y disponibilidad diferentes. Ninguno cura la enfermedad. El país de aprobación se aclara en cada ficha.',keys:['riluzol','edaravone','tofersen']},
+ {id:'investigacion',n:'2. Investigación, otras opciones y suplementos',d:'Lo que aparece en el grupo no equivale a una recomendación ni a eficacia demostrada. La metilcobalamina tiene una aprobación específica en Japón y por eso se explica por separado dentro de este grupo.',keys:['primec','b12','ibudilast','tudca','hmb','vitd','psilocibina']},
+ {id:'sintomas',n:'3. Medicamentos y opciones para síntomas',d:'Se organizan por el problema que se conversó en el grupo: saliva, rigidez, calambres, dolor, ánimo, sueño, secreciones o digestión. Su inclusión no implica que estén indicados para todas las personas con ELA.',keys:['gorfetan','baclofeno','atropina','amitriptilina','botox','propantelina','buscapina','magnesio','quinina','cannabis','diclofenac','codeina','antidep','clonazepam','melatonina','acemuk','barex','lactulon','probioticos','omeprazol']}
+];
+var MODELOS = [
+ {id:'pedido',n:'Pedido de cobertura a la obra social o prepaga',hint:'Adjuntá la orden y la justificación del profesional. Conservá la constancia de recepción.',text:'[Ciudad], [fecha]\nA [obra social / prepaga / organismo]:\n\nSolicito la autorización y provisión de [prestación, equipo o insumos] para [nombre de la persona], DNI [número], afiliación [número].\n\nAdjunto la orden de [profesional, matrícula y fecha], el resumen de historia clínica y [otra documentación / CUD, si corresponde]. La necesidad y las características requeridas se encuentran detalladas en la indicación adjunta.\n\nSolicito una respuesta por escrito, un número de trámite y la información sobre el procedimiento para acceder a la prestación. [Si el profesional indicó urgencia, transcribir su fundamento sin agregar datos no documentados].\n\nContacto para la respuesta: [correo / teléfono].\n[Nombre, vínculo y firma]\nAdjuntos: [lista].'},
+ {id:'reclamo',n:'Reclamo por demora o rechazo',hint:'Usá fechas y números de trámite reales. Si hay riesgo por la demora, pedí orientación profesional sin esperar una secuencia fija de reclamos.',text:'[Ciudad], [fecha]\nA [obra social / prepaga / organismo]:\n\nEl [fecha] presenté el pedido de [prestación] para [nombre, DNI y afiliación], bajo el número [trámite]. A la fecha [no recibí respuesta / recibí el rechazo adjunto de fecha ...].\n\nSolicito la revisión y una respuesta fundada por escrito. Adjunto nuevamente la indicación médica, su justificación y las constancias de la presentación anterior. [Describir solo los hechos y el impacto documentado de la demora].\n\nAgradeceré que informen la resolución y los pasos para obtener la prestación solicitada en [correo / domicilio].\n\n[Nombre, vínculo y firma]\nAdjuntos: [lista].'},
+ {id:'historia',n:'Guía para el resumen de historia clínica',hint:'Para que complete, revise y firme el profesional tratante. Este esquema no constituye una historia clínica ni reemplaza un formulario oficial.',text:'RESUMEN DE HISTORIA CLÍNICA — PARA COMPLETAR POR EL PROFESIONAL\n\nFecha: [fecha]\nPaciente: [nombre y apellido]\nDNI: [número] · Fecha de nacimiento: [fecha]\nCobertura / afiliación: [datos]\n\nDiagnóstico y fundamentos: [completar por profesional]\nEvolución y situación funcional actual: [completar]\nEstudios relevantes y fechas: [completar]\nTratamientos y apoyos actuales: [completar]\nPrestación o equipamiento solicitado: [completar]\nCaracterísticas, frecuencia o cantidad requeridas: [completar según corresponda]\nJustificación clínica y objetivos: [completar]\nUrgencia, si corresponde, y su fundamento: [completar]\nPlan de seguimiento: [completar]\n\nProfesional: [nombre y matrícula]\nFirma y sello: [a completar por el profesional]'},
+ {id:'carta-documento',n:'Borrador para preparar una carta documento',hint:'Llevá este borrador y las constancias a un abogado. Debe adaptar el destinatario, los hechos, el fundamento y el plazo al caso antes del envío. No es un texto listo para enviar.',text:'BORRADOR PARA REVISIÓN JURÍDICA — NO ENVIAR SIN ADAPTAR\n\nRemitente y domicilio: [datos]\nDestinatario y domicilio verificado: [datos]\nPersona beneficiaria / afiliación: [datos]\n\nCon fecha [fecha] solicité [prestación], conforme a la indicación de [profesional y fecha]. La presentación quedó registrada bajo [número]. [Describir la demora o negativa y la fecha, con respaldo documental].\n\nRequiero que se otorgue la prestación solicitada conforme a la documentación médica adjuntada. [El profesional jurídico debe completar el fundamento aplicable, el alcance del requerimiento y el plazo correspondiente al caso].\n\n[El profesional jurídico debe revisar las consecuencias y reservas que correspondan, la personería de quien firma y el texto final].\n\nDocumentación para revisar con el abogado: orden médica, resumen de historia clínica, CUD si corresponde, afiliación, constancias de recepción y respuesta o rechazo.'}
+];
+
+function fuenteHTML(keys){
+  return '<p class="topic-source">Fuentes: '+keys.map(function(k){var f=FUENTES[k];return '<a href="'+attr(f[1])+'" target="_blank" rel="noopener noreferrer">'+esc(f[0])+'</a>';}).join(' · ')+'</p>';
+}
+function enlaceTema(v,text){return '<a href="#/'+attr(v)+'" data-v="'+attr(v)+'">'+esc(text)+'</a>';}
+function introTema(id,body){
+  var n=NECESIDADES.find(function(x){return x.id===id;});
+  return '<a class="topic-back" href="#/inicio" data-v="inicio">← Todas las necesidades</a><div class="topic-intro"><p class="eyebrow">'+esc(n.short)+'</p><h2 class="big">'+esc(n.n)+'</h2>'+body+'</div><p class="topic-status" role="status" aria-live="polite"></p>';
+}
+function filtroTemaHTML(id,placeholder){return '<label class="topic-filter"><span>Buscar en esta sección</span><input type="search" data-topic-search="'+id+'" placeholder="'+attr(placeholder)+'"></label><p class="hint" data-topic-empty hidden>No encontramos coincidencias. Probá otra palabra o '+enlaceTema('preguntar','buscá en todo el archivo')+'.</p>';}
+function itemTemaHTML(i,sec,view){
+  var info=sec==='medicacion'?MED_INFO[i.k]:null;
+  var sources=info&&info.f?info.f:FUENTES[i.k]?[i.k]:[];
+  var extra=i.k==='marisapp'?'<p>'+enlaceTema('acerca','Conocé la historia de Andy, Marisa y Marcela')+'</p>':'';
+  return '<details class="topic-item" id="'+view+'-'+i.k+'" data-topic-item data-key="'+attr(i.k)+'" data-search="'+attr(fold(i.n+' '+i.d+' '+(info?info.s:'')))+'"><summary>'+esc(i.n)+(info?'<span class="item-status">'+esc(info.s)+'</span>':'')+'</summary><div class="topic-body"><p>'+esc(i.d)+'</p>'+extra+(sources.length?fuenteHTML(sources):'')+'<p class="hint"><a href="#/preguntar" data-history-query="'+attr(i.n)+'">Buscar conversaciones anteriores sobre este tema</a></p><div class="topic-community" data-topic-comments data-sec="'+sec+'" data-item="'+attr(i.k)+'"></div></div></details>';
+}
+function grupoTemaHTML(g,view){return '<div class="topic-section" data-topic-group><h3>'+esc(g.g)+'</h3>'+g.items.map(function(i){return itemTemaHTML(i,'insumo',view);}).join('')+'</div>';}
+function atajosProfesionales(types){return '<div class="topic-links">'+types.map(function(t){return '<a href="#/comunidad" data-specialist="'+attr(t)+'">Buscar o recomendar '+esc(t.toLowerCase())+'</a>';}).join('')+enlaceTema('directorio','Directorio de profesionales y proveedores')+'</div>';}
+function pintarAportesTematicos(){
+  document.querySelectorAll('[data-topic-comments]').forEach(function(box){
+    // Preserve drafts and file selections when another item is refreshed.
+    var form=box.querySelector('form.micro');
+    if(!aprobado()){
+      box.innerHTML='<h4>Experiencias de la comunidad</h4><p class="hint">'+(ME?'Tu acceso necesita aprobación para leer y agregar experiencias.':'Las experiencias y sus archivos se comparten solo con miembros aprobados.')+'</p>'+enlaceTema('comunidad',ME?'Ver mi acceso':'Entrar o solicitar acceso');return;
+    }
+    var sec=box.dataset.sec, item=box.dataset.item, entries=sec==='consejo'?deSeccion('consejo').filter(function(a){return ['Cuidados diarios','Enfermería y cuidadores','Ánimo y familia','Otro'].indexOf(a.tema)>=0 || !a.tema;}):deItem(sec,item);
+    box.innerHTML='<h4>Experiencias de la comunidad</h4><div class="topic-entries">'+(entries.length?entries.map(comentarioHTML).join(''):'<p class="hint">Todavía no hay experiencias. Podés compartir la primera.</p>')+'</div>';
+    if(form) box.appendChild(form); else box.insertAdjacentHTML('beforeend',cajaAporte(sec,item,'tema-'));
+    if(sec==='consejo'){
+      var f=box.querySelector('form');
+      if(!f.querySelector('[name=tema]')) f.insertAdjacentHTML('afterbegin','<div class="formrow"><label for="tema-consejo">Tema del consejo</label><select id="tema-consejo" name="tema"><option>Otro</option><option>Cuidados diarios</option><option>Enfermería y cuidadores</option><option>Ánimo y familia</option></select></div>');
+    }
+  });
+}
+function modelosHTML(){return MODELOS.map(function(m){return '<details class="topic-item" id="tramites-'+m.id+'"><summary>'+esc(m.n)+'</summary><div class="topic-body"><p class="template-hint">'+esc(m.hint)+'</p><label for="modelo-'+m.id+'">Completá los campos entre corchetes</label><textarea class="template-text" id="modelo-'+m.id+'" spellcheck="true">'+esc(m.text)+'</textarea><div class="template-controls"><button class="btn" data-copy-template="modelo-'+m.id+'">Copiar texto</button><button class="btn ghost" data-download-template="modelo-'+m.id+'">Descargar .txt</button><span role="status"></span></div><p class="hint">Lo que escribas aquí no se envía ni se guarda en el sitio. Copialo o descargalo antes de cerrar o recargar.</p></div></details>';}).join('');}
+function initPractical(){
+  el('needGrid').innerHTML=NECESIDADES.map(function(n,i){return '<a class="need-card" href="#/'+n.id+'" data-v="'+n.id+'"><span class="need-number">0'+(i+1)+'</span><strong>'+esc(n.n)+'</strong><p>'+esc(n.d)+'</p><span class="need-go">Ver opciones →</span></a>';}).join('');
+  el('v-medicamentos').innerHTML=introTema('medicamentos','<p class="lede">Entender qué se usa para la ELA, qué está en investigación y qué se utiliza para aliviar síntomas.</p><div class="topic-note"><strong>Hoy no existe una cura para la ELA.</strong><p>No inicies, cambies ni suspendas una medicación por lo que le funcionó a otra persona. Aprobación, indicación médica y cobertura son cuestiones distintas.</p></div>'+fuenteHTML(['ela'])+'<p class="hint">Información regulatoria revisada el 13 de septiembre de 2026. Consultá actualizaciones con neurología.</p>')+
+    '<div class="topic-links">'+GRUPOS_MEDS.map(function(g){return enlaceTema('medicamentos/'+g.id,g.n);}).join('')+'</div>'+filtroTemaHTML('medicamentos','Riluzol, B12, saliva, calambres…')+
+    GRUPOS_MEDS.map(function(g){return '<div class="topic-section" id="medicamentos-'+g.id+'" data-topic-group><h3>'+esc(g.n)+'</h3><p>'+esc(g.d)+'</p>'+g.keys.map(function(k){return itemTemaHTML(MEDS.find(function(m){return m.k===k;}),'medicacion','medicamentos');}).join('')+'</div>';}).join('')+atajosProfesionales(['Neurólogo']);
+  el('v-equipamiento').innerHTML=introTema('equipamiento','<p class="lede">Elementos para moverte, acomodarte y hacer más fácil la vida en casa. Abrí cada uno para ver información y experiencias.</p><div class="topic-note"><strong>Fisiatría y terapia ocupacional te ayudan a elegir.</strong><p>Llevá las medidas de puertas, baño, ascensor y espacios de giro. Pedí probar el equipo y que la orden describa las características que necesitás.</p></div>')+
+    atajosProfesionales(['Fisiatra','Terapista ocupacional'])+filtroTemaHTML('equipamiento','Silla, tilt, grúa, almohadón, inodoro…')+INSUMOS.slice(0,3).map(function(g){return grupoTemaHTML(g,'equipamiento');}).join('')+'<div class="topic-links">'+enlaceTema('tramites/pedido','Modelo para pedir cobertura')+enlaceTema('alimentacion','Elementos para comer')+enlaceTema('respiracion','Equipos respiratorios')+'</div>';
+  el('v-comunicacion').innerHTML=introTema('comunicacion','<p class="lede">Seguir eligiendo, conversando y diciendo lo que querés. Hay opciones con papel, pantallas, voz y control con la mirada.</p><p>Probá formas de acceso con fonoaudiología y terapia ocupacional. Tener un tablero impreso como respaldo puede ser útil cuando un equipo se queda sin batería.</p>'+fuenteHTML(['cuidados']))+
+    atajosProfesionales(['Fonoaudiólogo','Empresa de comunicación aumentativa'])+filtroTemaHTML('comunicacion','MarisApp, Tobii, IRISBOND, Háblalo…')+grupoTemaHTML({g:'Herramientas para comunicarte',items:INSUMOS.find(function(g){return g.g==='Comunicación';}).items.slice().sort(function(a,b){var order=['marisapp','tobii','irisbond','hablalo','pictogramas','tablet','teclado','soporte-disp'];return order.indexOf(a.k)-order.indexOf(b.k);})},'comunicacion')+'<div class="topic-links">'+enlaceTema('tramites/pedido','Modelo para pedir un dispositivo')+'</div>';
+  el('v-alimentacion').innerHTML=introTema('alimentacion','<p class="lede">Comer, hidratarte y sostener la nutrición con los apoyos que necesites.</p><p>Nutrición evalúa los requerimientos y los suplementos; fonoaudiología, la deglución y las texturas. Si comer cansa, hay atragantamientos o baja de peso, consultá para ajustar el plan.</p>'+fuenteHTML(['nutricion']))+
+    '<div class="topic-feature"><h3>Botón gástrico y gastrostomía</h3><p>Qué son, cuándo conversar sobre esta opción y qué preguntar al equipo.</p>'+enlaceTema('alimentacion/boton','Ver botón gástrico →')+'</div>'+atajosProfesionales(['Nutricionista','Fonoaudiólogo','Gastroenterólogo'])+filtroTemaHTML('alimentacion','Espesante, Fortisip, botón, suplementos…')+
+    grupoTemaHTML(INSUMOS.find(function(g){return g.g==='Alimentación';}),'alimentacion')+
+    '<div class="topic-note"><h3>Para conversar sobre la gastrostomía</h3><p>Preguntá por el momento apropiado, el tipo de acceso, los cuidados y quién será tu contacto ante problemas. La evaluación considera nutrición, deglución y respiración. Poder seguir comiendo por boca depende de que resulte seguro en tu situación.</p>'+fuenteHTML(['boton'])+'</div>';
+  el('v-respiracion').innerHTML=introTema('respiracion','<p class="lede">Equipos y apoyos para respirar, manejar secreciones y preparar los cuidados en casa.</p><p>Neumonología y kinesiología respiratoria evalúan qué hace falta, enseñan a usarlo y revisan los ajustes. BiPAP, CPAP, oxígeno y asistente de tos cumplen funciones diferentes.</p>'+fuenteHTML(['respiracion']))+
+    '<div class="topic-links">'+enlaceTema('respiracion/bipap','BiPAP')+enlaceTema('respiracion/traqueostomia','Traqueostomía')+enlaceTema('respiracion/cpap','CPAP')+enlaceTema('tramites/electrodependencia','Cortes de luz y electrodependencia')+'</div>'+atajosProfesionales(['Neumonólogo','Kinesiólogo respiratorio'])+filtroTemaHTML('respiracion','BiPAP, máscara, traqueostomía, aspirador…')+
+    grupoTemaHTML(INSUMOS.find(function(g){return g.g==='Respiratorio';}),'respiracion')+'<p class="hint">Ante dificultad respiratoria intensa o repentina, contactá al servicio de emergencias. No esperes una respuesta de la comunidad.</p>';
+  el('v-consejos').innerHTML=introTema('consejos','<p class="lede">Ideas de familiares para todo lo que no entra en las otras categorías.</p><p>Organizar el día, pedir ayuda, acompañar a quien cuida, compartir actividades y hacer lugar a lo que cada persona disfruta.</p>')+
+    '<div class="topic-section"><h3>Organizar los cuidados</h3><p>Varias familias usan un cuaderno de novedades para los relevos, una lista de contactos y un calendario de turnos. Acordá con el equipo qué tareas requieren personal capacitado y registrá las indicaciones.</p><h3>Armar una red</h3><p>Repartir compras, traslados, trámites y compañía ayuda a sostener los cuidados. En el directorio hay fundaciones y contactos que circularon en el grupo.</p><h3>Experiencias y préstamos</h3><p>Contá qué te ayudó y en qué contexto. Para prestar un equipo, revisá su estado y compatibilidad con el proveedor o profesional. Evitá publicar datos privados de otras personas.</p></div><div class="topic-links">'+enlaceTema('directorio','Profesionales y fundaciones')+enlaceTema('archivo','Leer el archivo del grupo')+enlaceTema('guias','Consultar las guías del archivo')+'</div><div class="topic-community" data-topic-comments data-sec="consejo" data-item="otros"></div>';
+  el('modelosCartas').innerHTML=modelosHTML();
+  // Search answers reuse the revised guidance; the historical messages remain verbatim.
+  var searchTargets={empezar:'empezar',equipo:'equipamiento','bipap-cuando':'respiracion/bipap','bipap-pedir':'tramites/pedido','bipap-tolerar':'respiracion/bipap',secreciones:'respiracion/cough',saliva:'medicamentos/atropina',traqueo:'respiracion/traqueostomia','traqueo-cuidados':'tramites/domicilio',electro:'tramites/electrodependencia',deglucion:'alimentacion/espesante',boton:'alimentacion/boton',enteral:'alimentacion/bomba',intestino:'medicamentos/lactulon',comunicacion:'comunicacion/tobii','comunicacion-orden':'tramites/pedido',silla:'equipamiento/silla-postural',cama:'equipamiento/cama',grua:'equipamiento/grua',casa:'equipamiento',postura:'equipamiento/cojin',escaras:'equipamiento/cremas-ae',enfermeria:'tramites/domicilio',odonto:'consejos',riluzol:'medicamentos/riluzol',genetico:'medicamentos/tofersen',edaravone:'medicamentos/edaravone',sintomaticos:'medicamentos/sintomas',cud:'tramites/cud',amparo:'tramites/cobertura',internacion:'tramites/domicilio',viajar:'tramites/viajes',traslados:'tramites/viajes',donaciones:'consejos',fundaciones:'consejos',cuidar:'consejos'};
+  CARDS.forEach(function(c){
+    var route=searchTargets[c.id];if(!route)return;
+    var bits=route.split('/'),target=el(bits.length===1?'v-'+route:bits.join('-'));
+    var body=target.querySelector('.topic-body')||target.querySelector('.topic-intro')||target;
+    var ps=Array.from(body.querySelectorAll(':scope > p:not(.topic-source):not(.hint):not(.template-hint)'));
+    if(!ps.length)ps=Array.from(body.querySelectorAll('p.lede,p.template-hint'));
+    c.a=ps.slice(0,2).map(function(p){return p.outerHTML;}).join('');
+    c.n=enlaceTema(route,'Ver la información y los recursos de este tema →');c.g=route;
+  });
+  document.querySelectorAll('[data-topic-item]').forEach(function(item){
+    var summary=item.querySelector('summary'),label=summary.firstChild.textContent.trim(),route=item.closest('.view').id.slice(2)+'/'+item.dataset.key;
+    var body=item.querySelector('.topic-body'),description=body.querySelector('p'),source=body.querySelector('.topic-source');
+    CARDS.push({id:'ficha-'+item.id,cat:'Fichas prácticas',t:label,k:label,p:[label.replace(/\s*\(.*/,''),label],a:description.outerHTML+(source?source.outerHTML:''),n:enlaceTema(route,'Abrir ficha y experiencias →'),g:route});
+  });
+  CARD_DF={};
+  CARDS.forEach(function(c){c._s=new Set(toks(c.k));c._t=new Set(toks(c.t).filter(function(t){return !c._s.has(t);}));c._s.forEach(function(t){CARD_DF[t]=(CARD_DF[t]||0)+1;});c._t.forEach(function(t){CARD_DF[t]=(CARD_DF[t]||0)+1;});});
+  // A shared dialog must remain available when a topic page is active.
+  document.body.appendChild(el('communityDialog'));
+  document.querySelectorAll('[data-topic-search]').forEach(function(input){input.addEventListener('input',function(){
+    var panel=el('v-'+input.dataset.topicSearch),q=fold(input.value).trim(),count=0;
+    panel.querySelectorAll('[data-topic-item]').forEach(function(item){item.hidden=!!q&&!item.dataset.search.includes(q);if(!item.hidden) count++;});
+    panel.querySelectorAll('[data-topic-group]').forEach(function(g){g.hidden=!g.querySelector('[data-topic-item]:not([hidden])');});
+    panel.querySelector('[data-topic-empty]').hidden=count!==0;
+  });});
+  document.addEventListener('click',async function(ev){
+    var link=ev.target.closest('[data-history-query],[data-specialist]');
+    if(link){ev.preventDefault();if(link.dataset.historyQuery){show('preguntar');el('q').value=link.dataset.historyQuery;el('send').click();}
+      else {show('comunidad');mostrarSeccion('especialista');fProv='';el('filtroProv').value='';el('qEsp').value=link.dataset.specialist;el('eTipo').value=link.dataset.specialist;pintarEsp();el('qEsp').focus();}return;}
+    var b=ev.target.closest('[data-copy-template],[data-download-template]');if(!b)return;
+    var field=el(b.dataset.copyTemplate||b.dataset.downloadTemplate),status=b.parentElement.querySelector('[role=status]');
+    if(b.dataset.copyTemplate){try{await navigator.clipboard.writeText(field.value);status.textContent='Texto copiado.';}catch(e){field.focus();field.select();status.textContent='Seleccionamos el texto. Copialo con el menú de tu dispositivo.';}}
+    else{var url=URL.createObjectURL(new Blob([field.value],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=field.id+'.txt';a.click();setTimeout(function(){URL.revokeObjectURL(url);},1000);status.textContent='Descarga preparada.';}
+  });
+  if(!esVueltaDeLogin()) revealRouteAnchor();
+}
+function revealRouteAnchor(){
+  var bits=(location.hash||'').replace(/^#\/?/,'').split('/');if(bits.length<2)return;
+  var target=el(bits[0]+'-'+bits[1]);if(!target)return;
+  var panel=target.closest('.view'),search=panel.querySelector('[data-topic-search]');
+  if(search&&search.value){search.value='';search.dispatchEvent(new Event('input',{bubbles:true}));}
+  if(target.tagName==='DETAILS')target.open=true;
+  target.scrollIntoView({block:'start'});var focus=target.querySelector('summary')||target;focus.tabIndex=0;focus.focus({preventScroll:true});
+}
+
 var sb = null, ME = null, APORTES = [], ARCHIVOS = [], CORRECCIONES = [], MIEMBROS = [], SEC = "insumo", abierto = {};
 var fEtapa = "", fMedCat = "", fProv = "", fTema = "";
 var sessionEpoch = 0, sessionUser = null, dialogAction = null, dialogReturnFocus = null;
@@ -2079,6 +2029,7 @@ function mensajeError(error){
 }
 function estadoComunidad(texto, error, retry){
   setMsg("comStatus", texto, error); el("comRetry").hidden = !retry;
+  document.querySelectorAll('.topic-status').forEach(function(s){s.textContent=texto||'';s.style.color=error?'var(--clay)':'';});
 }
 function archivoInput(id){
   return '<div class="formrow"><label for="'+attr(id)+'">Fotos o documentos (opcional)</label>'+
@@ -2121,9 +2072,9 @@ function comentarioHTML(a){
   return '<div data-aporte="'+a.id+'" class="coment'+(a.estado==="oculto"?" oculto":"")+'">'+
     '<p class="atexto">'+esc(a.texto||"").replace(/\n+/g,"<br>")+'</p>'+ firmaHTML(a) +'</div>';
 }
-function cajaAporte(sec, item){
+function cajaAporte(sec, item, prefix){
   if(!aprobado()) return '<p class="hint">'+(ME ? "Podrás participar cuando un administrador apruebe tu acceso." : "Iniciá sesión y solicitá acceso para contar tu experiencia.")+'</p>';
-  var id = "aporte-"+sec+"-"+item;
+  var id = (prefix||'')+"aporte-"+sec+"-"+item;
   return '<form class="micro" data-sec="'+sec+'" data-item="'+esc(item)+'">'+
     '<label for="'+id+'">Tu experiencia</label><textarea id="'+id+'" rows="3" required minlength="10" maxlength="2000" placeholder="Contá tu experiencia: qué usaste, cómo lo conseguiste, si te sirvió y para qué."></textarea>'+
     archivoInput(id+"-files")+'<div class="askbar"><button class="btn" type="submit">Publicar</button><span class="hint" role="status"></span></div></form>';
@@ -2155,7 +2106,7 @@ function pintarInsumos(){
       out += '<div class="cat'+(abierto["insumo:"+it.k]?" open":"")+'" data-open="insumo:'+it.k+'">'+
         '<button class="catcab" aria-expanded="'+!!abierto["insumo:"+it.k]+'" data-toggle="insumo:'+it.k+'">'+
           '<span class="catn">'+esc(it.n)+'</span>'+
-          '<span class="tag etapa '+it.e+'">'+ETIQ_ETAPA[it.e]+'</span>'+
+          '<span class="tag etapa '+it.e+'">'+(ETIQ_ETAPA[it.e]||"según necesidad")+'</span>'+
           (n?'<span class="cuenta">'+n+(n===1?" experiencia":" experiencias")+'</span>':"")+
         '</button>'+
         '<div class="catbody"><p class="catd">'+esc(it.d)+'</p>'+
@@ -2240,6 +2191,7 @@ function pintarConsejos(){
 
 function pintarTodo(){
   pintarInsumos(); pintarMeds(); pintarEsp(); pintarConsejos();
+  pintarAportesTematicos();
   el("espNuevo").hidden = !aprobado(); el("conNuevo").hidden = !aprobado();
 }
 
@@ -2522,7 +2474,8 @@ async function refrescarSesion(){
 }
 
 function bindDelegado(){
-  el("v-comunidad").addEventListener("click",async function(ev){
+  document.addEventListener("click",async function(ev){
+    if(!ev.target.closest('#v-comunidad,[data-community-scope]')) return;
     var b=ev.target.closest("button");if(!b || b.disabled) return;
     if(b.dataset.toggle){abierto[b.dataset.toggle]=!abierto[b.dataset.toggle];b.parentElement.classList.toggle("open",abierto[b.dataset.toggle]);b.setAttribute("aria-expanded",String(!!abierto[b.dataset.toggle]));return;}
     if(!aprobado()) return;
@@ -2576,12 +2529,16 @@ function bindDelegado(){
         },next==="aprobada"?"Aprobar acceso":"Suspender acceso");
     }
   });
-  el("v-comunidad").addEventListener("submit",async function(ev){
+  document.addEventListener("submit",async function(ev){
+    if(!ev.target.closest('#v-comunidad,[data-community-scope]')) return;
     var form=ev.target.closest("form.micro");if(!form) return;ev.preventDefault();
     try{
+      if(!aprobado()) throw falla("Necesitás acceso aprobado para participar.");
       var text=form.querySelector("textarea").value.trim();if(text.length<10) throw falla("Contanos un poco más.");
       abierto[form.dataset.sec+":"+form.dataset.item]=true;
-      await publicarFormulario(form,{autor:ME.id,seccion:form.dataset.sec,item:form.dataset.item,texto:text});
+      var data={autor:ME.id,seccion:form.dataset.sec,item:form.dataset.item,texto:text};
+      if(data.seccion==='consejo'){data.tema=form.querySelector('[name=tema]').value;delete data.item;}
+      await publicarFormulario(form,data);
     }catch(e){form.querySelector("[role=status]").textContent=mensajeError(e);}
   });
 }
@@ -2662,6 +2619,7 @@ function bindAuth(){
   el("accessRefresh").addEventListener("click",refrescarSesion);el("comRetry").addEventListener("click",refrescarSesion);
 }
 async function comInit(){
+  initPractical();
   comListas();
   if(!window.PREGUNTELA_CONFIG || !PREGUNTELA_CONFIG.url || !PREGUNTELA_CONFIG.anonKey || !window.supabase){
     el("comNoConfig").hidden=false;return;
