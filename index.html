@@ -536,6 +536,28 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 .discussion-form{margin-top:20px}.discussion-form>label{font-weight:700;display:block;margin-bottom:10px}.discussion-form>textarea{width:100%;min-height:125px;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:14px;font:inherit;box-sizing:border-box;background:var(--surface);color:var(--ink)}
 .discussion-form .askbar{flex-wrap:wrap}.discussion-status:empty{display:none}.forum-topics{display:grid;gap:12px;margin:24px 0}.forum-topic{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px;border:1px solid var(--line);border-radius:14px;text-decoration:none;background:var(--surface)}.forum-topic span{font-size:.83rem;white-space:nowrap}
 @media(max-width:600px){.directory-contribute,.discussion{padding:18px}.contribution-actions{flex-direction:column;align-items:stretch}.discussion .afirma{flex-wrap:wrap}.discussion .aacc{display:flex;flex-wrap:wrap;gap:8px}.forum-topic{align-items:flex-start;flex-direction:column;gap:8px}.discussion-form input[type=file]{max-width:100%}.discussion-controls>*{max-width:100%;white-space:normal}}
+/* Navigation by need: large index targets and plain-language filters. */
+.medication-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}
+.medication-index a{display:flex;flex-direction:column;gap:12px;padding:24px;border:2px solid var(--blue,#176eaf);border-radius:18px;background:#eef6fc;color:var(--ink,#0b2d50);text-decoration:none;min-height:160px}
+.medication-index strong{font-size:1.25rem;line-height:1.3}
+.medication-index a>span:last-child{margin-top:auto;font-size:1rem}
+.index-number{font-size:.9rem;font-weight:800;letter-spacing:.08em;color:#176eaf}
+.medication-index a:hover,.medication-index a:focus-visible{background:#deedf8;outline:3px solid #c79736;outline-offset:3px}
+.symptom-filter{margin:20px 0 30px;padding:20px;background:#f5f7f8;border-radius:16px}
+.symptom-filter h3{margin-top:0}
+[data-med-symptom][aria-pressed="true"]{background:#0b3157;color:white;border-color:#0b3157}
+.model-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.model-index a{display:block;padding:16px;background:#edf5fb;border:1px solid #b9cfdf;border-radius:12px;text-decoration:none;font-weight:700}
+.sources-footer{border-top:1px solid #d9e2e5;margin:30px 0 0;padding:24px 0 4px;font-size:.95rem;color:var(--ink-2,#46565f)}
+.sources-footer h4{font-size:1.05rem;margin:0 0 12px}
+.sources-footer li{margin:10px 0;overflow-wrap:anywhere}
+.sources-footer .technical-sources{margin-top:18px}
+.technical-sources summary{cursor:pointer;font-weight:600}
+.answer-topic{margin:24px 0}
+.answer-topic .resource-detail{padding:0;border:0}
+.care-directory{padding:22px;border:1px solid #c6d7df;border-radius:16px;background:#f3f8fb}
+.topic-item .item-comment-hint{display:block;font-weight:400;font-size:.88rem;color:var(--ink-2,#46565f);margin-top:6px}
+@media(max-width:700px){.medication-index,.model-index{grid-template-columns:1fr}.medication-index a{min-height:0;padding:18px}.medication-index strong{font-size:1.15rem}.medication-index .index-number{display:none}.symptom-filter{padding:16px}}
 /* practical styles end */
 </style>
 
@@ -873,28 +895,7 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
     <a class="btn" href="#/comunidad" data-v="comunidad">Sumate a la comunidad</a>
   </div>
 
-  <section class="about-section" aria-labelledby="marisa-art-title">
-    <h3 id="marisa-art-title">Los cuadros de Marisa</h3>
-    <p class="lede">Estos cuadros nos acercan a algo de su mundo. Compartirlos es también una forma de recordar a Marisa y mantener presente su creatividad.</p>
-    <div class="art-gallery">
-      <figure class="artwork">
-        <a href="marisa-obra-01.jpg" target="_blank" rel="noopener" aria-label="Ampliar el cuadro de Marisa con fondo amarillo (abre otra pestaña)"><img src="marisa-obra-01.jpg" width="897" height="908" loading="lazy" decoding="async" alt="Cuadro de Marisa: fondo amarillo, una forma suspendida y figuras vegetales y animales sobre un suelo ocre."></a>
-        <figcaption><span>Obra de Marisa</span><a href="marisa-obra-01.jpg" target="_blank" rel="noopener" aria-label="Ver completa la obra de fondo amarillo (abre otra pestaña)">Ver completa ↗</a></figcaption>
-      </figure>
-      <figure class="artwork">
-        <a href="marisa-obra-02.jpg" target="_blank" rel="noopener" aria-label="Ampliar el cuadro de Marisa con cinco figuras (abre otra pestaña)"><img src="marisa-obra-02.jpg" width="1125" height="722" loading="lazy" decoding="async" alt="Cuadro de Marisa: cinco figuras de animales fantásticos en negro, con distintos patrones, sobre fondo claro."></a>
-        <figcaption><span>Obra de Marisa</span><a href="marisa-obra-02.jpg" target="_blank" rel="noopener" aria-label="Ver completa la obra de cinco figuras (abre otra pestaña)">Ver completa ↗</a></figcaption>
-      </figure>
-      <figure class="artwork">
-        <a href="marisa-obra-03.jpg" target="_blank" rel="noopener" aria-label="Ampliar el cuadro de Marisa con trazos verdes (abre otra pestaña)"><img src="marisa-obra-03.jpg" width="838" height="605" loading="lazy" decoding="async" alt="Cuadro de Marisa: formas orgánicas verdes y dibujos de seres fantásticos en trazos negros sobre blanco."></a>
-        <figcaption><span>Obra de Marisa</span><a href="marisa-obra-03.jpg" target="_blank" rel="noopener" aria-label="Ver completa la obra de trazos verdes (abre otra pestaña)">Ver completa ↗</a></figcaption>
-      </figure>
-      <figure class="artwork">
-        <a href="marisa-obra-04.jpg" target="_blank" rel="noopener" aria-label="Ampliar el cuadro panorámico de Marisa (abre otra pestaña)"><img src="marisa-obra-04.jpg" width="1067" height="403" loading="lazy" decoding="async" alt="Cuadro panorámico de Marisa: una composición de formas verdes, turquesas, blancas y ocres sobre fondo gris oscuro."></a>
-        <figcaption><span>Obra de Marisa</span><a href="marisa-obra-04.jpg" target="_blank" rel="noopener" aria-label="Ver completa la obra panorámica (abre otra pestaña)">Ver completa ↗</a></figcaption>
-      </figure>
-    </div>
-  </section>
+
 
 
   <div class="col about-details">
@@ -949,7 +950,7 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
       <p>Las búsquedas en el archivo se procesan en tu navegador. El correo y los aportes de Comunidad se guardan en su servicio en línea y requieren acceso aprobado.</p>
     </div>
   </div>
-  <p class="footnote">El archivo y las guías se pueden consultar después de cargar esta página. Comunidad necesita internet · Última actualización: septiembre de 2026 · <a href="#/acerca" data-v="acerca">Acerca de este sitio</a></p>
+  <p class="footnote">El archivo y las guías se pueden consultar después de cargar esta página. Comunidad necesita internet · Última actualización: octubre de 2026 · <a href="#/acerca" data-v="acerca">Acerca de este sitio</a></p>
 </footer>
 
 </main>
@@ -1008,8 +1009,9 @@ var DIRECTORY = [
     {n:"Dr. Braguinsky", r:"Psiquiatría", p:"CABA", tel:"+5491157379092"},
     {n:"Dr. Eduardo Locatelli", r:"Neurología", p:"Miami, EE.UU.", tel:"+17865865774"}
   ]},
+  { g:"Enfermeras/cuidadoras capacitadas", kind:"cuidados", sub:"Contactos para cuidados en casa. Consultá experiencia en ELA, formación, matrícula cuando corresponda, tareas, turnos y referencias. Los contactos nuevos se comparten entre miembros aprobados.", items:[]},
   { g:"Comunicación aumentativa", sub:"Seguimiento ocular: provisión, alquiler y capacitación.", items:[
-    {n:"Tobii Argentina — Diego Levi", r:"Tobii Dynavox, TD Pilot, TD Snap", p:"Argentina", tel:"+5491169388353", note:"Contactalos primero: te pasan las especificaciones técnicas del último modelo para que el médico redacte la orden."},
+    {n:"Tobii Argentina — Diego Levi", r:"Tobii Dynavox, TD Pilot, TD Snap", p:"Argentina", tel:"+5491169388353", note:"Diego Levi es el contacto de Tobii Argentina. Pedile las especificaciones del modelo y la evaluación para que el profesional prepare la orden."},
     {n:"Fundación IAN", r:"Dispositivos de comunicación — venta, alquiler, capacitación", p:"Argentina", tel:"+5491164420849", note:"También: +54 9 11 4097-3784"},
     {n:"Clínica Asistiva", r:"Evaluación previa a la orden médica", p:"CABA / FLENI Escobar", note:"Varios neurólogos piden esta evaluación antes de emitir el pedido."}
   ]},
@@ -1540,6 +1542,11 @@ function drawDir(filter){
       if(!f) return true;
       return fold([it.n,it.r,it.p,it.note||""].join(" ")).indexOf(f)>=0 || fold(grp.g).indexOf(f)>=0;
     });
+    if(grp.kind==='cuidados'){
+      if(f&&!/enferm|cuidad|cuidados|capacit/.test(f))return;
+      var care=document.createElement('section');care.className='dirgroup care-directory';care.id='directorio-cuidados';
+      care.innerHTML='<h3>'+esc(grp.g)+'</h3><p>'+esc(grp.sub)+'</p><div class="contribution-actions"><button class="btn" data-add-contact="enfermeria">+ Agregar enfermera/o</button><button class="btn ghost" data-add-contact="cuidador">+ Agregar cuidador/a</button><button class="mini" data-specialist="cuidados">Ver contactos de cuidados</button></div>';dirEl.appendChild(care);return;
+    }
     if(!items.length) return;
     var sec=document.createElement("div"); sec.className="dirgroup";
     var h=document.createElement("h3"); h.textContent=grp.g; sec.appendChild(h);
@@ -1653,7 +1660,6 @@ var INSUMOS = [
 ]},
 {g:"Respiratorio", items:[
  {k:"oximetro", n:"Oxímetro de pulso", e:"temprana", d:"Para tener en casa desde temprano. Ojo: se puede saturar bien y aun así necesitar asistencia."},
- {k:"cpap", n:"CPAP", e:"intermedia", d:"Una sola presión. En ELA suele no alcanzar: el que sirve es el BiPAP."},
  {k:"bipap", n:"BiPAP", e:"intermedia", d:"Dos presiones, una para inhalar y otra para exhalar. Lo indica el neumonólogo."},
  {k:"mascara-nasal", n:"Máscara nasal", e:"intermedia", d:"Pedila por tipo en la orden. Las más nombradas: AirFit 30i y F30."},
  {k:"mascara-full", n:"Máscara full face", e:"intermedia", d:"Cuando hay pérdida de aire por la boca."},
@@ -1839,7 +1845,6 @@ var INSUMO_INFO = {
  toallitas:'Elementos para la higiene cotidiana. Revisá tolerancia de la piel y qué insumos contempla el pedido de cuidados.',
  panales:'Insumos de higiene que se eligen según necesidad, talle y cuidado de la piel. Para cobertura, pedí la indicación correspondiente.',
  oximetro:'Mide la saturación de oxígeno, pero por sí solo no descarta problemas de ventilación. No reemplaza la evaluación respiratoria.',
- cpap:'Mantiene una presión continua y se usa, por ejemplo, para apnea obstructiva del sueño. No es equivalente a la ventilación de dos niveles indicada para debilidad respiratoria; el especialista determina qué soporte hace falta.',
  bipap:'Ventilación no invasiva de dos niveles de presión, habitualmente mediante una máscara. El equipo respiratorio define el modo, los ajustes y el seguimiento; no cambies la configuración por tu cuenta.',
  'mascara-nasal':'Interfaz que cubre la nariz. Se selecciona según ajuste, fugas, comodidad y el soporte indicado.',
  'mascara-full':'Máscara que puede cubrir nariz y boca. Su elección y ajuste se revisan con el equipo respiratorio.',
@@ -1882,7 +1887,7 @@ var MODELOS = [
     "id": "bipap",
     "n": "Pedido de ventilación no invasiva (BiPAP) y accesorios",
     "hint": "Es una carta completa de ejemplo, no el informe de una persona real. Quitá lo que no corresponda y agregá los datos del paciente en el formulario o encabezado de tu cobertura. Caso con hipoventilación documentada. El profesional debe confirmar la indicación y definir parámetros, interfaz y autonomía.",
-    "text": "EJEMPLO FICTICIO PARA ADAPTAR. Conservá únicamente los síntomas, necesidades y hechos reales, respaldados por el equipo tratante.\n\nSolicito la autorización y provisión de un sistema de ventilación no invasiva para una persona con ELA y debilidad de los músculos respiratorios. Presenta dificultad para respirar al acostarse, descanso nocturno no reparador y fatiga durante el día. La evaluación del equipo respiratorio documenta hipoventilación y fundamenta el soporte solicitado.\n\nLa ventilación indicada tiene por objetivo mejorar la entrada y salida de aire, disminuir el esfuerzo respiratorio y favorecer el descanso. El oxígeno o un equipo de CPAP no sustituyen automáticamente el soporte ventilatorio prescrito.\n\nSolicito el ventilador con las modalidades, alarmas y prestaciones definidas por neumonología; interfaz del tipo y tamaño que se haya probado, arnés, circuito y filtros compatibles; humidificación cuando esté indicada; y baterías o respaldo de energía acordes con el tiempo de uso y la dependencia del equipo. Los parámetros y el plan de utilización deben acompañarse por escrito. Si se requiere soporte vital, el dispositivo debe estar habilitado para ese uso.\n\nLa provisión debe incluir instalación y ajuste en el domicilio, entrenamiento de la persona y sus cuidadores, seguimiento clínico, mantenimiento, recambio de consumibles y un canal de asistencia ante fallas. Adjunto la indicación, el informe respiratorio y las especificaciones técnicas. Solicito autorización y entrega oportuna para evitar una demora en el soporte indicado."
+    "text": "EJEMPLO FICTICIO PARA ADAPTAR. Conservá únicamente los síntomas, necesidades y hechos reales, respaldados por el equipo tratante.\n\nSolicito la autorización y provisión de un sistema de ventilación no invasiva para una persona con ELA y debilidad de los músculos respiratorios. Presenta dificultad para respirar al acostarse, descanso nocturno no reparador y fatiga durante el día. La evaluación del equipo respiratorio documenta hipoventilación y fundamenta el soporte solicitado.\n\nLa ventilación indicada tiene por objetivo mejorar la entrada y salida de aire, disminuir el esfuerzo respiratorio y favorecer el descanso. El oxígeno por sí solo no sustituye el soporte ventilatorio prescrito.\n\nSolicito el ventilador con las modalidades, alarmas y prestaciones definidas por neumonología; interfaz del tipo y tamaño que se haya probado, arnés, circuito y filtros compatibles; humidificación cuando esté indicada; y baterías o respaldo de energía acordes con el tiempo de uso y la dependencia del equipo. Los parámetros y el plan de utilización deben acompañarse por escrito. Si se requiere soporte vital, el dispositivo debe estar habilitado para ese uso.\n\nLa provisión debe incluir instalación y ajuste en el domicilio, entrenamiento de la persona y sus cuidadores, seguimiento clínico, mantenimiento, recambio de consumibles y un canal de asistencia ante fallas. Adjunto la indicación, el informe respiratorio y las especificaciones técnicas. Solicito autorización y entrega oportuna para evitar una demora en el soporte indicado."
   },
   {
     "id": "enfermeria",
@@ -2055,7 +2060,6 @@ var INSUMOS_DETALLE={
  duchador:['Ducha de mano con manguera que facilita la higiene sentado. Revisá que se pueda alcanzar sin perder el equilibrio y que el agua no esté demasiado caliente.','Largo, soporte al alcance, control de temperatura y agarre.'],
  panales:['Absorbentes para necesidades de continencia. Diferenciar talle, capacidad y modelo facilita evitar fugas y roce; la piel necesita controles y cambios oportunos.','Talle, tipo, cantidad diaria justificada y productos de cuidado de piel.'],
  oximetro:['El oxímetro estima el oxígeno de la sangre, no el dióxido de carbono. Un valor aparentemente normal no descarta hipoventilación nocturna. Movimiento o manos frías pueden alterar la lectura.','Cuándo medir y qué hacer ante un cambio, según el plan del equipo.'],
- cpap:['Entrega presión continua para mantener abierta la vía aérea, por ejemplo en apnea obstructiva. La debilidad respiratoria de la ELA puede requerir ayuda ventilatoria distinta; CPAP y BiPAP no son intercambiables.','Diagnóstico, modo y necesidad de soporte inspiratorio/frecuencia de respaldo.'],
  bipap:['La ventilación no invasiva con dos niveles ayuda a mover aire y a eliminar CO₂ cuando los músculos respiratorios no alcanzan. “BiPAP” se usa habitualmente para referirse a estos equipos, aunque sus modos y prestaciones varían.','Modo indicado, frecuencia de respaldo cuando corresponde, interfaz, humidificación, alarmas, batería y seguimiento.'],
  'mascara-nasal':['Cubre la nariz; las almohadillas nasales apoyan en las fosas. Deja la boca libre, pero puede haber fuga si no se logra mantener cerrada durante el tratamiento.','Talle, fugas, comodidad y compatibilidad con circuito y equipo.'],
  'mascara-full':['Las oronasales cubren nariz y boca; las faciales totales abarcan más superficie. Cambiar de interfaz puede aliviar puntos de presión o fugas. No se decide solo por tamaño o precio.','Válvula y puerto de exhalación compatibles, posibilidad de retirar la máscara y cuidado de la piel.'],
@@ -2257,7 +2261,7 @@ function redAyudaHTML(){return `<section class="topic-section" id="consejos-red"
  <div class="topic-links">${enlaceTema('directorio','Ver organizaciones y contactos en el Directorio')}</div></section>`;}
 
 function initPatientGuidance(){
- el('v-medicamentos').querySelector('.topic-intro').insertAdjacentHTML('afterend',geneticaHTML());
+ el('medicationIndex').insertAdjacentHTML('afterend',geneticaHTML());
  el('v-consejos').querySelector('.topic-intro').insertAdjacentHTML('afterend',salivaHTML());
  el('medicamentos-tofersen').querySelector('.topic-body').insertAdjacentHTML('afterbegin','<div class="topic-links">'+enlaceTema('medicamentos/genetica','Estudio genético: genes, laboratorios y cobertura')+'</div>');
  ['medicamentos-atropina','medicamentos-botox','respiracion-aspirador'].forEach(function(id){el(id).querySelector('.topic-body').insertAdjacentHTML('afterbegin','<div class="topic-links">'+enlaceTema('consejos/saliva','Ver todas las opciones para la saliva, incluida radioterapia')+'</div>');});
@@ -2270,8 +2274,125 @@ function initPatientGuidance(){
  el('v-tramites').querySelector('.topic-intro').insertAdjacentHTML('beforeend','<p class="topic-source">Orientación sobre presentaciones: <a href="'+FUENTES.reclamoCobertura[1]+'" target="_blank" rel="noopener noreferrer">Superintendencia de Servicios de Salud</a>. La indicación y el alcance del pedido se justifican con el equipo tratante.</p>');
 }
 
+/* Lecturas en español y recursos prácticos. Revisión: 01/10/2026.
+   Conservamos la documentación original especializada como referencia opcional,
+   identificada por idioma; nunca presentamos una traducción como un original. */
+var GUIA_EAN_ES='https://www.fundela.es/images/files/Gu%C3%ADa%20de%20Pr%C3%A1ctica%20Cl%C3%ADnica%20Academia%20Europea%20de%20Neurologia%20(EAN)_2024.pdf';
+var GUIA_SEPAR_ES='https://www.ffluzon.org/wp-content/uploads/2024/09/SEPAR_Convivir-con-la-ELA-Guia-pacientes-y-cuidadores.pdf';
+var BOTON_ES='https://www.colegioenfermeriahuesca.org/boton-gastrico-y-nutricion-enteral-guia-de-cuidados-de-enfermeria-en-pacientes-con-gastrostomia/';
+var RESP_ES='https://www.elaandalucia.es/consejos-sobre-cuidados-respiratorios-en-personas-con-ela/';
+Object.assign(FUENTES,{
+ ela:['MedlinePlus · ELA: información en español','https://medlineplus.gov/spanish/ency/article/000688.htm'],
+ riluzol:['MedlinePlus · Riluzol, en español','https://medlineplus.gov/spanish/druginfo/meds/a696013-es.html'],
+ tofersen:['AEMPS · Qalsody (tofersen), ficha en español','https://cima.aemps.es/cima/dochtml/ft/1231783001/FT_1231783001.html'],
+ cuidados:['Guía europea de atención a la ELA · Traducción al español de FUNDELA',GUIA_EAN_ES],
+ saliva:['Guía europea · Opciones para la saliva, en español',GUIA_EAN_ES],
+ salivaEAN:['Guía europea · Opciones para la saliva, en español',GUIA_EAN_ES],
+ nutricion:['SEPAR · Convivir con la ELA: nutrición y deglución (español)',GUIA_SEPAR_ES],
+ boton:['Colegio de Enfermería de Huesca · Cuidados de la gastrostomía (español)',BOTON_ES],
+ recambioBoton:['Children’s Wisconsin · Botón MIC-Key con balón: cuidados y recambio (español; material pediátrico)','https://childrenswi.org/es-ES/teaching-sheet/tube-feeding/mickey-balloon-button'],
+ respiracion:['SEPAR · Convivir con la ELA: respiración (español)',GUIA_SEPAR_ES],
+ respMND:['SEPAR · Convivir con la ELA: respiración (español)',GUIA_SEPAR_ES],
+ respApoyo:['ELA Andalucía · Respiración, máscaras y secreciones (español)',RESP_ES],
+ sillas:['SEPAR · Convivir con la ELA: movilidad y cuidados (español)',GUIA_SEPAR_ES],
+ fortisip:FUENTES.fortisipAR,
+ noxapal:FUENTES.noxapalpros,
+ magnesio:['NIH · Magnesio: datos en español','https://ods.od.nih.gov/factsheets/Magnesium-DatosEnEspanol/'],
+ vitd:['NIH · Vitamina D: datos en español','https://ods.od.nih.gov/factsheets/VitaminD-DatosEnEspanol/'],
+ bmcST:['Diagnostic Medic · BMC RESmart GII ST en Argentina','https://www.diagnostic-medic.com.ar/portfolio-item/bipap-bmc-resmart-gii-st/'],
+ yuwellST:['Diagnostic Medic · Yuwell YH-830 en Argentina','https://www.diagnostic-medic.com.ar/portfolio-item/bipap-yuwell-yh-830/'],
+ prisma40:['RespiFlow · Prisma VENT 40 en Argentina','https://www.respiflow.com.ar/ventilacion-mec-productos/prisma-40'],
+ diagnosticResp:['Diagnostic Medic · Ventilación domiciliaria en Argentina','https://www.diagnostic-medic.com.ar/bipap-con-frecuencia/']
+});
+// Sources with no verified Spanish edition remain in the optional original-document appendix.
+['primec','primeform','primeensayo','b12','b12ensayo','tudcaest','hmb','melatonina','probioticos','cannabis','psilocibina','stellarUso','geneticaGuia','geneticaNIH','geneticaFamilia','ionisCierre','alsIdentified','cboardAyuda','cfluent','ibudilast','riluzolDosis','tobii','vitalaire'].forEach(function(k){if(FUENTES[k])FUENTES[k][2]='en';});
+RECURSOS.cfluent.contactos[0][0]='Consultar acceso a Cfluent (sitio en inglés)';
+RECURSOS.boton.links=[['Gastrostomía y botón: guía de cuidados en español',BOTON_ES]];
+RECURSOS.bipap.links=RECURSOS.bipap.links.filter(function(l){return l[1]!==FUENTES.vitalaire[1];});
+RECURSOS.bipap.links.push(['Consultar equipos y fotos en Argentina',FUENTES.diagnosticResp[1]]);
+// This source also documents the standard riluzole regimen in Spanish.
+FUENTES.riluzolDosis=FUENTES.riluzol;
+
+FUENTES.quickie[2]='en';
+RECURSOS['silla-postural'].links=RECURSOS['silla-postural'].links.filter(function(l){return l[1]!==FUENTES.quickie[1];});
+RECURSOS['silla-postural'].f.push('sillas');
+FUENTES.cboardAyuda=['Cboard · Ayuda en español','https://www.cboard.io/es/help/'];
+FUENTES.hmb=['NIH · HMB y suplementos: información general en español (no específica de ELA)','https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-DatosEnEspanol/'];
+FUENTES.probioticos=['NIH · Probióticos: datos en español','https://ods.od.nih.gov/factsheets/Probiotics-DatosEnEspanol/'];
+FUENTES.tobii=['Tobii Dynavox · Guía de comunicación para personas con ELA (español, 2022)','https://downloads.tobiidynavox.com/Other/TD_Website/SPANISH_Gu%C3%ADa_ELA_2022.pdf'];
+var RESP_MODELS=[
+ {k:'stellar-150',n:'ResMed Stellar 150',d:'Ventilador para personas con respiración espontánea que no requieren soporte vital. Ofrece modos de dos niveles e iVAPS.',extra:'Conviene revisar las necesidades actuales y previsibles: no sustituye a un ventilador de soporte vital si aparece dependencia. La autonomía depende de la configuración y las baterías.',f:['stellar','stellarUso','diagnosticResp'],links:[['Ficha y fotos del fabricante',FUENTES.stellar[1]],['Consultar provisión en Argentina',FUENTES.diagnosticResp[1]]]},
+ {k:'astral-150',n:'ResMed Astral 150',d:'Ventilador para soporte invasivo o no invasivo, con opciones de circuitos, alarmas y alimentación por batería.',extra:'El equipo respiratorio define circuito, interfaz y plan de respaldo según la dependencia. Pedí capacitación y comprobación de la autonomía con el sistema que se va a usar.',f:['astral'],links:[['Ficha y fotos del fabricante',FUENTES.astral[1]],['Consultar equipos respiratorios en Argentina','https://ayressalud.com/']]},
+ {k:'luisa',n:'Löwenstein LUISA',d:'Ventilador de soporte vital para ventilación invasiva o no invasiva. Aparece en el catálogo argentino de RespiFlow.',extra:'Al comparar, pedí que el proveedor detalle circuitos, alarmas, baterías y mantenimiento incluidos en la propuesta para tu caso.',f:['luisa','respiflow'],links:[['Ficha técnica en español',FUENTES.luisa[1]],['Catálogo y contacto en Argentina',FUENTES.respiflow[1]]]},
+ {k:'prisma-vent-40',n:'Löwenstein prisma VENT 40',d:'Equipo de ventilación domiciliaria disponible en el catálogo de RespiFlow Argentina. Ofrece modos con frecuencia de respaldo y objetivo de volumen.',extra:'Consultá qué configuración y batería incluye el modelo presupuestado. Su indicación debe corresponder al grado de soporte necesario; tener batería no convierte por sí solo a un equipo en soporte vital.',f:['prisma40'],links:[['Ver características y fotos en Argentina',FUENTES.prisma40[1]]]},
+ {k:'bmc-gii-st',n:'BMC RESmart GII ST',d:'Equipo de dos niveles para ventilación no invasiva, comercializado en Argentina por Diagnostic Medic.',extra:'La ficha local identifica versiones Y-25T/Y-30T. Confirmá el modelo exacto, frecuencia de respaldo, alarmas y compatibilidad con el circuito indicado. No lo elijas solo por la marca o el precio.',f:['bmcST'],links:[['Modelo, fotos y consulta en Argentina',FUENTES.bmcST[1]]]},
+ {k:'yuwell-yh830',n:'Yuwell YH-830',d:'Otra opción de ventilación de dos niveles que figura en el catálogo argentino de Diagnostic Medic.',extra:'Pedí la ficha de la versión ofrecida y que neumonología confirme modos, alarmas y respaldo eléctrico. La presencia en un catálogo no garantiza stock ni que resulte adecuado para toda persona con ELA.',f:['yuwellST'],links:[['Modelo, fotos y consulta en Argentina',FUENTES.yuwellST[1]]]}
+];
+var respiratoryItems=INSUMOS.find(function(g){return g.g==='Respiratorio';}).items;
+RESP_MODELS.forEach(function(m){
+ respiratoryItems.push({k:m.k,n:m.n,d:m.d});
+ ficha(m.k,[m.extra,'Podés contar abajo qué modelo usás, qué te resultó cómodo y qué dificultades encontraste. Las experiencias se guardan en la conversación de este equipo.'],'Modelo y prestaciones indicadas, interfaz, circuito, alarmas, batería, consumibles, capacitación y soporte técnico local.',m.f,'Consultar disponibilidad, presupuesto y cobertura con el proveedor y la obra social.',m.links);
+});
+['mascara-nasal','mascara-full'].forEach(function(k){RECURSOS[k].extra.push('Compartí tu experiencia en los comentarios de esta ficha: marca, modelo, talle, comodidad, fugas y cuidado de la piel. Una máscara que funciona para alguien puede requerir otro ajuste en otra persona.');});
+
+var MED_SYMPTOMS={
+ saliva:['atropina','amitriptilina','botox','propantelina','buscapina'],
+ rigidez:['baclofeno','cannabis'],calambres:['magnesio','quinina'],dolor:['amitriptilina','diclofenac','codeina','cannabis'],
+ estrenimiento:['lactulon','barex','magnesio'],sueno:['melatonina','clonazepam'],animo:['antidep','clonazepam'],
+ llanto:['gorfetan'],secreciones:['acemuk'],acidez:['omeprazol']
+};
+function medicationIndexHTML(){return '<nav id="medicationIndex" class="medication-index" aria-label="Índice de medicamentos">'+GRUPOS_MEDS.map(function(g,i){return '<a href="#/medicamentos/'+g.id+'" data-v="medicamentos/'+g.id+'"><span class="index-number">0'+(i+1)+'</span><strong>'+esc(g.n.replace(/^\d\. /,''))+'</strong><span>Ver medicamentos →</span></a>';}).join('')+'</nav>';}
+function symptomFiltersHTML(){var labels={saliva:'Saliva',rigidez:'Rigidez',calambres:'Calambres',dolor:'Dolor',estrenimiento:'Estreñimiento',sueno:'Sueño',animo:'Ánimo y ansiedad',llanto:'Risa o llanto involuntarios',secreciones:'Secreciones',acidez:'Acidez'};return '<section class="symptom-filter"><h3>Buscar por síntoma</h3><p class="hint">Accesos a las fichas para conversar con el equipo tratante.</p><div class="relrow"><button class="chip" data-med-symptom="" aria-pressed="true">Todos</button>'+Object.keys(labels).map(function(k){return '<button class="chip" data-med-symptom="'+k+'" aria-pressed="false">'+labels[k]+'</button>';}).join('')+'</div><p>'+enlaceTema('consejos/saliva','Saliva: también postura, botox y radioterapia')+'</p></section>';}
+function sourceRecord(link){return Object.values(FUENTES).find(function(f){return f[1]===link[1];})||link;}
+function sourcesFooterHTML(links){
+ var seen=new Set(),list=(links||[]).map(sourceRecord).filter(function(l){if(!l||seen.has(l[1]))return false;seen.add(l[1]);return true;});
+ if(!list.length)return '';
+ var listHTML=function(items){return '<ul>'+items.map(function(l){return '<li><a href="'+attr(l[1])+'" target="_blank" rel="noopener noreferrer"'+(l[2]==='en'?' hreflang="en"':'')+'>'+esc(l[0])+'</a></li>';}).join('')+'</ul>';};
+ var spanish=list.filter(function(l){return l[2]!=='en';}),originals=list.filter(function(l){return l[2]==='en';});
+ return '<section class="sources-footer answer-sources"><h4>Fuentes para ampliar</h4>'+(spanish.length?listHTML(spanish):'')+'<p class="hint">Referencias revisadas el 01/10/2026. Las páginas de otros países orientan sobre cuidados; la disponibilidad y cobertura se consultan en Argentina.</p>'+(originals.length?'<details class="technical-sources"><summary>Documentación técnica original (en inglés)</summary><p class="hint">Referencias de investigación o fabricantes sin una edición en español verificada. La explicación práctica de arriba está en español.</p>'+listHTML(originals)+'</details>':'')+'</section>';
+}
+function arrangeTopicSources(){
+ // Keep references after practical content, videos and community, within each complete topic.
+ document.querySelectorAll('.view').forEach(function(view){
+  view.querySelectorAll('.topic-item > .topic-body').forEach(function(body){
+   var refs=Array.from(body.querySelectorAll('.topic-source')),links=[];
+   refs.forEach(function(p){p.querySelectorAll('a').forEach(function(a){links.push([a.textContent,a.getAttribute('href')]);});p.remove();});
+   var key=body.parentElement.dataset.key||body.parentElement.id.replace(/^[^-]+-/, '');
+   var relevant=VIDEOS.filter(function(v){return v.items&&v.items.includes(key);});
+   if(relevant.length)body.insertAdjacentHTML('beforeend','<section class="related-videos"><h4>Videos en español para este tema</h4>'+videoCardsHTML(relevant)+'</section>');
+   body.insertAdjacentHTML('beforeend',sourcesFooterHTML(links));
+  });
+  var links=[];view.querySelectorAll('.topic-source').forEach(function(p){p.querySelectorAll('a').forEach(function(a){links.push([a.textContent,a.getAttribute('href')]);});p.remove();});
+  view.insertAdjacentHTML('beforeend',sourcesFooterHTML(links));
+ });
+}
+function searchTopicTarget(card){var bits=(card.g||'').split('/');return bits.length>1?el(bits.join('-')):null;}
+function searchAnswerSources(card){
+ var links=(card.guide&&card.guide.links||[]).slice(),target=searchTopicTarget(card);
+ if(target)target.querySelectorAll('.sources-footer a,.topic-source a').forEach(function(a){links.push([a.textContent,a.getAttribute('href')]);});
+ return links;
+}
+function expandedSearchAnswer(card){
+ var target=searchTopicTarget(card),body=target&&(target.querySelector(':scope > .topic-body')||target);
+ // Video search results retain the direct video action, rather than copying the whole video index.
+ if(!body||card.id.startsWith('video-'))return card.a+'<p class="next">'+card.n+'</p>';
+ var copy=body.cloneNode(true);
+ copy.querySelectorAll('.topic-community,[data-community-scope],[data-discussion],.sources-footer,.topic-source').forEach(function(n){n.remove();});
+ copy.querySelectorAll('[data-history-query]').forEach(function(a){a.closest('p').remove();});
+ // Cloned template controls must point to their own editable textarea, not the original page.
+ var idMap={};copy.querySelectorAll('[id]').forEach(function(n){idMap[n.id]='answer-'+n.id;n.id=idMap[n.id];});
+ copy.querySelectorAll('[for],[data-copy-template],[data-download-template],[aria-controls]').forEach(function(n){['for','data-copy-template','data-download-template','aria-controls'].forEach(function(a){var v=n.getAttribute(a);if(idMap[v])n.setAttribute(a,idMap[v]);});});
+ var guide=card.guide,html=guide?answerParagraphs(guide.summary):'';
+ if(guide&&guide.steps&&guide.steps.length)html+='<section class="answer-steps"><h4>Qué podés hacer ahora</h4><ol>'+guide.steps.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ol></section>';
+ html+='<div class="answer-topic" data-answer-topic="'+attr(card.g)+'">'+copy.innerHTML+'</div>';
+ if(guide&&guide.community){var fragment=document.createElement('div');fragment.innerHTML=card.a;html+=fragment.querySelector('.answer-community').outerHTML;}
+ return html;
+}
+
 /* Catálogo público: referencias, idioma y alcance de la revisión por entrada. */
 var VIDEOS = [
+ {id:'cuidados-boton-sjd',url:'https://www.picuida.es/ciudadania/cuidados-del-boton-de-gastrostomia/',tema:'alimentacion',items:['boton','jeringas'],title:'Cuidados cotidianos del botón de gastrostomía',original:'Cuidados del botón de gastrostomía',org:'Hospital Sant Joan de Déu · PiCuida',lang:'es',review:'Video y autor identificados por la red de cuidados PiCuida; sin transcripción revisada',text:'Video de enfermería sobre el cuidado del dispositivo. Fue realizado en un contexto pediátrico: sirve para conocer el botón; las cantidades, el recambio y el plan de un adulto con ELA deben ajustarse con su equipo.',points:[],source:'https://www.picuida.es/ciudadania/cuidados-del-boton-de-gastrostomia/'},
+ {id:'respiracion-ela-andalucia',url:'https://www.elaandalucia.es/consejos-sobre-cuidados-respiratorios-en-personas-con-ela/',tema:'respiracion',items:['saliva','bipap','mascara-nasal','mascara-full','cough','aspirador'],title:'Máscaras, secreciones y cuidados respiratorios en casa',original:'Taller online: Manejo de las secreciones y cuidados respiratorios en la ELA',org:'ELA Andalucía · Hospital Universitario Virgen del Rocío',lang:'es',time:'75 min',review:'Temas y profesionales comprobados en el resumen de la institución; sin transcripción completa revisada',text:'Candela Caballero y Esther de Benito conversan sobre soporte ventilatorio, elección de máscaras y manejo de secreciones. La página incluye el video y un resumen en español para ubicar lo que te interesa.',points:[],source:'https://www.elaandalucia.es/consejos-sobre-cuidados-respiratorios-en-personas-con-ela/'},
  {id:'PhqcRHskFDs',tema:'respiracion',title:'Reconocer el compromiso respiratorio',original:'Compromiso respiratorio en la Esclerosis Lateral Amiotrófica',org:'Fundación Esteban Bullrich',lang:'es',time:'4 min',review:'Transcripción revisada',text:'Romina Fernández explica por qué conviene controlar la respiración desde el diagnóstico y qué pueden significar el mal descanso, el dolor de cabeza al despertar o una tos débil.',points:[[95,'Síntomas que conviene contar en la consulta'],[167,'Cómo se evalúa la función respiratoria']],source:FUENTES.bullrichVideos[1]},
  {id:'kDVBS-U6Z34',tema:'respiracion',title:'Para qué sirve el soporte ventilatorio',original:'Soporte ventilatorio en pacientes con Esclerosis Lateral Amiotrófica',org:'Fundación Esteban Bullrich',lang:'es',time:'4 min',review:'Transcripción revisada',text:'Diferencias entre ventilación con máscara y por traqueostomía, objetivos del soporte y por qué la decisión informada de la persona ocupa un lugar central.',points:[[19,'Ventilación y acumulación de CO₂'],[130,'Soporte nocturno y decisiones anticipadas']],source:FUENTES.bullrichVideos[1]},
  {id:'_3hVYFUcup0',tema:'alimentacion',title:'Conversar sobre la gastrostomía',original:'Vías de alimentación en pacientes con ELA',org:'Fundación Esteban Bullrich',lang:'es',time:'5 min',review:'Transcripción revisada',text:'Presenta la gastrostomía y la evaluación conjunta de nutrición, respiración y preferencias. Los umbrales mencionados en la charla requieren valoración individual; no son una regla para decidir en casa.',points:[[38,'Cuándo conversar sobre esta opción'],[137,'Qué implica la colocación endoscópica']],source:FUENTES.bullrichVideos[1]},
@@ -2284,13 +2405,13 @@ var VIDEOS = [
  {id:'WYSuuFl84iY',tema:'medicamentos',title:'Una introducción a los tratamientos',original:'Tratamientos Esclerosis Lateral Amiotrófica',org:'Fundación Esteban Bullrich',lang:'es',time:'5 min',review:'Título y canal verificados; sin transcripción disponible',text:'Una charla general para iniciar la conversación con neurología. Contrastá las aprobaciones y novedades con las fichas actualizadas de medicamentos; no uses el video como pauta de dosis.',points:[],source:FUENTES.bullrichVideos[1]}
 ];
 var VIDEO_TEMAS={todos:'Todos los temas',medicamentos:'Medicamentos',equipamiento:'Movilidad y cuidados',comunicacion:'Comunicación y voz',alimentacion:'Alimentación',respiracion:'Respiración',consejos:'Familia y cuidados',tramites:'Trámites y cobertura'};
-function videoUrl(v,t){return 'https://www.youtube.com/watch?v='+v.id+(t?'&t='+t+'s':'');}
-function videoCardsHTML(list){return list.map(function(v){return '<article class="video-card"><p class="eyebrow">'+esc(VIDEO_TEMAS[v.tema])+'</p><h3><a href="'+videoUrl(v)+'" target="_blank" rel="noopener noreferrer">'+esc(v.title)+'</a></h3><p class="video-meta">'+esc(v.org)+' · '+(v.lang==='es'?'Español':'Inglés')+(v.time?' · '+esc(v.time):'')+'</p><p>'+esc(v.text)+'</p>'+(v.points.length?'<ul class="video-chapters">'+v.points.map(function(p){var mins=Math.floor(p[0]/60),sec=String(p[0]%60).padStart(2,'0'),stamp=mins>=60?Math.floor(mins/60)+':'+String(mins%60).padStart(2,'0')+':'+sec:mins+':'+sec;return '<li><a href="'+videoUrl(v,p[0])+'" target="_blank" rel="noopener noreferrer">'+stamp+' · '+esc(p[1])+'</a></li>';}).join('')+'</ul>':'')+'<div class="topic-links"><a href="'+videoUrl(v)+'" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a>'+(v.lang==='en'?enlaceTema('videos/espanol','Cómo verlo en español'):'')+'</div><details class="video-reference"><summary>Fuente y revisión</summary><p>'+esc(v.original)+'</p><p>'+esc(v.review)+'. Selección: 29/09/2026.</p><a href="'+attr(v.source)+'" target="_blank" rel="noopener noreferrer">Ver la fuente</a></details></article>';}).join('');}
+function videoUrl(v,t){if(v.url)return v.url;return 'https://www.youtube.com/watch?v='+v.id+(t?'&t='+t+'s':'');}
+function videoCardsHTML(list){return list.map(function(v){return '<article class="video-card"><p class="eyebrow">'+esc(VIDEO_TEMAS[v.tema])+'</p><h3><a href="'+videoUrl(v)+'" target="_blank" rel="noopener noreferrer">'+esc(v.title)+'</a></h3><p class="video-meta">'+esc(v.org)+' · '+(v.lang==='es'?'Español':'Inglés')+(v.time?' · '+esc(v.time):'')+'</p><p>'+esc(v.text)+'</p>'+(v.points.length?'<ul class="video-chapters">'+v.points.map(function(p){var mins=Math.floor(p[0]/60),sec=String(p[0]%60).padStart(2,'0'),stamp=mins>=60?Math.floor(mins/60)+':'+String(mins%60).padStart(2,'0')+':'+sec:mins+':'+sec;return '<li><a href="'+videoUrl(v,p[0])+'" target="_blank" rel="noopener noreferrer">'+stamp+' · '+esc(p[1])+'</a></li>';}).join('')+'</ul>':'')+'<div class="topic-links"><a href="'+videoUrl(v)+'" target="_blank" rel="noopener noreferrer">'+(v.url?'Ver video y explicación en español':'Ver en YouTube')+' ↗</a>'+(v.lang==='en'?enlaceTema('videos/espanol','Cómo verlo en español'):'')+'</div><details class="video-reference"><summary>Fuente y revisión</summary><p>'+esc(v.original)+'</p><p>'+esc(v.review)+'. Selección revisada: 01/10/2026.</p><a href="'+attr(v.source)+'" target="_blank" rel="noopener noreferrer">Ver la fuente</a></details></article>';}).join('');}
 function videoTeaserHTML(tema){var list=VIDEOS.filter(function(v){return v.tema===tema;}).slice(0,2);return '<section class="related-videos"><h3>Videos para este tema</h3>'+(list.length?'<ul>'+list.map(function(v){return '<li><a href="'+videoUrl(v)+'" target="_blank" rel="noopener noreferrer">'+esc(v.title)+'</a> · '+esc(v.org)+'</li>';}).join('')+'</ul>':'')+enlaceTema('videos/'+tema,'Ver la selección por tema →')+'</section>';}
 function initVideos(){
  el('v-videos').innerHTML='<a class="topic-back" href="#/inicio" data-v="inicio">← Inicio</a><div class="topic-intro"><p class="eyebrow">Para mirar con tiempo</p><h2 class="big">Videos útiles, por tema</h2><p class="lede">Una selección pequeña para orientarte y preparar preguntas. Con enlaces al momento útil cuando pudimos revisar la transcripción.</p><p>Las experiencias del grupo se complementan con charlas de profesionales y organizaciones. Los videos externos pueden incluir indicaciones o trámites de otros países.</p></div><div class="video-filters"><label>Tema<select id="videoTema">'+Object.keys(VIDEO_TEMAS).map(function(k){return '<option value="'+k+'">'+esc(VIDEO_TEMAS[k])+'</option>';}).join('')+'</select></label><label>Idioma<select id="videoIdioma"><option value="todos">Todos los idiomas</option><option value="es">Español</option><option value="en">Inglés, con ayuda en español</option></select></label><label>Buscar en los videos<input id="videoBuscar" type="search" placeholder="Voz, gastrostomía, máscaras…"></label></div><p id="videoCount" class="hint" role="status" aria-live="polite"></p><div class="video-grid" id="videoGrid"></div><p id="videoEmpty" class="topic-note" hidden>No hay videos para esos filtros. Probá otro tema o borrá la búsqueda.</p><section class="topic-note" id="videos-tramites"><h3>Trámites y cobertura en Argentina</h3><p>La Fundación Esteban Bullrich reúne una lista específica de temas legales. Para formularios y pasos actuales, usá también nuestra sección de trámites.</p><div class="topic-links"><a href="https://www.youtube.com/playlist?list=PLP4yL8uD4hVw1jKMN6o1ZYksxy-T7vnRE" target="_blank" rel="noopener noreferrer">Videoteca legal de la Fundación ↗</a>'+enlaceTema('tramites','Trámites y cartas')+'</div></section><section class="topic-feature" id="videos-espanol"><h3>Cómo ver los videos de Bridging Voice en español</h3><ol><li>Abrí el video en YouTube y activá los subtítulos (CC).</li><li>Entrá en Configuración ⚙ → Subtítulos. Elegí Español si aparece.</li><li>Si solo aparece inglés, buscá Traducir automáticamente → Español. Si tu app no ofrece esa opción, probá en el navegador de una computadora.</li></ol><p>Los dos videos de Bridging Voice seleccionados tienen transcripción automática en inglés. La traducción depende de las opciones de YouTube y puede equivocarse en términos médicos. Las descripciones en esta página están en español; no son una traducción completa del video.</p>'+fuenteHTML(['youtubeCC','bridging'])+'</section>';
  ['videoTema','videoIdioma','videoBuscar'].forEach(function(id){el(id).addEventListener(id==='videoBuscar'?'input':'change',filtrarVideos);});filtrarVideos();
- VIDEOS.forEach(function(v){CARDS.push({id:'video-'+v.id,cat:'Videos',t:v.title,k:v.title+' '+v.org+' '+VIDEO_TEMAS[v.tema],p:[v.title],a:'<p>'+esc(v.text)+'</p>',n:'<a href="'+videoUrl(v)+'" target="_blank" rel="noopener noreferrer">Ver video en YouTube →</a>',g:'videos/'+v.tema});});
+ VIDEOS.forEach(function(v){CARDS.push({id:'video-'+v.id,cat:'Videos',t:v.title,k:v.title+' '+v.org+' '+VIDEO_TEMAS[v.tema],p:[v.title],a:'<p>'+esc(v.text)+'</p>',n:'<a href="'+videoUrl(v)+'" target="_blank" rel="noopener noreferrer">'+(v.url?'Ver video en español':'Ver video en YouTube')+' →</a>',g:'videos/'+v.tema});});
 }
 function filtrarVideos(){var tema=el('videoTema').value,idioma=el('videoIdioma').value,q=fold(el('videoBuscar').value).trim();var list=VIDEOS.filter(function(v){return (tema==='todos'||v.tema===tema)&&(idioma==='todos'||v.lang===idioma)&&(!q||fold(v.title+' '+v.original+' '+v.text+' '+v.org+' '+VIDEO_TEMAS[v.tema]).includes(q));});el('videoGrid').innerHTML=videoCardsHTML(list);el('videoCount').textContent=list.length+' videos de '+VIDEOS.length;el('videoEmpty').hidden=!!list.length||tema==='tramites';el('videos-tramites').hidden=(tema!=='todos'&&tema!=='tramites')||idioma==='en'||!!q;}
 function rutaVideos(tema){if(!el('videoTema')||!VIDEO_TEMAS[tema])return;el('videoTema').value=tema;el('videoIdioma').value='todos';el('videoBuscar').value='';filtrarVideos();el('videoTema').focus({preventScroll:true});}
@@ -2300,9 +2421,9 @@ function recursosHTML(k,sec){var r=RECURSOS[k];if(!r)return '';return '<div clas
 function initResources(){
  var equipment=el('v-equipamiento').querySelector('.topic-intro');equipment.insertAdjacentHTML('beforeend','<div class="topic-note"><h3>Anticipar las necesidades ahorra trámites</h3><p>Pedile al fisiatra o terapista ocupacional una orden detallada: medidas, apoyos, funciones, accesorios y condiciones de la casa. La evolución y los tiempos de entrega pueden hacer necesario prever ajustes desde el inicio.</p><p>Solicitar las adaptaciones previsibles con justificación clínica ayuda a evitar equipos que pronto queden cortos. Antes de aceptar la entrega, compará cada característica con la orden.</p>'+fuenteHTML(['sillas'])+'</div>');
  el('v-respiracion').querySelector('.topic-intro').insertAdjacentHTML('beforeend','<div class="topic-feature"><h3>La respiración puede cambiar primero durante la noche</h3><p>Podés sentir cansancio, sueño de día, dolor de cabeza al despertar o falta de aire al acostarte, incluso sin notar mucha dificultad durante el día. La ELA puede debilitar los músculos que mueven el aire: si ventilás menos, podés eliminar menos dióxido de carbono (CO₂) y acumularlo.</p><p>Contáselo al equipo respiratorio: evaluará la fuerza, la tos y, cuando corresponda, la respiración nocturna. La ventilación no invasiva puede ayudar a mover aire y descansar los músculos. Una postura con el tronco elevado puede aliviar al acostarte, pero no reemplaza la evaluación ni el soporte indicado.</p>'+fuenteHTML(['respMND','respApoyo'])+'</div>');
- var resp=el('v-respiracion').querySelector('[data-topic-group]');resp.insertAdjacentHTML('beforebegin','<section class="topic-note"><h3>Armar el equipo de cuidados según la necesidad</h3><ol class="resp-checklist"><li>'+enlaceTema('respiracion/bipap','Ventilación indicada y máscara adecuada')+': ayudar a respirar.</li><li>'+enlaceTema('respiracion/cough','Asistente de tos')+': movilizar secreciones cuando la tos pierde fuerza.</li><li>'+enlaceTema('respiracion/aspirador','Aspirador y sondas')+': retirar las secreciones accesibles con técnica enseñada.</li><li>'+enlaceTema('respiracion/ambu','Resucitador manual (Ambú)')+': cuando forme parte de un plan escrito, con cuidadores entrenados.</li><li>'+enlaceTema('respiracion/ups','Baterías y respaldo eléctrico')+': indispensables en el plan cuando hay dependencia de equipos.</li></ol><p>No todas las personas necesitan todo desde el inicio. Pedí indicaciones, capacitación, mantenimiento y un contacto para fallas.</p></section><section class="topic-section"><h3>Ejemplos de equipos para conversar con neumonología</h3><div class="comparison-scroll"><table class="equipment-compare"><thead><tr><th>Equipo</th><th>Diferencia práctica</th><th>Consulta</th></tr></thead><tbody><tr><th>ResMed Stellar 150</th><td>Soporte para personas no dependientes, con respiración espontánea. Incluye iVAPS. No es un ventilador de soporte vital.</td><td><a href="'+FUENTES.stellar[1]+'" target="_blank" rel="noopener noreferrer">Ficha y fotos</a></td></tr><tr><th>ResMed Astral 150</th><td>Ventilación invasiva o no invasiva, con opciones de circuitos, alarmas y batería. El sistema y la autonomía se eligen según la dependencia.</td><td><a href="'+FUENTES.astral[1]+'" target="_blank" rel="noopener noreferrer">Ficha y fotos</a></td></tr><tr><th>Löwenstein LUISA</th><td>Ventilador de soporte vital. Figura en el catálogo argentino de RespiFlow; verificar configuración, provisión y servicio.</td><td><a href="'+FUENTES.respiflow[1]+'" target="_blank" rel="noopener noreferrer">Proveedor en Argentina</a></td></tr></tbody></table></div><p class="hint">Ejemplos para comparar prestaciones; no constituyen un ranking. Consultá stock, registro, accesorios, asistencia local y compatibilidad del respaldo eléctrico.</p>'+fuenteHTML(['stellarUso','astral','luisa','respiflow'])+'</section>');
- el('v-medicamentos').querySelector('.topic-intro').insertAdjacentHTML('beforeend','<div class="topic-note"><h3>Conseguir un medicamento en Argentina</h3><p>Pedí la receta por principio activo y presentación exacta, consultá a la farmacia de tu cobertura y solicitá un presupuesto si hace falta autorización. Una farmacia que prepara una fórmula no demuestra que esa fórmula esté aprobada para tratar ELA.</p>'+fuenteHTML(['vnm','farmagen'])+'</div>');
- el('v-comunicacion').querySelector('.topic-intro').insertAdjacentHTML('afterend','<section class="topic-feature" id="comunicacion-voz"><h3>Guía para clonar tu voz y usarla para comunicarte</h3><p>La guía de Marcela y Andy reúne los pasos para solicitar el Programa de Impacto de ElevenLabs, guardar grabaciones, crear la voz y conectarla con MarisApp, TD Talk, TD Snap y otros programas. Incluye modelos de cartas, enlaces a tutoriales y ayuda para ver videos en español.</p><div class="topic-links"><a class="btn" href="guia-clonacion-voz.pdf" target="_blank" rel="noopener noreferrer">Abrir la guía en español (PDF)</a><a href="guia-clonacion-voz.pdf" download="PreguntELA-guia-clonacion-voz.pdf">Descargar la guía</a></div><p class="hint">9 páginas · 431 KB · Guía aportada por la familia, con instrucciones y enlaces consultados el 22/09/2026. Los menús y requisitos de cada servicio pueden cambiar.</p><div class="topic-links">'+enlaceTema('videos/comunicacion','Ver las capacitaciones de voz y comunicación')+'<a href="https://bridgingvoice.org/elevenlabs/" target="_blank" rel="noopener noreferrer">Bridging Voice · programa de voz</a><a href="https://hub.thinksmartbox.com/knowledgebase/how-do-i-use-my-elevenlabs-voice-in-grid/" target="_blank" rel="noopener noreferrer">Integración con Grid</a><a href="https://www.asoft.nl/SpeechAssistantAAC-ElevenLabsSetup.pdf" target="_blank" rel="noopener noreferrer">Integración con Speech Assistant (PDF en inglés)</a></div></section>');
+ var resp=el('v-respiracion').querySelector('[data-topic-group]');resp.insertAdjacentHTML('beforebegin','<section class="topic-note"><h3>Armar el equipo de cuidados según la necesidad</h3><ol class="resp-checklist"><li>'+enlaceTema('respiracion/bipap','Ventilación indicada y máscara adecuada')+': ayudar a respirar.</li><li>'+enlaceTema('respiracion/cough','Asistente de tos')+': movilizar secreciones cuando la tos pierde fuerza.</li><li>'+enlaceTema('respiracion/aspirador','Aspirador y sondas')+': retirar las secreciones accesibles con técnica enseñada.</li><li>'+enlaceTema('respiracion/ambu','Resucitador manual (Ambú)')+': cuando forme parte de un plan escrito, con cuidadores entrenados.</li><li>'+enlaceTema('respiracion/ups','Baterías y respaldo eléctrico')+': indispensables en el plan cuando hay dependencia de equipos.</li></ol><p>No todas las personas necesitan todo desde el inicio. Pedí indicaciones, capacitación, mantenimiento y un contacto para fallas.</p></section><section class="topic-section" id="respiracion-modelos"><h3>Equipos que se comercializan en Argentina</h3><p>Abrí un modelo para ver sus características y compartir cómo te resultó. La elección depende del soporte indicado, las alarmas, el circuito y la autonomía necesarios.</p><div class="model-index">'+RESP_MODELS.map(function(m){return enlaceTema('respiracion/'+m.k,m.n);}).join('')+'</div><p class="hint">Presencia en catálogos argentinos revisada el 01/10/2026. Consultá stock, configuración, accesorios y servicio local. Los modelos no son intercambiables para todas las necesidades.</p></section>');
+ el('v-medicamentos').insertAdjacentHTML('beforeend','<div class="topic-note"><h3>Conseguir un medicamento en Argentina</h3><p>Pedí la receta por principio activo y presentación exacta, consultá a la farmacia de tu cobertura y solicitá un presupuesto si hace falta autorización. Una farmacia que prepara una fórmula no demuestra que esa fórmula esté aprobada para tratar ELA.</p>'+fuenteHTML(['vnm','farmagen'])+'</div>');
+ el('v-comunicacion').querySelector('.topic-intro').insertAdjacentHTML('afterend','<section class="topic-feature" id="comunicacion-voz"><h3>Guía para clonar tu voz y usarla para comunicarte</h3><p>La guía de Marcela y Andy reúne los pasos para solicitar el Programa de Impacto de ElevenLabs, guardar grabaciones, crear la voz y conectarla con MarisApp, TD Talk, TD Snap y otros programas. Incluye modelos de cartas, enlaces a tutoriales y ayuda para ver videos en español.</p><div class="topic-links"><a class="btn" href="guia-clonacion-voz.pdf" target="_blank" rel="noopener noreferrer">Abrir la guía en español (PDF)</a><a href="guia-clonacion-voz.pdf" download="PreguntELA-guia-clonacion-voz.pdf">Descargar la guía</a></div><p class="hint">9 páginas · 431 KB · Guía aportada por la familia, con instrucciones y enlaces consultados el 22/09/2026. Los menús y requisitos de cada servicio pueden cambiar.</p><div class="topic-links">'+enlaceTema('videos/comunicacion','Ver las capacitaciones de voz y comunicación')+'</div></section>');
  CARDS.push({id:'guia-clonacion-voz',cat:'Guías en PDF',t:'Guía para clonar tu voz y usarla para comunicarte',k:'guía clonación clonar voz ElevenLabs programa impacto MarisApp Tobii TD Pilot TD Talk TD Snap Communicator Bridging Voice PDF español',p:['Cómo clonar mi voz','Guía de voz en PDF'],a:'<p>Guía en español de Marcela y Andy: solicitud del programa, grabaciones, verificación y configuración en distintas aplicaciones. Incluye cartas modelo y enlaces a videos.</p>',n:enlaceTema('comunicacion/voz','Abrir la guía de voz →'),g:'comunicacion/voz'});
  ['medicamentos','equipamiento','comunicacion','alimentacion','respiracion','consejos'].forEach(function(id){el('v-'+id).insertAdjacentHTML('beforeend',videoTeaserHTML(id));});
  el('v-tramites').insertAdjacentHTML('beforeend','<div class="topic-note" id="tramites-comunicacion"><h3>Pedidos de comunicación</h3><p>Las cartas completas están dentro de la ficha de cada herramienta. Describen casos ficticios para adaptar con el profesional.</p><div class="topic-links">'+Object.keys(PEDIDOS_COM).map(function(k){var i=INSUMOS.find(function(g){return g.g==='Comunicación';}).items.find(function(x){return x.k===k;});return enlaceTema('comunicacion/'+k,i.n);}).join('')+enlaceTema('videos/tramites','Videos sobre cobertura')+'</div></div>');
@@ -2321,7 +2442,7 @@ function itemTemaHTML(i,sec,view){
   var info=sec==='medicacion'?MED_INFO[i.k]:null;
   var sources=info&&info.f?info.f:FUENTES[i.k]?[i.k]:[];
   var rich=RECURSOS[i.k], searchText=i.n+' '+i.d+' '+(info?info.s:'')+' '+(rich?rich.extra.join(' ')+' '+rich.pedido+' '+rich.acceso:'');
-  return '<details class="topic-item" id="'+view+'-'+i.k+'" data-topic-item data-key="'+attr(i.k)+'" data-search="'+attr(fold(searchText))+'"><summary>'+esc(i.n)+(info?'<span class="item-status">'+esc(info.s)+'</span>':'')+'</summary><div class="topic-body"><p>'+esc(i.d)+'</p>'+(sources.length?fuenteHTML(sources):'')+recursosHTML(i.k,sec)+'<p class="hint"><a href="#/preguntar" data-history-query="'+attr(i.n)+'">Buscar conversaciones anteriores sobre este tema</a></p><div class="topic-community" data-topic-comments data-sec="'+sec+'" data-item="'+attr(i.k)+'"></div></div></details>';
+  return '<details class="topic-item" id="'+view+'-'+i.k+'" data-topic-item data-key="'+attr(i.k)+'" data-search="'+attr(fold(searchText))+'"><summary>'+esc(i.n)+(info?'<span class="item-status">'+esc(info.s)+'</span>':'')+(view==='respiracion'?'<span class="item-comment-hint">Ver detalles y comentarios</span>':'')+'</summary><div class="topic-body"><p>'+esc(i.d)+'</p>'+(sources.length?fuenteHTML(sources):'')+recursosHTML(i.k,sec)+'<p class="hint"><a href="#/preguntar" data-history-query="'+attr(i.n)+'">Buscar conversaciones anteriores sobre este tema</a></p><div class="topic-community" data-topic-comments data-sec="'+sec+'" data-item="'+attr(i.k)+'"></div></div></details>';
 }
 function grupoTemaHTML(g,view){return '<div class="topic-section" data-topic-group><h3>'+esc(g.g)+'</h3>'+g.items.map(function(i){return itemTemaHTML(i,'insumo',view);}).join('')+'</div>';}
 function atajosProfesionales(types){return '<div class="topic-links">'+types.map(function(t){return '<a href="#/directorio" data-specialist="'+attr(t)+'">Buscar '+esc(t.toLowerCase())+'</a>';}).join('')+enlaceTema('directorio','Directorio de profesionales y proveedores')+'<button type="button" class="mini" data-add-contact="profesional">+ Agregar profesional o centro</button></div>';}
@@ -2345,24 +2466,26 @@ function pintarAportesTematicos(){
 function modelosHTML(){return MODELOS.map(function(m){return '<details class="topic-item" id="tramites-'+m.id+'"><summary>'+esc(m.n)+'</summary><div class="topic-body"><p class="template-hint">'+esc(m.hint)+'</p><label for="modelo-'+m.id+'">Editá la carta: quitá o agregá detalles según el caso</label><textarea class="template-text" id="modelo-'+m.id+'" spellcheck="true">'+esc(m.text)+'</textarea><div class="template-controls"><button class="btn" data-copy-template="modelo-'+m.id+'">Copiar texto</button><button class="btn ghost" data-download-template="modelo-'+m.id+'">Descargar .txt</button><span role="status"></span></div><p class="hint">Lo que escribas aquí no se envía ni se guarda en el sitio. Copialo o descargalo antes de cerrar o recargar.</p></div></details>';}).join('');}
 function initPractical(){
   el('needGrid').innerHTML=NECESIDADES.map(function(n,i){return '<a class="need-card" href="#/'+n.id+'" data-v="'+n.id+'"><span class="need-number">0'+(i+1)+'</span><strong>'+esc(n.n)+'</strong><p>'+esc(n.d)+'</p><span class="need-go">Ver opciones →</span></a>';}).join('');
-  el('v-medicamentos').innerHTML=introTema('medicamentos','<p class="lede">Entender qué se usa para la ELA, qué está en investigación y qué se utiliza para aliviar síntomas.</p><div class="topic-note"><strong>Hoy no existe una cura para la ELA.</strong><p>No inicies, cambies ni suspendas una medicación por lo que le funcionó a otra persona. Aprobación, indicación médica y cobertura son cuestiones distintas.</p></div>'+fuenteHTML(['ela'])+'<p class="hint">Información regulatoria revisada el 29 de septiembre de 2026. Consultá actualizaciones con neurología.</p>')+
-    '<div class="topic-links">'+GRUPOS_MEDS.map(function(g){return enlaceTema('medicamentos/'+g.id,g.n);}).join('')+'</div>'+filtroTemaHTML('medicamentos','Riluzol, B12, saliva, calambres…')+
+  el('v-medicamentos').innerHTML=introTema('medicamentos','<p class="lede">Entender qué se usa para la ELA, qué está en investigación y qué se utiliza para aliviar síntomas.</p><p class="hint">Información regulatoria revisada el 29 de septiembre de 2026. Consultá actualizaciones con neurología.</p>')+
+    medicationIndexHTML()+filtroTemaHTML('medicamentos','Riluzol, B12, saliva, calambres…')+symptomFiltersHTML()+
     GRUPOS_MEDS.map(function(g){return '<div class="topic-section" id="medicamentos-'+g.id+'" data-topic-group><h3>'+esc(g.n)+'</h3><p>'+esc(g.d)+'</p>'+g.keys.map(function(k){return itemTemaHTML(MEDS.find(function(m){return m.k===k;}),'medicacion','medicamentos');}).join('')+'</div>';}).join('')+atajosProfesionales(['Neurólogo']);
   el('v-equipamiento').innerHTML=introTema('equipamiento','<p class="lede">Elementos para moverte, acomodarte y hacer más fácil la vida en casa. Abrí cada uno para ver información y experiencias.</p><div class="topic-note"><strong>Fisiatría y terapia ocupacional te ayudan a elegir.</strong><p>Llevá las medidas de puertas, baño, ascensor y espacios de giro. Pedí probar el equipo y que la orden describa las características que necesitás.</p></div>')+
-    atajosProfesionales(['Fisiatra','Terapista ocupacional'])+filtroTemaHTML('equipamiento','Silla, tilt, grúa, almohadón, inodoro…')+INSUMOS.slice(0,3).map(function(g){return grupoTemaHTML(g,'equipamiento');}).join('')+'<div class="topic-links">'+enlaceTema('tramites/pedido','Modelo para pedir cobertura')+enlaceTema('alimentacion','Elementos para comer')+enlaceTema('respiracion','Equipos respiratorios')+'</div>';
+    filtroTemaHTML('equipamiento','Silla, tilt, grúa, almohadón, inodoro…')+INSUMOS.slice(0,3).map(function(g){return grupoTemaHTML(g,'equipamiento');}).join('')+'<div class="topic-links">'+enlaceTema('tramites/pedido','Modelo para pedir cobertura')+enlaceTema('alimentacion','Elementos para comer')+enlaceTema('respiracion','Equipos respiratorios')+'</div>';
   el('v-comunicacion').innerHTML=introTema('comunicacion','<p class="lede">Seguir eligiendo, conversando y diciendo lo que querés. Hay opciones con papel, pantallas, voz y control con la mirada.</p><p>Probá formas de acceso con fonoaudiología y terapia ocupacional. Tener un tablero impreso como respaldo puede ser útil cuando un equipo se queda sin batería.</p>'+fuenteHTML(['cuidados']))+
     atajosProfesionales(['Fonoaudiólogo','Empresa de comunicación aumentativa'])+filtroTemaHTML('comunicacion','Tobii, MarisApp, Cboard, Cfluent…')+grupoTemaHTML({g:'Herramientas para comunicarte',items:INSUMOS.find(function(g){return g.g==='Comunicación';}).items.slice().sort(function(a,b){var order=['tobii','irisbond','marisapp','cboard','cfluent','hablalo','pictogramas','tablet','teclado','soporte-disp'];return order.indexOf(a.k)-order.indexOf(b.k);})},'comunicacion')+'<div class="topic-links">'+enlaceTema('tramites/comunicacion','Cartas para pedir dispositivos de comunicación')+'</div>';
   el('v-alimentacion').innerHTML=introTema('alimentacion','<p class="lede">Comer, hidratarte y sostener la nutrición con los apoyos que necesites.</p><p>Nutrición evalúa los requerimientos y los suplementos; fonoaudiología, la deglución y las texturas. Si comer cansa, hay atragantamientos o baja de peso, consultá para ajustar el plan.</p>'+fuenteHTML(['nutricion']))+
     '<div class="topic-feature"><h3>Botón gástrico y gastrostomía</h3><p>Qué son, cuándo conversar sobre esta opción y qué preguntar al equipo.</p>'+enlaceTema('alimentacion/boton','Ver botón gástrico →')+'</div>'+atajosProfesionales(['Nutricionista','Fonoaudiólogo','Gastroenterólogo'])+filtroTemaHTML('alimentacion','Espesante, Fortisip, botón, suplementos…')+
     grupoTemaHTML(INSUMOS.find(function(g){return g.g==='Alimentación';}),'alimentacion')+
     '<div class="topic-note"><h3>Para conversar sobre la gastrostomía</h3><p>Preguntá por el momento apropiado, el tipo de acceso, los cuidados y quién será tu contacto ante problemas. La evaluación considera nutrición, deglución y respiración. Poder seguir comiendo por boca depende de que resulte seguro en tu situación.</p>'+fuenteHTML(['boton'])+'</div>';
-  el('v-respiracion').innerHTML=introTema('respiracion','<p class="lede">Equipos y apoyos para respirar, manejar secreciones y preparar los cuidados en casa.</p><p>Neumonología y kinesiología respiratoria evalúan qué hace falta, enseñan a usarlo y revisan los ajustes. BiPAP, CPAP, oxígeno y asistente de tos cumplen funciones diferentes.</p>'+fuenteHTML(['respiracion']))+
-    '<div class="topic-links">'+enlaceTema('respiracion/bipap','BiPAP')+enlaceTema('respiracion/traqueostomia','Traqueostomía')+enlaceTema('respiracion/cpap','CPAP')+enlaceTema('tramites/electrodependencia','Cortes de luz y electrodependencia')+'</div>'+atajosProfesionales(['Neumonólogo','Kinesiólogo respiratorio'])+filtroTemaHTML('respiracion','BiPAP, máscara, traqueostomía, aspirador…')+
+  el('v-respiracion').innerHTML=introTema('respiracion','<p class="lede">Equipos y apoyos para respirar, manejar secreciones y preparar los cuidados en casa.</p><p>Neumonología y kinesiología respiratoria evalúan qué hace falta, enseñan a usarlo y revisan los ajustes. La ventilación, el manejo de secreciones y el respaldo eléctrico se planifican en conjunto.</p>'+fuenteHTML(['respiracion']))+
+    '<div class="topic-links">'+enlaceTema('respiracion/bipap','BiPAP')+enlaceTema('respiracion/traqueostomia','Traqueostomía')+enlaceTema('tramites/electrodependencia','Cortes de luz y electrodependencia')+'</div>'+atajosProfesionales(['Neumonólogo','Kinesiólogo respiratorio'])+filtroTemaHTML('respiracion','BiPAP, máscara, traqueostomía, aspirador…')+
     grupoTemaHTML(INSUMOS.find(function(g){return g.g==='Respiratorio';}),'respiracion')+'<p class="hint">Ante dificultad respiratoria intensa o repentina, contactá al servicio de emergencias. No esperes una respuesta de la comunidad.</p>';
   el('v-consejos').innerHTML=introTema('consejos','<p class="lede">Ideas de familiares para todo lo que no entra en las otras categorías.</p><p>Organizar el día, pedir ayuda, acompañar a quien cuida, compartir actividades y hacer lugar a lo que cada persona disfruta.</p>')+
     '<div class="topic-section"><h3>Organizar los cuidados</h3><p>Varias familias usan un cuaderno de novedades para los relevos, una lista de contactos y un calendario de turnos. Acordá con el equipo qué tareas requieren personal capacitado y registrá las indicaciones.</p><h3>Armar una red</h3><p>Repartir compras, traslados, trámites y compañía ayuda a sostener los cuidados. En el directorio hay fundaciones y contactos que circularon en el grupo.</p><h3>Experiencias y préstamos</h3><p>Contá qué te ayudó y en qué contexto. Para prestar un equipo, revisá su estado y compatibilidad con el proveedor o profesional. Evitá publicar datos privados de otras personas.</p></div><div class="topic-links">'+enlaceTema('directorio','Profesionales y fundaciones')+enlaceTema('archivo','Leer el archivo del grupo')+enlaceTema('guias','Consultar las guías del archivo')+'</div><div class="topic-community" data-topic-comments data-sec="consejo" data-item="otros"></div>';
   el('modelosCartas').innerHTML=modelosHTML();
   initVideos();initResources();initPatientGuidance();
+  el('v-equipamiento').insertAdjacentHTML('beforeend',atajosProfesionales(['Fisiatra','Terapista ocupacional']));
+  arrangeTopicSources();
   // Search answers reuse the revised guidance; the historical messages remain verbatim.
   var searchTargets={empezar:'empezar',equipo:'equipamiento','bipap-cuando':'respiracion/bipap','bipap-pedir':'tramites/bipap','bipap-tolerar':'respiracion/bipap',secreciones:'respiracion/cough',saliva:'consejos/saliva',traqueo:'respiracion/traqueostomia','traqueo-cuidados':'tramites/domicilio',electro:'tramites/electrodependencia',deglucion:'alimentacion/espesante',boton:'alimentacion/boton',enteral:'alimentacion/bomba',intestino:'medicamentos/lactulon',comunicacion:'comunicacion/tobii','comunicacion-orden':'tramites/comunicacion',silla:'equipamiento/silla-postural',cama:'equipamiento/cama',grua:'equipamiento/grua',casa:'equipamiento',postura:'equipamiento/cojin',escaras:'equipamiento/cremas-ae',enfermeria:'tramites/domicilio',odonto:'consejos',riluzol:'medicamentos/riluzol',genetico:'medicamentos/genetica',edaravone:'medicamentos/edaravone',sintomaticos:'medicamentos/sintomas',cud:'tramites/cud',amparo:'tramites/cobertura',internacion:'tramites/domicilio',viajar:'tramites/viajes',traslados:'tramites/viajes',donaciones:'consejos',fundaciones:'consejos/red',cuidar:'consejos'};
   CARDS.forEach(function(c){
@@ -2387,11 +2510,12 @@ function initPractical(){
   document.body.appendChild(el('communityDialog'));
   document.querySelectorAll('[data-topic-search]').forEach(function(input){input.addEventListener('input',function(){
     var panel=el('v-'+input.dataset.topicSearch),q=fold(input.value).trim(),count=0;
-    panel.querySelectorAll('[data-topic-item]').forEach(function(item){item.hidden=!!q&&!item.dataset.search.includes(q);if(!item.hidden) count++;});
+    panel.querySelectorAll('[data-topic-item]').forEach(function(item){var symptom=panel.dataset.symptom, keys=symptom&&MED_SYMPTOMS[symptom];item.hidden=(!!q&&!item.dataset.search.includes(q))||(!!keys&&!keys.includes(item.dataset.key));if(!item.hidden) count++;});
     panel.querySelectorAll('[data-topic-group]').forEach(function(g){g.hidden=!g.querySelector('[data-topic-item]:not([hidden])');});
     panel.querySelector('[data-topic-empty]').hidden=count!==0;
   });});
   document.addEventListener('click',async function(ev){
+    var symptomButton=ev.target.closest('[data-med-symptom]');if(symptomButton){var panel=el('v-medicamentos'),input=panel.querySelector('[data-topic-search]');panel.dataset.symptom=symptomButton.dataset.medSymptom;input.value='';panel.querySelectorAll('[data-med-symptom]').forEach(function(b){b.setAttribute('aria-pressed',String(b===symptomButton));});input.dispatchEvent(new Event('input',{bubbles:true}));return;}
     var link=ev.target.closest('[data-history-query],[data-specialist]');
     if(link){ev.preventDefault();if(link.dataset.historyQuery){show('preguntar');el('q').value=link.dataset.historyQuery;el('send').click();}
       else {show('directorio');el('dirq').value=link.dataset.specialist;drawDir(el('dirq').value);renderMemberDirectory();el('dirq').focus();}return;}
@@ -2407,14 +2531,14 @@ function revealRouteAnchor(){
   if(bits[0]==='videos'&&typeof VIDEO_TEMAS!=='undefined'&&VIDEO_TEMAS[bits[1]]){rutaVideos(bits[1]);return;}
   var target=el(bits[0]+'-'+bits[1]);if(!target)return;
   var panel=target.closest('.view'),search=panel.querySelector('[data-topic-search]');
-  if(search&&search.value){search.value='';search.dispatchEvent(new Event('input',{bubbles:true}));}
+  if(search&&(search.value||panel.dataset.symptom)){search.value='';panel.dataset.symptom='';panel.querySelectorAll('[data-med-symptom]').forEach(function(b){b.setAttribute('aria-pressed',String(!b.dataset.medSymptom));});search.dispatchEvent(new Event('input',{bubbles:true}));}
   if(target.tagName==='DETAILS')target.open=true;
   target.scrollIntoView({block:'start'});var focus=target.tagName==='DETAILS'?target.querySelector('summary'):(target.querySelector('h2,h3')||target);focus.tabIndex=0;focus.focus({preventScroll:true});
 }
 
 /* Respuestas editoriales: fuentes públicas revisadas y experiencias identificadas.
    No se envían consultas a un modelo ni se simula una búsqueda web en vivo. */
-var SEARCH_REVIEW_DATE='30/09/2026';
+var SEARCH_REVIEW_DATE='01/10/2026';
 var SEARCH_GUIDES={
  'que-es-ela':{
   title:'Qué es la ELA y qué se puede hacer',route:'empezar',
@@ -2439,7 +2563,7 @@ var SEARCH_GUIDES={
  },
  'bipap-cuando':{
   title:'Cansancio, mal descanso o falta de aire: revisar la respiración',
-  summary:['La ELA puede debilitar los músculos respiratorios. Si entra y sale menos aire, puede acumularse dióxido de carbono (CO₂), especialmente durante el sueño. Cansancio diurno, dolor de cabeza al despertar o falta de aire al acostarte merecen una evaluación respiratoria.','La ventilación no invasiva, habitualmente llamada BiPAP, ayuda a mover aire. CPAP y oxígeno cumplen otras funciones y no sustituyen automáticamente ese soporte. El equipo define cuál corresponde y sus ajustes.'],
+  summary:['La ELA puede debilitar los músculos respiratorios. Si entra y sale menos aire, puede acumularse dióxido de carbono (CO₂), especialmente durante el sueño. Cansancio diurno, dolor de cabeza al despertar o falta de aire al acostarte merecen una evaluación respiratoria.','La ventilación no invasiva, habitualmente llamada BiPAP, ayuda a mover aire. El oxígeno por sí solo no reemplaza la asistencia ventilatoria. El equipo define cuál corresponde y sus ajustes.'],
   steps:['Pedí una evaluación de la respiración, la tos y, si corresponde, del sueño.','Si indican ventilación, solicitá prueba de máscara, capacitación y seguimiento. No ajustes presiones por tu cuenta.'],
   sources:['respMND','respApoyo'],
   community:{text:'En el grupo, una familia relacionó el cansancio intenso con el compromiso respiratorio y contó que el BiPAP ayudó. También se compartió la importancia de que el equipo enseñe a usarlo y lo ajuste.',ids:[52,53]}
@@ -2508,20 +2632,20 @@ function searchSourceLinks(keys,extra){
  var links=(keys||[]).map(function(k){return FUENTES[k];}).filter(Boolean).concat(extra||[]),seen=new Set();
  return links.filter(function(x){if(seen.has(x[1]))return false;seen.add(x[1]);return true;});
 }
-function searchSourcesHTML(links){return links.length?'<section class="answer-sources"><h4>Fuentes para ampliar</h4><ul>'+links.map(function(x){return '<li><a href="'+attr(x[1])+'" target="_blank" rel="noopener noreferrer">'+esc(x[0])+'</a></li>';}).join('')+'</ul><p class="hint">Resumen preparado el '+SEARCH_REVIEW_DATE+' a partir de estas fuentes. Los requisitos y la disponibilidad pueden cambiar.</p></section>':'';}
+function searchSourcesHTML(links){return sourcesFooterHTML(links);}
 function answerContent(card){
  var guide=card.guide;if(!guide)return card.a;
  var html=answerParagraphs(guide.summary);
  if(guide.steps&&guide.steps.length)html+='<section class="answer-steps"><h4>Qué podés hacer ahora</h4><ol>'+guide.steps.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ol></section>';
  if(guide.access)html+='<details class="answer-access"><summary>Cómo consultar en Argentina</summary>'+answerParagraphs([guide.access])+'</details>';
- html+=searchSourcesHTML(guide.links||[]);
+
  if(guide.community){html+='<section class="answer-community"><h4>Lo que compartieron las familias</h4>'+answerParagraphs([guide.community.text])+'<p class="hint">Síntesis editorial de experiencias del archivo, no un resultado garantizado.</p><details><summary>Ver los mensajes que respaldan este resumen</summary>'+guide.community.ids.map(function(id){return CORPUS.find(function(m){return m.i===id;});}).filter(Boolean).map(function(m){return msgHtml(m,'');}).join('')+'</details></section>';}
  if(guide.testimony)html+=el('consejos-saliva').querySelector('[data-saliva-experience]').outerHTML;
  return html;
 }
 function initSearchAnswers(){
- FUENTES.deglucionALS=['ALS Association · Cambios del habla y la deglución','https://www.als.org/navigating-als/living-with-als/therapies-care/managing-speech-swallowing-changes'];
- FUENTES.equipoELA=['NICE · Guía de atención multidisciplinaria de la enfermedad de motoneurona','https://www.nice.org.uk/guidance/ng42/evidence/full-guideline-pdf-2361774637'];
+ FUENTES.deglucionALS=FUENTES.nutricion;
+ FUENTES.equipoELA=FUENTES.cuidados;
  CARDS.push({id:'que-es-ela',t:'Qué es la ELA',k:'esclerosis lateral amiotrofica enfermedad neuronas que es ela',p:['qué es la ela','qué es ela','esclerosis lateral amiotrófica'],g:'empezar'});
  var routeGuides={};
  Object.keys(SEARCH_GUIDES).forEach(function(id){
@@ -2571,6 +2695,7 @@ function questionIntent(q){
  if(/que (profesionales|especialistas)|equipo multidisciplinario/.test(f))return 'equipo';
  if(/(rechaz|negativ|no (me |nos )?(cubre|autoriza)|demor|reclam|amparo)/.test(f)&&/(obra|social|prepaga|pami|cobertura|autoriz|silla|bipap|enferm|comunicador|irisbond|tobii)/.test(f))return 'amparo';
  if(/(estudio|test|analisis|panel).*(genet|sod1|c9orf72)|c9orf72|ela.*heredit/.test(f))return 'genetico';
+ if(/^(tobii|tobii dynavox|td pilot|td snap)$/.test(f.trim()))return 'ficha-comunicacion-tobii';
  if(/(saliva|sialorrea|babeo|glandulas salivales)/.test(f)&&!/(atropina|amitriptilina|propantelina|botox)/.test(f))return 'saliva';
  if(/radioterapia/.test(f))return 'saliva';
  if(/(aspirador.*(tos|cough)|asistente de tos.*aspirador|no (puede|puedo) toser)/.test(f))return 'secreciones';
@@ -2615,7 +2740,7 @@ function renderSearchAnswer(q,chosenId){
  var matches=rankAnswers(q),forced=chosenId&&CARDS.find(function(c){return c.id===chosenId;}),best=forced||(matches[0]&&matches[0].confident?matches[0].c:null);
  var hits=search(q,40),html=emergencySearchHTML(q);
  if(best){
-  html+='<div class="answer-body"><p class="eyebrow">Orientación para tu consulta</p><h3 class="sec">'+esc(best.t)+'</h3>'+best.a+'<p class="next"><strong>Seguí por acá.</strong> '+best.n+'</p></div>';
+  html+='<div class="answer-body"><p class="eyebrow">Orientación para tu consulta</p><h3 class="sec">'+esc(best.t)+'</h3>'+expandedSearchAnswer(best)+'</div>';
   var contacts=(best.c||[]).map(function(n){return CONTACT_BY_NAME[n];}).filter(Boolean);
   if(contacts.length)html+='<details class="search-contacts"><summary>Contactos que pueden orientarte</summary><div class="cards">'+contacts.map(contactCard).join('')+'</div></details>';
   var routes=new Set([best.g]),related=matches.filter(function(x){if(x.c.id===best.id||routes.has(x.c.g)||!x.confident||x.s<5||(!x.phrase&&!x.titleMatched))return false;routes.add(x.c.g);return true;}).slice(0,3);
@@ -2627,6 +2752,7 @@ function renderSearchAnswer(q,chosenId){
  if(hits.length){
   html+='<details class="search-history" id="searchHistory"><summary>Experiencias del grupo relacionadas con tu búsqueda <span class="cnt">'+hits.length+'</span></summary><p class="hint">Mensajes del archivo de La ELA no nos Define. Pueden describir casos particulares o datos que cambiaron; no son indicaciones médicas verificadas.</p>'+hits.slice(0,6).map(function(h){return msgHtml(h,q);}).join('')+(hits.length>6?'<div id="moreWrap" hidden>'+hits.slice(6).map(function(h){return msgHtml(h,q);}).join('')+'</div><button class="btn ghost" id="moreBtn">Ver más mensajes</button>':'')+'</details>';
  }
+ if(best)html+=searchSourcesHTML(searchAnswerSources(best));
  ansEl.innerHTML=html;ansEl.hidden=false;clearEl.hidden=false;hintEl.textContent='';
  renderDiscussionWidgets();
  var more=el('moreBtn');if(more)more.addEventListener('click',function(){el('moreWrap').hidden=false;more.remove();});
@@ -2652,10 +2778,12 @@ function openContactForm(kind){
   el('directoryAccess').tabIndex=-1;el('directoryAccess').focus();return;
  }
  var form=el('espForm');el('directoryFormSlot').appendChild(form);form.hidden=false;
- if(!el('eTipo').value&&kind==='proveedor')el('eTipo').value='Proveedor u otro servicio';
+ if(kind==='proveedor')el('eTipo').value='Proveedor u otro servicio';
+ if(kind==='enfermeria')el('eTipo').value='Enfermeros';
+ if(kind==='cuidador')el('eTipo').value='Cuidadores especializados';
  el('eNombre').focus();form.scrollIntoView({block:'start'});
 }
-function specialistMatches(a,q){return !q||fold([a.esp_nombre,a.esp_tipo,a.esp_institucion,a.esp_ciudad,a.esp_provincia,a.esp_cobertura,a.texto].filter(Boolean).join(' ')).includes(q);}
+function specialistMatches(a,q){if(q==='cuidados')return /enferm|cuidad/.test(fold(a.esp_tipo||''));return !q||fold([a.esp_nombre,a.esp_tipo,a.esp_institucion,a.esp_ciudad,a.esp_provincia,a.esp_cobertura,a.texto].filter(Boolean).join(' ')).includes(q);}
 function specialistHTML(a){
  var field=function(label,value){return value?'<div class="kv"><span class="k">'+label+'</span><span class="v">'+esc(value)+'</span></div>':'';};
  return '<article data-aporte="'+a.id+'" class="aporte'+(a.estado==='oculto'?' oculto':'')+'"><h4 class="ah">'+esc(a.esp_nombre||'Contacto')+'</h4><div class="ataglist">'+(a.esp_tipo?'<span class="tag">'+esc(a.esp_tipo)+'</span>':'')+(a.esp_calificacion?'<span class="tag califica">'+esc(a.esp_calificacion)+'</span>':'')+'</div>'+field('Dónde',[a.esp_institucion,a.esp_ciudad,a.esp_provincia].filter(Boolean).join(' · '))+field('Cobertura',a.esp_cobertura)+field('Contacto laboral',a.esp_contacto)+field('Experiencia',a.texto)+firmaHTML(a)+'</article>';
