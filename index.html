@@ -548,6 +548,13 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 [data-med-symptom][aria-pressed="true"]{background:#0b3157;color:white;border-color:#0b3157}
 .model-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .model-index a{display:block;padding:16px;background:#edf5fb;border:1px solid #b9cfdf;border-radius:12px;text-decoration:none;font-weight:700}
+.respiratory-models{margin:26px 0;padding:20px;background:#f2f7fb;border-radius:16px}
+.respiratory-models>h4{font-size:1.2rem;margin:0 0 12px}
+.communication-board{margin:24px 0;max-width:620px}
+.communication-board img{display:block;width:100%;max-width:500px;height:auto;border:1px solid var(--line);border-radius:10px}
+.communication-board figcaption{margin-top:14px;font-size:.94rem}
+.advance-directives .template-text{min-height:600px}
+@media(max-width:600px){.respiratory-models{padding:12px;margin:20px -10px}.respiratory-models .topic-body{padding:16px 12px}}
 .sources-footer{border-top:1px solid #d9e2e5;margin:30px 0 0;padding:24px 0 4px;font-size:.95rem;color:var(--ink-2,#46565f)}
 .sources-footer h4{font-size:1.05rem;margin:0 0 12px}
 .sources-footer li{margin:10px 0;overflow-wrap:anywhere}
@@ -656,7 +663,7 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 <section class="view" id="v-tramites" role="tabpanel" aria-label="Trámites y modelos de cartas">
   <a class="topic-back" href="#/inicio" data-v="inicio">← Todas las necesidades</a>
   <div class="topic-intro"><p class="eyebrow">Papeles y cobertura</p><h2 class="big">Trámites y modelos de cartas</h2><p class="lede">Cartas completas de ejemplo, con el pedido y sus motivos ya redactados. Elegí la que se acerque a tu situación y adaptala con tu equipo.</p></div>
-  <div class="topic-links"><a href="#/tramites/cud" data-v="tramites/cud">Certificado de discapacidad</a><a href="#/tramites/modelos" data-v="tramites/modelos">Cartas completas para adaptar</a><a href="#/tramites/cobertura" data-v="tramites/cobertura">Si hay una demora o rechazo</a><a href="#/tramites/electrodependencia" data-v="tramites/electrodependencia">Electrodependencia</a></div>
+  <div class="topic-links"><a href="#/tramites/cud" data-v="tramites/cud">Certificado de discapacidad</a><a href="#/tramites/modelos" data-v="tramites/modelos">Cartas completas para adaptar</a><a href="#/tramites/directivas" data-v="tramites/directivas">Directivas anticipadas</a><a href="#/tramites/cobertura" data-v="tramites/cobertura">Si hay una demora o rechazo</a><a href="#/tramites/electrodependencia" data-v="tramites/electrodependencia">Electrodependencia</a></div>
   <div class="topic-section topic-feature" id="tramites-cud">
     <h3>Certificado Único de Discapacidad (CUD)</h3>
     <p>Es un documento válido en todo el país. El trámite es voluntario y gratuito; una junta interdisciplinaria evalúa si corresponde emitirlo.</p>
@@ -727,8 +734,9 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 
   <div class="col" id="comLogin" hidden>
     <div class="panel">
-      <h3 class="sec">Entrá o solicitá acceso a la comunidad</h3>
-      <p>Te enviamos un enlace al correo, sin contraseña. Si es tu primera vez, un administrador debe aprobar tu acceso antes de que puedas ver o compartir aportes.</p>
+      <h3 class="sec">Ingresar a la comunidad</h3>
+      <p><strong>¿Ya sos miembro?</strong> Escribí el mismo correo con el que te aprobaron y tocá «Enviarme el enlace». Abrí el correo desde el celular o la computadora donde querés entrar. No necesitás contraseña ni otra aprobación.</p>
+      <p><strong>¿Es tu primera vez?</strong> Usá este mismo formulario, abrí el enlace del correo y completá tu solicitud. Un administrador debe aprobar tu acceso antes de que puedas ver o compartir aportes.</p>
       <div class="formrow"><label for="authNombre">Tu nombre (opcional)</label>
         <input type="text" id="authNombre" maxlength="60" autocomplete="name" placeholder="Como querés que te conozca el grupo"></div>
       <div class="formrow">
@@ -2310,6 +2318,20 @@ RECURSOS.cfluent.contactos[0][0]='Consultar acceso a Cfluent (sitio en inglés)'
 RECURSOS.boton.links=[['Gastrostomía y botón: guía de cuidados en español',BOTON_ES]];
 RECURSOS.bipap.links=RECURSOS.bipap.links.filter(function(l){return l[1]!==FUENTES.vitalaire[1];});
 RECURSOS.bipap.links.push(['Consultar equipos y fotos en Argentina',FUENTES.diagnosticResp[1]]);
+// The supplied example is served locally, unchanged and with its original credits.
+RECURSOS.pictogramas.links=[];
+RECURSOS.pictogramas.exampleHTML='<figure class="communication-board"><h4>Ejemplo de tablero de letras</h4><a href="tablero-abecedario-ejemplo.jpg" target="_blank" rel="noopener noreferrer"><img src="tablero-abecedario-ejemplo.jpg" width="794" height="1123" loading="lazy" alt="Abecedario en casilleros: A, B, C, D, E; F, G, H, I, J; K, L, M, N, Ñ; O, P, Q, R, S; T, U, V, W, X; Y, Z."></a><figcaption>Referencia visual aportada por la comunidad. Es una lámina educativa de abecedario: muestra cómo distribuir las letras, incluida la Ñ. Para usar un tablero de comunicación, adaptá tamaño, ubicación y forma de señalar con fonoaudiología o terapia ocupacional.</figcaption><div class="topic-links"><a href="tablero-abecedario-ejemplo.jpg" target="_blank" rel="noopener noreferrer">Abrir el ejemplo completo</a><a href="tablero-abecedario-ejemplo.jpg" download>Descargar la imagen</a></div><p class="hint">Imagen original sin modificaciones. Créditos de la lámina: María Olivares · RECURSOSEP; pictogramas: Sergio Palao · ARASAAC. Licencia indicada en la imagen: CC BY-NC-SA.</p></figure>';
+FUENTES.circonyl=['ANMAT · Circonyl: sulfato de quinina 200 mg (disposición 1201/2012)','https://boletin.anmat.gob.ar/marzo_2012/Dispo_1201-12.pdf'];
+var quinine=MEDS.find(function(m){return m.k==='quinina';});
+quinine.n='Circonyl 200 mg (sulfato de quinina)';
+quinine.d='Sulfato de quinina, de TRB Pharma. Se menciona en la comunidad para calambres; la conveniencia de usarlo requiere evaluación médica por sus posibles efectos adversos graves.';
+MED_INFO.quinina.s='Calambres · Experiencia compartida, con precauciones';
+MED_INFO.quinina.d=quinine.d;
+RECURSOS.quinina.extra=['La quinina puede causar alteraciones graves de las plaquetas, sangrado, daño renal y arritmias. MedlinePlus advierte contra su uso para calambres nocturnos. Revisá con neurología la indicación, las interacciones y otras opciones; una buena experiencia individual no elimina esos riesgos.'];
+RECURSOS.quinina.exampleHTML='<aside class="topic-note" data-quinine-experience><h4>Experiencia compartida para calambres</h4><p>Un testimonio aportado a PreguntELA dice: «Para los calambres tomo Circonyl 200 mg (sulfato de quinina), 1/2 o 1 a demanda. Me funciona muy bien».</p><p class="hint">Es el relato de una persona, no una pauta para que otros la repitan. La dosis, la frecuencia y si corresponde usarlo deben revisarse con el médico. No iniciar ni cambiar el tratamiento por este comentario.</p></aside>';
+RECURSOS.quinina.pedido='Contale al neurólogo cuándo aparecen los calambres, su frecuencia y qué medicamentos tomás. Revisen beneficios, riesgos, alternativas y, si corresponde, una indicación individual.';
+RECURSOS.quinina.acceso='Consultá Circonyl 200 mg (TRB Pharma) en una farmacia habilitada con la indicación médica. La referencia de ANMAT identifica el producto; no confirma stock actual ni cobertura.';
+RECURSOS.quinina.f=['circonyl','quinina'];
 // This source also documents the standard riluzole regimen in Spanish.
 FUENTES.riluzolDosis=FUENTES.riluzol;
 
@@ -2355,7 +2377,7 @@ function arrangeTopicSources(){
  // Keep references after practical content, videos and community, within each complete topic.
  document.querySelectorAll('.view').forEach(function(view){
   view.querySelectorAll('.topic-item > .topic-body').forEach(function(body){
-   var refs=Array.from(body.querySelectorAll('.topic-source')),links=[];
+   var refs=Array.from(body.querySelectorAll('.topic-source')).filter(function(p){return p.closest('.topic-body')===body;}),links=[];
    refs.forEach(function(p){p.querySelectorAll('a').forEach(function(a){links.push([a.textContent,a.getAttribute('href')]);});p.remove();});
    var key=body.parentElement.dataset.key||body.parentElement.id.replace(/^[^-]+-/, '');
    var relevant=VIDEOS.filter(function(v){return v.items&&v.items.includes(key);});
@@ -2389,6 +2411,127 @@ function expandedSearchAnswer(card){
  return html;
 }
 
+/* Modelo aportado por la comunidad, adaptado para revisión y formalización.
+   Referencias argentinas consultadas el 01/10/2026. No registra decisiones. */
+FUENTES.directivasLey=['Argentina.gob.ar · Ley 26.529 actualizada: derechos del paciente y directivas anticipadas','https://www.argentina.gob.ar/normativa/nacional/ley-26529-160432/actualizacion'];
+FUENTES.directivasReg=['Argentina.gob.ar · Decreto 1089/2012, artículo 11: formalización','https://www.argentina.gob.ar/normativa/nacional/199296/texto'];
+FUENTES.directivasCivil=['Argentina.gob.ar · Código Civil y Comercial, artículo 60','https://www.argentina.gob.ar/normativa/nacional/ley-26994-235975/actualizacion'];
+FUENTES.donacion=['INCUCAI · Registrar la voluntad sobre donación de órganos y tejidos','https://www.argentina.gob.ar/manifestar-la-voluntad-hacia-la-donacion-de-organos-y-tejidos'];
+FUENTES.paliativos=['Ministerio de Salud · Manual de cuidados paliativos para cuidadores','https://www.argentina.gob.ar/sites/default/files/bancos/2020-02/manual-de-cuidados-paliativos-para-cuidadores.pdf'];
+var DIRECTIVAS_TEXTO=`DIRECTIVAS ANTICIPADAS
+Borrador personal para completar, revisar y formalizar en Argentina.
+Marcar únicamente las opciones elegidas y completar o quitar lo que no corresponda. Ninguna opción está seleccionada de antemano.
+
+Yo, ______________________________________________________________,
+mayor de edad, DNI/CI/LC N.º ______________________,
+con domicilio en __________________________________________________,
+declaro que puedo comprender y decidir libremente, y que recibí información suficiente sobre las alternativas de cuidado y sus consecuencias. Expreso mis preferencias para el caso de que, en el futuro, no pueda manifestar mi voluntad ni siquiera con apoyos para comunicarme.
+
+La dificultad para hablar o moverme no implica por sí sola que no pueda decidir. Solicito que se utilicen los apoyos de comunicación que necesite. Mientras pueda expresar una decisión informada, deberá respetarse mi voluntad actual.
+
+1. SITUACIONES EN LAS QUE DESEO QUE SE APLIQUEN ESTAS INSTRUCCIONES
+
+Si mi equipo tratante determina una condición irreversible, sin expectativas razonables de recuperación de la situación que describo, deseo que no se inicien o que se retiren los tratamientos que únicamente prolonguen mi proceso de morir o que resulten desproporcionados, en las siguientes circunstancias que elijo:
+☐ Situación terminal.
+☐ Inconsciencia permanente.
+☐ Estado permanente de mínima conciencia en el que no pueda comprender, decidir ni expresar mis deseos, pese a los apoyos disponibles.
+☐ Otra situación que especifico: _____________________________________
+____________________________________________________________________
+
+El diagnóstico de ELA, por sí solo, no activa todas estas decisiones. Deben respetarse las circunstancias y los límites que dejo expresados.
+
+2. MIS DECISIONES SOBRE TRATAMIENTOS
+
+Dentro de las situaciones y condiciones que acabo de definir, marco los tratamientos que NO deseo recibir:
+☐ Reanimación cardiopulmonar (RCP).
+☐ Ventilación mecánica invasiva, por intubación o traqueostomía.
+☐ Ventilación no invasiva por máscara (BiPAP u otro ventilador).
+☐ Diálisis.
+☐ Otro tratamiento: _________________________________________________
+
+Condiciones, excepciones o tratamientos que SÍ acepto:
+____________________________________________________________________
+____________________________________________________________________
+
+Que una opción quede sin marcar no significa aceptación ni rechazo. Esas decisiones deberán evaluarse según mi voluntad, mis valores y la situación clínica.
+
+Para los tratamientos que rechacé expresamente, deseo que no se inicien y, si ya se hubieran iniciado, que se retiren cuando se compruebe que se cumplen las condiciones aquí definidas, con un plan de alivio del sufrimiento y acompañamiento.
+
+3. CONFORT Y CUIDADOS PALIATIVOS
+
+Deseo recibir higiene, compañía, atención y medidas para aliviar el dolor, la falta de aire, la ansiedad y otros síntomas. Mi rechazo de un tratamiento no significa renunciar a estos cuidados.
+
+Si presento sufrimiento intolerable por síntomas refractarios —que el equipo considere que no se pueden aliviar adecuadamente con otras medidas—, mi preferencia respecto de la sedación paliativa, cuando esté clínicamente indicada, es:
+☐ La acepto.  ☐ No la acepto.  ☐ Deseo conversarlo antes de decidir.
+
+Comprendo que busca aliviar el sufrimiento mediante una reducción proporcionada y supervisada de la conciencia, sin intención de provocar la muerte.
+Otras preferencias sobre el lugar, la compañía o los cuidados:
+____________________________________________________________________
+____________________________________________________________________
+
+4. DONACIÓN DE ÓRGANOS Y TEJIDOS
+
+Mi voluntad respecto de la donación después de mi fallecimiento es:
+☐ Sí, deseo donar.  ☐ No deseo donar.  ☐ Prefiero no declararlo aquí.
+Observaciones o límites: ____________________________________________
+____________________________________________________________________
+
+Registraré esta voluntad por los canales oficiales de INCUCAI. Este borrador no realiza ese trámite.
+
+5. REPRESENTANTE PARA DECISIONES DE SALUD
+
+Designo a __________________________________________________________,
+DNI ______________________, vínculo _________________________________,
+teléfono ______________________, domicilio __________________________,
+para que, cuando yo no pueda expresar mi voluntad, ayude a interpretar y hacer respetar estas instrucciones, mis preferencias y mis valores.
+
+Ante situaciones que no haya previsto, deseo que esta persona participe en las decisiones en mi representación, dentro de la ley y respetando mi voluntad:
+☐ Sí.  ☐ No; su función se limita a comunicar e interpretar lo escrito.
+
+Si no estuviera disponible, designo como suplente a ___________________,
+DNI ______________________, teléfono ________________________________.
+
+Mis representantes no podrán sustituir una decisión que yo pueda expresar ni contradecir mis instrucciones. Les he comunicado mis preferencias.
+
+6. INSTRUCCIONES ADICIONALES Y COMUNICACIÓN DEL DOCUMENTO
+
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+
+Solicito incorporar este documento a mi historia clínica y entregar una copia a mi equipo tratante y a las personas designadas. Esta versión reemplaza las directivas anteriores que hubiera emitido. Puedo modificarla o revocarla en cualquier momento.
+
+7. FIRMAS Y FORMALIZACIÓN
+
+Lugar y fecha: ______________________________________________________
+Firma y aclaración de la persona otorgante: __________________________
+____________________________________________________________________
+
+Aceptación del representante: acepto la función y el alcance indicados.
+Firma, aclaración y DNI: ____________________________________________
+Aceptación del suplente, si fue designado:
+Firma, aclaración y DNI: ____________________________________________
+
+Testigos: declaramos que, según nuestro conocimiento al momento de este acto, la persona otorgante comprende lo que expresa y decide con discernimiento y libertad.
+
+Testigo 1. Firma, aclaración y DNI: __________________________________
+Domicilio: _________________________________________________________
+
+Testigo 2. Firma, aclaración y DNI: __________________________________
+Domicilio: _________________________________________________________
+
+Intervención de escribano público o juzgado de primera instancia:
+____________________________________________________________________
+____________________________________________________________________
+
+La sola descarga o firma de este borrador no completa su formalización. Coordinar el acto con dos testigos ante escribano público o juzgado de primera instancia, conforme a los requisitos aplicables. Si hay dificultad para firmar o trasladarse, consultar cómo instrumentarlo preservando la voluntad de la persona.
+`;
+function initAdvanceDirectives(){
+ var body='<p>Dejar por escrito tus preferencias ayuda a que se respete tu voluntad si más adelante no podés expresarla. Podés aceptar o rechazar tratamientos y designar a alguien que te represente.</p><p><strong>Modelo para adaptar con tu equipo de salud y revisar al formalizarlo.</strong> Está basado en el texto aportado por la comunidad. Cada elección es personal: tener ELA o dificultad para hablar no significa perder la capacidad de decidir.</p><ol><li>Conversá las opciones con tu equipo y con la persona que quieras designar.</li><li>Editá el texto y marcá solamente lo que elegís; podés dejar temas para conversar.</li><li>Para formalizarlo en Argentina, la Ley 26.529 y su reglamentación prevén un escrito ante escribano público o juzgado de primera instancia, con dos testigos. Consultá cómo hacerlo si no podés firmar o trasladarte.</li><li>Entregá copias e incorporalo a tu historia clínica. Podés revocarlo en cualquier momento.</li></ol><label for="modelo-directivas">Editá tu borrador de directivas anticipadas</label><textarea class="template-text" id="modelo-directivas" spellcheck="true">'+esc(DIRECTIVAS_TEXTO)+'</textarea><div class="template-controls"><button class="btn" data-copy-template="modelo-directivas">Copiar modelo</button><button class="btn ghost" data-download-template="modelo-directivas">Descargar .txt</button><span role="status"></span></div><p class="hint">Lo que escribas aquí no se envía ni se guarda en PreguntELA. Copialo o descargalo antes de cerrar. La descarga no reemplaza la formalización.</p><p>La donación de órganos tiene su propio trámite: <a href="'+attr(FUENTES.donacion[1])+'" target="_blank" rel="noopener noreferrer">registrar mi voluntad en los canales de INCUCAI</a>.</p>'+fuenteHTML(['directivasLey','directivasReg','directivasCivil','paliativos','donacion']);
+ el('tramites-modelos').insertAdjacentHTML('afterend','<details class="topic-item advance-directives" id="tramites-directivas"><summary>Directivas anticipadas · modelo personal para completar</summary><div class="topic-body">'+body+'</div></details>');
+ CARDS.push({id:'directivas-anticipadas',cat:'Trámites y decisiones de cuidado',t:'Directivas anticipadas: modelo para expresar tu voluntad',k:'directivas anticipadas voluntad anticipada testamento vital representante salud decisiones tratamientos RCP sedación paliativa escribano testigos',p:['Directivas anticipadas','Testamento vital','Voluntades anticipadas'],a:'<p>Modelo editable para expresar tus preferencias de cuidado y designar un representante. Incluye los pasos de formalización en Argentina.</p>',n:enlaceTema('tramites/directivas','Ver y copiar el modelo'),g:'tramites/directivas'});
+}
+
 /* Catálogo público: referencias, idioma y alcance de la revisión por entrada. */
 var VIDEOS = [
  {id:'cuidados-boton-sjd',url:'https://www.picuida.es/ciudadania/cuidados-del-boton-de-gastrostomia/',tema:'alimentacion',items:['boton','jeringas'],title:'Cuidados cotidianos del botón de gastrostomía',original:'Cuidados del botón de gastrostomía',org:'Hospital Sant Joan de Déu · PiCuida',lang:'es',review:'Video y autor identificados por la red de cuidados PiCuida; sin transcripción revisada',text:'Video de enfermería sobre el cuidado del dispositivo. Fue realizado en un contexto pediátrico: sirve para conocer el botón; las cantidades, el recambio y el plan de un adulto con ELA deben ajustarse con su equipo.',points:[],source:'https://www.picuida.es/ciudadania/cuidados-del-boton-de-gastrostomia/'},
@@ -2417,11 +2560,11 @@ function filtrarVideos(){var tema=el('videoTema').value,idioma=el('videoIdioma')
 function rutaVideos(tema){if(!el('videoTema')||!VIDEO_TEMAS[tema])return;el('videoTema').value=tema;el('videoIdioma').value='todos';el('videoBuscar').value='';filtrarVideos();el('videoTema').focus({preventScroll:true});}
 
 function modeloFichaHTML(k){var m=MODELOS_FICHA[k];if(!m)return '';var id='modelo-ficha-'+k;return '<details class="template-in-card"><summary>'+esc(m.title)+'</summary><p class="template-hint">'+esc(m.hint)+'</p><label for="'+id+'">Texto para completar y revisar</label><textarea class="template-text" id="'+id+'">'+esc(m.text)+'</textarea><div class="template-controls"><button class="btn" data-copy-template="'+id+'">Copiar texto</button><button class="btn ghost" data-download-template="'+id+'">Descargar .txt</button><span role="status"></span></div><p class="hint">Lo que edites no se envía ni se guarda. Copialo antes de salir.</p></details>';}
-function recursosHTML(k,sec){var r=RECURSOS[k];if(!r)return '';return '<div class="resource-detail">'+r.extra.map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+'<div class="resource-question"><h4>'+(sec==='medicacion'?'Para conversar con el médico':'Qué conviene especificar en el pedido')+'</h4><p>'+esc(r.pedido)+'</p></div>'+(r.acceso?'<h4>Cómo consultar en Argentina</h4><p>'+esc(r.acceso)+'</p>':'')+(r.contactos?'<div class="topic-links">'+r.contactos.map(function(l){return '<a href="'+attr(l[1])+'" target="_blank" rel="noopener noreferrer">'+esc(l[0])+'</a>';}).join('')+'</div>':'')+(r.links.length?'<ul class="resource-links">'+r.links.map(function(l){return '<li><a href="'+attr(l[1])+'" target="_blank" rel="noopener noreferrer">'+esc(l[0])+' ↗</a></li>';}).join('')+'</ul><p class="hint">Los enlaces comerciales muestran ejemplos. No verificamos cada publicación, su calidad, stock o cobertura. Compará la especificación indicada y consultá al proveedor.</p>':'')+(r.f.length?fuenteHTML(r.f):'')+modeloFichaHTML(k)+'</div>';}
+function recursosHTML(k,sec){var r=RECURSOS[k];if(!r)return '';return '<div class="resource-detail">'+r.extra.map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+(r.exampleHTML||'')+'<div class="resource-question"><h4>'+(sec==='medicacion'?'Para conversar con el médico':'Qué conviene especificar en el pedido')+'</h4><p>'+esc(r.pedido)+'</p></div>'+(r.acceso?'<h4>Cómo consultar en Argentina</h4><p>'+esc(r.acceso)+'</p>':'')+(r.contactos?'<div class="topic-links">'+r.contactos.map(function(l){return '<a href="'+attr(l[1])+'" target="_blank" rel="noopener noreferrer">'+esc(l[0])+'</a>';}).join('')+'</div>':'')+(r.links.length?'<ul class="resource-links">'+r.links.map(function(l){return '<li><a href="'+attr(l[1])+'" target="_blank" rel="noopener noreferrer">'+esc(l[0])+' ↗</a></li>';}).join('')+'</ul><p class="hint">Los enlaces comerciales muestran ejemplos. No verificamos cada publicación, su calidad, stock o cobertura. Compará la especificación indicada y consultá al proveedor.</p>':'')+(r.f.length?fuenteHTML(r.f):'')+modeloFichaHTML(k)+'</div>';}
 function initResources(){
  var equipment=el('v-equipamiento').querySelector('.topic-intro');equipment.insertAdjacentHTML('beforeend','<div class="topic-note"><h3>Anticipar las necesidades ahorra trámites</h3><p>Pedile al fisiatra o terapista ocupacional una orden detallada: medidas, apoyos, funciones, accesorios y condiciones de la casa. La evolución y los tiempos de entrega pueden hacer necesario prever ajustes desde el inicio.</p><p>Solicitar las adaptaciones previsibles con justificación clínica ayuda a evitar equipos que pronto queden cortos. Antes de aceptar la entrega, compará cada característica con la orden.</p>'+fuenteHTML(['sillas'])+'</div>');
  el('v-respiracion').querySelector('.topic-intro').insertAdjacentHTML('beforeend','<div class="topic-feature"><h3>La respiración puede cambiar primero durante la noche</h3><p>Podés sentir cansancio, sueño de día, dolor de cabeza al despertar o falta de aire al acostarte, incluso sin notar mucha dificultad durante el día. La ELA puede debilitar los músculos que mueven el aire: si ventilás menos, podés eliminar menos dióxido de carbono (CO₂) y acumularlo.</p><p>Contáselo al equipo respiratorio: evaluará la fuerza, la tos y, cuando corresponda, la respiración nocturna. La ventilación no invasiva puede ayudar a mover aire y descansar los músculos. Una postura con el tronco elevado puede aliviar al acostarte, pero no reemplaza la evaluación ni el soporte indicado.</p>'+fuenteHTML(['respMND','respApoyo'])+'</div>');
- var resp=el('v-respiracion').querySelector('[data-topic-group]');resp.insertAdjacentHTML('beforebegin','<section class="topic-note"><h3>Armar el equipo de cuidados según la necesidad</h3><ol class="resp-checklist"><li>'+enlaceTema('respiracion/bipap','Ventilación indicada y máscara adecuada')+': ayudar a respirar.</li><li>'+enlaceTema('respiracion/cough','Asistente de tos')+': movilizar secreciones cuando la tos pierde fuerza.</li><li>'+enlaceTema('respiracion/aspirador','Aspirador y sondas')+': retirar las secreciones accesibles con técnica enseñada.</li><li>'+enlaceTema('respiracion/ambu','Resucitador manual (Ambú)')+': cuando forme parte de un plan escrito, con cuidadores entrenados.</li><li>'+enlaceTema('respiracion/ups','Baterías y respaldo eléctrico')+': indispensables en el plan cuando hay dependencia de equipos.</li></ol><p>No todas las personas necesitan todo desde el inicio. Pedí indicaciones, capacitación, mantenimiento y un contacto para fallas.</p></section><section class="topic-section" id="respiracion-modelos"><h3>Equipos que se comercializan en Argentina</h3><p>Abrí un modelo para ver sus características y compartir cómo te resultó. La elección depende del soporte indicado, las alarmas, el circuito y la autonomía necesarios.</p><div class="model-index">'+RESP_MODELS.map(function(m){return enlaceTema('respiracion/'+m.k,m.n);}).join('')+'</div><p class="hint">Presencia en catálogos argentinos revisada el 01/10/2026. Consultá stock, configuración, accesorios y servicio local. Los modelos no son intercambiables para todas las necesidades.</p></section>');
+ var resp=el('v-respiracion').querySelector('[data-topic-group]');resp.insertAdjacentHTML('beforebegin','<section class="topic-note"><h3>Armar el equipo de cuidados según la necesidad</h3><ol class="resp-checklist"><li>'+enlaceTema('respiracion/bipap','Ventilación indicada y máscara adecuada')+': ayudar a respirar.</li><li>'+enlaceTema('respiracion/cough','Asistente de tos')+': movilizar secreciones cuando la tos pierde fuerza.</li><li>'+enlaceTema('respiracion/aspirador','Aspirador y sondas')+': retirar las secreciones accesibles con técnica enseñada.</li><li>'+enlaceTema('respiracion/ambu','Resucitador manual (Ambú)')+': cuando forme parte de un plan escrito, con cuidadores entrenados.</li><li>'+enlaceTema('respiracion/ups','Baterías y respaldo eléctrico')+': indispensables en el plan cuando hay dependencia de equipos.</li></ol><p>No todas las personas necesitan todo desde el inicio. Pedí indicaciones, capacitación, mantenimiento y un contacto para fallas.</p></section>');
  el('v-medicamentos').insertAdjacentHTML('beforeend','<div class="topic-note"><h3>Conseguir un medicamento en Argentina</h3><p>Pedí la receta por principio activo y presentación exacta, consultá a la farmacia de tu cobertura y solicitá un presupuesto si hace falta autorización. Una farmacia que prepara una fórmula no demuestra que esa fórmula esté aprobada para tratar ELA.</p>'+fuenteHTML(['vnm','farmagen'])+'</div>');
  el('v-comunicacion').querySelector('.topic-intro').insertAdjacentHTML('afterend','<section class="topic-feature" id="comunicacion-voz"><h3>Guía para clonar tu voz y usarla para comunicarte</h3><p>La guía de Marcela y Andy reúne los pasos para solicitar el Programa de Impacto de ElevenLabs, guardar grabaciones, crear la voz y conectarla con MarisApp, TD Talk, TD Snap y otros programas. Incluye modelos de cartas, enlaces a tutoriales y ayuda para ver videos en español.</p><div class="topic-links"><a class="btn" href="guia-clonacion-voz.pdf" target="_blank" rel="noopener noreferrer">Abrir la guía en español (PDF)</a><a href="guia-clonacion-voz.pdf" download="PreguntELA-guia-clonacion-voz.pdf">Descargar la guía</a></div><p class="hint">9 páginas · 431 KB · Guía aportada por la familia, con instrucciones y enlaces consultados el 22/09/2026. Los menús y requisitos de cada servicio pueden cambiar.</p><div class="topic-links">'+enlaceTema('videos/comunicacion','Ver las capacitaciones de voz y comunicación')+'</div></section>');
  CARDS.push({id:'guia-clonacion-voz',cat:'Guías en PDF',t:'Guía para clonar tu voz y usarla para comunicarte',k:'guía clonación clonar voz ElevenLabs programa impacto MarisApp Tobii TD Pilot TD Talk TD Snap Communicator Bridging Voice PDF español',p:['Cómo clonar mi voz','Guía de voz en PDF'],a:'<p>Guía en español de Marcela y Andy: solicitud del programa, grabaciones, verificación y configuración en distintas aplicaciones. Incluye cartas modelo y enlaces a videos.</p>',n:enlaceTema('comunicacion/voz','Abrir la guía de voz →'),g:'comunicacion/voz'});
@@ -2442,9 +2585,10 @@ function itemTemaHTML(i,sec,view){
   var info=sec==='medicacion'?MED_INFO[i.k]:null;
   var sources=info&&info.f?info.f:FUENTES[i.k]?[i.k]:[];
   var rich=RECURSOS[i.k], searchText=i.n+' '+i.d+' '+(info?info.s:'')+' '+(rich?rich.extra.join(' ')+' '+rich.pedido+' '+rich.acceso:'');
-  return '<details class="topic-item" id="'+view+'-'+i.k+'" data-topic-item data-key="'+attr(i.k)+'" data-search="'+attr(fold(searchText))+'"><summary>'+esc(i.n)+(info?'<span class="item-status">'+esc(info.s)+'</span>':'')+(view==='respiracion'?'<span class="item-comment-hint">Ver detalles y comentarios</span>':'')+'</summary><div class="topic-body"><p>'+esc(i.d)+'</p>'+(sources.length?fuenteHTML(sources):'')+recursosHTML(i.k,sec)+'<p class="hint"><a href="#/preguntar" data-history-query="'+attr(i.n)+'">Buscar conversaciones anteriores sobre este tema</a></p><div class="topic-community" data-topic-comments data-sec="'+sec+'" data-item="'+attr(i.k)+'"></div></div></details>';
+  return '<details class="topic-item" id="'+view+'-'+i.k+'" data-topic-item data-key="'+attr(i.k)+'" data-search="'+attr(fold(searchText))+'"><summary>'+esc(i.n)+(info?'<span class="item-status">'+esc(info.s)+'</span>':'')+(view==='respiracion'?'<span class="item-comment-hint">Ver detalles y comentarios</span>':'')+'</summary><div class="topic-body"><p>'+esc(i.d)+'</p>'+(sources.length?fuenteHTML(sources):'')+recursosHTML(i.k,sec)+(view==='respiracion'&&i.k==='bipap'?respiratoryModelsHTML():'')+'<p class="hint"><a href="#/preguntar" data-history-query="'+attr(i.n)+'">Buscar conversaciones anteriores sobre este tema</a></p><div class="topic-community" data-topic-comments data-sec="'+sec+'" data-item="'+attr(i.k)+'"></div></div></details>';
 }
-function grupoTemaHTML(g,view){return '<div class="topic-section" data-topic-group><h3>'+esc(g.g)+'</h3>'+g.items.map(function(i){return itemTemaHTML(i,'insumo',view);}).join('')+'</div>';}
+function grupoTemaHTML(g,view){return '<div class="topic-section" data-topic-group><h3>'+esc(g.g)+'</h3>'+g.items.filter(function(i){return view!=='respiracion'||!RESP_MODELS.some(function(m){return m.k===i.k;});}).map(function(i){return itemTemaHTML(i,'insumo',view);}).join('')+'</div>';}
+function respiratoryModelsHTML(){return '<section class="respiratory-models" id="respiracion-modelos"><h4>Modelos de BiPAP y ventiladores</h4><p>Abrí cada modelo para ver detalles y comentar tu experiencia. La elección depende del soporte, las alarmas, el circuito y la autonomía indicados por el equipo respiratorio.</p><p class="hint">Figuran en catálogos argentinos revisados el 01/10/2026. Confirmá stock, configuración y servicio local; no todos brindan el mismo nivel de soporte.</p>'+RESP_MODELS.map(function(m){return itemTemaHTML(m,'insumo','respiracion');}).join('')+'</section>';}
 function atajosProfesionales(types){return '<div class="topic-links">'+types.map(function(t){return '<a href="#/directorio" data-specialist="'+attr(t)+'">Buscar '+esc(t.toLowerCase())+'</a>';}).join('')+enlaceTema('directorio','Directorio de profesionales y proveedores')+'<button type="button" class="mini" data-add-contact="profesional">+ Agregar profesional o centro</button></div>';}
 function pintarAportesTematicos(){
   document.querySelectorAll('[data-topic-comments]').forEach(function(box){
@@ -2483,7 +2627,7 @@ function initPractical(){
   el('v-consejos').innerHTML=introTema('consejos','<p class="lede">Ideas de familiares para todo lo que no entra en las otras categorías.</p><p>Organizar el día, pedir ayuda, acompañar a quien cuida, compartir actividades y hacer lugar a lo que cada persona disfruta.</p>')+
     '<div class="topic-section"><h3>Organizar los cuidados</h3><p>Varias familias usan un cuaderno de novedades para los relevos, una lista de contactos y un calendario de turnos. Acordá con el equipo qué tareas requieren personal capacitado y registrá las indicaciones.</p><h3>Armar una red</h3><p>Repartir compras, traslados, trámites y compañía ayuda a sostener los cuidados. En el directorio hay fundaciones y contactos que circularon en el grupo.</p><h3>Experiencias y préstamos</h3><p>Contá qué te ayudó y en qué contexto. Para prestar un equipo, revisá su estado y compatibilidad con el proveedor o profesional. Evitá publicar datos privados de otras personas.</p></div><div class="topic-links">'+enlaceTema('directorio','Profesionales y fundaciones')+enlaceTema('archivo','Leer el archivo del grupo')+enlaceTema('guias','Consultar las guías del archivo')+'</div><div class="topic-community" data-topic-comments data-sec="consejo" data-item="otros"></div>';
   el('modelosCartas').innerHTML=modelosHTML();
-  initVideos();initResources();initPatientGuidance();
+  initAdvanceDirectives();initVideos();initResources();initPatientGuidance();
   el('v-equipamiento').insertAdjacentHTML('beforeend',atajosProfesionales(['Fisiatra','Terapista ocupacional']));
   arrangeTopicSources();
   // Search answers reuse the revised guidance; the historical messages remain verbatim.
@@ -2510,7 +2654,11 @@ function initPractical(){
   document.body.appendChild(el('communityDialog'));
   document.querySelectorAll('[data-topic-search]').forEach(function(input){input.addEventListener('input',function(){
     var panel=el('v-'+input.dataset.topicSearch),q=fold(input.value).trim(),count=0;
-    panel.querySelectorAll('[data-topic-item]').forEach(function(item){var symptom=panel.dataset.symptom, keys=symptom&&MED_SYMPTOMS[symptom];item.hidden=(!!q&&!item.dataset.search.includes(q))||(!!keys&&!keys.includes(item.dataset.key));if(!item.hidden) count++;});
+    var items=Array.from(panel.querySelectorAll('[data-topic-item]')),keys=MED_SYMPTOMS[panel.dataset.symptom];
+    var matches=new Map(items.map(function(item){return [item,(!q||item.dataset.search.includes(q))&&(!keys||keys.includes(item.dataset.key))];}));
+    items.forEach(function(item){var parent=item.parentElement.closest('[data-topic-item]');item.hidden=!matches.get(item)&&!(parent&&matches.get(parent));});
+    // A matching model must remain visible inside its BiPAP parent.
+    items.slice().reverse().forEach(function(item){if(item.querySelector('[data-topic-item]:not([hidden])')){item.hidden=false;if(q)item.open=true;}if(!item.hidden)count++;});
     panel.querySelectorAll('[data-topic-group]').forEach(function(g){g.hidden=!g.querySelector('[data-topic-item]:not([hidden])');});
     panel.querySelector('[data-topic-empty]').hidden=count!==0;
   });});
@@ -2532,7 +2680,7 @@ function revealRouteAnchor(){
   var target=el(bits[0]+'-'+bits[1]);if(!target)return;
   var panel=target.closest('.view'),search=panel.querySelector('[data-topic-search]');
   if(search&&(search.value||panel.dataset.symptom)){search.value='';panel.dataset.symptom='';panel.querySelectorAll('[data-med-symptom]').forEach(function(b){b.setAttribute('aria-pressed',String(!b.dataset.medSymptom));});search.dispatchEvent(new Event('input',{bubbles:true}));}
-  if(target.tagName==='DETAILS')target.open=true;
+  for(var ancestor=target;ancestor&&ancestor!==panel;ancestor=ancestor.parentElement){if(ancestor.tagName==='DETAILS')ancestor.open=true;}
   target.scrollIntoView({block:'start'});var focus=target.tagName==='DETAILS'?target.querySelector('summary'):(target.querySelector('h2,h3')||target);focus.tabIndex=0;focus.focus({preventScroll:true});
 }
 
