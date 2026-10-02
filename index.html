@@ -316,7 +316,7 @@ mark{background:var(--gold-soft);color:var(--ink);padding:0 2px;border-radius:2p
 /* comunidad */
 .formrow{margin-bottom:16px}
 .formrow label{display:block;font-weight:600;font-size:.93rem;margin-bottom:6px}
-.formrow input[type="text"],.formrow input[type="email"],.formrow select,.formrow textarea{
+.formrow input[type="text"],.formrow input[type="email"],.formrow input[type="password"],.formrow select,.formrow textarea{
   width:100%;font:inherit;color:var(--ink);background:var(--surface-2);
   border:1px solid var(--line);border-radius:8px;padding:11px 13px;min-height:46px}
 .formrow textarea{resize:vertical;line-height:1.5}
@@ -587,6 +587,14 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 .respiratory-suppliers h5{font-size:1rem;margin:0 0 10px}.respiratory-suppliers p{margin:0 0 12px}
 @media(max-width:650px){.video-selection-list{grid-template-columns:1fr}}
 .directory-category-members{margin-top:20px}.directory-category-members>.aporte{max-width:850px}
+/* Cuenta siempre visible: identidad, sesión y membresía por separado. */
+.session-access{flex:0 1 300px;min-width:245px;max-width:100%;padding:12px 14px;border:2px solid #b6c8d1;border-radius:14px;background:#f3f7fa;color:#123148}.session-access[data-state="signed-in"]{background:#e8f5ee;border-color:#23734e;color:#155238}.session-access[data-state="error"]{background:#fff4d9;border-color:#9d7820;color:#634b12}.session-identity{display:flex;flex-direction:column;gap:2px;line-height:1.35}.session-indicator{font-size:.77rem;font-weight:700}.session-identity strong{font-size:1rem;overflow-wrap:anywhere}.session-identity>span:last-child{font-size:.75rem}.session-actions{display:flex;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}.session-actions .btn{min-height:38px;padding:7px 12px;font-size:.78rem}.session-out{border:0;background:transparent;color:inherit;text-decoration:underline;font:inherit;font-size:.78rem;min-height:38px;cursor:pointer;padding:4px}.session-out:disabled{opacity:.55}.auth-choices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 24px}.auth-choices button{border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:16px;font:inherit;font-weight:650;cursor:pointer}.auth-choices button[aria-pressed="true"]{border-color:var(--accent);background:#e9f2f7;box-shadow:inset 0 -4px var(--accent)}.auth-explainer{background:var(--surface-2);border-radius:12px;padding:18px;margin-top:22px;font-size:.88rem}.auth-explainer p:last-child{margin-bottom:0}.account-signed-in{font-size:.9rem;font-weight:700;color:#155238;margin:0 0 6px}.whoami{border:2px solid #23734e;background:#e8f5ee}.whoami .hint{margin:6px 0 0}.header-tools .brandrow{flex-basis:280px}
+@media(max-width:1100px) and (min-width:761px){.header-tools{gap:12px}.header-tools .brandrow{flex-basis:230px}.header-tools .brandlockup{width:220px}.session-access{flex-basis:260px;min-width:220px}.account-menu{font-size:.75rem}}
+@media(max-width:760px){.session-access{grid-column:1/-1;grid-row:3;min-width:0;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px}.session-identity{min-width:0}.session-actions{margin-top:0;justify-content:flex-end;gap:4px;flex-shrink:0;max-width:48%}.session-identity strong{font-size:.95rem}.session-identity>span:last-child{font-size:.72rem}.account-menu{grid-column:2;grid-row:1}.header-tools .brandrow{grid-column:1;grid-row:1}.auth-choices{gap:8px}.auth-choices button{font-size:.92rem;padding:12px}.topic-section,.topic-item,.topic-feature,#videos-espanol{scroll-margin-top:260px}}
+.auth-methods{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.auth-methods button{font:inherit;font-size:.9rem;border:1px solid var(--line);border-radius:9px;padding:10px 14px;min-height:44px;cursor:pointer;background:var(--surface);color:var(--ink)}.auth-methods button[aria-pressed="true"]{background:var(--accent);color:var(--btn-fg);border-color:var(--accent)}.text-action{display:block;border:0;background:none;padding:10px 0;text-decoration:underline;font:inherit;font-size:.87rem;cursor:pointer;color:var(--accent);min-height:44px}.password-invitation{margin:18px 0 24px;padding:18px;border:1px solid var(--line);border-radius:12px}.password-invitation p{margin:6px 0 12px;font-size:.88rem}#passwordSettings{margin-bottom:24px;scroll-margin-top:230px}#passwordReauth{border-left:4px solid #b68b2e;padding:12px 16px;margin-bottom:18px;background:#fff6dc}#passwordSettings input[type=password],#authPassword{font:inherit;width:100%}
+.directory-category-members{margin-top:20px}.directory-category-members>.aporte{max-width:850px}
+
+.header-tools{flex-wrap:wrap}.join-link{white-space:nowrap}
 /* practical styles end */
 </style>
 
@@ -599,7 +607,7 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
       <span class="brandsub">Ayuda práctica para la comunidad de ELA en Argentina</span>
     </a>
     <form id="headerSearch" class="header-search" role="search"><label class="sr-only" for="headerQ">Buscar en PreguntELA</label><input id="headerQ" type="search" placeholder="¿Qué necesitás encontrar?" required><button type="submit" aria-label="Buscar en todo el sitio">Buscar</button></form>
-    <details class="account-menu" id="accountMenu"><summary>Comunidad y más</summary><nav aria-label="Comunidad y otros accesos"><a href="#/comunidad" data-v="comunidad">Mi cuenta / Comunidad</a><a href="#/foro" data-v="foro">Conversaciones de la comunidad</a><a href="#/archivo" data-v="archivo">Archivo del grupo</a><a href="#/acerca" data-v="acerca">Acerca de PreguntELA</a></nav></details></div>
+    <div class="session-access" id="sessionAccess" data-state="checking" aria-label="Estado de tu cuenta"><div class="session-identity" role="status" aria-live="polite" aria-atomic="true"><span class="session-indicator" id="sessionIndicator">Comprobando sesión…</span><strong id="sessionName" hidden></strong><span id="sessionDetail">Un momento</span></div><div class="session-actions"><a class="btn join-link" id="joinLink" href="#/comunidad" data-v="comunidad">Mi cuenta</a><button class="session-out" type="button" id="headerSignOut" hidden>Cerrar sesión</button></div></div><details class="account-menu" id="accountMenu"><summary>Comunidad y más</summary><nav aria-label="Comunidad y otros accesos"><a href="#/comunidad" data-v="comunidad">Mi cuenta / Comunidad</a><a href="#/foro" data-v="foro">Conversaciones de la comunidad</a><a href="#/archivo" data-v="archivo">Archivo del grupo</a><a href="#/acerca" data-v="acerca">Acerca de PreguntELA</a></nav></details></div>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menú</button>
     <nav class="tabs" id="mainNav" role="tablist" aria-label="Secciones">
 <button class="tab" role="tab" aria-selected="true" data-v="inicio">Inicio</button>
@@ -756,26 +764,23 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 
   <div class="col" id="comLogin" hidden>
     <div class="panel">
-      <h3 class="sec">Ingresar a la comunidad</h3>
-      <p><strong>¿Ya sos miembro?</strong> Escribí el mismo correo con el que te aprobaron y tocá «Enviarme el enlace». Abrí el correo desde el celular o la computadora donde querés entrar. No necesitás contraseña ni otra aprobación.</p>
-      <p><strong>¿Es tu primera vez?</strong> Usá este mismo formulario, abrí el enlace del correo y completá tu solicitud. Un administrador debe aprobar tu acceso antes de que puedas ver o compartir aportes.</p>
-      <div class="formrow"><label for="authNombre">Tu nombre (opcional)</label>
-        <input type="text" id="authNombre" maxlength="60" autocomplete="name" placeholder="Como querés que te conozca el grupo"></div>
-      <div class="formrow">
-        <label for="authMail">Tu mail</label>
-        <input type="email" id="authMail" placeholder="nombre@ejemplo.com" autocomplete="email">
-      </div>
-      <div class="askbar">
-        <button class="btn" id="authSend">Enviarme el enlace</button>
-        <span class="hint" id="authMsg" role="status" aria-live="polite"></span>
-      </div>
-      <p class="hint" style="margin-top:12px">El correo y los aportes se guardan en el servicio de Comunidad. Solo las personas aprobadas pueden ver los aportes.</p>
+      <h3 class="sec">Entrá a tu cuenta o sumate a la comunidad</h3>
+      <div class="auth-choices" role="group" aria-label="Elegí cómo entrar"><button type="button" data-auth-mode="member" aria-pressed="true">Ya tengo cuenta</button><button type="button" data-auth-mode="register" aria-pressed="false">Quiero registrarme</button></div>
+      <h4 id="authModeTitle">Ingresar a mi cuenta</h4>
+      <p id="authModeHelp">Escribí el mismo email con el que te registraste. Te enviaremos un enlace para entrar: <strong>no estás pidiendo autorización otra vez.</strong></p>
+      <form id="emailAccessForm">
+        <div class="formrow" id="authNameRow" hidden><label for="authNombre">Tu nombre (opcional)</label><input type="text" id="authNombre" maxlength="60" autocomplete="name" placeholder="Como querés que te conozca el grupo"></div>
+        <div class="formrow"><label for="authMail">Email de tu cuenta</label><input type="email" id="authMail" placeholder="nombre@ejemplo.com" autocomplete="email" required aria-describedby="authModeHelp"></div>
+        <div class="askbar"><button class="btn" id="authSend" type="submit">Recibir enlace para ingresar</button><span class="hint" id="authMsg" role="status" aria-live="polite"></span></div>
+      </form>
+      <div class="auth-explainer"><strong>No hace falta ingresar cada vez que visitás el sitio.</strong><p>Si tu sesión sigue abierta en este navegador, entrás directamente y arriba vas a ver tu nombre. Si usás otro celular o computadora, cerraste sesión o se borraron los datos del navegador, volvé a entrar con tu email.</p><p id="authEmailExplanation">El enlace confirma que el correo es tuyo. Abrilo en el dispositivo donde querés entrar. Solo escribir el email no alcanza para ingresar a una cuenta.</p></div>
+      <p class="hint">Las guías y la información pública se pueden consultar sin cuenta. Para ver y compartir aportes, un administrador debe aprobar tu acceso.</p>
     </div>
   </div>
 
   <div class="col" id="comYo" hidden>
     <div class="whoami">
-      <div><span class="whoname" id="meName">—</span><span class="whorole" id="meRole"></span></div>
+      <div><p class="account-signed-in">✓ Estás dentro de tu cuenta</p><span class="whoname" id="meName">—</span><span class="whorole" id="meRole"></span><p class="hint" id="meEmail"></p><p class="hint">No necesitás solicitar otro enlace mientras tu sesión siga abierta.</p></div>
       <div class="whoact">
         <button class="btn ghost" id="meEdit">Mi cuenta</button>
         <button class="btn ghost" id="meOut">Salir</button>
@@ -3593,6 +3598,7 @@ function pintarConsejos(){
 }
 
 function pintarTodo(){
+  pintarEstadoSesion();
   pintarInsumos(); pintarMeds(); pintarEsp(); pintarConsejos();
   pintarAportesTematicos();
   updateParticipation();
@@ -3834,6 +3840,8 @@ async function cargarAportes(epoch){
 
 function limpiarPrivado(){
   ME=null;APORTES=[];ARCHIVOS=[];CORRECCIONES=[];MIEMBROS=[];
+  if(!sessionUser){sessionEmail="";sessionAccessError=false;}
+  el("meEmail").textContent="";limpiarPasswords();
   clearDiscussionDrafts();
   el('directoryStatus').textContent='';
   el("comAdmin").hidden=true;el("comAccess").hidden=true;el("mePanel").hidden=true;
@@ -3849,8 +3857,8 @@ function limpiarPrivado(){
 }
 async function comSesion(session, force){
   var id=session && session.user.id;
-  if(!force && id===sessionUser && ME) return;
-  var epoch=++sessionEpoch;sessionUser=id||null;limpiarPrivado();
+  if(!force && id===sessionUser && ME){if(passwordRecoveryPending)mostrarPasswordCuenta(true);return;}
+  var epoch=++sessionEpoch;sessionUser=id||null;sessionEmail=session&&session.user.email||"";sessionAccessError=false;limpiarPrivado();
   el("comLogin").hidden=!!id;el("comYo").hidden=!id;
   el("meName").textContent="Mi cuenta";el("meRole").textContent="";el("meEdit").disabled=true;
   if(!id){estadoComunidad("",false,false);return;}
@@ -3858,7 +3866,7 @@ async function comSesion(session, force){
     estadoComunidad("Comprobando tu acceso…",false,false);
     var profile=comprobar(await sb.from("perfiles").select("id,nombre,rol,rol_comunidad,contacto,mostrar_contacto,membresia").eq("id",id).single());
     if(epoch!==sessionEpoch) return;
-    ME=profile;el("meName").textContent=ME.nombre||"Miembro";el("meEdit").disabled=false;
+    ME=profile;if(passwordRecoveryPending)mostrarPasswordCuenta(true);el("meEmail").textContent=sessionEmail?"Ingresaste con "+sessionEmail:"";el("meName").textContent=ME.nombre||"Miembro";el("meEdit").disabled=false;
     el("meRole").textContent=admin()?"administrador":(aprobado()?"miembro aprobado":"acceso pendiente");
     el("meNombre").value=ME.nombre||"";el("meRolC").value=ME.rol_comunidad||"";
     el("meContacto").value=ME.contacto||"";el("meMostrar").checked=!!ME.mostrar_contacto;
@@ -3872,7 +3880,7 @@ async function comSesion(session, force){
     }
     el("comAdmin").hidden=!admin();
     await cargarAportes(epoch); if(admin()) await cargarMiembros(epoch);
-  }catch(e){if(epoch===sessionEpoch) estadoComunidad("No pudimos comprobar o cargar tu acceso. "+mensajeError(e),true,true);}
+  }catch(e){if(epoch===sessionEpoch){sessionAccessError=!ME;pintarEstadoSesion();estadoComunidad("No pudimos comprobar o cargar tu acceso. "+mensajeError(e),true,true);}}
 }
 async function refrescarSesion(){
   try{var s=comprobar(await sb.auth.getSession());await comSesion(s.session,true);}
@@ -3999,36 +4007,173 @@ function bindFormularios(){
   el("memberFilter").addEventListener("change",pintarMiembros);
 }
 
+/* La sesión y la aprobación son estados distintos: entrar no vuelve a solicitar membresía. */
+var authMode='member',actualizarIngresoPorCorreo=null,sessionEmail='',sessionAccessError=false;
+function textoBotonIngreso(){return authMode==='register'?'Confirmar mi email y registrarme':authMethod==='password'?'Ingresar a mi cuenta':'Recibir enlace para ingresar';}
+function elegirModoIngreso(mode){
+ authMode=mode==='register'?'register':'member';
+ document.querySelectorAll('[data-auth-mode]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.authMode===authMode));});
+ el('authNameRow').hidden=authMode!=='register';
+ el('authModeTitle').textContent=authMode==='register'?'Crear mi cuenta y solicitar acceso':'Ingresar a mi cuenta';
+ el('authModeHelp').innerHTML=authMode==='register'?'Confirmá tu email y completá los datos de registro. Un administrador revisará tu solicitud antes de que puedas compartir información.':'Escribí el mismo email con el que te registraste. Te enviaremos un enlace para entrar: <strong>no estás pidiendo autorización otra vez.</strong>';
+ el('authMail').previousElementSibling.textContent=authMode==='register'?'Tu email':'Email de tu cuenta';
+ pintarMetodoIngreso();
+ if(actualizarIngresoPorCorreo)actualizarIngresoPorCorreo();
+}
+function bindAccountAccess(){
+ initPasswordAccess();
+ document.querySelectorAll('[data-auth-mode]').forEach(function(b){b.addEventListener('click',function(){elegirModoIngreso(b.dataset.authMode);el('authMail').focus();});});
+ el('joinLink').addEventListener('click',function(){if(!sessionUser)elegirModoIngreso('member');});
+ document.querySelectorAll('[data-auth-entry]').forEach(function(a){a.addEventListener('click',function(){if(!sessionUser)elegirModoIngreso(a.dataset.authEntry);});});
+ elegirModoIngreso('member');
+}
+function pintarEstadoSesion(){
+ var box=el('sessionAccess');if(!box)return;
+ var signed=!!sessionUser,known=!!ME;
+ box.dataset.state=sessionAccessError?'error':signed?(known?'signed-in':'checking'):'signed-out';
+ el('sessionIndicator').textContent=signed?'✓ Sesión iniciada':sessionAccessError?'No pudimos comprobar tu sesión':'Sin iniciar sesión';
+ el('sessionName').hidden=!known;el('sessionName').textContent=known?(ME.nombre||'Mi cuenta'):'';
+ el('sessionDetail').textContent=signed?(known?(admin()?'Administración':aprobado()?'Miembro aprobado':ME.membresia==='suspendida'?'Acceso a la comunidad suspendido':'Acceso a la comunidad pendiente'):(sessionAccessError?'No pudimos comprobar tu acceso':'Comprobando tu acceso…')):(sessionAccessError?'Volvé a intentar desde Mi cuenta':'Podés leer el sitio. Para aportar, ingresá.');
+ el('joinLink').textContent=signed?(known&&admin()?'Administrar':'Mi cuenta'):'Ingresar / Registrarme';
+ el('headerSignOut').hidden=!signed;
+}
+
+/* Contraseña opcional: la identidad la verifica Supabase; la membresía no cambia. */
+var authMethod='password',passwordBusy=false,passwordRecoveryPending=/(?:^#|&)type=recovery(?:&|$)/.test(location.hash||''),pausarCorreosIngreso=null,puedeEnviarCorreoIngreso=null;
+function mensajeErrorPassword(e){
+ var code=String(e&&e.code||'');
+ if(code==='invalid_credentials')return 'El email o la contraseña no son correctos. Si todavía no creaste una contraseña, usá «Crear o recuperar contraseña», o entrá por correo y configurala desde Mi cuenta.';
+ if(code==='email_not_confirmed')return 'Primero confirmá tu email con el enlace de registro.';
+ if(code==='weak_password')return 'Elegí una contraseña más segura: usá al menos 12 caracteres y evitá contraseñas comunes.';
+ if(code==='same_password')return 'Elegí una contraseña diferente de la actual.';
+ if(code==='reauthentication_needed')return 'Por seguridad, confirmá tu identidad con el código que podés pedir abajo y volvé a guardar la contraseña.';
+ if(code==='reauthentication_not_valid')return 'El código no es válido o venció. Pedí otro código e ingresalo para confirmar el cambio.';
+ if(code==='user_banned')return 'Esta cuenta no puede ingresar. Contactá a la administración.';
+ if(Number(e&&e.status)===429)return 'Se alcanzó el límite de intentos. Esperá unos minutos antes de volver a intentar.';
+ if(e&&e.userMessage)return e.userMessage;
+ return 'No pudimos completar el ingreso o el cambio de contraseña. Revisá tu conexión e intentá otra vez.';
+}
+function pintarMetodoIngreso(){
+ var member=authMode==='member',password=member&&authMethod==='password';
+ el('authMethods').hidden=!member;el('authPasswordRow').hidden=!password;el('authPassword').required=password;
+ document.querySelectorAll('[data-auth-method]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.authMethod===authMethod));});
+ el('authModeHelp').innerHTML=!member?'Confirmá tu email para solicitar acceso. Un administrador revisará tu solicitud. Después podés crear una contraseña desde Mi cuenta.':password?'Escribí el mismo email con el que te registraste y tu contraseña. <strong>Entrás a tu cuenta sin pedir un enlace ni otra autorización.</strong>':'Escribí el mismo email con el que te registraste. Te enviaremos un enlace para entrar: <strong>no estás pidiendo autorización otra vez.</strong>';
+ el('authEmailExplanation').textContent=member&&password?'¿Todavía no tenés contraseña? Usá «Crear o recuperar contraseña». Podés abrir ese correo en el dispositivo donde lo recibís y elegirla allí; después usás tu email y esa contraseña desde cualquier celular o computadora.':'El enlace confirma que el correo es tuyo e inicia sesión en el navegador donde lo abrís. Una vez dentro, podés configurar una contraseña para entrar también desde otros dispositivos.';
+}
+function bloquearIngresoPassword(block){
+ passwordBusy=block;
+ ['authSend','authMail','authPassword','forgotPassword'].forEach(function(id){el(id).disabled=block;});
+ document.querySelectorAll('[data-auth-mode],[data-auth-method]').forEach(function(b){b.disabled=block;});
+ if(actualizarIngresoPorCorreo)actualizarIngresoPorCorreo();
+}
+async function ingresarConPassword(){
+ if(passwordBusy||sessionUser)return;
+ var email=el('authMail').value.trim(),password=el('authPassword').value;
+ if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)||!password){setMsg('authMsg','Completá tu email y tu contraseña.',true);return;}
+ bloquearIngresoPassword(true);setMsg('authMsg','Ingresando a tu cuenta…',false);
+ try{
+  var data=comprobar(await sb.auth.signInWithPassword({email:email,password:password}));
+  if(!data.session)throw falla('No pudimos abrir tu sesión. Volvé a intentar.');
+  await comSesion(data.session,false);show('comunidad');
+ }catch(e){setMsg('authMsg',mensajeErrorPassword(e),true);}
+ finally{el('authPassword').value='';bloquearIngresoPassword(false);}
+}
+function mostrarPasswordCuenta(recovery){
+ if(!sessionUser)return;
+ if(recovery)passwordRecoveryPending=true;
+ el('passwordSettings').hidden=false;
+ el('passwordSettingsTitle').textContent=recovery?'Elegí una nueva contraseña':'Crear o cambiar mi contraseña';
+ show('comunidad');el('newAccountPassword').focus();el('passwordSettings').scrollIntoView({block:'center'});
+}
+function limpiarPasswords(){
+ ['authPassword','newAccountPassword','confirmAccountPassword','passwordNonce'].forEach(function(id){if(el(id))el(id).value='';});
+ if(el('passwordSettings'))el('passwordSettings').hidden=true;
+ if(el('passwordSaveMsg'))el('passwordSaveMsg').textContent='';
+ if(el('passwordReauth'))el('passwordReauth').hidden=true;
+ if(!sessionUser)passwordRecoveryPending=false;
+}
+function initPasswordAccess(){
+ el('emailAccessForm').insertAdjacentHTML('afterbegin','<div class="auth-methods" id="authMethods" role="group" aria-label="Método de ingreso"><button type="button" data-auth-method="password" aria-pressed="true">Con contraseña</button><button type="button" data-auth-method="email" aria-pressed="false">Entrar por correo</button></div>');
+ el('authMail').closest('.formrow').insertAdjacentHTML('afterend','<div class="formrow" id="authPasswordRow"><label for="authPassword">Contraseña</label><input id="authPassword" type="password" autocomplete="current-password" maxlength="256" required><button class="text-action" type="button" id="forgotPassword">Crear o recuperar contraseña</button><p class="hint">El correo se necesita para crearla o recuperarla, no en cada ingreso.</p></div>');
+ el('comYo').insertAdjacentHTML('beforeend','<div class="password-invitation"><strong>Ingresar sin pedir un enlace</strong><p>Podés crear una contraseña y usar tu email para entrar desde cualquier dispositivo. El ingreso por correo seguirá disponible.</p><button class="btn ghost" type="button" id="openPasswordSettings">Configurar mi contraseña</button></div><section class="panel" id="passwordSettings" hidden><h3 id="passwordSettingsTitle">Crear o cambiar mi contraseña</h3><p>Esta contraseña es para tu cuenta de PreguntELA. No cambia tu aprobación como miembro.</p><form id="passwordSettingsForm"><div class="formrow"><label for="newAccountPassword">Nueva contraseña (mínimo 12 caracteres)</label><input type="password" id="newAccountPassword" autocomplete="new-password" minlength="12" maxlength="256" required></div><div class="formrow"><label for="confirmAccountPassword">Repetí la nueva contraseña</label><input type="password" id="confirmAccountPassword" autocomplete="new-password" minlength="12" maxlength="256" required></div><div id="passwordReauth" hidden><p>Necesitamos una confirmación reciente de tu identidad.</p><button class="btn ghost" type="button" id="passwordReauthSend">Enviarme un código de confirmación</button><div class="formrow"><label for="passwordNonce">Código recibido por email</label><input id="passwordNonce" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="12"></div><p id="passwordReauthMsg" role="status"></p></div><div class="askbar"><button class="btn" type="submit" id="passwordSave">Guardar contraseña</button><button class="btn ghost" type="button" id="passwordCancel">Cancelar</button><span id="passwordSaveMsg" role="status" aria-live="polite"></span></div></form></section>');
+ document.querySelectorAll('[data-auth-method]').forEach(function(b){b.addEventListener('click',function(){authMethod=b.dataset.authMethod;el('authPassword').value='';setMsg('authMsg','',false);pintarMetodoIngreso();actualizarIngresoPorCorreo();el('authMail').focus();});});
+ el('openPasswordSettings').addEventListener('click',function(){mostrarPasswordCuenta(false);});
+ el('passwordCancel').addEventListener('click',function(){passwordRecoveryPending=false;limpiarPasswords();el('openPasswordSettings').focus();});
+ el('forgotPassword').addEventListener('click',async function(){
+  if(passwordBusy||sessionUser||!puedeEnviarCorreoIngreso())return;
+  var email=el('authMail').value.trim();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){setMsg('authMsg','Escribí el email de tu cuenta para crear o recuperar la contraseña.',true);el('authMail').focus();return;}
+  bloquearIngresoPassword(true);
+  try{comprobar(await sb.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname}));pausarCorreosIngreso(60);
+   setMsg('authMsg','Si ese email tiene una cuenta, recibirás un correo para crear o cambiar tu contraseña. Podés abrirlo en el dispositivo donde recibís tus emails. Revisá también spam.',false);
+  }catch(e){var segundos=segundosEsperaIngreso(e);if(segundos)pausarCorreosIngreso(segundos);setMsg('authMsg',mensajeErrorIngreso(e),true);}finally{bloquearIngresoPassword(false);}
+ });
+ el('passwordSettingsForm').addEventListener('submit',async function(ev){
+  ev.preventDefault();if(!sessionUser||this._saving)return;
+  var form=this,value=el('newAccountPassword').value;
+  if(value.length<12){setMsg('passwordSaveMsg','Usá al menos 12 caracteres.',true);return;}
+  if(value!==el('confirmAccountPassword').value){setMsg('passwordSaveMsg','Las dos contraseñas no coinciden.',true);return;}
+  form._saving=true;el('passwordSave').disabled=true;el('passwordCancel').disabled=true;
+  var owner=sessionUser;
+  try{var data={password:value},nonce=el('passwordNonce').value.trim();if(!el('passwordReauth').hidden&&nonce)data.nonce=nonce;
+   comprobar(await sb.auth.updateUser(data));
+   if(sessionUser!==owner)return;
+   passwordRecoveryPending=false;setMsg('passwordSaveMsg','Contraseña guardada. La próxima vez podés entrar con tu email y contraseña, sin pedir un enlace.',false);
+   el('passwordReauth').hidden=true;
+  }catch(e){if(sessionUser!==owner)return;
+   if(['reauthentication_needed','reauthentication_not_valid'].includes(e&&e.code))el('passwordReauth').hidden=false;
+   setMsg('passwordSaveMsg',mensajeErrorPassword(e),true);
+  }finally{el('newAccountPassword').value='';el('confirmAccountPassword').value='';form._saving=false;el('passwordSave').disabled=false;el('passwordCancel').disabled=false;}
+ });
+ el('passwordReauthSend').addEventListener('click',async function(){
+  if(!sessionUser)return;this.disabled=true;
+  try{comprobar(await sb.auth.reauthenticate());el('passwordReauthMsg').textContent='Revisá tu correo y copiá el código. Luego escribí nuevamente la contraseña que querés guardar.';}
+  catch(e){el('passwordReauthMsg').textContent=mensajeErrorIngreso(e);}finally{this.disabled=false;}
+ });
+ pintarMetodoIngreso();
+}
+
 function bindAuth(){
   var envioPendiente=false,esperaHasta=0,temporizadorEnvio=null;
   function actualizarBotonEnvio(){
     if(temporizadorEnvio!==null){clearTimeout(temporizadorEnvio);temporizadorEnvio=null;}
     var segundos=Math.max(0,Math.ceil((esperaHasta-Date.now())/1000)),boton=el('authSend');
-    boton.disabled=envioPendiente||segundos>0;
-    boton.textContent=envioPendiente?'Enviando…':segundos>0?'Podés pedir otro enlace en '+segundos+' s':'Enviarme el enlace';
+    var usaCorreo=authMode==="register"||authMethod==="email";
+    boton.disabled=envioPendiente||passwordBusy||(usaCorreo&&segundos>0);
+    boton.textContent=passwordBusy?'Un momento…':envioPendiente?'Enviando…':usaCorreo&&segundos>0?'Podés pedir otro enlace en '+segundos+' s':textoBotonIngreso();
+    if(el('forgotPassword')){el('forgotPassword').disabled=passwordBusy||envioPendiente||segundos>0;el('forgotPassword').textContent=segundos>0?'Podés pedir otro correo en '+segundos+' s':'Crear o recuperar contraseña';}
     if(segundos>0&&!envioPendiente)temporizadorEnvio=setTimeout(actualizarBotonEnvio,1000);
   }
-  el("authSend").addEventListener("click",async function(){
-    if(envioPendiente||Date.now()<esperaHasta)return;
+  actualizarIngresoPorCorreo=actualizarBotonEnvio;
+  pausarCorreosIngreso=function(segundos){esperaHasta=Date.now()+segundos*1000;actualizarBotonEnvio();};
+  puedeEnviarCorreoIngreso=function(){return !envioPendiente&&Date.now()>=esperaHasta;};
+  bindAccountAccess();
+  el("emailAccessForm").addEventListener("submit",async function(ev){
+    ev.preventDefault();
+    if(sessionUser||envioPendiente||passwordBusy)return;
+    if(authMode==="member"&&authMethod==="password"){await ingresarConPassword();return;}
+    if(Date.now()<esperaHasta)return;
     var mail=el("authMail").value.trim();
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)){setMsg("authMsg","Escribí un correo válido.",true);return;}
     envioPendiente=true;actualizarBotonEnvio();setMsg("authMsg","Enviando el enlace…",false);
     try{
-      var options={emailRedirectTo:location.origin+location.pathname};
-      var nombre=el("authNombre").value.trim();if(nombre) options.data={nombre:nombre};
+      var mode=authMode,options={emailRedirectTo:location.origin+location.pathname,shouldCreateUser:mode==="register"};
+      var nombre=el("authNombre").value.trim();if(mode==="register"&&nombre) options.data={nombre:nombre};
       comprobar(await sb.auth.signInWithOtp({email:mail,options:options}));
       esperaHasta=Date.now()+60000;
-      setMsg("authMsg","Revisá tu correo y la carpeta de spam. Al abrir el enlace podrás ingresar o dejar tu solicitud de acceso.",false);
+      setMsg("authMsg",mode==="register"?"Revisá tu correo y spam. Abrí el enlace para confirmar tu email y dejar tu solicitud de acceso.":"Revisá tu correo y spam. Abrí el enlace para ingresar a tu cuenta. Si ya sos miembro aprobado, conservás tu acceso: no necesitás otra autorización.",false);
     }catch(e){
       var segundos=segundosEsperaIngreso(e);if(segundos)esperaHasta=Date.now()+segundos*1000;
-      setMsg("authMsg",mensajeErrorIngreso(e),true);
+      setMsg("authMsg",mode==="member"&&/signups not allowed for otp/i.test(String(e&&e.message||""))?"Revisá el email de tu cuenta. Si todavía no te registraste, elegí «Quiero registrarme».":mensajeErrorIngreso(e),true);
     }finally{envioPendiente=false;actualizarBotonEnvio();}
   });
-  el("meOut").addEventListener("click",async function(){
-    this.disabled=true;
-    try{comprobar(await sb.auth.signOut());sessionUser=null;++sessionEpoch;limpiarPrivado();el("comYo").hidden=true;el("comLogin").hidden=false;estadoComunidad("Cerraste la sesión.",false,false);}
-    catch(e){estadoComunidad(mensajeError(e),true,false);}finally{this.disabled=false;}
-  });
+  async function cerrarSesionDesdePagina(){
+    el("meOut").disabled=true;el("headerSignOut").disabled=true;
+    try{comprobar(await sb.auth.signOut({scope:"local"}));sessionUser=null;++sessionEpoch;limpiarPrivado();el("comYo").hidden=true;el("comLogin").hidden=false;estadoComunidad("Cerraste la sesión en este navegador.",false,false);}
+    catch(e){estadoComunidad(mensajeError(e),true,false);}finally{el("meOut").disabled=false;el("headerSignOut").disabled=false;}
+  }
+  el("meOut").addEventListener("click",cerrarSesionDesdePagina);
+  el("headerSignOut").addEventListener("click",cerrarSesionDesdePagina);
   el("meEdit").addEventListener("click",function(){el("mePanel").hidden=!el("mePanel").hidden;if(!el("mePanel").hidden) el("meNombre").focus();});
   el("meSave").addEventListener("click",async function(){
     if(!ME) return;this.disabled=true;
@@ -4046,14 +4191,15 @@ async function comInit(){
   initParticipation();
   comListas();
   if(!window.PREGUNTELA_CONFIG || !PREGUNTELA_CONFIG.url || !PREGUNTELA_CONFIG.anonKey || !window.supabase){
-    el("comNoConfig").hidden=false;return;
+    el("comNoConfig").hidden=false;sessionAccessError=true;pintarEstadoSesion();return;
   }
-  sb=window.supabase.createClient(PREGUNTELA_CONFIG.url,PREGUNTELA_CONFIG.anonKey);
+  sb=window.supabase.createClient(PREGUNTELA_CONFIG.url,PREGUNTELA_CONFIG.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
   bindDelegado();bindFormularios();bindAuth();
   // La llamada asíncrona se programa fuera del callback de Auth para evitar
   // bloquear la misma sesión al consultar perfiles con el cliente Supabase.
   sb.auth.onAuthStateChange(function(event,session){
     if(event==="SIGNED_OUT"){sessionUser=null;++sessionEpoch;limpiarPrivado();el("comYo").hidden=true;el("comLogin").hidden=false;return;}
+    if(event==="PASSWORD_RECOVERY")passwordRecoveryPending=true;
     if(event!=="TOKEN_REFRESHED") setTimeout(function(){comSesion(session,false);},0);
   });
   try{
@@ -4067,7 +4213,7 @@ async function comInit(){
       history.replaceState(null,"","#/comunidad");
       if(!s.session) setMsg("authMsg","El enlace no pudo abrir la sesión. Pedí uno nuevo.",true);
     }
-  }catch(e){estadoComunidad(mensajeError(e),true,true);el("comLogin").hidden=false;}
+  }catch(e){sessionAccessError=true;pintarEstadoSesion();estadoComunidad(mensajeError(e),true,true);el("comLogin").hidden=false;}
 }
 if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",comInit);
 else comInit();
