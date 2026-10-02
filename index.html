@@ -586,6 +586,7 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 .respiratory-suppliers{padding:16px 20px;background:var(--surface-2);border-radius:12px;margin:18px 0}
 .respiratory-suppliers h5{font-size:1rem;margin:0 0 10px}.respiratory-suppliers p{margin:0 0 12px}
 @media(max-width:650px){.video-selection-list{grid-template-columns:1fr}}
+.directory-category-members{margin-top:20px}.directory-category-members>.aporte{max-width:850px}
 /* practical styles end */
 </style>
 
@@ -719,8 +720,8 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
   <div class="filterbar">
     <input type="search" id="dirq" placeholder="Buscar por nombre, especialidad o ciudad…" aria-label="Buscar en el directorio">
   </div>
-  <section id="directoryMembers"></section>
   <div id="dir"></div>
+  <section id="directoryMembers"></section>
 </section>
 
 <!-- ============ ARCHIVO ============ -->
@@ -1563,43 +1564,102 @@ function fmtTel(t){
   if(t.indexOf("+")===0) return t;
   return t;
 }
-function drawDir(filter){
-  var f = filter ? fold(filter) : "";
-  dirEl.innerHTML="";
-  DIRECTORY.forEach(function(grp){
-    var items = grp.items.filter(function(it){
-      if(!f) return true;
-      return fold([it.n,it.r,it.p,it.note||""].join(" ")).indexOf(f)>=0 || fold(grp.g).indexOf(f)>=0;
-    });
-    if(grp.kind==='cuidados'){
-      if(f&&!/enferm|cuidad|cuidados|capacit/.test(f))return;
-      var care=document.createElement('section');care.className='dirgroup care-directory';care.id='directorio-cuidados';
-      care.innerHTML='<h3>'+esc(grp.g)+'</h3><p>'+esc(grp.sub)+'</p><div class="contribution-actions"><button class="btn" data-add-contact="enfermeria">+ Agregar enfermera/o</button><button class="btn ghost" data-add-contact="cuidador">+ Agregar cuidador/a</button><button class="mini" data-specialist="cuidados">Ver contactos de cuidados</button></div>';dirEl.appendChild(care);return;
-    }
-    if(!items.length) return;
-    var sec=document.createElement("div"); sec.className="dirgroup";
-    var h=document.createElement("h3"); h.textContent=grp.g; sec.appendChild(h);
-    var sb=document.createElement("div"); sb.className="sub"; sb.textContent=grp.sub; sec.appendChild(sb);
-    var cards=document.createElement("div"); cards.className="cards";
-    items.forEach(function(it){
-      var c=document.createElement("div"); c.className="card";
-      var html='<div class="nm">'+esc(it.n)+'</div><div class="rl">'+esc(it.r)+'</div>';
-      if(it.p) html+='<div class="pl">'+esc(it.p)+'</div>';
-      if(it.note) html+='<div class="pl" style="margin-top:8px;color:var(--ink-2)">'+esc(it.note)+'</div>';
-      var pills="";
-      if(it.tel) pills+='<a class="pill" href="tel:'+it.tel+'">'+esc(fmtTel(it.tel))+'</a>';
-      if(it.tel && it.tel.indexOf("+")===0 && it.whatsapp!==false) pills+='<a class="pill" href="https://wa.me/'+it.tel.replace(/\D/g,"")+'" target="_blank" rel="noopener">WhatsApp</a>';
-      if(it.url) pills+='<a class="pill" href="'+it.url+'" target="_blank" rel="noopener">Sitio</a>';
-      if(it.email) pills+='<a class="pill" href="mailto:'+esc(it.email)+'">Enviar correo</a>';
-      if(pills) html+='<div class="contact">'+pills+'</div>';
-      c.innerHTML=html; cards.appendChild(c);
-    });
-    sec.appendChild(cards);
-    sec.insertAdjacentHTML("beforeend",'<button class="mini directory-add-more" type="button" data-add-contact="profesional">+ Agregar otro contacto</button>');
-    dirEl.appendChild(sec);
-  });
-  if(!dirEl.children.length) dirEl.innerHTML='<p class="hint">No hay contactos que coincidan con esa búsqueda.</p>';
+/* Un mismo índice para contactos del archivo y aportes de miembros.
+   Solo se clasifica por el rubro declarado, nunca por nombre o comentario. */
+function directoryCategory(type){
+ var t=fold(type||'').replace(/\s+/g,' ').trim();
+ if(/paliativ/.test(t))return 'paliativos';
+ if(/\benfermer|\bcuidad/.test(t))return 'cuidados';
+ if(/kinesio|fisioterap/.test(t))return 'kinesiologia';
+ if(/^(centro|hospital|clinica)( |$)/.test(t)&&!/^clinica general/.test(t))return 'centros';
+ if(/internacion domiciliaria/.test(t))return 'internacion';
+ if(/comunicacion aumentativa/.test(t))return 'comunicacion';
+ if(/laboratorio.*genetic|estudio.*genetic/.test(t))return 'estudios-geneticos';
+ if(/farmacia|laboratorio/.test(t))return 'farmacias';
+ if(/ortopedi|equipamiento|proveedor.*respir/.test(t))return 'equipamiento';
+ if(/neurolog/.test(t))return 'neurologia';
+ if(/neumonolog/.test(t))return 'neumonologia';
+ if(/fonoaudiolog/.test(t))return 'fonoaudiologia';
+ if(/fisiatr/.test(t))return 'fisiatria';
+ if(/terap.*ocupacional/.test(t))return 'terapia-ocupacional';
+ if(/nutricion/.test(t))return 'nutricion';
+ if(/cabecera|clinico|clinica general/.test(t))return 'clinica';
+ if(/psiquiatr/.test(t))return 'psiquiatria';
+ if(/psicolog/.test(t))return 'psicologia';
+ if(/gastroenterolog/.test(t))return 'gastroenterologia';
+ if(/paliativ/.test(t))return 'paliativos';
+ if(/genetista/.test(t))return 'genetistas';
+ if(/acompanante.*terapeut/.test(t))return 'acompanamiento';
+ if(/odontolog/.test(t))return 'odontologia';
+ if(/cirugi|cirujan/.test(t))return 'cirugia';
+ if(/polisomnogra/.test(t))return 'sueno';
+ if(/abogad|amparo/.test(t))return 'legales';
+ if(/traslado/.test(t))return 'traslados';
+ if(/holistic/.test(t))return 'holisticos';
+ if(/fundacion|asociacion/.test(t))return 'organizaciones';
+ return 'otros';
 }
+function directoryGroups(){
+ var definitions=[
+  ['centros','Centros con experiencia en ELA','Centro de atención / rehabilitación'],
+  ['neurologia','Neurología','Neurólogo'],['neumonologia','Neumonología','Neumonólogo'],
+  ['kinesiologia','Kinesiología','Kinesiólogo motor'],['fonoaudiologia','Fonoaudiología','Fonoaudiólogo'],
+  ['fisiatria','Fisiatría','Fisiatra'],['terapia-ocupacional','Terapia ocupacional','Terapista ocupacional'],
+  ['nutricion','Nutrición','Nutricionista'],['clinica','Clínica médica y médicos de cabecera','Clínico / médico de cabecera'],
+  ['gastroenterologia','Gastroenterología','Gastroenterólogo'],['paliativos','Cuidados paliativos','Médico paliativista'],
+  ['genetistas','Médicos genetistas','Médico genetista'],['psicologia','Psicología','Psicólogo'],['psiquiatria','Psiquiatría','Psiquiatra'],
+  ['odontologia','Odontología','Odontólogo'],['cirugia','Cirugía','Otro'],['sueno','Estudios del sueño','Otro'],
+  ['cuidados','Enfermeras/cuidadoras capacitadas','Enfermeros'],['acompanamiento','Acompañantes terapéuticos','Acompañante terapéutico'],
+  ['internacion','Internación domiciliaria','Empresa de internación domiciliaria'],
+  ['comunicacion','Comunicación aumentativa','Empresa de comunicación aumentativa'],
+  ['equipamiento','Equipamiento, ortopedia y respiratorio','Ortopedia'],
+  ['estudios-geneticos','Estudios genéticos','Laboratorio / estudio genético'],
+  ['farmacias','Farmacias y laboratorios','Farmacia'],['legales','Legales','Abogado para amparos'],
+  ['traslados','Traslados','Traslados'],['holisticos','Tratamientos holísticos','Tratamientos holísticos'],
+  ['organizaciones','Organizaciones y redes de ayuda','Fundación / asociación'],
+  ['otros','Otros contactos / sin clasificar','Otro']
+ ];
+ var groups=definitions.map(function(d){return {key:d[0],g:d[1],type:d[2],sub:'',items:[],members:[]};}),byKey={};
+ groups.forEach(function(g){byKey[g.key]=g;});
+ DIRECTORY.forEach(function(original){
+  var target=groups.find(function(g){return g.g===original.g;});
+  if(target){target.sub=original.sub;target.items=original.items.slice();}
+  else original.items.forEach(function(it){byKey[directoryCategory(it.r)].items.push(it);});
+ });
+ if(aprobado())deSeccion('especialista').forEach(function(a){if(a.esp_tipo!=='DElaMano')byKey[directoryCategory(a.esp_tipo)].members.push(a);});
+ return groups;
+}
+function directoryPublicCard(it){
+ var html='<div class="nm">'+esc(it.n)+'</div><div class="rl">'+esc(it.r)+'</div>';
+ if(it.p)html+='<div class="pl">'+esc(it.p)+'</div>';
+ if(it.note)html+='<div class="pl" style="margin-top:8px;color:var(--ink-2)">'+esc(it.note)+'</div>';
+ var pills='';
+ if(it.tel)pills+='<a class="pill" href="tel:'+it.tel+'">'+esc(fmtTel(it.tel))+'</a>';
+ if(it.tel&&it.tel.indexOf('+')===0&&it.whatsapp!==false)pills+='<a class="pill" href="https://wa.me/'+it.tel.replace(/\D/g,'')+'" target="_blank" rel="noopener">WhatsApp</a>';
+ if(it.url)pills+='<a class="pill" href="'+it.url+'" target="_blank" rel="noopener">Sitio</a>';
+ if(it.email)pills+='<a class="pill" href="mailto:'+esc(it.email)+'">Enviar correo</a>';
+ return '<div class="card">'+html+(pills?'<div class="contact">'+pills+'</div>':'')+'</div>';
+}
+function renderDirectoryGroups(filter){
+ var q=fold(filter||'').trim(),list=el('dir'),other=el('directoryMembers');
+ list.innerHTML='';other.innerHTML='';
+ directoryGroups().forEach(function(g){
+  var groupMatch=!q||fold(g.g).includes(q)||q===g.key;
+  var items=g.items.filter(function(it){return groupMatch||fold([it.n,it.r,it.p,it.note||''].join(' ')).includes(q);});
+  var members=g.members.filter(function(a){return groupMatch||specialistMatches(a,q);});
+  var care=g.key==='cuidados';
+  if(!items.length&&!members.length&&!(care&&(groupMatch||/enferm|cuidad|capacit/.test(q))))return;
+  var sec=document.createElement('section');sec.className='dirgroup'+(care?' care-directory':'');sec.id='directorio-'+g.key;
+  sec.innerHTML='<h3>'+esc(g.g)+'</h3>'+(g.sub?'<p class="sub">'+esc(g.sub)+'</p>':'')+
+   (items.length?'<div class="cards">'+items.map(directoryPublicCard).join('')+'</div>':'')+
+   (members.length?'<div class="directory-category-members"><p class="hint">Aportes de la comunidad · Solo para miembros aprobados. Consultá disponibilidad y condiciones con cada contacto.</p>'+members.map(specialistHTML).join('')+'</div>':'')+
+   (care?'<div class="contribution-actions"><button class="btn" data-add-contact="enfermeria">+ Agregar enfermera/o</button><button class="btn ghost" data-add-contact="cuidador">+ Agregar cuidador/a</button><button class="mini" data-specialist="cuidados">Ver contactos de cuidados</button></div>':'<button class="mini directory-add-more" type="button" data-add-contact="profesional" data-directory-type="'+attr(g.type)+'">+ Agregar otro contacto</button>');
+  (g.key==='otros'?other:list).appendChild(sec);
+ });
+ if(!list.children.length&&!other.children.length)list.innerHTML='<p class="hint">No hay contactos que coincidan con esa búsqueda.</p>';
+}
+
+function drawDir(filter){renderDirectoryGroups(filter);}
 dirq.addEventListener("input", function(){ drawDir(dirq.value); });
 drawDir("");
 
@@ -3197,13 +3257,14 @@ function accessParticipationHTML(){
  var text=ME?(ME.membresia==='suspendida'?'Tu cuenta no tiene acceso para participar. Podés consultar tu situación en Mi cuenta.':'Tu solicitud está pendiente. Cuando se apruebe, vas a poder leer y agregar aportes.'):'Para compartir información y leer los aportes nuevos, entrá con tu correo. Un administrador debe aprobar tu acceso.';
  return '<p>'+text+'</p>'+enlaceTema('comunidad',ME?'Ver mi acceso':'Entrar o solicitar acceso');
 }
-function openContactForm(kind){
+function openContactForm(kind,type){
  show('directorio');
  if(!aprobado()){
   el('directoryAccess').hidden=false;el('directoryAccess').innerHTML=accessParticipationHTML();
   el('directoryAccess').tabIndex=-1;el('directoryAccess').focus();return;
  }
  var form=el('espForm');el('directoryFormSlot').appendChild(form);form.hidden=false;
+ if(type&&ESP_TIPOS.includes(type))el('eTipo').value=type;
  if(kind==='proveedor')el('eTipo').value='Proveedor u otro servicio';
  if(kind==='enfermeria')el('eTipo').value='Enfermeros';
  if(kind==='cuidador')el('eTipo').value='Cuidadores especializados';
@@ -3215,13 +3276,10 @@ function specialistHTML(a){
  return '<article data-aporte="'+a.id+'" class="aporte'+(a.estado==='oculto'?' oculto':'')+'"><h4 class="ah">'+esc(a.esp_nombre||'Contacto')+'</h4><div class="ataglist">'+(a.esp_tipo?'<span class="tag">'+esc(a.esp_tipo)+'</span>':'')+(a.esp_calificacion?'<span class="tag califica">'+esc(a.esp_calificacion)+'</span>':'')+'</div>'+field('Dónde',[a.esp_institucion,a.esp_ciudad,a.esp_provincia].filter(Boolean).join(' · '))+field('Cobertura',a.esp_cobertura)+field('Contacto laboral',a.esp_contacto)+field('Experiencia',a.texto)+firmaHTML(a)+'</article>';
 }
 function renderMemberDirectory(){
- var box=el('directoryMembers');if(!box)return;
+ if(!el('directoryMembers'))return;
  el('directoryAccess').hidden=aprobado();
- if(!aprobado()){
-  el('directoryAccess').innerHTML=accessParticipationHTML();box.innerHTML='';return;
- }
- var q=fold(el('dirq').value.trim()),items=deSeccion('especialista').filter(function(a){return specialistMatches(a,q);});
- box.innerHTML='<h3>Contactos agregados por la comunidad</h3><p class="hint">Visibles para miembros aprobados. Son aportes de familias: consultá disponibilidad y condiciones con cada profesional o centro.</p>'+(items.length?items.map(specialistHTML).join(''):'<p class="hint">'+(q?'No hay aportes nuevos que coincidan con esta búsqueda.':'Todavía no hay contactos nuevos. Podés agregar el primero.')+'</p>');
+ if(!aprobado())el('directoryAccess').innerHTML=accessParticipationHTML();
+ drawDir(el('dirq').value);
 }
 
 function registerForumTopic(sec,item,title,route){
@@ -3309,7 +3367,7 @@ function initParticipation(){
  FORUM_READY=true;
  el('dirq').addEventListener('input',renderMemberDirectory);
  document.addEventListener('click',async function(ev){
-  var add=ev.target.closest('[data-add-contact]');if(add){ev.preventDefault();openContactForm(add.dataset.addContact);return;}
+  var add=ev.target.closest('[data-add-contact]');if(add){ev.preventDefault();openContactForm(add.dataset.addContact,add.dataset.directoryType);return;}
   var b=ev.target.closest('[data-discussion-reply],[data-discussion-refresh],[data-discussion-older]');if(!b||!aprobado())return;
   var box=b.closest('[data-discussion]'),topic=FORUM_TOPICS[box.dataset.discussion];if(!topic)return;
   if(b.hasAttribute('data-discussion-older')){DISCUSSION_EXPANDED.add(topic.key);renderDiscussionWidgets();return;}
