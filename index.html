@@ -316,7 +316,7 @@ mark{background:var(--gold-soft);color:var(--ink);padding:0 2px;border-radius:2p
 /* comunidad */
 .formrow{margin-bottom:16px}
 .formrow label{display:block;font-weight:600;font-size:.93rem;margin-bottom:6px}
-.formrow input[type="text"],.formrow input[type="email"],.formrow input[type="password"],.formrow select,.formrow textarea{
+.formrow input[type="text"],.formrow input[type="email"],.formrow input[type="password"],.formrow input[type="tel"],.formrow select,.formrow textarea{
   width:100%;font:inherit;color:var(--ink);background:var(--surface-2);
   border:1px solid var(--line);border-radius:8px;padding:11px 13px;min-height:46px}
 .formrow textarea{resize:vertical;line-height:1.5}
@@ -586,15 +586,17 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 .respiratory-suppliers{padding:16px 20px;background:var(--surface-2);border-radius:12px;margin:18px 0}
 .respiratory-suppliers h5{font-size:1rem;margin:0 0 10px}.respiratory-suppliers p{margin:0 0 12px}
 @media(max-width:650px){.video-selection-list{grid-template-columns:1fr}}
-.directory-category-members{margin-top:20px}.directory-category-members>.aporte{max-width:850px}
+/* Participación y revisión previa. */
+.join-link{white-space:nowrap;font-size:.85rem;flex-shrink:0}.header-tools{flex-wrap:wrap}.join-callout{border:2px solid var(--accent,#1673b8);background:#eff7fc;border-radius:18px;padding:24px;margin:20px 0 28px;display:flex;align-items:center;gap:24px}.join-callout h3{margin-top:0}.join-callout p{margin-bottom:0}.join-callout .btn{flex-shrink:0}.registration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.review-state{font-weight:700;font-size:.85rem;padding:8px 12px;border-radius:8px;background:#edf4f7}.review-state.pendiente{background:#fff0ca;color:#674400}.review-state.rechazado,.review-state.oculto{background:#f3e8e5;color:#732d20}.admin-overview{background:#edf4f7;font-weight:700;padding:16px;border-radius:12px;margin-bottom:20px}#comAdmin details{border-bottom:1px solid var(--line);padding:18px 0}#comAdmin summary{font-weight:700;cursor:pointer}#adminMembers,#adminTeam,#helpList{overflow-wrap:anywhere}.delamano{margin:28px 0}.delamano h3{font-size:1.8rem;margin:6px 0}.delamano form{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.admin-item{margin:16px 0;padding:18px;border:1px solid var(--line);border-radius:12px}.admin-item h4{margin-top:0}.admin-item .admin-item{border:0;padding:0}.check{display:flex;align-items:flex-start;gap:10px}.check input{flex-shrink:0;width:22px;height:22px}
+@media(max-width:760px){.join-callout{display:block;padding:20px}.join-callout .btn{margin-top:16px}.registration-grid{grid-template-columns:1fr;gap:0}.join-link{white-space:normal}.header-tools>.join-link{flex:1;text-align:center}.admin-item .askbar{flex-wrap:wrap}}
+
+#adminReview [data-ocultar]{display:none}
 /* Cuenta siempre visible: identidad, sesión y membresía por separado. */
 .session-access{flex:0 1 300px;min-width:245px;max-width:100%;padding:12px 14px;border:2px solid #b6c8d1;border-radius:14px;background:#f3f7fa;color:#123148}.session-access[data-state="signed-in"]{background:#e8f5ee;border-color:#23734e;color:#155238}.session-access[data-state="error"]{background:#fff4d9;border-color:#9d7820;color:#634b12}.session-identity{display:flex;flex-direction:column;gap:2px;line-height:1.35}.session-indicator{font-size:.77rem;font-weight:700}.session-identity strong{font-size:1rem;overflow-wrap:anywhere}.session-identity>span:last-child{font-size:.75rem}.session-actions{display:flex;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}.session-actions .btn{min-height:38px;padding:7px 12px;font-size:.78rem}.session-out{border:0;background:transparent;color:inherit;text-decoration:underline;font:inherit;font-size:.78rem;min-height:38px;cursor:pointer;padding:4px}.session-out:disabled{opacity:.55}.auth-choices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 24px}.auth-choices button{border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:16px;font:inherit;font-weight:650;cursor:pointer}.auth-choices button[aria-pressed="true"]{border-color:var(--accent);background:#e9f2f7;box-shadow:inset 0 -4px var(--accent)}.auth-explainer{background:var(--surface-2);border-radius:12px;padding:18px;margin-top:22px;font-size:.88rem}.auth-explainer p:last-child{margin-bottom:0}.account-signed-in{font-size:.9rem;font-weight:700;color:#155238;margin:0 0 6px}.whoami{border:2px solid #23734e;background:#e8f5ee}.whoami .hint{margin:6px 0 0}.header-tools .brandrow{flex-basis:280px}
 @media(max-width:1100px) and (min-width:761px){.header-tools{gap:12px}.header-tools .brandrow{flex-basis:230px}.header-tools .brandlockup{width:220px}.session-access{flex-basis:260px;min-width:220px}.account-menu{font-size:.75rem}}
 @media(max-width:760px){.session-access{grid-column:1/-1;grid-row:3;min-width:0;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px}.session-identity{min-width:0}.session-actions{margin-top:0;justify-content:flex-end;gap:4px;flex-shrink:0;max-width:48%}.session-identity strong{font-size:.95rem}.session-identity>span:last-child{font-size:.72rem}.account-menu{grid-column:2;grid-row:1}.header-tools .brandrow{grid-column:1;grid-row:1}.auth-choices{gap:8px}.auth-choices button{font-size:.92rem;padding:12px}.topic-section,.topic-item,.topic-feature,#videos-espanol{scroll-margin-top:260px}}
 .auth-methods{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.auth-methods button{font:inherit;font-size:.9rem;border:1px solid var(--line);border-radius:9px;padding:10px 14px;min-height:44px;cursor:pointer;background:var(--surface);color:var(--ink)}.auth-methods button[aria-pressed="true"]{background:var(--accent);color:var(--btn-fg);border-color:var(--accent)}.text-action{display:block;border:0;background:none;padding:10px 0;text-decoration:underline;font:inherit;font-size:.87rem;cursor:pointer;color:var(--accent);min-height:44px}.password-invitation{margin:18px 0 24px;padding:18px;border:1px solid var(--line);border-radius:12px}.password-invitation p{margin:6px 0 12px;font-size:.88rem}#passwordSettings{margin-bottom:24px;scroll-margin-top:230px}#passwordReauth{border-left:4px solid #b68b2e;padding:12px 16px;margin-bottom:18px;background:#fff6dc}#passwordSettings input[type=password],#authPassword{font:inherit;width:100%}
 .directory-category-members{margin-top:20px}.directory-category-members>.aporte{max-width:850px}
-
-.header-tools{flex-wrap:wrap}.join-link{white-space:nowrap}
 /* practical styles end */
 </style>
 
@@ -629,6 +631,7 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 <section class="view on" id="v-inicio" role="tabpanel" aria-label="Inicio">
   <div class="topic-intro"><p class="eyebrow">De todos, para todos</p><h2 class="big">¿Qué necesitás resolver hoy?</h2><p class="lede">Información y experiencias para pacientes y familias con ELA en Argentina. Elegí lo que necesitás y encontrá por dónde empezar.</p></div>
   <div class="start-callout"><div><h3>Me diagnosticaron ELA</h3><p>Primeras consultas, CUD y estudio genético: qué pedir y por dónde empezar.</p></div><a class="btn" href="#/empezar" data-v="empezar">Por dónde empezar →</a></div>
+  <aside class="join-callout" id="homeAccountCallout"><div><h3 id="homeAccountTitle">Tu experiencia puede ayudar a otra familia</h3><p id="homeAccountHelp">Podés consultar toda la información pública sin registrarte. <strong>Para agregar información o comentarios, registrate y solicitá acceso.</strong> Un administrador aprobará tu ingreso y revisará tus aportes antes de compartirlos con la comunidad.</p></div><a class="btn" id="homeAccountLink" href="#/comunidad" data-v="comunidad" data-auth-entry="register">Quiero participar →</a></aside>
   <div class="need-grid" id="needGrid"></div>
   <div class="topic-note"><h3>Buscá por lo que te está pasando</h3><div class="topic-links"><a href="#/consejos/saliva" data-v="consejos/saliva">Me ahogo con la saliva</a><a href="#/respiracion/bipap" data-v="respiracion/bipap">Me cuesta respirar al acostarme</a><a href="#/medicamentos/genetica" data-v="medicamentos/genetica">Quiero pedir el estudio genético</a><a href="#/tramites/enfermeria" data-v="tramites/enfermeria">Necesito pedir enfermería</a></div></div>
   <div class="topic-note"><strong>Lo que una familia aprendió puede ayudar a otra.</strong><p>La base de PreguntELA son las experiencias compartidas en el grupo de WhatsApp <strong>La ELA no nos Define</strong>. Las organizamos por temas y las completamos con fuentes confiables y nuevos aportes de la comunidad.</p><p>Dentro de cada tema podés leer y compartir experiencias si tenés acceso aprobado a la comunidad. La información general está abierta para todos.</p><a href="#/comunidad" data-v="comunidad">Entrar o solicitar acceso</a></div>
@@ -1569,101 +1572,6 @@ function fmtTel(t){
   if(t.indexOf("+")===0) return t;
   return t;
 }
-/* Un mismo índice para contactos del archivo y aportes de miembros.
-   Solo se clasifica por el rubro declarado, nunca por nombre o comentario. */
-function directoryCategory(type){
- var t=fold(type||'').replace(/\s+/g,' ').trim();
- if(/paliativ/.test(t))return 'paliativos';
- if(/\benfermer|\bcuidad/.test(t))return 'cuidados';
- if(/kinesio|fisioterap/.test(t))return 'kinesiologia';
- if(/^(centro|hospital|clinica)( |$)/.test(t)&&!/^clinica general/.test(t))return 'centros';
- if(/internacion domiciliaria/.test(t))return 'internacion';
- if(/comunicacion aumentativa/.test(t))return 'comunicacion';
- if(/laboratorio.*genetic|estudio.*genetic/.test(t))return 'estudios-geneticos';
- if(/farmacia|laboratorio/.test(t))return 'farmacias';
- if(/ortopedi|equipamiento|proveedor.*respir/.test(t))return 'equipamiento';
- if(/neurolog/.test(t))return 'neurologia';
- if(/neumonolog/.test(t))return 'neumonologia';
- if(/fonoaudiolog/.test(t))return 'fonoaudiologia';
- if(/fisiatr/.test(t))return 'fisiatria';
- if(/terap.*ocupacional/.test(t))return 'terapia-ocupacional';
- if(/nutricion/.test(t))return 'nutricion';
- if(/cabecera|clinico|clinica general/.test(t))return 'clinica';
- if(/psiquiatr/.test(t))return 'psiquiatria';
- if(/psicolog/.test(t))return 'psicologia';
- if(/gastroenterolog/.test(t))return 'gastroenterologia';
- if(/paliativ/.test(t))return 'paliativos';
- if(/genetista/.test(t))return 'genetistas';
- if(/acompanante.*terapeut/.test(t))return 'acompanamiento';
- if(/odontolog/.test(t))return 'odontologia';
- if(/cirugi|cirujan/.test(t))return 'cirugia';
- if(/polisomnogra/.test(t))return 'sueno';
- if(/abogad|amparo/.test(t))return 'legales';
- if(/traslado/.test(t))return 'traslados';
- if(/holistic/.test(t))return 'holisticos';
- if(/fundacion|asociacion/.test(t))return 'organizaciones';
- return 'otros';
-}
-function directoryGroups(){
- var definitions=[
-  ['centros','Centros con experiencia en ELA','Centro de atención / rehabilitación'],
-  ['neurologia','Neurología','Neurólogo'],['neumonologia','Neumonología','Neumonólogo'],
-  ['kinesiologia','Kinesiología','Kinesiólogo motor'],['fonoaudiologia','Fonoaudiología','Fonoaudiólogo'],
-  ['fisiatria','Fisiatría','Fisiatra'],['terapia-ocupacional','Terapia ocupacional','Terapista ocupacional'],
-  ['nutricion','Nutrición','Nutricionista'],['clinica','Clínica médica y médicos de cabecera','Clínico / médico de cabecera'],
-  ['gastroenterologia','Gastroenterología','Gastroenterólogo'],['paliativos','Cuidados paliativos','Médico paliativista'],
-  ['genetistas','Médicos genetistas','Médico genetista'],['psicologia','Psicología','Psicólogo'],['psiquiatria','Psiquiatría','Psiquiatra'],
-  ['odontologia','Odontología','Odontólogo'],['cirugia','Cirugía','Otro'],['sueno','Estudios del sueño','Otro'],
-  ['cuidados','Enfermeras/cuidadoras capacitadas','Enfermeros'],['acompanamiento','Acompañantes terapéuticos','Acompañante terapéutico'],
-  ['internacion','Internación domiciliaria','Empresa de internación domiciliaria'],
-  ['comunicacion','Comunicación aumentativa','Empresa de comunicación aumentativa'],
-  ['equipamiento','Equipamiento, ortopedia y respiratorio','Ortopedia'],
-  ['estudios-geneticos','Estudios genéticos','Laboratorio / estudio genético'],
-  ['farmacias','Farmacias y laboratorios','Farmacia'],['legales','Legales','Abogado para amparos'],
-  ['traslados','Traslados','Traslados'],['holisticos','Tratamientos holísticos','Tratamientos holísticos'],
-  ['organizaciones','Organizaciones y redes de ayuda','Fundación / asociación'],
-  ['otros','Otros contactos / sin clasificar','Otro']
- ];
- var groups=definitions.map(function(d){return {key:d[0],g:d[1],type:d[2],sub:'',items:[],members:[]};}),byKey={};
- groups.forEach(function(g){byKey[g.key]=g;});
- DIRECTORY.forEach(function(original){
-  var target=groups.find(function(g){return g.g===original.g;});
-  if(target){target.sub=original.sub;target.items=original.items.slice();}
-  else original.items.forEach(function(it){byKey[directoryCategory(it.r)].items.push(it);});
- });
- if(aprobado())deSeccion('especialista').forEach(function(a){if(a.esp_tipo!=='DElaMano')byKey[directoryCategory(a.esp_tipo)].members.push(a);});
- return groups;
-}
-function directoryPublicCard(it){
- var html='<div class="nm">'+esc(it.n)+'</div><div class="rl">'+esc(it.r)+'</div>';
- if(it.p)html+='<div class="pl">'+esc(it.p)+'</div>';
- if(it.note)html+='<div class="pl" style="margin-top:8px;color:var(--ink-2)">'+esc(it.note)+'</div>';
- var pills='';
- if(it.tel)pills+='<a class="pill" href="tel:'+it.tel+'">'+esc(fmtTel(it.tel))+'</a>';
- if(it.tel&&it.tel.indexOf('+')===0&&it.whatsapp!==false)pills+='<a class="pill" href="https://wa.me/'+it.tel.replace(/\D/g,'')+'" target="_blank" rel="noopener">WhatsApp</a>';
- if(it.url)pills+='<a class="pill" href="'+it.url+'" target="_blank" rel="noopener">Sitio</a>';
- if(it.email)pills+='<a class="pill" href="mailto:'+esc(it.email)+'">Enviar correo</a>';
- return '<div class="card">'+html+(pills?'<div class="contact">'+pills+'</div>':'')+'</div>';
-}
-function renderDirectoryGroups(filter){
- var q=fold(filter||'').trim(),list=el('dir'),other=el('directoryMembers');
- list.innerHTML='';other.innerHTML='';
- directoryGroups().forEach(function(g){
-  var groupMatch=!q||fold(g.g).includes(q)||q===g.key;
-  var items=g.items.filter(function(it){return groupMatch||fold([it.n,it.r,it.p,it.note||''].join(' ')).includes(q);});
-  var members=g.members.filter(function(a){return groupMatch||specialistMatches(a,q);});
-  var care=g.key==='cuidados';
-  if(!items.length&&!members.length&&!(care&&(groupMatch||/enferm|cuidad|capacit/.test(q))))return;
-  var sec=document.createElement('section');sec.className='dirgroup'+(care?' care-directory':'');sec.id='directorio-'+g.key;
-  sec.innerHTML='<h3>'+esc(g.g)+'</h3>'+(g.sub?'<p class="sub">'+esc(g.sub)+'</p>':'')+
-   (items.length?'<div class="cards">'+items.map(directoryPublicCard).join('')+'</div>':'')+
-   (members.length?'<div class="directory-category-members"><p class="hint">Aportes de la comunidad · Solo para miembros aprobados. Consultá disponibilidad y condiciones con cada contacto.</p>'+members.map(specialistHTML).join('')+'</div>':'')+
-   (care?'<div class="contribution-actions"><button class="btn" data-add-contact="enfermeria">+ Agregar enfermera/o</button><button class="btn ghost" data-add-contact="cuidador">+ Agregar cuidador/a</button><button class="mini" data-specialist="cuidados">Ver contactos de cuidados</button></div>':'<button class="mini directory-add-more" type="button" data-add-contact="profesional" data-directory-type="'+attr(g.type)+'">+ Agregar otro contacto</button>');
-  (g.key==='otros'?other:list).appendChild(sec);
- });
- if(!list.children.length&&!other.children.length)list.innerHTML='<p class="hint">No hay contactos que coincidan con esa búsqueda.</p>';
-}
-
 function drawDir(filter){renderDirectoryGroups(filter);}
 dirq.addEventListener("input", function(){ drawDir(dirq.value); });
 drawDir("");
@@ -1862,6 +1770,101 @@ var TEMAS = ["Respiratorio","Nutrición y deglución","Comunicación","Equipamie
 var ETIQ_ETAPA = {temprana:"etapa temprana", intermedia:"etapa intermedia", avanzada:"etapa avanzada"};
 
 /* ---------------- comunidad ---------------- */
+/* Un mismo índice para contactos del archivo y aportes de miembros.
+   Solo se clasifica por el rubro declarado, nunca por nombre o comentario. */
+function directoryCategory(type){
+ var t=fold(type||'').replace(/\s+/g,' ').trim();
+ if(/paliativ/.test(t))return 'paliativos';
+ if(/\benfermer|\bcuidad/.test(t))return 'cuidados';
+ if(/kinesio|fisioterap/.test(t))return 'kinesiologia';
+ if(/^(centro|hospital|clinica)( |$)/.test(t)&&!/^clinica general/.test(t))return 'centros';
+ if(/internacion domiciliaria/.test(t))return 'internacion';
+ if(/comunicacion aumentativa/.test(t))return 'comunicacion';
+ if(/laboratorio.*genetic|estudio.*genetic/.test(t))return 'estudios-geneticos';
+ if(/farmacia|laboratorio/.test(t))return 'farmacias';
+ if(/ortopedi|equipamiento|proveedor.*respir/.test(t))return 'equipamiento';
+ if(/neurolog/.test(t))return 'neurologia';
+ if(/neumonolog/.test(t))return 'neumonologia';
+ if(/fonoaudiolog/.test(t))return 'fonoaudiologia';
+ if(/fisiatr/.test(t))return 'fisiatria';
+ if(/terap.*ocupacional/.test(t))return 'terapia-ocupacional';
+ if(/nutricion/.test(t))return 'nutricion';
+ if(/cabecera|clinico|clinica general/.test(t))return 'clinica';
+ if(/psiquiatr/.test(t))return 'psiquiatria';
+ if(/psicolog/.test(t))return 'psicologia';
+ if(/gastroenterolog/.test(t))return 'gastroenterologia';
+ if(/paliativ/.test(t))return 'paliativos';
+ if(/genetista/.test(t))return 'genetistas';
+ if(/acompanante.*terapeut/.test(t))return 'acompanamiento';
+ if(/odontolog/.test(t))return 'odontologia';
+ if(/cirugi|cirujan/.test(t))return 'cirugia';
+ if(/polisomnogra/.test(t))return 'sueno';
+ if(/abogad|amparo/.test(t))return 'legales';
+ if(/traslado/.test(t))return 'traslados';
+ if(/holistic/.test(t))return 'holisticos';
+ if(/fundacion|asociacion/.test(t))return 'organizaciones';
+ return 'otros';
+}
+function directoryGroups(){
+ var definitions=[
+  ['centros','Centros con experiencia en ELA','Centro de atención / rehabilitación'],
+  ['neurologia','Neurología','Neurólogo'],['neumonologia','Neumonología','Neumonólogo'],
+  ['kinesiologia','Kinesiología','Kinesiólogo motor'],['fonoaudiologia','Fonoaudiología','Fonoaudiólogo'],
+  ['fisiatria','Fisiatría','Fisiatra'],['terapia-ocupacional','Terapia ocupacional','Terapista ocupacional'],
+  ['nutricion','Nutrición','Nutricionista'],['clinica','Clínica médica y médicos de cabecera','Clínico / médico de cabecera'],
+  ['gastroenterologia','Gastroenterología','Gastroenterólogo'],['paliativos','Cuidados paliativos','Médico paliativista'],
+  ['genetistas','Médicos genetistas','Médico genetista'],['psicologia','Psicología','Psicólogo'],['psiquiatria','Psiquiatría','Psiquiatra'],
+  ['odontologia','Odontología','Odontólogo'],['cirugia','Cirugía','Otro'],['sueno','Estudios del sueño','Otro'],
+  ['cuidados','Enfermeras/cuidadoras capacitadas','Enfermeros'],['acompanamiento','Acompañantes terapéuticos','Acompañante terapéutico'],
+  ['internacion','Internación domiciliaria','Empresa de internación domiciliaria'],
+  ['comunicacion','Comunicación aumentativa','Empresa de comunicación aumentativa'],
+  ['equipamiento','Equipamiento, ortopedia y respiratorio','Ortopedia'],
+  ['estudios-geneticos','Estudios genéticos','Laboratorio / estudio genético'],
+  ['farmacias','Farmacias y laboratorios','Farmacia'],['legales','Legales','Abogado para amparos'],
+  ['traslados','Traslados','Traslados'],['holisticos','Tratamientos holísticos','Tratamientos holísticos'],
+  ['organizaciones','Organizaciones y redes de ayuda','Fundación / asociación'],
+  ['otros','Otros contactos / sin clasificar','Otro']
+ ];
+ var groups=definitions.map(function(d){return {key:d[0],g:d[1],type:d[2],sub:'',items:[],members:[]};}),byKey={};
+ groups.forEach(function(g){byKey[g.key]=g;});
+ DIRECTORY.forEach(function(original){
+  var target=groups.find(function(g){return g.g===original.g;});
+  if(target){target.sub=original.sub;target.items=original.items.slice();}
+  else original.items.forEach(function(it){byKey[directoryCategory(it.r)].items.push(it);});
+ });
+ if(aprobado())deSeccion('especialista').forEach(function(a){if(a.esp_tipo!=='DElaMano')byKey[directoryCategory(a.esp_tipo)].members.push(a);});
+ return groups;
+}
+function directoryPublicCard(it){
+ var html='<div class="nm">'+esc(it.n)+'</div><div class="rl">'+esc(it.r)+'</div>';
+ if(it.p)html+='<div class="pl">'+esc(it.p)+'</div>';
+ if(it.note)html+='<div class="pl" style="margin-top:8px;color:var(--ink-2)">'+esc(it.note)+'</div>';
+ var pills='';
+ if(it.tel)pills+='<a class="pill" href="tel:'+it.tel+'">'+esc(fmtTel(it.tel))+'</a>';
+ if(it.tel&&it.tel.indexOf('+')===0&&it.whatsapp!==false)pills+='<a class="pill" href="https://wa.me/'+it.tel.replace(/\D/g,'')+'" target="_blank" rel="noopener">WhatsApp</a>';
+ if(it.url)pills+='<a class="pill" href="'+it.url+'" target="_blank" rel="noopener">Sitio</a>';
+ if(it.email)pills+='<a class="pill" href="mailto:'+esc(it.email)+'">Enviar correo</a>';
+ return '<div class="card">'+html+(pills?'<div class="contact">'+pills+'</div>':'')+'</div>';
+}
+function renderDirectoryGroups(filter){
+ var q=fold(filter||'').trim(),list=el('dir'),other=el('directoryMembers');
+ list.innerHTML='';other.innerHTML='';
+ directoryGroups().forEach(function(g){
+  var groupMatch=!q||fold(g.g).includes(q)||q===g.key;
+  var items=g.items.filter(function(it){return groupMatch||fold([it.n,it.r,it.p,it.note||''].join(' ')).includes(q);});
+  var members=g.members.filter(function(a){return groupMatch||specialistMatches(a,q);});
+  var care=g.key==='cuidados';
+  if(!items.length&&!members.length&&!(care&&(groupMatch||/enferm|cuidad|capacit/.test(q))))return;
+  var sec=document.createElement('section');sec.className='dirgroup'+(care?' care-directory':'');sec.id='directorio-'+g.key;
+  sec.innerHTML='<h3>'+esc(g.g)+'</h3>'+(g.sub?'<p class="sub">'+esc(g.sub)+'</p>':'')+
+   (items.length?'<div class="cards">'+items.map(directoryPublicCard).join('')+'</div>':'')+
+   (members.length?'<div class="directory-category-members"><p class="hint">Aportes de la comunidad · Solo para miembros aprobados. Consultá disponibilidad y condiciones con cada contacto.</p>'+members.map(specialistHTML).join('')+'</div>':'')+
+   (care?'<div class="contribution-actions"><button class="btn" data-add-contact="enfermeria">+ Agregar enfermera/o</button><button class="btn ghost" data-add-contact="cuidador">+ Agregar cuidador/a</button><button class="mini" data-specialist="cuidados">Ver contactos de cuidados</button></div>':'<button class="mini directory-add-more" type="button" data-add-contact="profesional" data-directory-type="'+attr(g.type)+'">+ Agregar otro contacto</button>');
+  (g.key==='otros'?other:list).appendChild(sec);
+ });
+ if(!list.children.length&&!other.children.length)list.innerHTML='<p class="hint">No hay contactos que coincidan con esa búsqueda.</p>';
+}
+
 /* Resúmenes de orientación revisados el 13/09/2026. El archivo histórico se conserva. */
 var FUENTES = {
   ela:['NIH · Tratamientos de la ELA','https://www.ninds.nih.gov/current-research/focus-disorders/focus-amyotrophic-lateral-sclerosis'],
@@ -3275,13 +3278,13 @@ function openContactForm(kind,type){
  if(kind==='cuidador')el('eTipo').value='Cuidadores especializados';
  el('eNombre').focus();form.scrollIntoView({block:'start'});
 }
-function specialistMatches(a,q){if(q==='cuidados')return /enferm|cuidad/.test(fold(a.esp_tipo||''));return !q||fold([a.esp_nombre,a.esp_tipo,a.esp_institucion,a.esp_ciudad,a.esp_provincia,a.esp_cobertura,a.texto].filter(Boolean).join(' ')).includes(q);}
+function specialistMatches(a,q){if(q==='cuidados')return /enferm|cuidad/.test(fold(a.esp_tipo||''));return !q||fold([a.esp_nombre,a.esp_tipo,a.esp_institucion,a.esp_ciudad,a.esp_provincia,a.esp_cobertura,a.esp_modalidad,a.esp_obra_social,a.ayuda_temas,a.texto].filter(Boolean).join(' ')).includes(q);}
 function specialistHTML(a){
  var field=function(label,value){return value?'<div class="kv"><span class="k">'+label+'</span><span class="v">'+esc(value)+'</span></div>':'';};
- return '<article data-aporte="'+a.id+'" class="aporte'+(a.estado==='oculto'?' oculto':'')+'"><h4 class="ah">'+esc(a.esp_nombre||'Contacto')+'</h4><div class="ataglist">'+(a.esp_tipo?'<span class="tag">'+esc(a.esp_tipo)+'</span>':'')+(a.esp_calificacion?'<span class="tag califica">'+esc(a.esp_calificacion)+'</span>':'')+'</div>'+field('Dónde',[a.esp_institucion,a.esp_ciudad,a.esp_provincia].filter(Boolean).join(' · '))+field('Cobertura',a.esp_cobertura)+field('Contacto laboral',a.esp_contacto)+field('Experiencia',a.texto)+firmaHTML(a)+'</article>';
+ return '<article data-aporte="'+a.id+'" class="aporte'+(a.estado==='oculto'?' oculto':'')+'"><h4 class="ah">'+esc(a.esp_nombre||'Contacto')+'</h4><div class="ataglist">'+(a.esp_tipo?'<span class="tag">'+esc(a.esp_tipo)+'</span>':'')+(a.esp_calificacion?'<span class="tag califica">'+esc(a.esp_calificacion)+'</span>':'')+'</div>'+field('Dónde',[a.esp_institucion,a.esp_ciudad,a.esp_provincia].filter(Boolean).join(' · '))+field('Modalidad',a.esp_modalidad)+field('Obra social',a.esp_obra_social)+field('Coberturas que acepta',a.esp_cobertura)+field('Contacto laboral',a.esp_contacto)+field('Experiencia',a.texto)+firmaHTML(a)+'</article>';
 }
 function renderMemberDirectory(){
- if(!el('directoryMembers'))return;
+ if(!el('directoryMembers'))return;renderDelaMano();
  el('directoryAccess').hidden=aprobado();
  if(!aprobado())el('directoryAccess').innerHTML=accessParticipationHTML();
  drawDir(el('dirq').value);
@@ -3318,7 +3321,7 @@ function rememberDiscussionForms(){
 }
 function discussionFormHTML(topic,instance){
  var id='discussion-'+instance+'-'+encodeURIComponent(topic.key);
- return '<form class="discussion-form" data-discussion-key="'+attr(topic.key)+'"><label for="'+id+'">Tu comentario o pregunta</label><textarea id="'+id+'" rows="3" required minlength="10" maxlength="2000" placeholder="Contá qué te sirvió, hacé una pregunta o respondé a otra familia."></textarea>'+archivoInput(id+'-files')+'<div class="askbar"><button class="btn" type="submit">Publicar comentario</button><span class="hint" role="status" aria-live="polite"></span></div></form>';
+ return '<form class="discussion-form" data-discussion-key="'+attr(topic.key)+'"><label for="'+id+'">Tu comentario o pregunta</label><textarea id="'+id+'" rows="3" required minlength="10" maxlength="2000" placeholder="Contá qué te sirvió, hacé una pregunta o respondé a otra familia."></textarea>'+archivoInput(id+'-files')+'<div class="askbar"><button class="btn" type="submit">Enviar comentario para revisión</button><span class="hint" role="status" aria-live="polite"></span></div></form>';
 }
 function renderDiscussionWidgets(){
  rememberDiscussionForms();
@@ -3330,7 +3333,7 @@ function renderDiscussionWidgets(){
   var form=DISCUSSION_DRAFTS[box.dataset.instance+':'+topic.key];
   box.innerHTML=top+'<p class="hint">'+entries.length+(entries.length===1?' comentario':' comentarios')+' · Solo miembros aprobados. Compartimos experiencias; las respuestas de familias no son indicaciones médicas.</p><div class="discussion-controls"><button type="button" class="mini" data-discussion-refresh>Actualizar comentarios</button>'+enlaceTema(forumURL(topic),'Abrir esta conversación')+'</div>'+
    (!all&&entries.length>shown.length?'<button type="button" class="btn ghost" data-discussion-older>Ver '+(entries.length-shown.length)+' comentarios anteriores</button>':'')+
-   '<div class="discussion-entries">'+(shown.length?shown.map(function(a){return '<div class="discussion-entry">'+comentarioHTML(a)+'<button class="mini" type="button" data-discussion-reply="'+a.id+'">Responder a '+esc(a.autor_nombre||'este miembro')+'</button></div>';}).join(''):'<p>Todavía no hay comentarios. Tu experiencia o tu pregunta puede abrir la conversación.</p>')+'</div><p class="hint">Publicá solo información que quieras compartir con el grupo. Un administrador puede moderar los aportes.</p><p class="discussion-status hint" role="status" aria-live="polite"></p>';
+   '<div class="discussion-entries">'+(shown.length?shown.map(function(a){return '<div class="discussion-entry">'+comentarioHTML(a)+'<button class="mini" type="button" data-discussion-reply="'+a.id+'">Responder a '+esc(a.autor_nombre||'este miembro')+'</button></div>';}).join(''):'<p>Todavía no hay comentarios. Tu experiencia o tu pregunta puede abrir la conversación.</p>')+'</div><p class="hint">Publicá solo información que quieras compartir con el grupo. Cada aporte se revisa antes de aparecer para los demás. La aprobación no valida su contenido médico.</p><p class="discussion-status hint" role="status" aria-live="polite"></p>';
   if(form)box.appendChild(form);else box.insertAdjacentHTML('beforeend',discussionFormHTML(topic,box.dataset.instance));
  });
 }
@@ -3391,7 +3394,7 @@ function initParticipation(){
    var text=form.querySelector('textarea').value.trim();if(text.length<10)throw falla('Escribí al menos 10 caracteres.');
    form._saving=true;
    var data={autor:ME.id,seccion:topic.sec,item:topic.item,texto:text};if(topic.sec==='consejo')data.tema=topic.title;
-   if(await publicarFormulario(form,data))status.textContent='Tu comentario quedó guardado en esta conversación.';
+   if(await publicarFormulario(form,data))status.textContent='Tu comentario quedó guardado, pendiente de aprobación. Los demás miembros lo verán cuando se apruebe.';
   }catch(e){status.textContent=mensajeError(e);}finally{form._saving=false;}
  });
  if(location.hash.startsWith('#/foro'))renderForum();
@@ -3466,12 +3469,12 @@ var SECCIONES = [["insumo","Insumos y equipamiento"],["medicacion","Medicaciones
 /* ---------- firma y acciones de cada aporte ---------- */
 function firmaHTML(a){
   var acc = "", pendiente = CORRECCIONES.some(function(c){ return String(c.aporte)===String(a.id) && !c.resuelta && c.autor===ME.id; });
-  if(admin()) acc = '<button class="mini" data-editar="'+a.id+'">Editar</button><button class="mini" data-ocultar="'+a.id+'">'+(a.estado==="oculto"?"Publicar":"Ocultar")+
+  if(admin()) acc = '<button class="mini" data-editar="'+a.id+'">Editar</button><button class="mini" data-ocultar="'+a.id+'">'+(a.estado==="publicado"?"Ocultar":"Revisar y aprobar")+
                   '</button><button class="mini danger" data-borrar="'+a.id+'">Borrar</button>';
   else if(aprobado() && a.autor === ME.id) acc = pendiente ? '<span>Corrección pendiente</span>' : '<button class="mini" data-corregir="'+a.id+'">Pedir corrección</button>';
   if(aprobado() && (a.autor===ME.id || admin()) && ARCHIVOS.filter(function(f){return String(f.aporte)===String(a.id);}).length<5)
     acc+='<button class="mini" data-adjuntar="'+a.id+'">Adjuntar archivos</button>';
-  return archivosHTML(a)+'<div class="afirma"><span class="aquien">'+esc(a.autor_nombre||"Miembro")+
+  return estadoAporteHTML(a)+archivosHTML(a)+'<div class="afirma"><span class="aquien">'+esc(a.autor_nombre||"Miembro")+
     (a.autor_rol?' · '+esc(a.autor_rol):"")+(a.autor_es_admin?' · admin':"")+'</span>'+
     '<span class="date">'+fechaCorta(a.creado)+'</span>'+
     (a.autor_contacto?'<span class="acont">'+esc(a.autor_contacto)+'</span>':"")+
@@ -3486,7 +3489,7 @@ function cajaAporte(sec, item, prefix){
   var id = (prefix||'')+"aporte-"+sec+"-"+item;
   return '<form class="micro" data-sec="'+sec+'" data-item="'+esc(item)+'">'+
     '<label for="'+id+'">Tu experiencia</label><textarea id="'+id+'" rows="3" required minlength="10" maxlength="2000" placeholder="Contá tu experiencia: qué usaste, cómo lo conseguiste, si te sirvió y para qué."></textarea>'+
-    archivoInput(id+"-files")+'<div class="askbar"><button class="btn" type="submit">Publicar</button><span class="hint" role="status"></span></div></form>';
+    archivoInput(id+"-files")+'<div class="askbar"><button class="btn" type="submit">Enviar para revisión</button><span class="hint" role="status"></span></div></form>';
 }
 
 function archivosHTML(a){
@@ -3553,6 +3556,7 @@ function pintarMeds(){
 function pintarEsp(){
   var q = fold((el("qEsp").value||"").trim());
   var lista = deSeccion("especialista").filter(function(a){
+    if(a.esp_tipo==="DElaMano") return false;
     if(fProv && a.esp_provincia !== fProv) return false;
     if(!q) return true;
     return specialistMatches(a,q);
@@ -3598,7 +3602,6 @@ function pintarConsejos(){
 }
 
 function pintarTodo(){
-  pintarEstadoSesion();
   pintarInsumos(); pintarMeds(); pintarEsp(); pintarConsejos();
   pintarAportesTematicos();
   updateParticipation();
@@ -3654,359 +3657,6 @@ function comListas(){
   pintarTodo();
 }
 
-/* Sesión, aportes, archivos y administración. Se integra en el HTML al compilar. */
-function falla(texto){ return {userMessage:texto}; }
-function archivosSeleccionados(input){
-  var files = Array.from(input && input.files || []);
-  if(files.length>5) throw falla("Podés adjuntar hasta cinco archivos por aporte.");
-  return files.map(function(file){
-    var extension = file.name.split('.').pop().toLowerCase();
-    var inferido = {jpg:"image/jpeg",jpeg:"image/jpeg",png:"image/png",webp:"image/webp",heic:"image/heic",pdf:"application/pdf"}[extension];
-    var tipo = file.type || inferido;
-    if(!FILE_TYPES[tipo] || !inferido || tipo!==inferido) throw falla("Elegí imágenes JPG, PNG, WebP, HEIC o documentos PDF.");
-    if(file.size<1 || file.size>10485760) throw falla("Cada archivo debe pesar entre 1 byte y 10 MB.");
-    if(file.name.length>180) throw falla("Acortá el nombre del archivo a menos de 181 caracteres.");
-    return {file:file,tipo:tipo,reserva:null,subido:false,listo:false};
-  });
-}
-function bloquearFormulario(form, block){
-  form.querySelectorAll("input,select,textarea,button").forEach(function(e){e.disabled=block;});
-}
-async function subirArchivos(carga, hint){
-  for(var i=0;i<carga.archivos.length;i++){
-    var f=carga.archivos[i]; if(f.listo) continue;
-    hint.textContent="Subiendo archivo "+(i+1)+" de "+carga.archivos.length+"…";
-    if(!f.reserva){
-      var data=comprobar(await sb.rpc("reservar_archivo",{p_aporte:carga.aporte,p_nombre:f.file.name,p_tipo:f.tipo,p_tamano:f.file.size}));
-      f.reserva=Array.isArray(data)?data[0]:data;
-    }
-    if(!f.subido){
-      var r=await sb.storage.from("aportes").upload(f.reserva.ruta,f.file,{contentType:f.tipo,upsert:false});
-      // Una respuesta perdida puede dejar el objeto guardado. Confirmar la
-      // reserva verifica su existencia sin reemplazar un archivo existente.
-      if(r.error && String(r.error.statusCode||r.error.status)!=="409") throw r.error;
-      f.subido=true;
-    }
-    comprobar(await sb.rpc("confirmar_archivo",{p_id:f.reserva.id})); f.listo=true;
-  }
-}
-async function publicarFormulario(form, datos, existente){
-  if(!aprobado()) throw falla("Necesitás acceso aprobado para participar.");
-  var hint=form.querySelector("[role=status]");
-  if(!form._carga){ form._carga={aporte:existente||null,archivos:archivosSeleccionados(form.querySelector("input[type=file]"))}; }
-  var carga=form._carga, epoch=sessionEpoch;
-  bloquearFormulario(form,true);
-  try{
-    if(!carga.aporte){
-      hint.textContent="Guardando el aporte…";
-      carga.aporte=comprobar(await sb.from("aportes").insert(datos).select("id").single()).id;
-    }
-    await subirArchivos(carga,hint);
-    if(epoch!==sessionEpoch) return false;
-    form.reset(); form._carga=null;bloquearFormulario(form,false);
-    try{await cargarAportes(epoch);estadoComunidad("El aporte quedó guardado.",false,false);}
-    catch(e){estadoComunidad("El aporte quedó guardado, pero no pudimos actualizar la lista. Volvé a intentar la carga de la lista.",true,true);}
-    return true;
-  }catch(error){
-    if(epoch!==sessionEpoch) return false;
-    hint.textContent=(carga.aporte?"El aporte ya está guardado. Faltan archivos por completar. ":"")+mensajeError(error);
-    var button=form.querySelector('button[type="submit"]');
-    button.disabled=false;
-    button.textContent=carga.aporte?"Reintentar archivos":"Volver a intentar";
-    // Si ya se guardó el texto, reintentar solo los archivos evita duplicar el aporte.
-    if(!carga.aporte){form._carga=null; bloquearFormulario(form,false);}
-    return false;
-  }
-}
-
-function abrirDialogo(titulo, fields, action, label){
-  dialogReturnFocus=document.activeElement;
-  el("communityDialogForm").reset(); el("communityDialogForm")._carga=null;
-  el("dialogTitle").textContent=titulo; el("dialogFields").innerHTML=fields;
-  el("dialogMsg").textContent=""; el("dialogSubmit").textContent=label||"Guardar";
-  bloquearFormulario(el("communityDialogForm"),false); dialogAction=action;
-  el("communityDialog").showModal();
-}
-function campoDialogo(name,label,value,max,multiline){
-  var id="edit-"+name;
-  return '<div class="formrow"><label for="'+id+'">'+label+'</label>'+
-    (multiline?'<textarea id="'+id+'" name="'+name+'" rows="4" maxlength="'+max+'">'+esc(value||"")+'</textarea>':
-      '<input type="text" id="'+id+'" name="'+name+'" maxlength="'+max+'" value="'+attr(value||"")+'">')+'</div>';
-}
-function aportePorId(id){return APORTES.find(function(a){return String(a.id)===String(id);});}
-function editarAporte(a){
-  if(!admin() || !a) return;
-  var fields="", keys=["texto"], html;
-  if(a.seccion==="especialista"){
-    var spec=[["esp_nombre","Nombre",150],["esp_tipo","Especialidad o servicio",150],["esp_institucion","Institución",150],
-      ["esp_provincia","Provincia o zona",100],["esp_ciudad","Ciudad",80],["esp_cobertura","Cobertura",150],["esp_contacto","Contacto laboral",500]];
-    spec.forEach(function(k){keys.push(k[0]);fields+=campoDialogo(k[0],k[1],a[k[0]],k[2],false);});
-    keys.push("esp_calificacion");
-    fields+='<div class="formrow"><label for="edit-esp_calificacion">Calificación</label><select id="edit-esp_calificacion" name="esp_calificacion">'+
-      ["","Excelente","Muy bueno","Bueno","Regular"].map(function(v){return '<option value="'+v+'"'+(v===(a.esp_calificacion||"")?' selected':'')+'>'+(v||"Sin calificar")+'</option>';}).join("")+'</select></div>';
-  }
-  if(a.seccion==="consejo"){keys.push("tema");fields+=campoDialogo("tema","Tema",a.tema,100,false);}
-  fields+=campoDialogo("texto","Contenido del aporte",a.texto,2500,true);
-  abrirDialogo("Editar aporte",fields,async function(form){
-    var values=new FormData(form), patch={editado:new Date().toISOString(),editado_por:ME.id};
-    keys.forEach(function(k){patch[k]=String(values.get(k)||"").trim()||null;});
-    if(a.seccion==="especialista" && !patch.esp_nombre) throw falla("Completá el nombre.");
-    if(a.seccion!=="especialista" && !patch.texto) throw falla("El aporte no puede quedar vacío.");
-    comprobar(await sb.from("aportes").update(patch).eq("id",a.id).select("id").single());
-    await cargarAportes(sessionEpoch); estadoComunidad("Los cambios quedaron guardados.",false,false);
-  });
-}
-function pedirCorreccion(a){
-  if(!aprobado() || !a || a.autor!==ME.id) return;
-  abrirDialogo("Pedir una corrección",campoDialogo("mensaje","¿Qué necesitás corregir?","",2000,true),async function(form){
-    var mensaje=String(new FormData(form).get("mensaje")||"").trim();
-    if(mensaje.length<5) throw falla("Explicá brevemente qué necesitás corregir.");
-    comprobar(await sb.from("correcciones").insert({aporte:a.id,autor:ME.id,mensaje:mensaje}));
-    await cargarAportes(sessionEpoch); estadoComunidad("Tu pedido quedó registrado para que lo revise un administrador.",false,false);
-  },"Enviar pedido");
-}
-function adjuntarAporte(a){
-  if(!aprobado() || !a || (a.autor!==ME.id && !admin())) return;
-  abrirDialogo("Adjuntar archivos",archivoInput("extra-files"),async function(form){
-    if(!form._carga && !form.querySelector("input[type=file]").files.length) throw falla("Elegí un archivo.");
-    return publicarFormulario(form,null,a.id);
-  },"Subir archivos");
-}
-async function borrarArchivo(f){
-  comprobar(await sb.storage.from("aportes").remove([f.ruta]));
-  comprobar(await sb.from("archivos").delete().eq("id",f.id).select("id").single());
-}
-async function abrirArchivo(f){
-  if(!f || !aprobado()) return;
-  var target=window.open("about:blank","_blank"); if(target) target.opener=null;
-  try{
-    var r=comprobar(await sb.storage.from("aportes").createSignedUrl(f.ruta,120));
-    var url=new URL(r.signedUrl);
-    if(url.origin!==new URL(PREGUNTELA_CONFIG.url).origin || !url.pathname.startsWith("/storage/")) throw falla("No pudimos abrir este archivo.");
-    if(target) target.location.href=url.href;
-    else abrirDialogo("Abrir archivo",'<p><a href="'+attr(url.href)+'" target="_blank" rel="noopener noreferrer">Abrir '+esc(f.nombre)+'</a></p><p class="hint">El enlace vence en dos minutos.</p>',async function(){},"Listo");
-  }catch(e){if(target) target.close();estadoComunidad(mensajeError(e),true,false);}
-}
-
-function pintarMiembros(){
-  if(!admin()) return;
-  var filtro=el("memberFilter").value, lista=MIEMBROS.filter(function(m){return !filtro || (m.rol!=="admin" && m.membresia===filtro);});
-  el("adminMembers").innerHTML=lista.length?lista.map(function(m){
-    var label=m.rol==="admin"?"Administrador":({pendiente:"Pendiente",aprobada:"Aprobado",suspendida:"Suspendido"}[m.membresia]||"Pendiente");
-    return '<article class="admin-item"><p><strong>'+esc(m.nombre)+'</strong> · '+esc(m.email)+'</p><p class="hint">'+label+'</p>'+
-      (m.rol==="admin"?"":'<div class="askbar">'+(m.membresia!=="aprobada"?'<button class="mini" data-miembro="'+m.id+'" data-estado="aprobada">Aprobar acceso</button>':"")+
-        (m.membresia!=="suspendida"?'<button class="mini danger" data-miembro="'+m.id+'" data-estado="suspendida">'+(m.membresia==="pendiente"?"Rechazar solicitud":"Suspender acceso")+'</button>':"")+'</div>')+'</article>';
-  }).join(""):'<p class="hint">No hay miembros en este estado.</p>';
-}
-function pintarCorrecciones(){
-  if(!admin()) return;
-  el("adminCorrections").innerHTML=CORRECCIONES.length?CORRECCIONES.map(function(c){
-    var a=aportePorId(c.aporte);
-    return '<article class="admin-item"><p><strong>'+esc(a && a.autor_nombre || "Miembro")+'</strong> · '+fechaCorta(c.creado)+'</p>'+
-      '<p>'+esc(c.mensaje)+'</p><div class="askbar">'+(a?'<button class="mini" data-editar="'+a.id+'">Revisar y editar aporte</button>':"")+
-      '<button class="mini" data-resolver="'+c.id+'">Marcar como resuelta</button></div></article>';
-  }).join(""):'<p class="hint">No hay correcciones pendientes.</p>';
-}
-async function cargarMiembros(epoch){
-  var data=comprobar(await sb.rpc("listar_miembros"));
-  if(epoch!==sessionEpoch || !admin()) return;
-  MIEMBROS=data||[]; pintarMiembros();
-}
-async function todasLasFilas(query){
-  var out=[];
-  for(var offset=0;;offset+=500){
-    var data=comprobar(await query().range(offset,offset+499))||[]; out=out.concat(data);
-    if(data.length<500) return out;
-  }
-}
-async function cargarAportes(epoch){
-  if(!aprobado()) return;
-  estadoComunidad("Cargando aportes…",false,false);
-  try{
-    var result=await Promise.all([
-      todasLasFilas(function(){return sb.from("aportes_publicos").select("*").order("creado",{ascending:false}).order("id",{ascending:false});}),
-      todasLasFilas(function(){return sb.from("archivos").select("*").order("id");}),
-      todasLasFilas(function(){return sb.from("correcciones").select("*").eq("resuelta",false).order("creado").order("id");})
-    ]);
-    if(epoch!==sessionEpoch || !aprobado()) return;
-    APORTES=result[0];ARCHIVOS=result[1];CORRECCIONES=result[2];pintarTodo();pintarCorrecciones();
-    estadoComunidad("",false,false);
-  }catch(e){
-    if(epoch!==sessionEpoch) return;
-    estadoComunidad("No pudimos actualizar los aportes. "+mensajeError(e),true,true);
-    throw e;
-  }
-}
-
-function limpiarPrivado(){
-  ME=null;APORTES=[];ARCHIVOS=[];CORRECCIONES=[];MIEMBROS=[];
-  if(!sessionUser){sessionEmail="";sessionAccessError=false;}
-  el("meEmail").textContent="";limpiarPasswords();
-  clearDiscussionDrafts();
-  el('directoryStatus').textContent='';
-  el("comAdmin").hidden=true;el("comAccess").hidden=true;el("mePanel").hidden=true;
-  el("espForm").hidden=true;el("conForm").hidden=true;
-  el("espForm").reset();el("conForm").reset();el("espForm")._carga=null;el("conForm")._carga=null;
-  bloquearFormulario(el("espForm"),false);bloquearFormulario(el("conForm"),false);
-  ["meNombre","meContacto","meRolC"].forEach(function(id){el(id).value="";});el("meMostrar").checked=false;
-  el("meName").textContent="";el("meRole").textContent="";
-  el("adminMembers").textContent="";el("adminCorrections").textContent="";
-  if(el("communityDialog").open) el("communityDialog").close();
-  el("dialogFields").textContent="";el("communityDialogForm")._carga=null;dialogAction=null;
-  pintarTodo();
-}
-async function comSesion(session, force){
-  var id=session && session.user.id;
-  if(!force && id===sessionUser && ME){if(passwordRecoveryPending)mostrarPasswordCuenta(true);return;}
-  var epoch=++sessionEpoch;sessionUser=id||null;sessionEmail=session&&session.user.email||"";sessionAccessError=false;limpiarPrivado();
-  el("comLogin").hidden=!!id;el("comYo").hidden=!id;
-  el("meName").textContent="Mi cuenta";el("meRole").textContent="";el("meEdit").disabled=true;
-  if(!id){estadoComunidad("",false,false);return;}
-  try{
-    estadoComunidad("Comprobando tu acceso…",false,false);
-    var profile=comprobar(await sb.from("perfiles").select("id,nombre,rol,rol_comunidad,contacto,mostrar_contacto,membresia").eq("id",id).single());
-    if(epoch!==sessionEpoch) return;
-    ME=profile;if(passwordRecoveryPending)mostrarPasswordCuenta(true);el("meEmail").textContent=sessionEmail?"Ingresaste con "+sessionEmail:"";el("meName").textContent=ME.nombre||"Miembro";el("meEdit").disabled=false;
-    el("meRole").textContent=admin()?"administrador":(aprobado()?"miembro aprobado":"acceso pendiente");
-    el("meNombre").value=ME.nombre||"";el("meRolC").value=ME.rol_comunidad||"";
-    el("meContacto").value=ME.contacto||"";el("meMostrar").checked=!!ME.mostrar_contacto;
-    if(!aprobado()){
-      el("comAccess").hidden=false;
-      var suspended=ME.membresia==="suspendida";
-      el("meRole").textContent=suspended?"sin acceso":"acceso pendiente";
-      el("accessTitle").textContent=suspended?"Tu cuenta no tiene acceso a los aportes":"Tu acceso está pendiente de aprobación";
-      el("accessText").textContent=suspended?"Contactá a un administrador del grupo si necesitás revisar esta decisión.":"Un administrador revisará tu solicitud. Mientras tanto, podés consultar las guías y los catálogos públicos.";
-      pintarTodo();estadoComunidad("",false,false);return;
-    }
-    el("comAdmin").hidden=!admin();
-    await cargarAportes(epoch); if(admin()) await cargarMiembros(epoch);
-  }catch(e){if(epoch===sessionEpoch){sessionAccessError=!ME;pintarEstadoSesion();estadoComunidad("No pudimos comprobar o cargar tu acceso. "+mensajeError(e),true,true);}}
-}
-async function refrescarSesion(){
-  try{var s=comprobar(await sb.auth.getSession());await comSesion(s.session,true);}
-  catch(e){estadoComunidad(mensajeError(e),true,true);}
-}
-
-function bindDelegado(){
-  document.addEventListener("click",async function(ev){
-    if(!ev.target.closest('#v-comunidad,[data-community-scope]')) return;
-    var b=ev.target.closest("button");if(!b || b.disabled) return;
-    if(b.dataset.toggle){abierto[b.dataset.toggle]=!abierto[b.dataset.toggle];b.parentElement.classList.toggle("open",abierto[b.dataset.toggle]);b.setAttribute("aria-expanded",String(!!abierto[b.dataset.toggle]));return;}
-    if(!aprobado()) return;
-    var a,id,f;
-    if(b.dataset.editar){editarAporte(aportePorId(b.dataset.editar));return;}
-    if(b.dataset.corregir){pedirCorreccion(aportePorId(b.dataset.corregir));return;}
-    if(b.dataset.adjuntar){adjuntarAporte(aportePorId(b.dataset.adjuntar));return;}
-    if(b.dataset.archivo){await abrirArchivo(ARCHIVOS.find(function(x){return String(x.id)===b.dataset.archivo;}));return;}
-    if(b.dataset.finalizar){
-      b.disabled=true;
-      try{comprobar(await sb.rpc("confirmar_archivo",{p_id:b.dataset.finalizar}));await cargarAportes(sessionEpoch);estadoComunidad("El archivo quedó disponible.",false,false);}
-      catch(e){estadoComunidad(mensajeError(e),true,false);}finally{b.disabled=false;}return;
-    }
-    if(b.dataset.descartar){
-      b.disabled=true;
-      try{comprobar(await sb.rpc("descartar_reserva",{p_id:b.dataset.descartar}));await cargarAportes(sessionEpoch);}
-      catch(e){estadoComunidad(mensajeError(e),true,false);}finally{b.disabled=false;}return;
-    }
-    if(!admin()) return;
-    if(b.dataset.ocultar){
-      a=aportePorId(b.dataset.ocultar);if(!a) return;b.disabled=true;
-      try{comprobar(await sb.from("aportes").update({estado:a.estado==="oculto"?"publicado":"oculto",editado:new Date().toISOString(),editado_por:ME.id}).eq("id",a.id).select("id").single());await cargarAportes(sessionEpoch);}
-      catch(e){estadoComunidad(mensajeError(e),true,false);}finally{b.disabled=false;}return;
-    }
-    if(b.dataset.borrar){
-      a=aportePorId(b.dataset.borrar);if(!a) return;
-      abrirDialogo("Borrar aporte",'<p>Se borrarán definitivamente este aporte, sus archivos y sus pedidos de corrección. Podés ocultarlo si querés conservarlo.</p>',async function(){
-        var files=ARCHIVOS.filter(function(x){return String(x.aporte)===String(a.id);});
-        if(files.length) comprobar(await sb.storage.from("aportes").remove(files.map(function(x){return x.ruta;})));
-        comprobar(await sb.from("aportes").delete().eq("id",a.id).select("id").single());
-        await cargarAportes(sessionEpoch);estadoComunidad("El aporte fue borrado.",false,false);
-      },"Borrar definitivamente");return;
-    }
-    if(b.dataset.borrarArchivo){
-      f=ARCHIVOS.find(function(x){return String(x.id)===b.dataset.borrarArchivo;});if(!f) return;
-      abrirDialogo("Borrar archivo",'<p>Se borrará definitivamente '+esc(f.nombre)+'. El aporte se conservará.</p>',async function(){await borrarArchivo(f);await cargarAportes(sessionEpoch);},"Borrar archivo");return;
-    }
-    if(b.dataset.resolver){
-      id=b.dataset.resolver;
-      abrirDialogo("Resolver corrección",'<p>Marcá el pedido como resuelto después de revisar el aporte y realizar los cambios necesarios.</p>',async function(){
-        comprobar(await sb.from("correcciones").update({resuelta:true}).eq("id",id).select("id").single());
-        await cargarAportes(sessionEpoch);estadoComunidad("La corrección quedó resuelta.",false,false);
-      },"Marcar como resuelta");return;
-    }
-    if(b.dataset.miembro){
-      var m=MIEMBROS.find(function(x){return x.id===b.dataset.miembro;}), next=b.dataset.estado;if(!m) return;
-      abrirDialogo(next==="aprobada"?"Aprobar acceso":"Suspender acceso",'<p>'+esc(m.nombre)+' · '+esc(m.email)+'</p><p>'+
-        (next==="aprobada"?"Esta persona podrá ver y agregar aportes de la comunidad.":"Esta persona dejará de ver y agregar aportes. Sus aportes anteriores se conservarán.")+'</p>',async function(){
-          comprobar(await sb.rpc("gestionar_miembro",{p_id:m.id,p_estado:next}));await cargarMiembros(sessionEpoch);
-          estadoComunidad("El acceso quedó actualizado.",false,false);
-        },next==="aprobada"?"Aprobar acceso":"Suspender acceso");
-    }
-  });
-  document.addEventListener("submit",async function(ev){
-    if(!ev.target.closest('#v-comunidad,[data-community-scope]')) return;
-    var form=ev.target.closest("form.micro");if(!form) return;ev.preventDefault();
-    try{
-      if(!aprobado()) throw falla("Necesitás acceso aprobado para participar.");
-      var text=form.querySelector("textarea").value.trim();if(text.length<10) throw falla("Contanos un poco más.");
-      abierto[form.dataset.sec+":"+form.dataset.item]=true;
-      var data={autor:ME.id,seccion:form.dataset.sec,item:form.dataset.item,texto:text};
-      if(data.seccion==='consejo'){data.tema=form.querySelector('[name=tema]').value;delete data.item;}
-      await publicarFormulario(form,data);
-    }catch(e){form.querySelector("[role=status]").textContent=mensajeError(e);}
-  });
-}
-
-function bindFormularios(){
-  el("espForm").querySelector(".askbar").insertAdjacentHTML("beforebegin",archivoInput("espFiles"));
-  el("conForm").querySelector(".askbar").insertAdjacentHTML("beforebegin",archivoInput("conFiles"));
-  el("eMsg").setAttribute("role","status");el("cMsg").setAttribute("role","status");
-  el("espNuevo").addEventListener("click",function(){openContactForm('profesional');});
-  el("conNuevo").addEventListener("click",function(){if(aprobado()){el("conForm").hidden=false;el("cTexto").focus();}});
-  el("eCancel").addEventListener("click",function(){el("espForm").hidden=true;el('directoryContribute').querySelector('button').focus();});
-  el("cCancel").addEventListener("click",function(){el("conForm").hidden=true;el("conNuevo").focus();});
-  el("eNombre").addEventListener("input",function(){
-    var q=fold(this.value.trim()),publicContacts=DIRECTORY.flatMap(function(g){return g.items.map(function(c){return {esp_nombre:c.n,esp_ciudad:c.p};});});
-    var hits=q.length<3?[]:deSeccion("especialista").concat(publicContacts).filter(function(a){return fold(a.esp_nombre||"").includes(q);}).slice(0,4);
-    el("eDup").hidden=!hits.length;
-    el("eDup").innerHTML='<strong>Ya hay nombres parecidos.</strong><ul>'+hits.map(function(a){return '<li>'+esc(a.esp_nombre)+(a.esp_ciudad?' · '+esc(a.esp_ciudad):"")+'</li>';}).join("")+'</ul>';
-  });
-  el("espForm").addEventListener("submit",async function(ev){
-    ev.preventDefault();var form=this;
-    try{
-      if(!aprobado()) throw falla("Necesitás acceso aprobado.");
-      function v(id){return el(id).value.trim();}
-      if(!v("eNombre")) throw falla("Completá el nombre.");
-      if(await publicarFormulario(form,{autor:ME.id,seccion:"especialista",esp_nombre:v("eNombre"),esp_tipo:v("eTipo"),esp_institucion:v("eInst"),esp_provincia:v("eProv"),esp_ciudad:v("eCiudad"),esp_cobertura:v("eCob"),esp_contacto:v("eCont"),esp_calificacion:v("eCalif")||null,texto:v("eComent")})){
-        bloquearFormulario(form,false);form.hidden=true;el("eDup").hidden=true;
-        el('dirq').value='';drawDir('');renderMemberDirectory();
-        el('directoryStatus').textContent='El contacto quedó guardado para los miembros aprobados. Lo encontrás en los aportes de la comunidad del Directorio.';
-        el('directoryStatus').scrollIntoView({block:'center'});
-      }
-    }catch(e){setMsg("eMsg",mensajeError(e),true);}
-  });
-  el("conForm").addEventListener("submit",async function(ev){
-    ev.preventDefault();var form=this;
-    try{
-      if(!aprobado()) throw falla("Necesitás acceso aprobado.");
-      var txt=el("cTexto").value.trim();if(txt.length<15) throw falla("Contanos un poco más.");
-      if(await publicarFormulario(form,{autor:ME.id,seccion:"consejo",tema:el("cTema").value||null,texto:txt})) {bloquearFormulario(form,false);form.hidden=true;}
-    }catch(e){setMsg("cMsg",mensajeError(e),true);}
-  });
-  el("dialogCancel").addEventListener("click",function(){el("communityDialog").close();});
-  el("communityDialog").addEventListener("close",function(){if(dialogReturnFocus && dialogReturnFocus.isConnected) dialogReturnFocus.focus();});
-  el("communityDialogForm").addEventListener("submit",async function(ev){
-    ev.preventDefault();if(this._saving || !dialogAction) return;
-    var form=this, action=dialogAction;form._saving=true;
-    el("dialogMsg").textContent="Guardando…";el("dialogSubmit").disabled=true;el("dialogCancel").disabled=true;
-    try{var result=await action(form);if(result!==false) el("communityDialog").close();}
-    catch(e){el("dialogMsg").textContent=mensajeError(e);}
-    finally{form._saving=false;el("dialogSubmit").disabled=false;el("dialogCancel").disabled=false;}
-  });
-  el("communityDialog").addEventListener("cancel",function(e){if(el("communityDialogForm")._saving) e.preventDefault();});
-  el("memberFilter").addEventListener("change",pintarMiembros);
-}
-
 /* La sesión y la aprobación son estados distintos: entrar no vuelve a solicitar membresía. */
 var authMode='member',actualizarIngresoPorCorreo=null,sessionEmail='',sessionAccessError=false;
 function textoBotonIngreso(){return authMode==='register'?'Confirmar mi email y registrarme':authMethod==='password'?'Ingresar a mi cuenta':'Recibir enlace para ingresar';}
@@ -4036,6 +3686,11 @@ function pintarEstadoSesion(){
  el('sessionDetail').textContent=signed?(known?(admin()?'Administración':aprobado()?'Miembro aprobado':ME.membresia==='suspendida'?'Acceso a la comunidad suspendido':'Acceso a la comunidad pendiente'):(sessionAccessError?'No pudimos comprobar tu acceso':'Comprobando tu acceso…')):(sessionAccessError?'Volvé a intentar desde Mi cuenta':'Podés leer el sitio. Para aportar, ingresá.');
  el('joinLink').textContent=signed?(known&&admin()?'Administrar':'Mi cuenta'):'Ingresar / Registrarme';
  el('headerSignOut').hidden=!signed;
+ if(el('homeAccountTitle')){
+  el('homeAccountTitle').textContent=signed?(known?(aprobado()?'Ya podés compartir tu experiencia':ME.membresia==='suspendida'?'Estás dentro de tu cuenta':ME.solicitud_enviada?'Ya ingresaste. Tu solicitud está pendiente':'Ya ingresaste. Completá tu solicitud'):'Estás dentro de tu cuenta'):'Tu experiencia puede ayudar a otra familia';
+  el('homeAccountHelp').innerHTML=signed?(known?(aprobado()?'Contá lo que aprendiste, agregá un contacto o participá en las conversaciones. Los nuevos aportes se revisan antes de mostrarse a los demás miembros.':ME.membresia==='suspendida'?'Tu acceso a los aportes está suspendido. Podés seguir consultando las guías y ver tu situación en Mi cuenta.':ME.solicitud_enviada?'Un administrador revisará tu solicitud. No necesitás registrarte de nuevo ni pedir otro enlace mientras tu sesión siga abierta.':'Falta completar tus datos para que los administradores puedan revisar tu acceso a la comunidad. No necesitás pedir otro enlace.'):(sessionAccessError?'No pudimos comprobar tu acceso a la comunidad. Volvé a intentar desde Mi cuenta.':'Estamos comprobando tu acceso a la comunidad.')):'Podés consultar toda la información pública sin registrarte. <strong>Para agregar información o comentarios, registrate y solicitá acceso.</strong> Un administrador aprobará tu ingreso y revisará tus aportes antes de compartirlos con la comunidad.';
+  el('homeAccountLink').textContent=signed?(known&&aprobado()?'Compartir una experiencia →':'Ir a mi cuenta →'):'Quiero participar →';
+ }
 }
 
 /* Contraseña opcional: la identidad la verifica Supabase; la membresía no cambia. */
@@ -4057,7 +3712,7 @@ function pintarMetodoIngreso(){
  var member=authMode==='member',password=member&&authMethod==='password';
  el('authMethods').hidden=!member;el('authPasswordRow').hidden=!password;el('authPassword').required=password;
  document.querySelectorAll('[data-auth-method]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.authMethod===authMethod));});
- el('authModeHelp').innerHTML=!member?'Confirmá tu email para solicitar acceso. Un administrador revisará tu solicitud. Después podés crear una contraseña desde Mi cuenta.':password?'Escribí el mismo email con el que te registraste y tu contraseña. <strong>Entrás a tu cuenta sin pedir un enlace ni otra autorización.</strong>':'Escribí el mismo email con el que te registraste. Te enviaremos un enlace para entrar: <strong>no estás pidiendo autorización otra vez.</strong>';
+ el('authModeHelp').innerHTML=!member?'Confirmá tu email y completá los datos de registro. Un administrador revisará tu solicitud. Después podés crear una contraseña opcional desde Mi cuenta.':password?'Escribí el mismo email con el que te registraste y tu contraseña. <strong>Entrás a tu cuenta sin pedir un enlace ni otra autorización.</strong>':'Escribí el mismo email con el que te registraste. Te enviaremos un enlace para entrar: <strong>no estás pidiendo autorización otra vez.</strong>';
  el('authEmailExplanation').textContent=member&&password?'¿Todavía no tenés contraseña? Usá «Crear o recuperar contraseña». Podés abrir ese correo en el dispositivo donde lo recibís y elegirla allí; después usás tu email y esa contraseña desde cualquier celular o computadora.':'El enlace confirma que el correo es tuyo e inicia sesión en el navegador donde lo abrís. Una vez dentro, podés configurar una contraseña para entrar también desde otros dispositivos.';
 }
 function bloquearIngresoPassword(block){
@@ -4133,6 +3788,458 @@ function initPasswordAccess(){
  pintarMetodoIngreso();
 }
 
+/* Solicitudes privadas, revisión previa y DElaMano. Los permisos se aplican en PostgreSQL. */
+function estadoAporteHTML(a){
+ var names={pendiente:'Pendiente de aprobación · Visible solo para el autor y la administración',rechazado:'No aprobado',oculto:'Oculto',publicado:'Experiencia de la comunidad'};
+ return '<p class="review-state '+attr(a.estado||'publicado')+'">'+esc(names[a.estado]||names.publicado)+'</p>'+
+  (a.estado==='publicado'?'<p class="hint">La aprobación permite compartirlo; no es una validación médica.</p>':'')+
+  (a.nota_moderacion?'<p class="hint">Nota de administración: '+esc(a.nota_moderacion)+'</p>':'');
+}
+function registroCampo(id,label,type,max){return '<div class="formrow"><label for="'+id+'">'+label+'</label><input id="'+id+'" type="'+(type||'text')+'" maxlength="'+(max||100)+'" required></div>';}
+function initCommunityManagement(){
+ el('comAccess').insertAdjacentHTML('beforebegin','<div class="col panel" id="registrationPanel" hidden><h3>Completá tu solicitud</h3><p>Contanos un poco sobre vos para que podamos reconocer a quienes se suman. <strong>Estos datos son privados: solo los ve la administración.</strong> El nombre para mostrar es el único dato de este formulario que aparecerá en tus aportes.</p><form id="registrationForm">'+
+ registroCampo('regDisplay','Cómo querés que te vea la comunidad','text',60)+registroCampo('regName','Nombre y apellido','text',120)+registroCampo('regWhatsApp','WhatsApp con código de país','tel',40)+
+ '<div class="registration-grid">'+registroCampo('regCountry','País','text',80)+registroCampo('regProvince','Provincia / estado','text',100)+registroCampo('regCity','Ciudad o localidad','text',100)+'</div>'+
+ '<div class="formrow"><label for="regRelation">¿Qué relación tenés con la ELA?</label><select id="regRelation" required><option value="">Elegí una opción</option>'+['Paciente','Familiar','Cuidador/a','Médico/a','Profesional de la salud','Otro'].map(function(x){return '<option>'+x+'</option>';}).join('')+'</select></div><div class="formrow"><label for="regSource">¿Cómo llegaste a PreguntELA? ¿De qué grupo venís o quién te recomendó?</label><textarea id="regSource" required minlength="3" maxlength="600" rows="3"></textarea></div><div class="askbar"><button class="btn" type="submit">Enviar solicitud</button><span id="registrationMsg" role="status" aria-live="polite"></span></div></form></div>');
+ el('regProvince').required=false;el('regWhatsApp').placeholder='+54 9 …';
+ el('registrationForm').addEventListener('submit',async function(ev){
+  ev.preventDefault();if(!ME)return;var form=this;bloquearFormulario(form,true);
+  try{var value=function(id){return el(id).value.trim();};
+   comprobar(await sb.rpc('enviar_solicitud',{p_nombre:value('regDisplay'),p_nombre_real:value('regName'),p_whatsapp:value('regWhatsApp'),p_pais:value('regCountry'),p_provincia:value('regProvince'),p_ciudad:value('regCity'),p_vinculo:value('regRelation'),p_llegada:value('regSource')}));
+   await refrescarSesion();estadoComunidad('Tus datos quedaron guardados. '+(aprobado()?'Conservás tu acceso a la comunidad.':'Un administrador revisará tu solicitud.'),false,false);
+  }catch(e){el('registrationMsg').textContent=mensajeError(e);}finally{bloquearFormulario(form,false);}
+ });
+ el('meEdit').insertAdjacentHTML('afterend','<button class="btn ghost" id="registrationEdit">Mis datos de registro</button>');
+ el('registrationEdit').addEventListener('click',function(){el('registrationPanel').hidden=!el('registrationPanel').hidden;if(!el('registrationPanel').hidden)el('regDisplay').focus();});
+ el('comAdmin').querySelector('h3').insertAdjacentHTML('afterend','<div class="admin-overview" id="adminOverview"></div><details open><summary>Aportes para revisar <span id="reviewCount"></span></summary><p>Revisá el texto y todos los adjuntos. Aprobar lo comparte como experiencia de la comunidad, sin incorporarlo automáticamente a las guías del sitio.</p><button class="btn ghost" id="reviewRefresh">Actualizar pendientes</button><div id="adminReview" data-community-scope></div></details><details><summary>Administradores y colaboradores</summary><p>Hasta cinco administradores pueden aprobar solicitudes y aportes, corregir información y gestionar colaboradores. Agregá solo personas de confianza.</p><div id="adminTeam"></div></details><details><summary>Resúmenes por correo</summary><div id="digestStatus"><p>Consultando el estado de los envíos…</p></div></details>');
+ el('reviewRefresh').addEventListener('click',refrescarSesion);
+ el('eCob').closest('.formrow').insertAdjacentHTML('beforebegin','<div class="formrow"><label for="eModalidad">Modalidad de atención</label><select id="eModalidad"><option value="">No lo sé todavía</option><option>Presencial</option><option>Virtual</option><option>Presencial y virtual</option><option>A domicilio</option><option>Presencial, virtual y a domicilio</option></select></div><div class="formrow"><label for="eObraSocial">¿Atiende por obra social o prepaga?</label><select id="eObraSocial"><option value="">No lo sé todavía</option><option>Sí, consultar coberturas</option><option>Solo particular</option><option>Particular con reintegro</option><option>Atención pública</option></select></div>');
+ el('eCob').previousElementSibling.textContent='¿Qué obras sociales o prepagas acepta?';el('eCob').placeholder='Nombres de las coberturas, si los conocés';
+ ['espForm','conForm'].forEach(function(id){el(id).querySelector('button[type=submit]').textContent='Enviar para revisión';});
+ el('directoryContribute').insertAdjacentHTML('beforebegin','<section class="delamano panel" id="delaMano" data-community-scope><p class="eyebrow">Directorio · Ayuda entre familias</p><h3>DElaMano</h3><p>Personas de la comunidad que se ofrecen a responder por correo sobre temas que conocen por experiencia. Una forma de acompañarnos, de familia a familia.</p><p class="hint">Los contactos solo se muestran a miembros aprobados. Esta ayuda no reemplaza al equipo de salud ni es un servicio de urgencias.</p><button class="btn" type="button" id="offerHelp">Quiero ofrecer mi ayuda</button><div id="helpList"></div><form id="helpForm" hidden><h4>Contá en qué podés ayudar</h4>'+registroCampo('helpName','Nombre para mostrar','text',150)+registroCampo('helpEmail','Correo donde querés recibir consultas','email',254)+registroCampo('helpTopics','Temas que conocés (por ejemplo: botón gástrico, comunicación)','text',500)+'<div class="formrow"><label for="helpExperience">Tu experiencia y cómo te gustaría acompañar</label><textarea id="helpExperience" minlength="10" maxlength="2500" rows="4" required></textarea></div><label class="check"><input id="helpConsent" type="checkbox" required> Acepto que mi nombre, experiencia y correo se compartan con miembros aprobados de PreguntELA para recibir consultas. Podré retirar mi ofrecimiento.</label><p class="hint">La administración revisará tu propuesta antes de mostrarla.</p><div class="askbar"><button class="btn" type="submit">Enviar ofrecimiento</button><button class="btn ghost" id="helpCancel" type="button">Cancelar</button><span role="status" aria-live="polite"></span></div></form></section>');
+ el('dirq').closest('.filterbar').insertAdjacentHTML('afterend','<p><a href="#/directorio" id="delaManoJump">DElaMano · Personas del grupo que ofrecen ayuda →</a></p>');
+ el('delaManoJump').addEventListener('click',function(ev){ev.preventDefault();el('delaMano').scrollIntoView({block:'start'});el('offerHelp').focus({preventScroll:true});});
+ el('mePanel').insertAdjacentHTML('beforeend','<p><button type="button" class="mini" data-withdraw="todos">Retirar mis ofrecimientos de DElaMano</button></p>');
+ el('offerHelp').addEventListener('click',function(){if(!aprobado()){show('comunidad');return;}el('helpForm').hidden=false;el('helpName').value=ME.nombre;el('helpName').focus();});
+ el('helpCancel').addEventListener('click',function(){el('helpForm').hidden=true;el('offerHelp').focus();});
+ el('helpForm').addEventListener('submit',async function(ev){ev.preventDefault();var form=this;
+  try{if(!aprobado()||!el('helpConsent').checked)throw falla('Necesitás acceso aprobado y aceptar compartir tu contacto.');
+   if(await publicarFormulario(form,{autor:ME.id,seccion:'especialista',esp_tipo:'DElaMano',esp_nombre:el('helpName').value.trim(),esp_contacto:el('helpEmail').value.trim(),ayuda_temas:el('helpTopics').value.trim(),texto:el('helpExperience').value.trim(),contacto_autorizado:true})){form.hidden=true;el('offerHelp').focus();}
+  }catch(e){form.querySelector('[role=status]').textContent=mensajeError(e);}
+ });
+ document.addEventListener('click',async function(ev){
+  var b=ev.target.closest('[data-review],[data-admin-role],[data-withdraw]');if(!b)return;
+  if(b.dataset.review&&admin()){
+   var a=aportePorId(b.dataset.review);if(a)await revisarAporte(a,b.dataset.decision);return;
+  }
+  if(b.dataset.adminRole&&admin()){
+   var m=MIEMBROS.find(function(x){return x.id===b.dataset.adminRole;}),add=b.dataset.promote==='true';if(!m)return;
+   abrirDialogo(add?'Agregar administrador':'Quitar rol de administrador','<p><strong>'+esc(m.nombre)+'</strong> · '+esc(m.email)+'</p><p>'+(add?'Esta persona podrá aprobar miembros y aportes, ver los datos privados de las solicitudes, editar u ocultar contenido y gestionar otros administradores.':'Conservará su acceso como miembro aprobado. Ya no podrá administrar la comunidad.')+'</p>',async function(){comprobar(await sb.rpc('gestionar_administrador',{p_id:m.id,p_admin:add}));await cargarMiembros(sessionEpoch);},add?'Confirmar nuevo administrador':'Quitar rol');return;
+  }
+  if(b.dataset.withdraw&&ME){abrirDialogo('Retirar mi ofrecimiento','<p>Tu contacto dejará de aparecer en DElaMano. No necesitás esperar la aprobación de un administrador.</p>',async function(){comprobar(await sb.rpc('retirar_ayuda',{p_id:b.dataset.withdraw==='todos'?null:b.dataset.withdraw}));await cargarAportes(sessionEpoch);},'Retirar ofrecimiento');}
+ });
+}
+function pintarRegistro(){
+ pintarEstadoSesion();
+ var fields={regDisplay:'nombre',regName:'nombre_real',regWhatsApp:'whatsapp',regCountry:'pais',regProvince:'provincia',regCity:'ciudad',regRelation:'vinculo',regSource:'llegada'};
+ Object.keys(fields).forEach(function(id){el(id).value=ME[fields[id]]||(id==='regCountry'?'Argentina':'');});
+ el('registrationPanel').hidden=!!ME.solicitud_enviada||aprobado()||ME.membresia==='suspendida';
+ el('registrationForm').querySelector('button[type=submit]').textContent=ME.solicitud_enviada?'Actualizar mis datos':'Enviar solicitud';
+ if(!ME.solicitud_enviada&&!aprobado())el('accessText').textContent='Completá tus datos para que un administrador pueda revisar tu solicitud.';
+}
+function limpiarGestion(){
+ if(!el('registrationPanel'))return;
+ pintarEstadoSesion();el('registrationPanel').hidden=true;el('registrationForm').reset();el('registrationMsg').textContent='';
+ ['adminTeam','adminReview','adminOverview','helpList','digestStatus'].forEach(function(id){el(id).textContent='';});
+ el('helpForm').reset();el('helpForm').hidden=true;el('helpForm')._carga=null;bloquearFormulario(el('helpForm'),false);
+}
+function pintarSolicitudesDetalladas(){
+ if(!admin())return;
+ var filter=el('memberFilter').value,list=MIEMBROS.filter(function(m){return !filter||m.rol!=='admin'&&m.membresia===filter;});
+ el('adminMembers').innerHTML=list.map(function(m){
+  var details=[['Nombre y apellido',m.nombre_real],['WhatsApp privado',m.whatsapp],['Lugar',[m.ciudad,m.provincia,m.pais].filter(Boolean).join(', ')],['Relación con ELA',m.vinculo],['Cómo llegó',m.llegada]];
+  return '<article class="admin-item"><h4>'+esc(m.nombre)+'</h4><p>'+esc(m.email)+' · '+esc(m.rol==='admin'?'Administrador':m.membresia)+'</p>'+details.filter(function(x){return x[1];}).map(function(x){return '<p><strong>'+x[0]+':</strong> '+esc(x[1])+'</p>';}).join('')+
+   (!m.solicitud_enviada?'<p class="hint">Falta completar los datos de registro.'+(m.membresia==='aprobada'?' Su acceso anterior se conserva.':' La persona debe entrar a Mi cuenta y completar su solicitud.')+'</p>':'')+
+   (m.rol==='admin'?'':'<div class="askbar">'+(m.membresia!=='aprobada'&&m.solicitud_enviada?'<button class="mini" data-miembro="'+attr(m.id)+'" data-estado="aprobada">Aprobar acceso</button>':'')+(m.membresia!=='suspendida'?'<button class="mini danger" data-miembro="'+attr(m.id)+'" data-estado="suspendida">'+(m.membresia==='pendiente'?'Rechazar solicitud':'Suspender acceso')+'</button>':'')+'</div>')+'</article>';
+ }).join('')||'<p>No hay solicitudes en este estado.</p>';
+ pintarModeracion();
+}
+function pintarAdministradores(){
+ if(!admin())return;
+ var team=MIEMBROS.filter(function(m){return m.rol==='admin';}),others=MIEMBROS.filter(function(m){return m.rol!=='admin'&&m.membresia==='aprobada';});
+ el('adminTeam').innerHTML='<p><strong>'+team.length+' de 5 administradores</strong></p>'+team.map(function(m){return '<p>'+esc(m.nombre)+' · '+esc(m.email)+(m.id===ME.id?' (vos)':' <button class="mini" data-admin-role="'+attr(m.id)+'" data-promote="false">Quitar rol</button>')+'</p>';}).join('')+
+  (team.length<5?'<h4>Agregar un colaborador</h4><p class="hint">Primero debe registrarse y tener el acceso aprobado.</p>'+others.map(function(m){return '<p>'+esc(m.nombre)+' · '+esc(m.email)+' <button class="mini" data-admin-role="'+attr(m.id)+'" data-promote="true">Hacer administrador</button></p>';}).join(''):'<p>Ya se alcanzó el máximo de cinco.</p>');
+ cargarEstadoResumen();
+}
+async function cargarEstadoResumen(){
+ try{var r=comprobar(await sb.rpc('estado_resumen'));if(!admin())return;
+  el('digestStatus').innerHTML='<p><strong>Dos resúmenes por día: 9:00 y 18:00, hora de Argentina.</strong></p><p>Destinatario: marisapp33@gmail.com. Incluyen solicitudes, nuevos aportes y revisiones. Solo se envían si hay novedades.</p><p>'+esc(r&&r.configurado?'Servicio de correo configurado.':'Falta conectar la clave de Brevo para activar los resúmenes.')+'</p>'+(r&&r.ultimo_envio?'<p>Último envío: '+esc(new Date(r.ultimo_envio).toLocaleString('es-AR'))+'</p>':'')+(r&&r.error?'<p role="alert">'+esc(r.error)+'</p>':'');
+ }catch(e){if(admin())el('digestStatus').textContent='Los resúmenes todavía no están activados. Falta completar la configuración del envío.';}
+}
+function pintarModeracion(){
+ if(!admin()||!el('adminReview'))return;
+ var pending=APORTES.filter(function(a){return a.estado==='pendiente';});
+ el('reviewCount').textContent='('+pending.length+')';
+ el('adminOverview').textContent=MIEMBROS.filter(function(m){return m.rol!=='admin'&&m.membresia==='pendiente'&&m.solicitud_enviada;}).length+' solicitudes completas · '+pending.length+' aportes pendientes';
+ el('adminReview').innerHTML=pending.map(function(a){return '<article class="admin-item"><h4>'+esc(a.esp_nombre||a.tema||(FORUM_TOPICS[a.seccion+':'+a.item]||{}).title||a.item||a.seccion)+'</h4>'+(a.seccion==='especialista'?specialistHTML(a):comentarioHTML(a))+'<div class="askbar"><button class="btn" data-review="'+a.id+'" data-decision="publicado">Revisar y aprobar</button><button class="btn ghost" data-review="'+a.id+'" data-decision="rechazado">No aprobar</button></div></article>';}).join('')||'<p>No hay aportes pendientes de revisión.</p>';
+}
+async function revisarAporte(a,estado){
+ if(!admin())return;
+ abrirDialogo(estado==='publicado'?'Aprobar aporte':estado==='rechazado'?'No aprobar aporte':'Ocultar aporte','<p>'+esc(a.esp_nombre||a.tema||a.item||'Aporte')+' · '+esc(a.autor_nombre||'Miembro')+'</p><p>'+(estado==='publicado'?'Confirmá que revisaste el texto y los adjuntos. Se mostrará como experiencia personal a los miembros aprobados.':'Podés dejar una explicación para la persona que envió el aporte.')+'</p>'+campoDialogo('reviewNote','Nota de revisión (opcional; visible junto al aporte)','',1000,true),async function(form){
+  comprobar(await sb.rpc('moderar_aporte',{p_id:a.id,p_revision:a.revision,p_estado:estado,p_nota:new FormData(form).get('reviewNote')||''}));await cargarAportes(sessionEpoch);estadoComunidad('Revisión guardada.',false,false);
+ },estado==='publicado'?'Aprobar y compartir':'Confirmar');
+}
+function renderDelaMano(){
+ var box=el('helpList');if(!box)return;
+ if(!aprobado()){box.innerHTML='<p class="hint">Ingresá como miembro aprobado para ver a quienes ofrecen ayuda y sus correos.</p>';return;}
+ var q=fold(el('dirq').value.trim()),items=deSeccion('especialista').filter(function(a){return a.esp_tipo==='DElaMano'&&a.contacto_autorizado&&(!q||q==='delamano'||specialistMatches(a,q));});
+ box.innerHTML=items.map(function(a){return '<article class="admin-item"><h4>'+esc(a.esp_nombre)+'</h4><p><strong>Puedo ayudar con:</strong> '+esc(a.ayuda_temas)+'</p><p>'+esc(a.texto)+'</p><p><a href="mailto:'+attr(a.esp_contacto)+'">'+esc(a.esp_contacto)+'</a></p>'+firmaHTML(a)+(a.autor===ME.id?'<button class="mini" data-withdraw="'+a.id+'">Retirar mi ofrecimiento</button>':'')+'</article>';}).join('')||'<p class="hint">Todavía no hay ofrecimientos que coincidan. Podés ser la primera persona en ofrecer ayuda.</p>';
+}
+
+/* Sesión, aportes, archivos y administración. Se integra en el HTML al compilar. */
+function falla(texto){ return {userMessage:texto}; }
+function archivosSeleccionados(input){
+  var files = Array.from(input && input.files || []);
+  if(files.length>5) throw falla("Podés adjuntar hasta cinco archivos por aporte.");
+  return files.map(function(file){
+    var extension = file.name.split('.').pop().toLowerCase();
+    var inferido = {jpg:"image/jpeg",jpeg:"image/jpeg",png:"image/png",webp:"image/webp",heic:"image/heic",pdf:"application/pdf"}[extension];
+    var tipo = file.type || inferido;
+    if(!FILE_TYPES[tipo] || !inferido || tipo!==inferido) throw falla("Elegí imágenes JPG, PNG, WebP, HEIC o documentos PDF.");
+    if(file.size<1 || file.size>10485760) throw falla("Cada archivo debe pesar entre 1 byte y 10 MB.");
+    if(file.name.length>180) throw falla("Acortá el nombre del archivo a menos de 181 caracteres.");
+    return {file:file,tipo:tipo,reserva:null,subido:false,listo:false};
+  });
+}
+function bloquearFormulario(form, block){
+  form.querySelectorAll("input,select,textarea,button").forEach(function(e){e.disabled=block;});
+}
+async function subirArchivos(carga, hint){
+  for(var i=0;i<carga.archivos.length;i++){
+    var f=carga.archivos[i]; if(f.listo) continue;
+    hint.textContent="Subiendo archivo "+(i+1)+" de "+carga.archivos.length+"…";
+    if(!f.reserva){
+      var data=comprobar(await sb.rpc("reservar_archivo",{p_aporte:carga.aporte,p_nombre:f.file.name,p_tipo:f.tipo,p_tamano:f.file.size}));
+      f.reserva=Array.isArray(data)?data[0]:data;
+    }
+    if(!f.subido){
+      var r=await sb.storage.from("aportes").upload(f.reserva.ruta,f.file,{contentType:f.tipo,upsert:false});
+      // Una respuesta perdida puede dejar el objeto guardado. Confirmar la
+      // reserva verifica su existencia sin reemplazar un archivo existente.
+      if(r.error && String(r.error.statusCode||r.error.status)!=="409") throw r.error;
+      f.subido=true;
+    }
+    comprobar(await sb.rpc("confirmar_archivo",{p_id:f.reserva.id})); f.listo=true;
+  }
+}
+async function publicarFormulario(form, datos, existente){
+  if(!aprobado()) throw falla("Necesitás acceso aprobado para participar.");
+  var hint=form.querySelector("[role=status]");
+  if(!form._carga){ form._carga={aporte:existente||null,archivos:archivosSeleccionados(form.querySelector("input[type=file]"))}; }
+  var carga=form._carga, epoch=sessionEpoch;
+  bloquearFormulario(form,true);
+  try{
+    if(!carga.aporte){
+      hint.textContent="Guardando el aporte…";
+      carga.aporte=comprobar(await sb.from("aportes").insert(datos).select("id").single()).id;
+    }
+    await subirArchivos(carga,hint);
+    if(epoch!==sessionEpoch) return false;
+    form.reset(); form._carga=null;bloquearFormulario(form,false);
+    try{await cargarAportes(epoch);estadoComunidad("El aporte quedó guardado y pendiente de aprobación. Solo vos y los administradores pueden verlo por ahora.",false,false);}
+    catch(e){estadoComunidad("El aporte quedó guardado, pero no pudimos actualizar la lista. Volvé a intentar la carga de la lista.",true,true);}
+    return true;
+  }catch(error){
+    if(epoch!==sessionEpoch) return false;
+    hint.textContent=(carga.aporte?"El aporte ya está guardado. Faltan archivos por completar. ":"")+mensajeError(error);
+    var button=form.querySelector('button[type="submit"]');
+    button.disabled=false;
+    button.textContent=carga.aporte?"Reintentar archivos":"Volver a intentar";
+    // Si ya se guardó el texto, reintentar solo los archivos evita duplicar el aporte.
+    if(!carga.aporte){form._carga=null; bloquearFormulario(form,false);}
+    return false;
+  }
+}
+
+function abrirDialogo(titulo, fields, action, label){
+  dialogReturnFocus=document.activeElement;
+  el("communityDialogForm").reset(); el("communityDialogForm")._carga=null;
+  el("dialogTitle").textContent=titulo; el("dialogFields").innerHTML=fields;
+  el("dialogMsg").textContent=""; el("dialogSubmit").textContent=label||"Guardar";
+  bloquearFormulario(el("communityDialogForm"),false); dialogAction=action;
+  el("communityDialog").showModal();
+}
+function campoDialogo(name,label,value,max,multiline){
+  var id="edit-"+name;
+  return '<div class="formrow"><label for="'+id+'">'+label+'</label>'+
+    (multiline?'<textarea id="'+id+'" name="'+name+'" rows="4" maxlength="'+max+'">'+esc(value||"")+'</textarea>':
+      '<input type="text" id="'+id+'" name="'+name+'" maxlength="'+max+'" value="'+attr(value||"")+'">')+'</div>';
+}
+function aportePorId(id){return APORTES.find(function(a){return String(a.id)===String(id);});}
+function editarAporte(a){
+  if(!admin() || !a) return;
+  var fields="", keys=["texto"], html;
+  if(a.seccion==="especialista"){
+    var spec=[["esp_nombre","Nombre",150],["esp_tipo","Especialidad o servicio",150],["esp_institucion","Institución",150],
+      ["esp_provincia","Provincia o zona",100],["esp_ciudad","Ciudad",80],["esp_cobertura","Obras sociales / prepagas",150],["esp_modalidad","Modalidad de atención",100],["esp_obra_social","¿Atiende por obra social?",100],["esp_contacto","Contacto laboral",500]];
+    spec.forEach(function(k){keys.push(k[0]);fields+=campoDialogo(k[0],k[1],a[k[0]],k[2],false);});
+    keys.push("esp_calificacion");
+    fields+='<div class="formrow"><label for="edit-esp_calificacion">Calificación</label><select id="edit-esp_calificacion" name="esp_calificacion">'+
+      ["","Excelente","Muy bueno","Bueno","Regular"].map(function(v){return '<option value="'+v+'"'+(v===(a.esp_calificacion||"")?' selected':'')+'>'+(v||"Sin calificar")+'</option>';}).join("")+'</select></div>';
+  }
+  if(a.seccion==="consejo"){keys.push("tema");fields+=campoDialogo("tema","Tema",a.tema,100,false);}
+  fields+=campoDialogo("texto","Contenido del aporte",a.texto,2500,true);
+  abrirDialogo("Editar aporte",fields,async function(form){
+    var values=new FormData(form), patch={editado:new Date().toISOString(),editado_por:ME.id};
+    keys.forEach(function(k){patch[k]=String(values.get(k)||"").trim()||null;});
+    if(a.seccion==="especialista" && !patch.esp_nombre) throw falla("Completá el nombre.");
+    if(a.seccion!=="especialista" && !patch.texto) throw falla("El aporte no puede quedar vacío.");
+    comprobar(await sb.from("aportes").update(patch).eq("id",a.id).select("id").single());
+    await cargarAportes(sessionEpoch); estadoComunidad("Los cambios quedaron guardados.",false,false);
+  });
+}
+function pedirCorreccion(a){
+  if(!aprobado() || !a || a.autor!==ME.id) return;
+  abrirDialogo("Pedir una corrección",campoDialogo("mensaje","¿Qué necesitás corregir?","",2000,true),async function(form){
+    var mensaje=String(new FormData(form).get("mensaje")||"").trim();
+    if(mensaje.length<5) throw falla("Explicá brevemente qué necesitás corregir.");
+    comprobar(await sb.from("correcciones").insert({aporte:a.id,autor:ME.id,mensaje:mensaje}));
+    await cargarAportes(sessionEpoch); estadoComunidad("Tu pedido quedó registrado para que lo revise un administrador.",false,false);
+  },"Enviar pedido");
+}
+function adjuntarAporte(a){
+  if(!aprobado() || !a || (a.autor!==ME.id && !admin())) return;
+  abrirDialogo("Adjuntar archivos",archivoInput("extra-files"),async function(form){
+    if(!form._carga && !form.querySelector("input[type=file]").files.length) throw falla("Elegí un archivo.");
+    return publicarFormulario(form,null,a.id);
+  },"Subir archivos");
+}
+async function borrarArchivo(f){
+  comprobar(await sb.storage.from("aportes").remove([f.ruta]));
+  comprobar(await sb.from("archivos").delete().eq("id",f.id).select("id").single());
+}
+async function abrirArchivo(f){
+  if(!f || !aprobado()) return;
+  var target=window.open("about:blank","_blank"); if(target) target.opener=null;
+  try{
+    var r=comprobar(await sb.storage.from("aportes").createSignedUrl(f.ruta,120));
+    var url=new URL(r.signedUrl);
+    if(url.origin!==new URL(PREGUNTELA_CONFIG.url).origin || !url.pathname.startsWith("/storage/")) throw falla("No pudimos abrir este archivo.");
+    if(target) target.location.href=url.href;
+    else abrirDialogo("Abrir archivo",'<p><a href="'+attr(url.href)+'" target="_blank" rel="noopener noreferrer">Abrir '+esc(f.nombre)+'</a></p><p class="hint">El enlace vence en dos minutos.</p>',async function(){},"Listo");
+  }catch(e){if(target) target.close();estadoComunidad(mensajeError(e),true,false);}
+}
+
+function pintarMiembros(){ pintarSolicitudesDetalladas(); }
+function pintarCorrecciones(){
+  if(!admin()) return;
+  el("adminCorrections").innerHTML=CORRECCIONES.length?CORRECCIONES.map(function(c){
+    var a=aportePorId(c.aporte);
+    return '<article class="admin-item"><p><strong>'+esc(a && a.autor_nombre || "Miembro")+'</strong> · '+fechaCorta(c.creado)+'</p>'+
+      '<p>'+esc(c.mensaje)+'</p><div class="askbar">'+(a?'<button class="mini" data-editar="'+a.id+'">Revisar y editar aporte</button>':"")+
+      '<button class="mini" data-resolver="'+c.id+'">Marcar como resuelta</button></div></article>';
+  }).join(""):'<p class="hint">No hay correcciones pendientes.</p>';
+}
+async function cargarMiembros(epoch){
+  var data=comprobar(await sb.rpc("listar_solicitudes"));
+  if(epoch!==sessionEpoch || !admin()) return;
+  MIEMBROS=data||[]; pintarMiembros(); pintarAdministradores();
+}
+async function todasLasFilas(query){
+  var out=[];
+  for(var offset=0;;offset+=500){
+    var data=comprobar(await query().range(offset,offset+499))||[]; out=out.concat(data);
+    if(data.length<500) return out;
+  }
+}
+async function cargarAportes(epoch){
+  if(!aprobado()) return;
+  estadoComunidad("Cargando aportes…",false,false);
+  try{
+    var result=await Promise.all([
+      todasLasFilas(function(){return sb.from("aportes_publicos").select("*").order("creado",{ascending:false}).order("id",{ascending:false});}),
+      todasLasFilas(function(){return sb.from("archivos").select("*").order("id");}),
+      todasLasFilas(function(){return sb.from("correcciones").select("*").eq("resuelta",false).order("creado").order("id");})
+    ]);
+    if(epoch!==sessionEpoch || !aprobado()) return;
+    APORTES=result[0];ARCHIVOS=result[1];CORRECCIONES=result[2];pintarTodo();pintarCorrecciones();pintarModeracion();
+    estadoComunidad("",false,false);
+  }catch(e){
+    if(epoch!==sessionEpoch) return;
+    estadoComunidad("No pudimos actualizar los aportes. "+mensajeError(e),true,true);
+    throw e;
+  }
+}
+
+function limpiarPrivado(){
+  ME=null;APORTES=[];ARCHIVOS=[];CORRECCIONES=[];MIEMBROS=[];
+  if(!sessionUser){sessionEmail="";sessionAccessError=false;}
+  el("meEmail").textContent="";limpiarPasswords();
+  clearDiscussionDrafts();limpiarGestion();
+  el('directoryStatus').textContent='';
+  el("comAdmin").hidden=true;el("comAccess").hidden=true;el("mePanel").hidden=true;
+  el("espForm").hidden=true;el("conForm").hidden=true;
+  el("espForm").reset();el("conForm").reset();el("espForm")._carga=null;el("conForm")._carga=null;
+  bloquearFormulario(el("espForm"),false);bloquearFormulario(el("conForm"),false);
+  ["meNombre","meContacto","meRolC"].forEach(function(id){el(id).value="";});el("meMostrar").checked=false;
+  el("meName").textContent="";el("meRole").textContent="";
+  el("adminMembers").textContent="";el("adminCorrections").textContent="";
+  if(el("communityDialog").open) el("communityDialog").close();
+  el("dialogFields").textContent="";el("communityDialogForm")._carga=null;dialogAction=null;
+  pintarTodo();
+}
+async function comSesion(session, force){
+  var id=session && session.user.id;
+  if(!force && id===sessionUser && ME){if(passwordRecoveryPending)mostrarPasswordCuenta(true);return;}
+  var epoch=++sessionEpoch;sessionUser=id||null;sessionEmail=session&&session.user.email||"";sessionAccessError=false;limpiarPrivado();
+  el("comLogin").hidden=!!id;el("comYo").hidden=!id;
+  el("meName").textContent="Mi cuenta";el("meRole").textContent="";el("meEdit").disabled=true;
+  if(!id){estadoComunidad("",false,false);return;}
+  try{
+    estadoComunidad("Comprobando tu acceso…",false,false);
+    var profile=comprobar(await sb.from("perfiles").select("id,nombre,rol,rol_comunidad,contacto,mostrar_contacto,membresia,nombre_real,whatsapp,pais,provincia,ciudad,vinculo,llegada,solicitud_enviada").eq("id",id).single());
+    if(epoch!==sessionEpoch) return;
+    ME=profile;if(passwordRecoveryPending)mostrarPasswordCuenta(true);el("meEmail").textContent=sessionEmail?"Ingresaste con "+sessionEmail:"";pintarRegistro();el("meName").textContent=ME.nombre||"Miembro";el("meEdit").disabled=false;
+    el("meRole").textContent=admin()?"administrador":(aprobado()?"miembro aprobado":"acceso pendiente");
+    el("meNombre").value=ME.nombre||"";el("meRolC").value=ME.rol_comunidad||"";
+    el("meContacto").value=ME.contacto||"";el("meMostrar").checked=!!ME.mostrar_contacto;
+    if(!aprobado()){
+      el("comAccess").hidden=false;
+      var suspended=ME.membresia==="suspendida";
+      el("meRole").textContent=suspended?"sin acceso":"acceso pendiente";
+      el("accessTitle").textContent=suspended?"Tu cuenta no tiene acceso a los aportes":"Tu acceso está pendiente de aprobación";
+      el("accessText").textContent=suspended?"Contactá a un administrador del grupo si necesitás revisar esta decisión.":(ME.solicitud_enviada?"Un administrador revisará tu solicitud. Mientras tanto, podés consultar las guías y los catálogos públicos.":"Completá los datos del formulario para enviar tu solicitud a los administradores.");
+      pintarTodo();estadoComunidad("",false,false);return;
+    }
+    el("comAdmin").hidden=!admin();
+    await cargarAportes(epoch); if(admin()) await cargarMiembros(epoch);
+  }catch(e){if(epoch===sessionEpoch){sessionAccessError=!ME;pintarEstadoSesion();estadoComunidad("No pudimos comprobar o cargar tu acceso. "+mensajeError(e),true,true);}}
+}
+async function refrescarSesion(){
+  try{var s=comprobar(await sb.auth.getSession());await comSesion(s.session,true);}
+  catch(e){estadoComunidad(mensajeError(e),true,true);}
+}
+
+function bindDelegado(){
+  document.addEventListener("click",async function(ev){
+    if(!ev.target.closest('#v-comunidad,[data-community-scope]')) return;
+    var b=ev.target.closest("button");if(!b || b.disabled) return;
+    if(b.dataset.toggle){abierto[b.dataset.toggle]=!abierto[b.dataset.toggle];b.parentElement.classList.toggle("open",abierto[b.dataset.toggle]);b.setAttribute("aria-expanded",String(!!abierto[b.dataset.toggle]));return;}
+    if(!aprobado()) return;
+    var a,id,f;
+    if(b.dataset.editar){editarAporte(aportePorId(b.dataset.editar));return;}
+    if(b.dataset.corregir){pedirCorreccion(aportePorId(b.dataset.corregir));return;}
+    if(b.dataset.adjuntar){adjuntarAporte(aportePorId(b.dataset.adjuntar));return;}
+    if(b.dataset.archivo){await abrirArchivo(ARCHIVOS.find(function(x){return String(x.id)===b.dataset.archivo;}));return;}
+    if(b.dataset.finalizar){
+      b.disabled=true;
+      try{comprobar(await sb.rpc("confirmar_archivo",{p_id:b.dataset.finalizar}));await cargarAportes(sessionEpoch);estadoComunidad("El archivo quedó disponible.",false,false);}
+      catch(e){estadoComunidad(mensajeError(e),true,false);}finally{b.disabled=false;}return;
+    }
+    if(b.dataset.descartar){
+      b.disabled=true;
+      try{comprobar(await sb.rpc("descartar_reserva",{p_id:b.dataset.descartar}));await cargarAportes(sessionEpoch);}
+      catch(e){estadoComunidad(mensajeError(e),true,false);}finally{b.disabled=false;}return;
+    }
+    if(!admin()) return;
+    if(b.dataset.ocultar){
+      a=aportePorId(b.dataset.ocultar);if(!a) return;b.disabled=true;
+      try{await revisarAporte(a,a.estado==="publicado"?"oculto":"publicado");}
+      catch(e){estadoComunidad(mensajeError(e),true,false);}finally{b.disabled=false;}return;
+    }
+    if(b.dataset.borrar){
+      a=aportePorId(b.dataset.borrar);if(!a) return;
+      abrirDialogo("Borrar aporte",'<p>Se borrarán definitivamente este aporte, sus archivos y sus pedidos de corrección. Podés ocultarlo si querés conservarlo.</p>',async function(){
+        var files=ARCHIVOS.filter(function(x){return String(x.aporte)===String(a.id);});
+        if(files.length) comprobar(await sb.storage.from("aportes").remove(files.map(function(x){return x.ruta;})));
+        comprobar(await sb.from("aportes").delete().eq("id",a.id).select("id").single());
+        await cargarAportes(sessionEpoch);estadoComunidad("El aporte fue borrado.",false,false);
+      },"Borrar definitivamente");return;
+    }
+    if(b.dataset.borrarArchivo){
+      f=ARCHIVOS.find(function(x){return String(x.id)===b.dataset.borrarArchivo;});if(!f) return;
+      abrirDialogo("Borrar archivo",'<p>Se borrará definitivamente '+esc(f.nombre)+'. El aporte se conservará.</p>',async function(){await borrarArchivo(f);await cargarAportes(sessionEpoch);},"Borrar archivo");return;
+    }
+    if(b.dataset.resolver){
+      id=b.dataset.resolver;
+      abrirDialogo("Resolver corrección",'<p>Marcá el pedido como resuelto después de revisar el aporte y realizar los cambios necesarios.</p>',async function(){
+        comprobar(await sb.from("correcciones").update({resuelta:true}).eq("id",id).select("id").single());
+        await cargarAportes(sessionEpoch);estadoComunidad("La corrección quedó resuelta.",false,false);
+      },"Marcar como resuelta");return;
+    }
+    if(b.dataset.miembro){
+      var m=MIEMBROS.find(function(x){return x.id===b.dataset.miembro;}), next=b.dataset.estado;if(!m) return;
+      abrirDialogo(next==="aprobada"?"Aprobar acceso":"Suspender acceso",'<p>'+esc(m.nombre)+' · '+esc(m.email)+'</p><p>'+
+        (next==="aprobada"?"Esta persona podrá ver y agregar aportes de la comunidad.":"Esta persona dejará de ver y agregar aportes. Sus aportes anteriores se conservarán.")+'</p>',async function(){
+          comprobar(await sb.rpc("gestionar_miembro",{p_id:m.id,p_estado:next}));await cargarMiembros(sessionEpoch);
+          estadoComunidad("El acceso quedó actualizado.",false,false);
+        },next==="aprobada"?"Aprobar acceso":"Suspender acceso");
+    }
+  });
+  document.addEventListener("submit",async function(ev){
+    if(!ev.target.closest('#v-comunidad,[data-community-scope]')) return;
+    var form=ev.target.closest("form.micro");if(!form) return;ev.preventDefault();
+    try{
+      if(!aprobado()) throw falla("Necesitás acceso aprobado para participar.");
+      var text=form.querySelector("textarea").value.trim();if(text.length<10) throw falla("Contanos un poco más.");
+      abierto[form.dataset.sec+":"+form.dataset.item]=true;
+      var data={autor:ME.id,seccion:form.dataset.sec,item:form.dataset.item,texto:text};
+      if(data.seccion==='consejo'){data.tema=form.querySelector('[name=tema]').value;delete data.item;}
+      await publicarFormulario(form,data);
+    }catch(e){form.querySelector("[role=status]").textContent=mensajeError(e);}
+  });
+}
+
+function bindFormularios(){
+  el("espForm").querySelector(".askbar").insertAdjacentHTML("beforebegin",archivoInput("espFiles"));
+  el("conForm").querySelector(".askbar").insertAdjacentHTML("beforebegin",archivoInput("conFiles"));
+  el("eMsg").setAttribute("role","status");el("cMsg").setAttribute("role","status");
+  el("espNuevo").addEventListener("click",function(){openContactForm('profesional');});
+  el("conNuevo").addEventListener("click",function(){if(aprobado()){el("conForm").hidden=false;el("cTexto").focus();}});
+  el("eCancel").addEventListener("click",function(){el("espForm").hidden=true;el('directoryContribute').querySelector('button').focus();});
+  el("cCancel").addEventListener("click",function(){el("conForm").hidden=true;el("conNuevo").focus();});
+  el("eNombre").addEventListener("input",function(){
+    var q=fold(this.value.trim()),publicContacts=DIRECTORY.flatMap(function(g){return g.items.map(function(c){return {esp_nombre:c.n,esp_ciudad:c.p};});});
+    var hits=q.length<3?[]:deSeccion("especialista").concat(publicContacts).filter(function(a){return fold(a.esp_nombre||"").includes(q);}).slice(0,4);
+    el("eDup").hidden=!hits.length;
+    el("eDup").innerHTML='<strong>Ya hay nombres parecidos.</strong><ul>'+hits.map(function(a){return '<li>'+esc(a.esp_nombre)+(a.esp_ciudad?' · '+esc(a.esp_ciudad):"")+'</li>';}).join("")+'</ul>';
+  });
+  el("espForm").addEventListener("submit",async function(ev){
+    ev.preventDefault();var form=this;
+    try{
+      if(!aprobado()) throw falla("Necesitás acceso aprobado.");
+      function v(id){return el(id).value.trim();}
+      if(!v("eNombre")) throw falla("Completá el nombre.");
+      if(await publicarFormulario(form,{autor:ME.id,seccion:"especialista",esp_nombre:v("eNombre"),esp_tipo:v("eTipo"),esp_institucion:v("eInst"),esp_provincia:v("eProv"),esp_ciudad:v("eCiudad"),esp_cobertura:v("eCob"),esp_modalidad:v("eModalidad"),esp_obra_social:v("eObraSocial"),esp_contacto:v("eCont"),esp_calificacion:v("eCalif")||null,texto:v("eComent")})){
+        bloquearFormulario(form,false);form.hidden=true;el("eDup").hidden=true;
+        el('dirq').value='';drawDir('');renderMemberDirectory();
+        el('directoryStatus').textContent='El contacto quedó guardado, pendiente de aprobación. Podés ver tu envío en el Directorio; los demás miembros lo verán cuando se apruebe.';
+        el('directoryStatus').scrollIntoView({block:'center'});
+      }
+    }catch(e){setMsg("eMsg",mensajeError(e),true);}
+  });
+  el("conForm").addEventListener("submit",async function(ev){
+    ev.preventDefault();var form=this;
+    try{
+      if(!aprobado()) throw falla("Necesitás acceso aprobado.");
+      var txt=el("cTexto").value.trim();if(txt.length<15) throw falla("Contanos un poco más.");
+      if(await publicarFormulario(form,{autor:ME.id,seccion:"consejo",tema:el("cTema").value||null,texto:txt})) {bloquearFormulario(form,false);form.hidden=true;}
+    }catch(e){setMsg("cMsg",mensajeError(e),true);}
+  });
+  el("dialogCancel").addEventListener("click",function(){el("communityDialog").close();});
+  el("communityDialog").addEventListener("close",function(){if(dialogReturnFocus && dialogReturnFocus.isConnected) dialogReturnFocus.focus();});
+  el("communityDialogForm").addEventListener("submit",async function(ev){
+    ev.preventDefault();if(this._saving || !dialogAction) return;
+    var form=this, action=dialogAction;form._saving=true;
+    el("dialogMsg").textContent="Guardando…";el("dialogSubmit").disabled=true;el("dialogCancel").disabled=true;
+    try{var result=await action(form);if(result!==false) el("communityDialog").close();}
+    catch(e){el("dialogMsg").textContent=mensajeError(e);}
+    finally{form._saving=false;el("dialogSubmit").disabled=false;el("dialogCancel").disabled=false;}
+  });
+  el("communityDialog").addEventListener("cancel",function(e){if(el("communityDialogForm")._saving) e.preventDefault();});
+  el("memberFilter").addEventListener("change",pintarMiembros);
+}
+
 function bindAuth(){
   var envioPendiente=false,esperaHasta=0,temporizadorEnvio=null;
   function actualizarBotonEnvio(){
@@ -4161,7 +4268,7 @@ function bindAuth(){
       var nombre=el("authNombre").value.trim();if(mode==="register"&&nombre) options.data={nombre:nombre};
       comprobar(await sb.auth.signInWithOtp({email:mail,options:options}));
       esperaHasta=Date.now()+60000;
-      setMsg("authMsg",mode==="register"?"Revisá tu correo y spam. Abrí el enlace para confirmar tu email y dejar tu solicitud de acceso.":"Revisá tu correo y spam. Abrí el enlace para ingresar a tu cuenta. Si ya sos miembro aprobado, conservás tu acceso: no necesitás otra autorización.",false);
+      setMsg("authMsg",mode==="register"?"Revisá tu correo y spam. Abrí el enlace para confirmar tu email y completar la solicitud de acceso.":"Revisá tu correo y spam. Abrí el enlace para ingresar a tu cuenta. Si ya sos miembro aprobado, conservás tu acceso: no necesitás otra autorización.",false);
     }catch(e){
       var segundos=segundosEsperaIngreso(e);if(segundos)esperaHasta=Date.now()+segundos*1000;
       setMsg("authMsg",mode==="member"&&/signups not allowed for otp/i.test(String(e&&e.message||""))?"Revisá el email de tu cuenta. Si todavía no te registraste, elegí «Quiero registrarme».":mensajeErrorIngreso(e),true);
@@ -4189,6 +4296,7 @@ function bindAuth(){
 async function comInit(){
   initPractical();
   initParticipation();
+  initCommunityManagement();
   comListas();
   if(!window.PREGUNTELA_CONFIG || !PREGUNTELA_CONFIG.url || !PREGUNTELA_CONFIG.anonKey || !window.supabase){
     el("comNoConfig").hidden=false;sessionAccessError=true;pintarEstadoSesion();return;
