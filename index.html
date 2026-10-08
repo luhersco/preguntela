@@ -607,6 +607,12 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 @media(max-width:760px){.welcome-tour{grid-template-columns:1fr;padding:20px;gap:16px;margin-bottom:28px}.welcome-tour h2{font-size:1.65rem}.welcome-tour-copy .hint{font-size:.85rem}}
 .delamano{scroll-margin-top:205px}
 @media(max-width:760px){.delamano{scroll-margin-top:260px}}
+
+/* La participación acompaña la información y la invitación cierra cada página. */
+.topic-participation-hint{font-size:.9rem;color:var(--ink-2);margin:16px 0 24px}
+.community-invitation{margin-top:48px;font-size:1rem}.community-invitation h3{font-size:1.45rem}.community-invitation p+p{margin-top:12px}
+.topic-community .discussion-entry{padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px}.topic-community .discussion-entry>.mini{min-height:44px;margin-top:8px}
+#inicio-temas{scroll-margin-top:210px}@media(max-width:760px){#inicio-temas{scroll-margin-top:260px}.community-invitation h3{font-size:1.2rem}}
 /* practical styles end */
 </style>
 
@@ -619,11 +625,10 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
       <span class="brandsub">Conectados para ayudarnos con la ELA en Argentina</span>
     </a>
     <form id="headerSearch" class="header-search" role="search"><label class="sr-only" for="headerQ">Buscar en PreguntELA</label><input id="headerQ" type="search" placeholder="¿Qué necesitás encontrar?" required><button type="submit" aria-label="Buscar en todo el sitio">Buscar</button></form>
-    <div class="session-access" id="sessionAccess" data-state="checking" aria-label="Estado de tu cuenta"><div class="session-identity" role="status" aria-live="polite" aria-atomic="true"><span class="session-indicator" id="sessionIndicator">Comprobando sesión…</span><strong id="sessionName" hidden></strong><span id="sessionDetail">Un momento</span></div><div class="session-actions"><a class="btn join-link" id="joinLink" href="#/comunidad" data-v="comunidad">Mi cuenta</a><button class="session-out" type="button" id="headerSignOut" hidden>Cerrar sesión</button></div></div><details class="account-menu" id="accountMenu"><summary>Mi cuenta y más</summary><nav aria-label="Comunidad y otros accesos"><a href="#/comunidad" data-v="comunidad">Mi cuenta</a><a href="#/foro" data-v="foro">Foro de la comunidad</a><a href="#/archivo" data-v="archivo">Archivo de experiencias</a><a href="#/acerca" data-v="acerca">Acerca de PreguntELA</a></nav></details></div>
+    <div class="session-access" id="sessionAccess" data-state="checking" aria-label="Estado de tu cuenta"><div class="session-identity" role="status" aria-live="polite" aria-atomic="true"><span class="session-indicator" id="sessionIndicator">Comprobando sesión…</span><strong id="sessionName" hidden></strong><span id="sessionDetail">Un momento</span></div><div class="session-actions"><a class="btn join-link" id="joinLink" href="#/comunidad" data-v="comunidad">Mi cuenta</a><button class="session-out" type="button" id="headerSignOut" hidden>Cerrar sesión</button></div></div><details class="account-menu" id="accountMenu"><summary>Mi cuenta y más</summary><nav aria-label="Comunidad y otros accesos"><a href="#/comunidad" data-v="comunidad">Mi cuenta</a><a href="#/foro" data-v="foro">Comentarios por tema</a><a href="#/archivo" data-v="archivo">Archivo de experiencias</a><a href="#/acerca" data-v="acerca">Acerca de PreguntELA</a></nav></details></div>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menú</button>
     <nav class="tabs" id="mainNav" role="tablist" aria-label="Secciones">
 <button class="tab" role="tab" aria-selected="true" data-v="inicio">Inicio</button>
-<button class="tab" role="tab" aria-selected="false" data-v="foro">Foro</button>
 <button class="tab" role="tab" aria-selected="false" data-v="medicamentos">Medicamentos</button>
 <button class="tab" role="tab" aria-selected="false" data-v="equipamiento">Equipamiento</button>
 <button class="tab" role="tab" aria-selected="false" data-v="comunicacion">Comunicación</button>
@@ -641,21 +646,20 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 <!-- practical views start -->
 <section class="view on" id="v-inicio" role="tabpanel" aria-label="Inicio">
   <section class="welcome-tour" aria-labelledby="welcomeTourTitle">
-    <div class="welcome-tour-copy"><p class="eyebrow">La comunidad de ELA en Argentina</p><h2 id="welcomeTourTitle">La ELA no espera.<br>Conectarnos nos ayuda.</h2><p>Un lugar de encuentro para personas con ELA, familias, cuidadores, profesionales y organizaciones de toda la Argentina. <strong>Distintos caminos, una misma intención: ayudarnos.</strong></p><div class="welcome-actions"><a class="btn" href="#/foro" data-v="foro">Entrar al foro →</a><a class="btn ghost" href="#/comunidad" data-v="comunidad" data-auth-entry="register">Quiero sumarme</a></div><p class="hint">Conocé la comunidad en este video, con voz y subtítulos en español.</p></div>
+    <div class="welcome-tour-copy"><p class="eyebrow">La comunidad de ELA en Argentina</p><h2 id="welcomeTourTitle">La ELA no espera.<br>Conectarnos nos ayuda.</h2><p>Un lugar de encuentro para personas con ELA, familias, cuidadores, profesionales y organizaciones de toda la Argentina. <strong>Distintos caminos, una misma intención: ayudarnos.</strong></p><div class="welcome-actions"><a class="btn" href="#/inicio/temas" data-v="inicio/temas">Explorar temas y experiencias →</a><a class="btn ghost" href="#/comunidad" data-v="comunidad" data-auth-entry="register">Quiero sumarme</a></div><p class="hint">Conocé la comunidad en este video, con voz y subtítulos en español.</p></div>
     <div class="welcome-tour-media"><video id="welcomeVideo" controls playsinline preload="none" poster="comunidad-argentina.jpg" width="1280" height="720" aria-label="Conocé la comunidad de PreguntELA: video con subtítulos en español"><source src="comunidad-argentina.mp4" type="video/mp4">Tu navegador no puede reproducir este video. Podés descargarlo o leer los pasos debajo.</video><p class="welcome-tour-download"><a href="comunidad-argentina.mp4" download>Descargar el video</a> · 1:34</p></div>
     <details class="welcome-tour-transcript"><summary>Prefiero leer los pasos</summary><div>
       <p><strong>La ELA no espera. Y nadie debería atravesarla en soledad.</strong> PreguntELA invita a encontrarnos a personas con ELA, familias, cuidadores, profesionales y organizaciones de toda la Argentina. Distintos caminos, una misma intención: ayudarnos. Cuando aparece una duda, hablar con alguien que pasó por algo parecido puede hacer una diferencia.</p>
-      <ol><li>Entrá al <a href="#/foro" data-v="foro">Foro de la comunidad</a> para hacer una pregunta, compartir lo que te sirvió o acompañar a otra persona.</li><li>Las conversaciones quedan organizadas por tema. Volvé para leer nuevas respuestas y seguir participando. Cada persona responde cuando puede.</li><li>Para cuidarnos, el acceso y los aportes pasan por revisión. Compartimos experiencias personales que no reemplazan al equipo de salud.</li><li>El buscador, las guías, los videos, las cartas y el directorio son recursos para orientarte y preparar tus preguntas. Si recién empezás, visitá <a href="#/empezar" data-v="empezar">Me diagnosticaron ELA</a>.</li><li>Para sumarte, tocá <a href="#/comunidad" data-v="comunidad" data-auth-entry="register">Ingresar / Registrarme</a>, confirmá tu email y completá tus datos. Revisaremos tu solicitud. Si ya tenés cuenta y contraseña, entrá con tu email y tu clave.</li><li>En <a href="#/directorio/delamano" data-v="directorio/delamano">DElaMano</a> podés ofrecerte para orientar a otras familias. Lo que aprendiste puede ser justo lo que alguien necesita hoy.</li></ol>
+      <ol><li>Elegí un tema —por ejemplo, equipamiento o alimentación— y abrí la ficha que te interesa. Debajo de su información podés hacer una pregunta, comentar o responder a otra familia.</li><li>La información y las conversaciones quedan juntas en cada ficha. Volvé a ese mismo tema para leer nuevas respuestas y seguir participando. Cada persona responde cuando puede.</li><li>Para cuidarnos, el acceso y los aportes pasan por revisión. Compartimos experiencias personales que no reemplazan al equipo de salud.</li><li>El buscador, las guías, los videos, las cartas y el directorio son recursos para orientarte y preparar tus preguntas. Si recién empezás, visitá <a href="#/empezar" data-v="empezar">Me diagnosticaron ELA</a>.</li><li>Para sumarte, tocá <a href="#/comunidad" data-v="comunidad" data-auth-entry="register">Ingresar / Registrarme</a>, confirmá tu email y completá tus datos. Revisaremos tu solicitud. Si ya tenés cuenta y contraseña, entrá con tu email y tu clave.</li><li>En <a href="#/directorio/delamano" data-v="directorio/delamano">DElaMano</a> podés ofrecerte para orientar a otras familias. Lo que aprendiste puede ser justo lo que alguien necesita hoy.</li></ol>
       <p><strong>La ELA no espera. Conectarnos nos ayuda a ganar tiempo y sentirnos acompañados. Una comunidad hecha por todos, para todos.</strong></p>
     </div></details>
   </section>
-  <section class="community-paths" aria-label="Participá en la comunidad"><a href="#/foro/consejo%3Aforo%2Fpreguntas" data-v="foro/consejo%3Aforo%2Fpreguntas"><span class="eyebrow">Preguntá</span><h3>Hay otras personas atravesando algo parecido</h3><p>Abrí una conversación y contá qué necesitás resolver.</p><strong>Hacer una pregunta →</strong></a><a href="#/foro" data-v="foro"><span class="eyebrow">Compartí</span><h3>Tu experiencia puede hacer una diferencia</h3><p>Contá qué te sirvió o respondé a otra familia.</p><strong>Ver el foro →</strong></a><a href="#/directorio/delamano" data-v="directorio/delamano"><span class="eyebrow">Acompañá</span><h3>Ofrecé una mano en lo que conocés</h3><p>DElaMano conecta a miembros que quieren orientar a otros.</p><strong>Conocer DElaMano →</strong></a></section>
   <div class="start-callout"><div><h3>Me diagnosticaron ELA</h3><p>Primeras consultas, CUD y estudio genético: qué pedir y por dónde empezar.</p></div><a class="btn" href="#/empezar" data-v="empezar">Por dónde empezar →</a></div>
-  <aside class="join-callout" id="homeAccountCallout"><div><h3 id="homeAccountTitle">Sumate: tu experiencia tiene un lugar</h3><p id="homeAccountHelp">Las guías y los recursos están abiertos a todos. <strong>Para leer y escribir en el foro, registrate y solicitá acceso.</strong> Revisamos las solicitudes y los aportes para cuidar este espacio de encuentro.</p></div><a class="btn" id="homeAccountLink" href="#/comunidad" data-v="comunidad" data-auth-entry="register">Quiero sumarme →</a></aside>
-  <div class="topic-intro"><p class="eyebrow">Recursos para nuestra comunidad</p><h2 class="big">¿Qué necesitás resolver hoy?</h2><p class="lede">Buscá orientación, prepará tus preguntas y compartí lo que aprendés en el foro. Elegí un tema para empezar.</p></div>
+  <div class="topic-intro" id="inicio-temas"><p class="eyebrow">Información y experiencias, juntas</p><h2 class="big">¿Qué necesitás resolver hoy?</h2><p class="lede">Elegí un tema para leer la información disponible. Dentro de cada ficha también podés preguntar, comentar y compartir tu experiencia.</p></div>
   <div class="need-grid" id="needGrid"></div>
+  <section class="community-paths" aria-label="Participá en la comunidad"><a href="#/inicio/temas" data-v="inicio/temas"><span class="eyebrow">Preguntá</span><h3>Hay otras personas atravesando algo parecido</h3><p>Abrí una ficha y dejá tu pregunta debajo de la información.</p><strong>Elegir un tema →</strong></a><a href="#/inicio/temas" data-v="inicio/temas"><span class="eyebrow">Compartí</span><h3>Tu experiencia puede hacer una diferencia</h3><p>En ese mismo lugar podés contar qué te sirvió y responder a otra familia.</p><strong>Ver temas y experiencias →</strong></a><a href="#/directorio/delamano" data-v="directorio/delamano"><span class="eyebrow">Acompañá</span><h3>Ofrecé una mano en lo que conocés</h3><p>DElaMano conecta a miembros que quieren orientar a otros.</p><strong>Conocer DElaMano →</strong></a></section>
   <div class="topic-note"><h3>Buscá por lo que te está pasando</h3><div class="topic-links"><a href="#/consejos/saliva" data-v="consejos/saliva">Me ahogo con la saliva</a><a href="#/respiracion/bipap" data-v="respiracion/bipap">Me cuesta respirar al acostarme</a><a href="#/medicamentos/genetica" data-v="medicamentos/genetica">Quiero pedir el estudio genético</a><a href="#/tramites/enfermeria" data-v="tramites/enfermeria">Necesito pedir enfermería</a></div></div>
-  <div class="topic-note"><h3>Estar cerca, aunque estemos lejos</h3><p>Una duda sobre un equipo, un trámite que se demora o la necesidad de hablar con alguien que entiende. Para eso creamos PreguntELA: para que podamos encontrarnos y ayudarnos entre todos, desde cualquier lugar de Argentina.</p><p>El foro queda abierto para escribir cuando lo necesites. Cada persona responde cuando puede y los aportes se revisan antes de compartirse. Volvé a tu conversación y tocá <strong>Actualizar comentarios</strong> para ver nuevas respuestas.</p><a href="#/foro" data-v="foro">Encontrarnos en el foro →</a></div>
+  <div class="topic-note"><h3>Estar cerca, aunque estemos lejos</h3><p>Una duda sobre un equipo, un trámite que se demora o la necesidad de hablar con alguien que entiende. Para eso creamos PreguntELA: para que podamos encontrarnos y ayudarnos entre todos, desde cualquier lugar de Argentina.</p><p>Los comentarios están integrados en cada tema. Cada persona responde cuando puede y los aportes se revisan antes de compartirse. Volvé a la misma ficha y tocá <strong>Actualizar comentarios</strong> para ver nuevas respuestas.</p><a href="#/inicio/temas" data-v="inicio/temas">Elegir un tema para compartir →</a></div>
   <div class="topic-links"><a href="#/preguntar" data-v="preguntar">Buscar con mis palabras</a><a href="#/directorio" data-v="directorio">Buscar un profesional o proveedor</a><a href="#/consejos/red" data-v="consejos/red">Organizaciones y redes de ayuda</a><a href="#/acerca" data-v="acerca">En memoria de Marisa: cómo nació PreguntELA</a></div>
   <p class="hint">Las experiencias de otras familias no reemplazan una evaluación del equipo de salud. Ante una urgencia, contactá al servicio de emergencias.</p>
 </section>
@@ -668,7 +672,7 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 
 <section class="view" id="v-videos" role="tabpanel" aria-label="Videos útiles"></section>
 <section class="view" id="v-foro" role="tabpanel" aria-label="Conversaciones de la comunidad" data-community-scope>
-  <div class="col"><p class="eyebrow">La ELA no espera. Conectarnos nos ayuda.</p><h2 class="big">Foro de la comunidad</h2><p class="lede">Hacé una pregunta, compartí lo que te sirvió o acompañá a alguien que está pasando por algo parecido. Un espacio para personas con ELA, familias, cuidadores, profesionales y organizaciones de toda la Argentina.</p><div id="forumContent"></div><p class="hint">Cada persona responde cuando puede. Los nuevos aportes se revisan antes de aparecer para los demás; son experiencias personales. Volvé a tu conversación y tocá «Actualizar comentarios» para ver las respuestas nuevas.</p></div>
+  <div class="col"><p class="eyebrow">La ELA no espera. Conectarnos nos ayuda.</p><h2 class="big">Comentarios por tema</h2><p class="lede">La conversación forma parte de cada ficha: leé la información, preguntá y compartí lo que te sirvió en el mismo lugar.</p><div id="forumContent"></div><p class="hint">Cada persona responde cuando puede. Los nuevos aportes se revisan antes de aparecer para los demás; son experiencias personales. Volvé a tu conversación y tocá «Actualizar comentarios» para ver las respuestas nuevas.</p></div>
 </section>
 <!-- practical views end -->
 
@@ -944,9 +948,11 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
     <h3>Cómo cuidamos este encuentro</h3><p>Las guías y los recursos están abiertos a todos. Para leer y escribir en el foro, necesitás registrarte y recibir aprobación. También revisamos los aportes antes de mostrarlos a otros miembros, para cuidar la privacidad y la convivencia. Aprobar un comentario no lo convierte en una indicación médica.</p><p>El foro queda abierto para escribir cuando lo necesites; cada persona participa y responde cuando puede. No es un chat de atención inmediata ni un servicio de urgencias. Las decisiones sobre tratamientos y cuidados se conversan con el equipo de salud.</p>
     <h3>Una mano de persona a persona</h3><p>En <a href="#/directorio/delamano" data-v="directorio/delamano">DElaMano</a>, miembros de la comunidad se ofrecen a orientar por correo sobre temas que conocen por experiencia. Cada uno decide si comparte su contacto, visible solo para miembros aprobados.</p>
     <h3>Un espacio que sigue creciendo</h3><p>Si un contacto cambió, encontraste un error o falta un tema, contalo en el foro. PreguntELA se construye con preguntas, experiencias, aportes y correcciones de toda la comunidad.</p>
-    <details class="about-details"><summary>Experiencias y fuentes de información</summary><p>Reunimos experiencias compartidas por pacientes, familiares y cuidadores, con agradecimiento a quienes ayudan a otras personas. El archivo conserva intercambios anteriores, identificados como material histórico. Las nuevas preguntas y respuestas se encuentran en el foro.</p><p>Los mensajes del archivo se presentan sin los nombres ni teléfonos de quienes escribieron. Las guías se complementan con fuentes médicas e institucionales enlazadas. Los nuevos comentarios del foro se muestran por separado, como experiencias de sus autores.</p><p>Los contactos del directorio deben confirmarse antes de contratar: su presencia no implica un aval. Los trámites están orientados a Argentina.</p><a href="#/archivo" data-v="archivo">Consultar el archivo de experiencias</a></details>
+    <details class="about-details"><summary>Experiencias y fuentes de información</summary><p>Reunimos experiencias compartidas por pacientes, familiares y cuidadores, con agradecimiento a quienes ayudan a otras personas. El archivo conserva intercambios anteriores, identificados como material histórico. Las nuevas preguntas y respuestas se encuentran dentro de cada tema.</p><p>Los mensajes del archivo se presentan sin los nombres ni teléfonos de quienes escribieron. Las guías se complementan con fuentes médicas e institucionales enlazadas. Los nuevos comentarios acompañan la información de cada tema y están identificados como experiencias de sus autores.</p><p>Los contactos del directorio deben confirmarse antes de contratar: su presencia no implica un aval. Los trámites están orientados a Argentina.</p><a href="#/archivo" data-v="archivo">Consultar el archivo de experiencias</a></details>
   </div>
 </section>
+
+<aside class="join-callout community-invitation" id="homeAccountCallout" aria-labelledby="homeAccountTitle"><div><h3 id="homeAccountTitle">Lo que una familia aprendió puede ayudar a otra.</h3><p>Podés dejar preguntas, comentarios y experiencias dentro de cada tema, junto a la información que estás consultando.</p><p id="homeAccountHelp">Toda la información pública se puede consultar sin registrarse. Para leer y agregar comentarios, registrate y solicitá acceso. Un administrador revisará tu ingreso y tus aportes antes de compartirlos.</p></div><a class="btn" id="homeAccountLink" href="#/comunidad" data-v="comunidad" data-auth-entry="register">Quiero sumarme →</a></aside>
 
 <footer class="foot">
   <div class="footgrid">
@@ -954,11 +960,11 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
       <p class="footbrand"><span class="brandlockup"><img src="preguntela-logo-source.png" alt="PreguntELA" width="1462" height="404" decoding="async"></span></p>
       <p><strong>La ELA no espera. Conectarnos nos ayuda.</strong></p>
       <p>En memoria de Marisa, con la experiencia y las contribuciones de toda la comunidad. <a href="#/acerca" data-v="acerca">Conocé cómo nació PreguntELA</a>.</p>
-      <p>Personas con ELA, familias, cuidadores, profesionales y organizaciones de toda la Argentina: un espacio para preguntar, compartir y acompañarnos. <a href="#/foro" data-v="foro">Encontranos en el foro</a>.</p>
+      <p>Personas con ELA, familias, cuidadores, profesionales y organizaciones de toda la Argentina: un espacio para preguntar, compartir y acompañarnos. <a href="#/inicio/temas" data-v="inicio/temas">Elegí un tema para compartir</a>.</p>
     </div>
     <div>
       <p class="footh">Qué es</p>
-      <p>Un foro de ayuda entre personas, con recursos prácticos y fuentes para orientarte. Las experiencias no reemplazan al equipo de salud. Ante una urgencia, llamá a emergencias.</p>
+      <p>Información práctica y conversaciones de la comunidad, juntas en cada tema. Las experiencias no reemplazan al equipo de salud. Ante una urgencia, llamá a emergencias.</p>
     </div>
     <div>
       <p class="footh">Privacidad</p>
@@ -1081,7 +1087,7 @@ var DIRECTORY = [
 /* ---------------- tabs ---------------- */
 var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
 var VIEWS = ["inicio","medicamentos","equipamiento","comunicacion","alimentacion","respiracion","consejos","videos","preguntar","empezar","guias","tramites","directorio","archivo","comunidad","foro","acerca"];
-var TITLES = {foro:"Foro de la comunidad · PreguntELA",videos:"Videos útiles · PreguntELA",inicio:"Inicio · PreguntELA",medicamentos:"Medicamentos · PreguntELA",equipamiento:"Equipamiento · PreguntELA",comunicacion:"Comunicación · PreguntELA",alimentacion:"Alimentación · PreguntELA",respiracion:"Asistencia respiratoria · PreguntELA",consejos:"Consejos útiles · PreguntELA",preguntar:"PreguntELA", empezar:"Primeros pasos · PreguntELA", guias:"Guías · PreguntELA",
+var TITLES = {foro:"Comentarios por tema · PreguntELA",videos:"Videos útiles · PreguntELA",inicio:"Inicio · PreguntELA",medicamentos:"Medicamentos · PreguntELA",equipamiento:"Equipamiento · PreguntELA",comunicacion:"Comunicación · PreguntELA",alimentacion:"Alimentación · PreguntELA",respiracion:"Asistencia respiratoria · PreguntELA",consejos:"Consejos útiles · PreguntELA",preguntar:"PreguntELA", empezar:"Primeros pasos · PreguntELA", guias:"Guías · PreguntELA",
   tramites:"Trámites y cartas · PreguntELA", directorio:"Directorio · PreguntELA",
   archivo:"Archivo del grupo · PreguntELA", comunidad:"Comunidad · PreguntELA", acerca:"Acerca de · PreguntELA"};
 function show(v, push){
@@ -2903,14 +2909,14 @@ function fuenteHTML(keys){
 function enlaceTema(v,text){return '<a href="#/'+attr(v)+'" data-v="'+attr(v)+'">'+esc(text)+'</a>';}
 function introTema(id,body){
   var n=NECESIDADES.find(function(x){return x.id===id;});
-  return '<a class="topic-back" href="#/inicio" data-v="inicio">← Todos los recursos</a><div class="topic-intro"><p class="eyebrow">'+esc(n.short)+'</p><h2 class="big">'+esc(n.n)+'</h2>'+body+'</div><p class="forum-topic-link">¿Te pasa algo parecido o tenés una experiencia para compartir? '+enlaceTema('foro','Encontranos en el foro →')+'</p><p class="topic-status" role="status" aria-live="polite"></p>';
+  return '<a class="topic-back" href="#/inicio/temas" data-v="inicio/temas">← Todos los temas</a><div class="topic-intro"><p class="eyebrow">'+esc(n.short)+'</p><h2 class="big">'+esc(n.n)+'</h2>'+body+'</div><p class="topic-participation-hint">Abrí el tema que te interesa: debajo de su información podés leer experiencias, preguntar y comentar.</p><p class="topic-status" role="status" aria-live="polite"></p>';
 }
 function filtroTemaHTML(id,placeholder){return '<label class="topic-filter"><span>Buscar en esta sección</span><input type="search" data-topic-search="'+id+'" placeholder="'+attr(placeholder)+'"></label><p class="hint" data-topic-empty hidden>No encontramos coincidencias. Probá otra palabra o '+enlaceTema('preguntar','buscá en todo el sitio')+'.</p>';}
 function itemTemaHTML(i,sec,view){
   var info=sec==='medicacion'?MED_INFO[i.k]:null;
   var sources=info&&info.f?info.f:FUENTES[i.k]?[i.k]:[];
   var rich=RECURSOS[i.k], searchText=i.n+' '+i.d+' '+(info?info.s:'')+' '+(rich?rich.extra.join(' ')+' '+rich.pedido+' '+rich.acceso:'');
-  return '<details class="topic-item" id="'+view+'-'+i.k+'" data-topic-item data-key="'+attr(i.k)+'" data-search="'+attr(fold(searchText))+'"><summary>'+esc(i.n)+(info?'<span class="item-status">'+esc(info.s)+'</span>':'')+(view==='respiracion'?'<span class="item-comment-hint">Ver detalles y comentarios</span>':'')+'</summary><div class="topic-body"><p>'+esc(i.d)+'</p>'+(sources.length?fuenteHTML(sources):'')+recursosHTML(i.k,sec)+(view==='respiracion'&&i.k==='bipap'?respiratoryModelsHTML():'')+'<p class="hint"><a href="#/preguntar" data-history-query="'+attr(i.n)+'">Buscar conversaciones anteriores sobre este tema</a></p><div class="topic-community" data-topic-comments data-sec="'+sec+'" data-item="'+attr(i.k)+'"></div></div></details>';
+  return '<details class="topic-item" id="'+view+'-'+i.k+'" data-topic-item data-key="'+attr(i.k)+'" data-search="'+attr(fold(searchText))+'"><summary>'+esc(i.n)+(info?'<span class="item-status">'+esc(info.s)+'</span>':'')+'<span class="item-comment-hint">Información y comentarios</span>'+'</summary><div class="topic-body"><p>'+esc(i.d)+'</p>'+(sources.length?fuenteHTML(sources):'')+recursosHTML(i.k,sec)+(view==='respiracion'&&i.k==='bipap'?respiratoryModelsHTML():'')+'<p class="hint"><a href="#/preguntar" data-history-query="'+attr(i.n)+'">Buscar conversaciones anteriores sobre este tema</a></p><div class="topic-community" data-topic-comments data-sec="'+sec+'" data-item="'+attr(i.k)+'"></div></div></details>';
 }
 function grupoTemaHTML(g,view){return '<div class="topic-section" data-topic-group><h3>'+esc(g.g)+'</h3>'+g.items.filter(function(i){return view!=='respiracion'||!RESP_MODELS.some(function(m){return m.k===i.k;});}).map(function(i){return itemTemaHTML(i,'insumo',view);}).join('')+'</div>';}
 function respiratoryModelsHTML(){return '<section class="respiratory-models" id="respiracion-modelos"><h4>Modelos de BiPAP y ventiladores</h4><p>Abrí cada modelo para ver detalles y comentar tu experiencia. La elección depende del soporte, las alarmas, el circuito y la autonomía indicados por el equipo respiratorio.</p><div class="respiratory-suppliers"><h5>Cómo consultar en Argentina</h5><p>Compará proveedores de ventilación domiciliaria por el equipo prescripto, alquiler o compra, insumos, capacitación y asistencia técnica. Las fichas técnicas de cada modelo están abajo.</p>'+directorioRecursoHTML({directory:['Equipamiento, ortopedia y respiratorio','Ver proveedores de equipamiento y respiración']})+'</div><p class="hint">Figuran en catálogos argentinos revisados el 01/10/2026. Confirmá stock, configuración y servicio local; no todos brindan el mismo nivel de soporte.</p>'+RESP_MODELS.map(function(m){return itemTemaHTML(m,'insumo','respiracion');}).join('')+'</section>';}
@@ -2919,12 +2925,13 @@ function pintarAportesTematicos(){
   document.querySelectorAll('[data-topic-comments]').forEach(function(box){
     // Preserve drafts and file selections when another item is refreshed.
     var form=box.querySelector('form.micro');
+    var sec=box.dataset.sec, item=box.dataset.item, topic=FORUM_TOPICS[sec+':'+item]||(sec==='consejo'?FORUM_TOPICS['consejo:foro/consejos']:null);
+    if(topic){box.dataset.discussion=topic.key;box.dataset.instance='ficha-'+box.closest('.view').id;}
     if(!aprobado()){
-      box.innerHTML='<h4>Experiencias de la comunidad</h4><p class="hint">'+(ME?'Tu acceso necesita aprobación para leer y agregar experiencias.':'Las experiencias y sus archivos se comparten solo con miembros aprobados.')+'</p>'+enlaceTema('comunidad',ME?'Ver mi acceso':'Entrar o solicitar acceso');return;
+      box.innerHTML='<h4>Comentarios y experiencias sobre este tema</h4><p class="hint">'+(ME?'Tu acceso necesita aprobación para leer y agregar experiencias.':'Los comentarios se comparten solo con miembros aprobados. Podés preguntar, responder o contar qué te sirvió aquí mismo.')+'</p>'+enlaceTema('comunidad',ME?'Ver mi acceso':'Ingresar o registrarme');return;
     }
-    var sec=box.dataset.sec, item=box.dataset.item, entries=sec==='consejo'?deSeccion('consejo').filter(function(a){return !isForumAdvice(a)&&(['Cuidados diarios','Enfermería y cuidadores','Ánimo y familia','Otro'].indexOf(a.tema)>=0 || !a.tema);}):deItem(sec,item);
-    box.innerHTML='<h4>Experiencias de la comunidad</h4><div class="topic-entries">'+(entries.length?entries.map(comentarioHTML).join(''):'<p class="hint">Todavía no hay experiencias. Podés compartir la primera.</p>')+'</div>';
-    var topic=FORUM_TOPICS[sec+':'+item];if(topic)box.insertAdjacentHTML('beforeend','<p>'+enlaceTema(forumURL(topic),'Abrir la conversación y responder →')+'</p>');
+    var entries=topic?discussionEntries(topic):deItem(sec,item);
+    box.innerHTML='<h4>Comentarios y experiencias sobre este tema</h4><p class="hint">'+entries.length+' comentarios · Experiencias personales, no indicaciones médicas. Los nuevos aportes se revisan antes de compartirse.</p>'+(topic?'<div class="discussion-controls"><button type="button" class="mini" data-discussion-refresh>Actualizar comentarios</button></div>':'')+'<div class="topic-entries">'+(entries.length?entries.map(function(a){return topic?discussionEntryHTML(a):comentarioHTML(a);}).join(''):'<p class="hint">Todavía no hay comentarios. Tu experiencia o tu pregunta puede abrir la conversación.</p>')+'</div><p class="discussion-status hint" role="status" aria-live="polite"></p>';
     if(form) box.appendChild(form); else box.insertAdjacentHTML('beforeend',cajaAporte(sec,item,'tema-'));
     if(sec==='consejo'){
       var f=box.querySelector('form');
@@ -3284,13 +3291,19 @@ function forumTopicForCard(card){
  return FORUM_TOPICS['consejo:foro/'+(card.g||card.id)];
 }
 function forumURL(topic){return 'foro/'+encodeURIComponent(topic.key);}
+function topicURL(topic){return topic.key!=='consejo:foro/preguntas'&&topic.route?topic.route:forumURL(topic);}
 function isForumAdvice(a){return a.seccion==='consejo'&&typeof a.item==='string'&&a.item.startsWith('foro/');}
 function discussionEntries(topic){
- return deItem(topic.sec,topic.item).slice().sort(function(a,b){return String(a.creado).localeCompare(String(b.creado))||Number(a.id)-Number(b.id);});
+ var entries=deItem(topic.sec,topic.item).slice();
+ if(topic.key==='consejo:foro/consejos')entries=entries.concat(deSeccion('consejo').filter(function(a){return !isForumAdvice(a)&&(['Cuidados diarios','Enfermería y cuidadores','Ánimo y familia','Otro'].includes(a.tema)||!a.tema);}));
+ return entries.sort(function(a,b){return String(a.creado).localeCompare(String(b.creado))||Number(a.id)-Number(b.id);});
 }
 function discussionShell(topic,instance){
  if(!topic)return '';
  return '<section class="discussion" data-discussion="'+attr(topic.key)+'" data-instance="'+instance+'" data-community-scope></section>';
+}
+function discussionEntryHTML(a){
+ return '<div class="discussion-entry">'+comentarioHTML(a)+'<button class="mini" type="button" data-discussion-reply="'+a.id+'">Responder a '+esc(a.autor_nombre||'este miembro')+'</button></div>';
 }
 function rememberDiscussionForms(){
  if(!aprobado())return;
@@ -3304,27 +3317,27 @@ function discussionFormHTML(topic,instance){
 }
 function renderDiscussionWidgets(){
  rememberDiscussionForms();
- document.querySelectorAll('[data-discussion]').forEach(function(box){
+ document.querySelectorAll('[data-discussion]:not([data-topic-comments])').forEach(function(box){
   var topic=FORUM_TOPICS[box.dataset.discussion];if(!topic)return;
-  var top='<p class="eyebrow">Foro de la comunidad</p><h3>'+esc(topic.title)+'</h3>';
+  var top='<p class="eyebrow">Comentarios y experiencias</p><h3>'+esc(topic.title)+'</h3>';
   if(!aprobado()){box.innerHTML=top+'<p>Los comentarios quedan guardados en este tema, para poder volver y seguir la conversación.</p>'+accessParticipationHTML();return;}
   var entries=discussionEntries(topic),all=DISCUSSION_EXPANDED.has(topic.key),shown=all?entries:entries.slice(-8);
   var form=DISCUSSION_DRAFTS[box.dataset.instance+':'+topic.key];
-  box.innerHTML=top+'<p class="hint">'+entries.length+(entries.length===1?' comentario':' comentarios')+' · Solo miembros aprobados. Compartimos experiencias; las respuestas de familias no son indicaciones médicas.</p><div class="discussion-controls"><button type="button" class="mini" data-discussion-refresh>Actualizar comentarios</button>'+enlaceTema(forumURL(topic),'Abrir esta conversación')+'</div>'+
+  box.innerHTML=top+'<p class="hint">'+entries.length+(entries.length===1?' comentario':' comentarios')+' · Solo miembros aprobados. Compartimos experiencias; las respuestas de familias no son indicaciones médicas.</p><div class="discussion-controls"><button type="button" class="mini" data-discussion-refresh>Actualizar comentarios</button>'+(box.dataset.instance==='search'?enlaceTema(topicURL(topic),'Ver información y comentarios juntos'):'')+'</div>'+
    (!all&&entries.length>shown.length?'<button type="button" class="btn ghost" data-discussion-older>Ver '+(entries.length-shown.length)+' comentarios anteriores</button>':'')+
-   '<div class="discussion-entries">'+(shown.length?shown.map(function(a){return '<div class="discussion-entry">'+comentarioHTML(a)+'<button class="mini" type="button" data-discussion-reply="'+a.id+'">Responder a '+esc(a.autor_nombre||'este miembro')+'</button></div>';}).join(''):'<p>Todavía no hay comentarios. Tu experiencia o tu pregunta puede abrir la conversación.</p>')+'</div><p class="hint">Publicá solo información que quieras compartir con el grupo. Cada aporte se revisa antes de aparecer para los demás. La aprobación no valida su contenido médico.</p><p class="discussion-status hint" role="status" aria-live="polite"></p>';
+   '<div class="discussion-entries">'+(shown.length?shown.map(discussionEntryHTML).join(''):'<p>Todavía no hay comentarios. Tu experiencia o tu pregunta puede abrir la conversación.</p>')+'</div><p class="hint">Publicá solo información que quieras compartir con la comunidad. Cada aporte se revisa antes de aparecer para los demás. La aprobación no valida su contenido médico.</p><p class="discussion-status hint" role="status" aria-live="polite"></p>';
   if(form)box.appendChild(form);else box.insertAdjacentHTML('beforeend',discussionFormHTML(topic,box.dataset.instance));
  });
 }
 function forumIndexHTML(){
- return (aprobado()?'':'<div class="topic-note">'+accessParticipationHTML()+'</div>')+'<div class="forum-entry-actions"><a class="btn" href="#/'+forumURL(FORUM_TOPICS['consejo:foro/preguntas'])+'" data-v="'+forumURL(FORUM_TOPICS['consejo:foro/preguntas'])+'">Hacer una pregunta a la comunidad →</a>'+enlaceTema('directorio/delamano','Conocer DElaMano')+'</div><label class="forum-topic-search">Encontrá una conversación<input id="forumTopicSearch" type="search" placeholder="Silla, saliva, botón gástrico, cuidados…" value="'+attr(FORUM_QUERY)+'"></label><p id="forumTopicStatus" class="hint" role="status" aria-live="polite"></p><div class="forum-topics" id="forumTopicList">'+forumTopicListHTML()+'</div><p>También podés comentar debajo de las fichas y de las respuestas del buscador. Es la misma conversación, para que los aportes queden juntos.</p>'+enlaceTema('preguntar','Consultar guías y recursos');
+ return '<p>Elegí un tema para abrir su información y los comentarios de la comunidad en el mismo lugar.</p><label class="forum-topic-search">Encontrá un tema<input id="forumTopicSearch" type="search" placeholder="Silla, saliva, botón gástrico, cuidados…" value="'+attr(FORUM_QUERY)+'"></label><p id="forumTopicStatus" class="hint" role="status" aria-live="polite"></p><div class="forum-topics" id="forumTopicList">'+forumTopicListHTML()+'</div><div class="forum-entry-actions">'+enlaceTema(forumURL(FORUM_TOPICS['consejo:foro/preguntas']),'¿Tu pregunta no tiene un tema? Dejala acá')+enlaceTema('directorio/delamano','Conocer DElaMano')+'</div>';
 }
 function forumTopicListHTML(){
  var topics=Object.values(FORUM_TOPICS),active=topics.filter(function(t){return discussionEntries(t).length;});
  active.sort(function(a,b){var aa=discussionEntries(a).at(-1),bb=discussionEntries(b).at(-1);return String(bb.creado).localeCompare(String(aa.creado));});
  var common=topics.filter(function(t){return ['insumo:bipap','insumo:silla-postural','medicacion:b12','consejo:foro/consejos/saliva','consejo:foro/preguntas'].includes(t.key)&&!active.includes(t);});
  var q=fold(FORUM_QUERY).trim(),list=q?topics.filter(function(t){return q.split(/\s+/).every(function(word){return fold(t.title+' '+t.item).includes(word);});}):active.concat(common);
- return list.length?list.map(function(topic){var count=aprobado()?discussionEntries(topic).length:0;return '<a class="forum-topic" href="#/'+forumURL(topic)+'" data-v="'+forumURL(topic)+'"><strong>'+esc(topic.title)+'</strong><span>'+(aprobado()?count+' comentarios':'Entrá para participar')+' →</span></a>';}).join(''):'<p>No encontramos ese tema. Podés '+enlaceTema(forumURL(FORUM_TOPICS['consejo:foro/preguntas']),'hacer tu pregunta a la comunidad')+'.</p>';
+ return list.length?list.map(function(topic){var count=aprobado()?discussionEntries(topic).length:0;return '<a class="forum-topic" href="#/'+topicURL(topic)+'" data-v="'+topicURL(topic)+'"><strong>'+esc(topic.title)+'</strong><span>'+(aprobado()?count+' comentarios':'Información y comentarios')+' →</span></a>';}).join(''):'<p>No encontramos ese tema. Podés '+enlaceTema(forumURL(FORUM_TOPICS['consejo:foro/preguntas']),'hacer tu pregunta a la comunidad')+'.</p>';
 }
 function renderForum(){
  if(!FORUM_READY)return;
@@ -3332,6 +3345,7 @@ function renderForum(){
  var raw=(location.hash||'').replace(/^#\/?foro\/?/,''),key;
  try{key=decodeURIComponent(raw);}catch(e){key='';}
  var topic=FORUM_TOPICS[key],box=el('forumContent');
+ if(topic&&topicURL(topic)!==forumURL(topic)){show(topicURL(topic));return;}
  if(topic){
   box.innerHTML='<div class="topic-links">'+enlaceTema('foro','← Todas las conversaciones')+(topic.route?enlaceTema(topic.route,'Ver la información de este tema'):'')+'</div>'+discussionShell(topic,'thread');
  }else box.innerHTML=forumIndexHTML();
@@ -3354,6 +3368,19 @@ function initParticipation(){
  });
  CARDS.forEach(function(card){
   if(!forumTopicForCard(card))registerForumTopic('consejo','foro/'+(card.g||card.id),card.t,card.g);
+ });
+ MODELOS.forEach(function(model){registerForumTopic('consejo','foro/tramites/'+model.id,model.n,'tramites/'+model.id);});
+ // Static guides have the same thread as their search answer. Keep saved keys intact.
+ Object.values(FORUM_TOPICS).forEach(function(topic){
+  if(topic.key==='consejo:foro/preguntas'||topic.sec!=='consejo'||!topic.route)return;
+  var bits=topic.route.split('/'),target=el(bits.length>1?bits.join('-'):'v-'+topic.route);
+  if(!target||target.closest('#v-videos')||target.closest('#v-directorio'))return;
+  if(bits.length===1){var heading=target.querySelector('h2.big');if(heading)topic.title=heading.textContent.trim();}
+  if(topic.key==='consejo:foro/consejos')return; // Uses the existing advice form and its saved contributions.
+  var body=target.matches('details')?(target.querySelector(':scope > .topic-body')||target):target;
+  var sources=body.querySelector(':scope > .sources-footer');
+  if(sources)sources.insertAdjacentHTML('beforebegin',discussionShell(topic,'ficha-'+topic.route.replaceAll('/','-')));
+  else body.insertAdjacentHTML('beforeend',discussionShell(topic,'ficha-'+topic.route.replaceAll('/','-')));
  });
  FORUM_READY=true;
  el('dirq').addEventListener('input',renderMemberDirectory);
@@ -3472,7 +3499,7 @@ function cajaAporte(sec, item, prefix){
   if(!aprobado()) return '<p class="hint">'+(ME ? "Podrás participar cuando un administrador apruebe tu acceso." : "Iniciá sesión y solicitá acceso para contar tu experiencia.")+'</p>';
   var id = (prefix||'')+"aporte-"+sec+"-"+item;
   return '<form class="micro" data-sec="'+sec+'" data-item="'+esc(item)+'">'+
-    '<label for="'+id+'">Tu experiencia</label><textarea id="'+id+'" rows="3" required minlength="10" maxlength="2000" placeholder="Contá tu experiencia: qué usaste, cómo lo conseguiste, si te sirvió y para qué."></textarea>'+
+    '<label for="'+id+'">Tu comentario o pregunta</label><textarea id="'+id+'" rows="3" required minlength="10" maxlength="2000" placeholder="Hacé una pregunta, respondé a otra familia o contá qué te sirvió."></textarea>'+
     archivoInput(id+"-files")+'<div class="askbar"><button class="btn" type="submit">Enviar para revisión</button><span class="hint" role="status"></span></div></form>';
 }
 
@@ -3671,11 +3698,10 @@ function pintarEstadoSesion(){
  el('joinLink').textContent=signed?(known&&admin()?'Administrar':'Mi cuenta'):'Ingresar / Registrarme';
  el('headerSignOut').hidden=!signed;
  if(el('homeAccountTitle')){
-  el('homeAccountTitle').textContent=signed?(known?(aprobado()?'Ya podés compartir en el foro':ME.membresia==='suspendida'?'Estás dentro de tu cuenta':ME.solicitud_enviada?'Ya ingresaste. Tu solicitud está pendiente':'Ya ingresaste. Completá tu solicitud'):'Estás dentro de tu cuenta'):'Sumate: tu experiencia tiene un lugar';
-  el('homeAccountHelp').innerHTML=signed?(known?(aprobado()?'Contá lo que aprendiste, agregá un contacto o participá en las conversaciones. Los nuevos aportes se revisan antes de mostrarse a los demás miembros.':ME.membresia==='suspendida'?'Tu acceso a los aportes está suspendido. Podés seguir consultando las guías y ver tu situación en Mi cuenta.':ME.solicitud_enviada?'Un administrador revisará tu solicitud. No necesitás registrarte de nuevo ni pedir otro enlace mientras tu sesión siga abierta.':'Falta completar tus datos para que los administradores puedan revisar tu acceso a la comunidad. No necesitás pedir otro enlace.'):(sessionAccessError?'No pudimos comprobar tu acceso a la comunidad. Volvé a intentar desde Mi cuenta.':'Estamos comprobando tu acceso a la comunidad.')):'Podés consultar toda la información pública sin registrarte. <strong>Para agregar información o comentarios, registrate y solicitá acceso.</strong> Un administrador aprobará tu ingreso y revisará tus aportes antes de compartirlos con la comunidad.';
-  if(!signed)el('homeAccountHelp').innerHTML='Las guías y los recursos están abiertos a todos. <strong>Para leer y escribir en el foro, registrate y solicitá acceso.</strong> Revisamos las solicitudes y los aportes para cuidar este espacio de encuentro.';
-  el('homeAccountLink').textContent=signed?(known&&aprobado()?'Entrar al foro →':'Ir a mi cuenta →'):'Quiero sumarme →';
-  var destination=signed&&known&&aprobado()?'foro':'comunidad';el('homeAccountLink').href='#/'+destination;el('homeAccountLink').dataset.v=destination;
+  el('homeAccountTitle').textContent='Lo que una familia aprendió puede ayudar a otra.';
+  el('homeAccountHelp').innerHTML=signed?(known?(aprobado()?'Ya podés compartir: abrí una ficha para preguntar, comentar o responder. Los nuevos aportes se revisan antes de mostrarse a los demás miembros.':ME.membresia==='suspendida'?'Tu acceso a los aportes está suspendido. Podés seguir consultando la información pública y ver tu situación en Mi cuenta.':ME.solicitud_enviada?'Tu solicitud está pendiente. Un administrador revisará tu acceso; no necesitás registrarte de nuevo.':'Completá tus datos en Mi cuenta para que los administradores puedan revisar tu solicitud.'):(sessionAccessError?'No pudimos comprobar tu acceso. Volvé a intentar desde Mi cuenta.':'Estamos comprobando tu acceso a la comunidad.')):'Toda la información pública se puede consultar sin registrarse. <strong>Para leer y agregar comentarios, registrate y solicitá acceso.</strong> Un administrador revisará tu ingreso y tus aportes antes de compartirlos con la comunidad.';
+  el('homeAccountLink').textContent=signed?(known&&aprobado()?'Elegir un tema para comentar →':'Ir a mi cuenta →'):'Quiero sumarme →';
+  var destination=signed&&known&&aprobado()?'inicio/temas':'comunidad';el('homeAccountLink').href='#/'+destination;el('homeAccountLink').dataset.v=destination;
  }
 }
 
