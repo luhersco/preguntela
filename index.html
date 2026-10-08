@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PreguntELA</title>
-<meta name="description" content="Información práctica sobre ELA: medicamentos, equipamiento, comunicación, alimentación, respiración, consejos y trámites. Una comunidad de pacientes y familias en Argentina.">
+<meta name="description" content="La ELA no espera. Un foro para conectar a pacientes, familiares y cuidadores de Argentina: preguntar, compartir experiencias y ayudarnos entre todos.">
 <meta name="author" content="Comunidad de PreguntELA">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
@@ -17,15 +17,15 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PreguntELA">
 <meta property="og:locale" content="es_AR">
-<meta property="og:title" content="PreguntELA — hecho por todos, para todos">
-<meta property="og:description" content="Información práctica sobre ELA: medicamentos, equipamiento, comunicación, alimentación, respiración, consejos y trámites. Una comunidad de pacientes y familias en Argentina.">
-<meta property="og:image" content="https://luhersco.github.io/preguntela/og-image.png?v=comunidad-3">
+<meta property="og:title" content="PreguntELA — La ELA no espera. Conectarnos nos ayuda.">
+<meta property="og:description" content="La ELA no espera. Un foro para conectar a pacientes, familiares y cuidadores de Argentina: preguntar, compartir experiencias y ayudarnos entre todos.">
+<meta property="og:image" content="https://luhersco.github.io/preguntela/og-image.png?v=foro-4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PreguntELA">
-<meta name="twitter:description" content="Información práctica sobre ELA: medicamentos, equipamiento, comunicación, alimentación, respiración, consejos y trámites. Una comunidad de pacientes y familias en Argentina.">
-<meta name="twitter:image" content="https://luhersco.github.io/preguntela/og-image.png?v=comunidad-3">
+<meta name="twitter:description" content="La ELA no espera. Un foro para conectar a pacientes, familiares y cuidadores de Argentina: preguntar, compartir experiencias y ayudarnos entre todos.">
+<meta name="twitter:image" content="https://luhersco.github.io/preguntela/og-image.png?v=foro-4">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -600,7 +600,13 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 /* Introductory video: optional playback, readable transcript, no autoplay. */
 .welcome-tour{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:20px 32px;padding:28px;margin:0 0 40px;border:1px solid var(--line);border-top:5px solid #ffba24;border-radius:22px;background:var(--surface)}
 .welcome-tour-copy{align-self:center}.welcome-tour h2{font-size:2rem;line-height:1.15;margin:8px 0 16px}.welcome-tour-copy p{margin:10px 0}.welcome-tour-media{min-width:0}.welcome-tour video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:12px;background:#082d55}.welcome-tour-download{font-size:.8rem;margin:8px 0 0}.welcome-tour-transcript{grid-column:1/-1;border-top:1px solid var(--line);padding-top:14px}.welcome-tour-transcript summary{cursor:pointer;font-weight:600;padding:8px 0;min-height:44px}.welcome-tour-transcript li{margin:12px 0}.welcome-tour-transcript>div{max-width:75ch}
+.welcome-actions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.welcome-actions .btn{text-decoration:none}.welcome-tour h2{font-size:clamp(1.75rem,2.8vw,2.5rem)}
+.community-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0}.community-paths>a{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;padding:24px;text-decoration:none;color:var(--ink);background:var(--surface)}.community-paths h3{font-size:1.25rem;line-height:1.3;margin:8px 0}.community-paths p{font-size:.95rem}.community-paths strong{margin-top:auto;color:var(--accent-ink)}.community-paths>a:hover{background:var(--accent-soft)}
+.tab[data-v="foro"]{font-weight:700;color:var(--accent-ink);background:var(--accent-soft);border-radius:10px 10px 0 0}.forum-entry-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:22px 0}.forum-entry-actions .btn{text-decoration:none}.forum-topic-link{font-size:.9rem;margin:16px 0 26px}.forum-topic-search{display:block;margin:24px 0 12px;font-weight:600}.forum-topic-search input{display:block;width:100%;margin-top:8px;padding:13px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+@media(max-width:760px){.community-paths{grid-template-columns:1fr}.welcome-actions{flex-direction:column;align-items:stretch}.welcome-actions .btn{text-align:center}}
 @media(max-width:760px){.welcome-tour{grid-template-columns:1fr;padding:20px;gap:16px;margin-bottom:28px}.welcome-tour h2{font-size:1.65rem}.welcome-tour-copy .hint{font-size:.85rem}}
+.delamano{scroll-margin-top:205px}
+@media(max-width:760px){.delamano{scroll-margin-top:260px}}
 /* practical styles end */
 </style>
 
@@ -610,13 +616,14 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
   <div class="masthead-in">
     <div class="header-tools"><a class="brandrow" href="#/inicio" data-v="inicio">
       <span class="brandlockup"><img src="preguntela-logo-source.png" alt="PreguntELA" width="1462" height="404" decoding="async"></span>
-      <span class="brandsub">Ayuda práctica para la comunidad de ELA en Argentina</span>
+      <span class="brandsub">Conectados para ayudarnos con la ELA en Argentina</span>
     </a>
     <form id="headerSearch" class="header-search" role="search"><label class="sr-only" for="headerQ">Buscar en PreguntELA</label><input id="headerQ" type="search" placeholder="¿Qué necesitás encontrar?" required><button type="submit" aria-label="Buscar en todo el sitio">Buscar</button></form>
-    <div class="session-access" id="sessionAccess" data-state="checking" aria-label="Estado de tu cuenta"><div class="session-identity" role="status" aria-live="polite" aria-atomic="true"><span class="session-indicator" id="sessionIndicator">Comprobando sesión…</span><strong id="sessionName" hidden></strong><span id="sessionDetail">Un momento</span></div><div class="session-actions"><a class="btn join-link" id="joinLink" href="#/comunidad" data-v="comunidad">Mi cuenta</a><button class="session-out" type="button" id="headerSignOut" hidden>Cerrar sesión</button></div></div><details class="account-menu" id="accountMenu"><summary>Comunidad y más</summary><nav aria-label="Comunidad y otros accesos"><a href="#/comunidad" data-v="comunidad">Mi cuenta / Comunidad</a><a href="#/foro" data-v="foro">Conversaciones de la comunidad</a><a href="#/archivo" data-v="archivo">Archivo del grupo</a><a href="#/acerca" data-v="acerca">Acerca de PreguntELA</a></nav></details></div>
+    <div class="session-access" id="sessionAccess" data-state="checking" aria-label="Estado de tu cuenta"><div class="session-identity" role="status" aria-live="polite" aria-atomic="true"><span class="session-indicator" id="sessionIndicator">Comprobando sesión…</span><strong id="sessionName" hidden></strong><span id="sessionDetail">Un momento</span></div><div class="session-actions"><a class="btn join-link" id="joinLink" href="#/comunidad" data-v="comunidad">Mi cuenta</a><button class="session-out" type="button" id="headerSignOut" hidden>Cerrar sesión</button></div></div><details class="account-menu" id="accountMenu"><summary>Mi cuenta y más</summary><nav aria-label="Comunidad y otros accesos"><a href="#/comunidad" data-v="comunidad">Mi cuenta</a><a href="#/foro" data-v="foro">Foro de la comunidad</a><a href="#/archivo" data-v="archivo">Archivo de experiencias</a><a href="#/acerca" data-v="acerca">Acerca de PreguntELA</a></nav></details></div>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menú</button>
     <nav class="tabs" id="mainNav" role="tablist" aria-label="Secciones">
 <button class="tab" role="tab" aria-selected="true" data-v="inicio">Inicio</button>
+<button class="tab" role="tab" aria-selected="false" data-v="foro">Foro</button>
 <button class="tab" role="tab" aria-selected="false" data-v="medicamentos">Medicamentos</button>
 <button class="tab" role="tab" aria-selected="false" data-v="equipamiento">Equipamiento</button>
 <button class="tab" role="tab" aria-selected="false" data-v="comunicacion">Comunicación</button>
@@ -634,20 +641,21 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 <!-- practical views start -->
 <section class="view on" id="v-inicio" role="tabpanel" aria-label="Inicio">
   <section class="welcome-tour" aria-labelledby="welcomeTourTitle">
-    <div class="welcome-tour-copy"><p class="eyebrow">¿Primera vez por acá?</p><h2 id="welcomeTourTitle">Conocé PreguntELA</h2><p>Un recorrido de <strong>1 minuto y medio</strong> para encontrar ayuda, entrar a tu cuenta y compartir tu experiencia.</p><p class="hint">Tocá reproducir. Tiene voz y subtítulos en español; también podés verlo sin sonido.</p></div>
-    <div class="welcome-tour-media"><video id="welcomeVideo" controls playsinline preload="none" poster="bienvenida-preguntela.jpg" width="1280" height="720" aria-label="Cómo usar PreguntELA: video de bienvenida con subtítulos en español"><source src="bienvenida-preguntela.mp4" type="video/mp4">Tu navegador no puede reproducir este video. Podés descargarlo o leer los pasos debajo.</video><p class="welcome-tour-download"><a href="bienvenida-preguntela.mp4" download>Descargar el video</a> · 1:37</p></div>
+    <div class="welcome-tour-copy"><p class="eyebrow">La comunidad de ELA en Argentina</p><h2 id="welcomeTourTitle">La ELA no espera.<br>Conectarnos nos ayuda.</h2><p>Un lugar para encontrarnos, preguntar y acompañarnos. Pacientes, familiares y cuidadores de todo el país: <strong>lo que alguien aprendió puede ayudar a otra persona hoy.</strong></p><div class="welcome-actions"><a class="btn" href="#/foro" data-v="foro">Entrar al foro →</a><a class="btn ghost" href="#/comunidad" data-v="comunidad" data-auth-entry="register">Quiero sumarme</a></div><p class="hint">Conocé la comunidad en este video, con voz y subtítulos en español.</p></div>
+    <div class="welcome-tour-media"><video id="welcomeVideo" controls playsinline preload="none" poster="comunidad-preguntela.jpg" width="1280" height="720" aria-label="Conocé la comunidad de PreguntELA: video con subtítulos en español"><source src="comunidad-preguntela.mp4" type="video/mp4">Tu navegador no puede reproducir este video. Podés descargarlo o leer los pasos debajo.</video><p class="welcome-tour-download"><a href="comunidad-preguntela.mp4" download>Descargar el video</a> · 1:17</p></div>
     <details class="welcome-tour-transcript"><summary>Prefiero leer los pasos</summary><div>
-      <p>Bienvenidos a PreguntELA. Un lugar hecho por todos, para todos, para acompañar a pacientes y familias con ELA en Argentina. Reunimos lo que aprendimos en la comunidad <strong>La ELA no nos Define</strong>, junto con información de fuentes confiables. Podés consultar el sitio sin registrarte.</p>
-      <ol><li>Si recién empezás, entrá en <a href="#/empezar" data-v="empezar">Me diagnosticaron ELA</a>: una guía para los primeros pasos.</li><li>Usá el buscador de arriba. Escribí con tus palabras, por ejemplo «silla de ruedas», y abrí la respuesta que te interese.</li><li>Elegí un tema: medicamentos, equipamiento, comunicación, alimentación o respiración. Encontrarás explicaciones, recursos y videos.</li><li>En <a href="#/tramites" data-v="tramites">Trámites y cartas</a> hay modelos para adaptar. En <a href="#/directorio" data-v="directorio">Directorio</a> podés buscar profesionales, proveedores y redes de ayuda.</li><li>Para compartir tu experiencia, tocá <a href="#/comunidad" data-v="comunidad" data-auth-entry="register">Ingresar / Registrarme</a>, elegí «Quiero registrarme», confirmá tu email y completá tus datos. Una administradora revisará tu solicitud.</li><li>Si ya sos miembro y creaste tu contraseña, entrá con tu email y esa clave. El enlace por correo queda como alternativa.</li><li>Con tu acceso aprobado, podés comentar dentro de cada tema o agregar un profesional. Los aportes se revisan antes de publicarse y quedan como experiencias de la comunidad.</li></ol>
-      <p><strong>Buscá, preguntá y compartí. Lo que una familia aprendió puede ayudar a otra.</strong></p>
+      <p><strong>La ELA no espera. Y nadie debería atravesarla en soledad.</strong> PreguntELA nace para conectar a las personas con ELA, sus familias y quienes cuidan, en toda la Argentina. Cuando aparece una duda, hablar con alguien que pasó por algo parecido puede hacer una diferencia.</p>
+      <ol><li>Entrá al <a href="#/foro" data-v="foro">Foro de la comunidad</a> para hacer una pregunta, compartir lo que te sirvió o acompañar a otra persona.</li><li>Las conversaciones quedan organizadas por tema. Volvé para leer nuevas respuestas y seguir participando. Cada persona responde cuando puede.</li><li>Para cuidarnos, el acceso y los aportes pasan por revisión. Compartimos experiencias personales que no reemplazan al equipo de salud.</li><li>El buscador, las guías, los videos, las cartas y el directorio son recursos para orientarte y preparar tus preguntas. Si recién empezás, visitá <a href="#/empezar" data-v="empezar">Me diagnosticaron ELA</a>.</li><li>Para sumarte, tocá <a href="#/comunidad" data-v="comunidad" data-auth-entry="register">Ingresar / Registrarme</a>, confirmá tu email y completá tus datos. Revisaremos tu solicitud. Si ya tenés cuenta y contraseña, entrá con tu email y tu clave.</li><li>En <a href="#/directorio/delamano" data-v="directorio/delamano">DElaMano</a> podés ofrecerte para orientar a otras familias. Lo que aprendiste puede ser justo lo que alguien necesita hoy.</li></ol>
+      <p><strong>La ELA no espera. Conectarnos nos ayuda a ganar tiempo y sentirnos acompañados. Una comunidad hecha por todos, para todos.</strong></p>
     </div></details>
   </section>
-  <div class="topic-intro"><p class="eyebrow">De todos, para todos</p><h2 class="big">¿Qué necesitás resolver hoy?</h2><p class="lede">Información y experiencias para pacientes y familias con ELA en Argentina. Elegí lo que necesitás y encontrá por dónde empezar.</p></div>
+  <section class="community-paths" aria-label="Participá en la comunidad"><a href="#/foro/consejo%3Aforo%2Fpreguntas" data-v="foro/consejo%3Aforo%2Fpreguntas"><span class="eyebrow">Preguntá</span><h3>Hay otras personas atravesando algo parecido</h3><p>Abrí una conversación y contá qué necesitás resolver.</p><strong>Hacer una pregunta →</strong></a><a href="#/foro" data-v="foro"><span class="eyebrow">Compartí</span><h3>Tu experiencia puede hacer una diferencia</h3><p>Contá qué te sirvió o respondé a otra familia.</p><strong>Ver el foro →</strong></a><a href="#/directorio/delamano" data-v="directorio/delamano"><span class="eyebrow">Acompañá</span><h3>Ofrecé una mano en lo que conocés</h3><p>DElaMano conecta a miembros que quieren orientar a otros.</p><strong>Conocer DElaMano →</strong></a></section>
   <div class="start-callout"><div><h3>Me diagnosticaron ELA</h3><p>Primeras consultas, CUD y estudio genético: qué pedir y por dónde empezar.</p></div><a class="btn" href="#/empezar" data-v="empezar">Por dónde empezar →</a></div>
-  <aside class="join-callout" id="homeAccountCallout"><div><h3 id="homeAccountTitle">Tu experiencia puede ayudar a otra familia</h3><p id="homeAccountHelp">Podés consultar toda la información pública sin registrarte. <strong>Para agregar información o comentarios, registrate y solicitá acceso.</strong> Un administrador aprobará tu ingreso y revisará tus aportes antes de compartirlos con la comunidad.</p></div><a class="btn" id="homeAccountLink" href="#/comunidad" data-v="comunidad" data-auth-entry="register">Quiero participar →</a></aside>
+  <aside class="join-callout" id="homeAccountCallout"><div><h3 id="homeAccountTitle">Sumate: tu experiencia tiene un lugar</h3><p id="homeAccountHelp">Las guías y los recursos están abiertos a todos. <strong>Para leer y escribir en el foro, registrate y solicitá acceso.</strong> Revisamos las solicitudes y los aportes para cuidar este espacio de encuentro.</p></div><a class="btn" id="homeAccountLink" href="#/comunidad" data-v="comunidad" data-auth-entry="register">Quiero sumarme →</a></aside>
+  <div class="topic-intro"><p class="eyebrow">Recursos para nuestra comunidad</p><h2 class="big">¿Qué necesitás resolver hoy?</h2><p class="lede">Buscá orientación, prepará tus preguntas y compartí lo que aprendés en el foro. Elegí un tema para empezar.</p></div>
   <div class="need-grid" id="needGrid"></div>
   <div class="topic-note"><h3>Buscá por lo que te está pasando</h3><div class="topic-links"><a href="#/consejos/saliva" data-v="consejos/saliva">Me ahogo con la saliva</a><a href="#/respiracion/bipap" data-v="respiracion/bipap">Me cuesta respirar al acostarme</a><a href="#/medicamentos/genetica" data-v="medicamentos/genetica">Quiero pedir el estudio genético</a><a href="#/tramites/enfermeria" data-v="tramites/enfermeria">Necesito pedir enfermería</a></div></div>
-  <div class="topic-note"><strong>Lo que una familia aprendió puede ayudar a otra.</strong><p>La base de PreguntELA son las experiencias compartidas en el grupo de WhatsApp <strong>La ELA no nos Define</strong>. Las organizamos por temas y las completamos con fuentes confiables y nuevos aportes de la comunidad.</p><p>Dentro de cada tema podés leer y compartir experiencias si tenés acceso aprobado a la comunidad. La información general está abierta para todos.</p><a href="#/comunidad" data-v="comunidad">Entrar o solicitar acceso</a></div>
+  <div class="topic-note"><h3>Estar cerca, aunque estemos lejos</h3><p>Una duda sobre un equipo, un trámite que se demora o la necesidad de hablar con alguien que entiende. Para eso creamos PreguntELA: para que podamos encontrarnos y ayudarnos entre todos, desde cualquier lugar de Argentina.</p><p>El foro queda abierto para escribir cuando lo necesites. Cada persona responde cuando puede y los aportes se revisan antes de compartirse. Volvé a tu conversación y tocá <strong>Actualizar comentarios</strong> para ver nuevas respuestas.</p><a href="#/foro" data-v="foro">Encontrarnos en el foro →</a></div>
   <div class="topic-links"><a href="#/preguntar" data-v="preguntar">Buscar con mis palabras</a><a href="#/directorio" data-v="directorio">Buscar un profesional o proveedor</a><a href="#/consejos/red" data-v="consejos/red">Organizaciones y redes de ayuda</a><a href="#/acerca" data-v="acerca">En memoria de Marisa: cómo nació PreguntELA</a></div>
   <p class="hint">Las experiencias de otras familias no reemplazan una evaluación del equipo de salud. Ante una urgencia, contactá al servicio de emergencias.</p>
 </section>
@@ -660,7 +668,7 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 
 <section class="view" id="v-videos" role="tabpanel" aria-label="Videos útiles"></section>
 <section class="view" id="v-foro" role="tabpanel" aria-label="Conversaciones de la comunidad" data-community-scope>
-  <div class="col"><p class="eyebrow">De todos, para todos</p><h2 class="big">Conversaciones de la comunidad</h2><p class="lede">Preguntas, respuestas y experiencias que quedan guardadas por tema. Volvé cuando quieras para leer nuevos comentarios y seguir conversando.</p><div id="forumContent"></div></div>
+  <div class="col"><p class="eyebrow">La ELA no espera. Conectarnos nos ayuda.</p><h2 class="big">Foro de la comunidad</h2><p class="lede">Hacé una pregunta, compartí lo que te sirvió o acompañá a alguien que está pasando por algo parecido. Un espacio para pacientes, familias y cuidadores de toda la Argentina.</p><div id="forumContent"></div><p class="hint">Cada persona responde cuando puede. Los nuevos aportes se revisan antes de aparecer para los demás; son experiencias personales. Volvé a tu conversación y tocá «Actualizar comentarios» para ver las respuestas nuevas.</p></div>
 </section>
 <!-- practical views end -->
 
@@ -669,7 +677,7 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
   <div class="col" style="margin-bottom:22px">
     <p class="eyebrow">Buscá</p>
     <h2 class="big">¿Qué necesitás resolver hoy?</h2>
-    <p class="lede">Encontrá una explicación clara y pasos concretos para resolver tu consulta. Reunimos información de fuentes médicas e institucionales confiables con lo aprendido por las familias de <em>La ELA no nos Define</em>, pensando en las necesidades de quienes viven con ELA en Argentina.</p>
+    <p class="lede">Buscá orientación sobre lo que necesitás hoy y llevá tu pregunta al foro. Las guías combinan fuentes confiables y experiencias identificadas; la conversación con otras personas continúa debajo de cada respuesta.</p>
   </div>
 
   <div class="col ask">
@@ -766,8 +774,8 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 <section class="view" id="v-comunidad" role="tabpanel">
   <div class="col" style="margin-bottom:20px">
     <p class="eyebrow">Comunidad</p>
-    <h2 class="big">Juntemos información</h2>
-    <p class="lede">Acá están las listas de lo que hace falta a lo largo de la enfermedad: insumos, medicaciones, especialistas. Sobre cada una podés contar tu experiencia — qué usaste, cómo lo conseguiste, si te sirvió. Entre todos, dELAmano.</p>
+    <h2 class="big">Tu lugar en la comunidad</h2>
+    <p class="lede">Ingresá o sumate para conversar con otras personas que viven de cerca la ELA. Una pregunta, una experiencia o un contacto pueden ayudar a alguien que lo necesita hoy.</p>
   </div>
 
   <div class="col" id="comNoConfig" hidden>
@@ -853,12 +861,12 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
     <div id="listaInsumo"></div>
   </div>
 
-  <p class="col"><a href="#/foro" data-v="foro">Ver conversaciones y nuevos comentarios por tema →</a></p>
+  <p class="col"><a class="btn" href="#/foro" data-v="foro">Ir al foro de la comunidad →</a></p>
 
   <!-- medicaciones -->
   <div class="col pane" id="pane-medicacion" hidden>
     <div class="alert" style="margin-bottom:18px">
-      <div><strong>Esto no es una recomendación.</strong> Es la lista de lo que se nombró en el grupo a lo largo de cinco años, con el número de veces que apareció. Que alguien la haya usado no significa que te sirva a vos. Ninguna medicación se empieza, se cambia ni se suspende sin tu médico.</div>
+      <div><strong>Esto no es una recomendación.</strong> Aquí podés conversar sobre experiencias con tratamientos. Las menciones del archivo se identifican como antecedentes, no como recomendaciones. Que alguien los haya usado no significa que te sirvan a vos. Ninguna medicación se empieza, se cambia ni se suspende sin tu médico.</div>
     </div>
     <div class="filterbar"><input type="search" id="qMed" aria-label="Buscar una medicación" placeholder="Buscar una medicación…"></div>
     <div class="relrow" id="filtroMed" style="margin-bottom:18px"></div>
@@ -925,62 +933,17 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
 
 <!-- ============ ACERCA ============ -->
 <section class="view" id="v-acerca" role="tabpanel">
-  <div class="about-intro">
-    <p class="eyebrow">En memoria de Marisa</p>
-    <h2 class="big">Hecho por todos, para todos.</h2>
-    <p class="lede">PreguntELA nace en homenaje a Marisa, que vivió con ELA y falleció. Su recuerdo nos inspira a convertir lo aprendido en ayuda para otras personas y sus familias.</p>
-  </div>
-
+  <div class="about-intro"><p class="eyebrow">Una comunidad de ELA en Argentina</p><h2 class="big">La ELA no espera.<br>Conectarnos nos ayuda.</h2><p class="lede">Cuando aparece una necesidad, el tiempo importa. PreguntELA nace para que pacientes, familiares y cuidadores podamos encontrarnos, compartir lo que sabemos y acompañarnos, desde cualquier lugar del país.</p></div>
   <div class="community-story">
-    <h3>Cuando necesitábamos respuestas</h3>
-    <p>Durante la enfermedad de Marisa, encontrar información cuando necesitábamos ayuda fue una de las grandes dificultades. Había preguntas nuevas, decisiones por tomar y trámites que no sabíamos cómo resolver. Muchas veces, lo que más necesitábamos era hablar con alguien que ya hubiera pasado por lo mismo.</p>
-
-    <h3>Una comunidad que nos acompañó</h3>
-    <p>En el grupo de WhatsApp <strong>La ELA no nos Define</strong>, de la Fundación Bullrich, encontramos esa ayuda. Pacientes y familiares respondían con amabilidad, compartían lo que les había servido y acompañaban desde su propia experiencia. Entre todos, hicimos que el proceso de la enfermedad fuera más llevadero.</p>
-    <p>Cada respuesta, cada consejo y cada dato compartido nos ayudaron a sentirnos menos solos. Esa generosidad es el corazón de este sitio.</p>
-
-    <h3>Compartir lo aprendido para ayudar a quienes llegan</h3>
-    <p>PreguntELA reúne y ordena la información compartida en <strong>La ELA no nos Define</strong> para que sea más fácil encontrarla cuando hace falta. Esa es nuestra base, que completamos con fuentes confiables y nuevos aportes. Queremos que los nuevos pacientes y sus familias puedan apoyarse en lo que otros ya aprendieron, y que quienes seguimos formando parte de esta comunidad podamos continuar ayudándonos.</p>
-    <p>Este espacio se construye y se completa entre todos: con experiencias, preguntas, aportes y correcciones. Cada persona tiene algo valioso para compartir, y cada contribución puede ayudar a otra familia.</p>
-    <p class="community-motto">Con la información de todos, las contribuciones de todos y la intención de ayudarnos entre todos.</p>
-    <a class="btn" href="#/comunidad" data-v="comunidad">Sumate a la comunidad</a>
-  </div>
-
-
-
-
-  <div class="col about-details">
-    <h3 class="sec">De dónde viene la información de PreguntELA</h3>
-    <p class="lede">PreguntELA reúne experiencias compartidas por una comunidad. No es una fuente médica ni una institución: busca que la próxima familia no tenga que aprenderlo todo de nuevo.</p>
-    <p>Entre octubre de 2021 y febrero de 2026, pacientes con ELA, familiares y cuidadores de toda la Argentina se escribieron casi veinte mil mensajes en un grupo llamado <em>La ELA no nos Define</em>. Ahí se preguntaron y se contestaron cosas que ningún folleto explica: qué máscara del BiPAP es menos incómoda, cómo redactar el pedido para que la obra social no mande otra silla, cuánto tarda un amparo, si conviene hacer el botón gástrico ahora o esperar, qué se hace a las tres de la mañana cuando alguien se ahoga con la saliva.</p>
-    <p>El problema de un grupo de WhatsApp es que todo eso se pierde. Alguien pregunta hoy algo que se respondió con detalle hace dos años y nadie lo encuentra. Este sitio es ese archivo, hecho buscable.</p>
-
-    <h3 class="sec">Cómo se armó</h3>
-    <ul class="plain">
-      <li>Se combinaron dos exportaciones del chat y se eliminaron los duplicados: <strong>19.933 mensajes</strong> reales.</li>
-      <li>Se descartaron saludos, condolencias, cadenas y mensajes sin información. Quedaron <strong>3.862 mensajes</strong> con contenido útil, que son los que se pueden buscar acá.</li>
-      <li>La información se organizó en <strong>siete secciones prácticas</strong>, con fichas, un buscador y acceso a los mensajes originales. Los nuevos aportes de la comunidad permiten seguir completándola.</li>
-      <li>De los contactos que circularon en el chat se armó un <strong>directorio de unos cincuenta</strong> profesionales, centros, proveedores, farmacias, abogados y fundaciones.</li>
-    </ul>
-
-    <h3 class="sec">Qué se hizo con los datos personales</h3>
-    <p>De los mensajes se quitaron <strong>los nombres y los teléfonos de quienes escribieron</strong>: en el archivo solo quedan la fecha y el texto. En el directorio, en cambio, sí figuran teléfonos de profesionales, comercios, estudios jurídicos y fundaciones, porque se compartieron en el grupo justamente para que circularan.</p>
-    <p>Las búsquedas en el archivo se procesan en tu navegador. Comunidad usa un servicio en línea para el ingreso por correo, las solicitudes de acceso y los aportes. Los aportes están disponibles solo para miembros aprobados; los administradores revisan las solicitudes y las correcciones.</p>
-
-    <h3 class="sec">Qué no es</h3>
-    <ul class="plain">
-      <li><strong>No es asesoramiento médico.</strong> Ninguna ficha da dosis ni indica empezar o suspender un tratamiento. Sirve para saber qué preguntar y qué pedir, no para decidir sin tu equipo.</li>
-      <li><strong>No es un aval.</strong> Que un profesional o una empresa figure en el directorio significa que alguien del grupo lo recomendó, no que esté verificado. Averiguá antes de contratar.</li>
-      <li><strong>No es universal.</strong> Todo lo administrativo —CUD, obras sociales, amparos, electrodependientes— es específico de la Argentina.</li>
-      <li><strong>No está completo.</strong> Faltan los audios, las fotos y los documentos que se compartieron en el chat, que son muchos y valiosos.</li>
-    </ul>
-
-    <h3 class="sec">Si encontrás un error</h3>
-    <p>Un teléfono que cambió, un profesional que ya no atiende, algo mal explicado, una pregunta frecuente que acá no está: decilo. La información de salud desactualizada hace daño, y este sitio solo sirve si se corrige.</p>
-
-    <h3 class="sec">Gracias</h3>
-    <p>A cada persona que en estos cinco años se tomó el trabajo de contar lo que le había pasado para que a otro le costara menos. A quienes donaron un aspirador, una caja de Riluzol o un bastón con la única condición de que se volviera a donar. Y a quienes escribieron desde una sala de terapia intensiva para avisar que se podía seguir.</p>
-    <div class="quote" style="max-width:73ch">«Lo nuestro fue con mucha lucha, por eso me quedé en el grupo. Por si puedo ayudar de alguna manera.»<span class="who">Grupo La ELA no nos Define · septiembre 2025</span></div>
+    <h3>Nadie debería atravesarlo en soledad</h3><p>Una pregunta sobre un equipo. Un trámite que no avanza. La necesidad de hablar con alguien que entiende lo que está pasando. A veces, una experiencia o un contacto compartido pueden ahorrarnos un camino difícil y ayudarnos a dar el próximo paso.</p><p>Por eso creamos este espacio: para que quienes vivimos de cerca la ELA estemos más conectados y podamos ayudarnos cuando surgen las dudas. Cada persona tiene algo para aportar, y también tiene derecho a pedir ayuda.</p>
+    <h3>El corazón de PreguntELA es su foro</h3><p>Acá podés hacer una pregunta, contar qué te sirvió, responder a otra familia o volver para seguir una conversación. Los temas quedan organizados para que cada intercambio pueda ayudar también a quienes lleguen después.</p><p>Las guías, los videos, las cartas y el directorio acompañan esa conversación. Ofrecen información para orientarte, preparar consultas y conocer opciones, mientras el foro nos acerca a otras personas.</p>
+    <h3>En memoria de Marisa</h3><p>PreguntELA nació en homenaje a Marisa, que vivió con ELA y falleció. Durante su enfermedad, su familia conoció la dificultad de buscar ayuda a tiempo y el valor de encontrar a otros dispuestos a compartir su experiencia.</p><p>Su recuerdo inspira una comunidad que construimos entre todos. Queremos que las nuevas familias encuentren compañía y que quienes ya atravesaron parte del camino puedan seguir dando una mano.</p>
+    <p class="community-motto">La ELA no espera. Una pregunta puede abrir una conversación. Una experiencia puede ayudar a otra persona. Juntos podemos acompañarnos.</p>
+    <div class="welcome-actions"><a class="btn" href="#/foro" data-v="foro">Entrar al foro →</a><a class="btn ghost" href="#/comunidad" data-v="comunidad" data-auth-entry="register">Sumarme a la comunidad</a></div>
+    <h3>Cómo cuidamos este encuentro</h3><p>Las guías y los recursos están abiertos a todos. Para leer y escribir en el foro, necesitás registrarte y recibir aprobación. También revisamos los aportes antes de mostrarlos a otros miembros, para cuidar la privacidad y la convivencia. Aprobar un comentario no lo convierte en una indicación médica.</p><p>El foro queda abierto para escribir cuando lo necesites; cada persona participa y responde cuando puede. No es un chat de atención inmediata ni un servicio de urgencias. Las decisiones sobre tratamientos y cuidados se conversan con el equipo de salud.</p>
+    <h3>Una mano de persona a persona</h3><p>En <a href="#/directorio/delamano" data-v="directorio/delamano">DElaMano</a>, miembros de la comunidad se ofrecen a orientar por correo sobre temas que conocen por experiencia. Cada uno decide si comparte su contacto, visible solo para miembros aprobados.</p>
+    <h3>Un espacio que sigue creciendo</h3><p>Si un contacto cambió, encontraste un error o falta un tema, contalo en el foro. PreguntELA se construye con preguntas, experiencias, aportes y correcciones de toda la comunidad.</p>
+    <details class="about-details"><summary>Origen del archivo y fuentes de información</summary><p>Conservamos un archivo de experiencias compartidas en el grupo <em>La ELA no nos Define</em> entre octubre de 2021 y febrero de 2026, con agradecimiento a las personas que ayudaron a otras familias. Ese material se identifica como histórico y no representa una conversación actual.</p><p>Los mensajes del archivo se presentan sin los nombres ni teléfonos de quienes escribieron. Las guías se complementan con fuentes médicas e institucionales enlazadas. Los nuevos comentarios del foro se muestran por separado, como experiencias de sus autores.</p><p>Los contactos del directorio deben confirmarse antes de contratar: su presencia no implica un aval. Los trámites están orientados a Argentina.</p><a href="#/archivo" data-v="archivo">Consultar el archivo de experiencias</a></details>
   </div>
 </section>
 
@@ -988,17 +951,17 @@ nav.tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;overflow-x:auto}.t
   <div class="footgrid">
     <div>
       <p class="footbrand"><span class="brandlockup"><img src="preguntela-logo-source.png" alt="PreguntELA" width="1462" height="404" decoding="async"></span></p>
-      <p><strong>Hecho por todos, para todos.</strong></p>
+      <p><strong>La ELA no espera. Conectarnos nos ayuda.</strong></p>
       <p>En memoria de Marisa, con la experiencia y las contribuciones de toda la comunidad. <a href="#/acerca" data-v="acerca">Conocé cómo nació PreguntELA</a>.</p>
-      <p>Hecho con lo que se ayudaron entre sí las familias del grupo <em>La ELA no nos Define</em>, entre octubre de 2021 y febrero de 2026.</p>
+      <p>Pacientes, familiares y cuidadores de toda la Argentina, unidos para preguntar, compartir y acompañarnos. <a href="#/foro" data-v="foro">Encontranos en el foro</a>.</p>
     </div>
     <div>
       <p class="footh">Qué es</p>
-      <p>Orientación con fuentes médicas e institucionales y experiencias de la comunidad. No es un servicio médico ni reemplaza a tu equipo tratante. Ante una urgencia, llamá a emergencias.</p>
+      <p>Un foro de ayuda entre personas, con recursos prácticos y fuentes para orientarte. Las experiencias no reemplazan al equipo de salud. Ante una urgencia, llamá a emergencias.</p>
     </div>
     <div>
       <p class="footh">Privacidad</p>
-      <p>Las búsquedas en el archivo se procesan en tu navegador. El correo y los aportes de Comunidad se guardan en su servicio en línea y requieren acceso aprobado.</p>
+      <p>El foro y los contactos personales de DElaMano son para miembros aprobados. Revisamos las solicitudes y los aportes antes de compartirlos. Las guías y los recursos generales son públicos.</p>
     </div>
   </div>
   <p class="footnote">El archivo y las guías se pueden consultar después de cargar esta página. Comunidad necesita internet · Última actualización: octubre de 2026 · <a href="#/acerca" data-v="acerca">Acerca de este sitio</a></p>
@@ -1107,7 +1070,7 @@ var DIRECTORY = [
   ]},
   { g:"Organizaciones y redes de ayuda", sub:"Orientación, acompañamiento, experiencias y capacitación.", items:[
     {n:"Fundación Esteban Bullrich", r:"Medicación, gestión con obras sociales, encuentros mensuales, capacitación", p:"Argentina", note:"La organización más presente en el grupo. Encuentros virtuales por Zoom y gala del 21 de junio, Día Mundial de la ELA."},
-    {n:"La ELA no nos Define · Grupo de WhatsApp", r:"Experiencias y acompañamiento entre pacientes, familiares y cuidadores", p:"Comunidad de familias con ELA en Argentina", note:"Sus conversaciones son la base de la información comunitaria de PreguntELA. El sitio organiza lo compartido y lo completa con fuentes confiables y nuevos aportes: hecho por todos, para todos."},
+    {n:"La ELA no nos Define · Grupo de WhatsApp", r:"Experiencias y acompañamiento entre pacientes, familiares y cuidadores", p:"Comunidad de familias con ELA en Argentina", note:"Una de las redes que nos acompañaron e inspiraron este espacio. Sus experiencias forman parte del archivo histórico; hoy seguimos encontrándonos y compartiendo nuevos aportes en el foro de PreguntELA."},
     {n:"Cruz Roja Argentina — curso ELA para enfermería", r:"Formación de enfermeros y cuidadores", p:"Virtual", url:"https://capacitacion.cruzroja.org.ar/ela-para-enfermeria", note:"La Fundación Bulrich otorgó becas a equipos del grupo."},
     {n:"Fundación Amparando Tu Salud", r:"Asesoramiento en cobertura", p:"Argentina", tel:"+5491136323660"},
     {n:"Asociación ELA Argentina", r:"Información, orientación, contención y asesoramiento para pacientes y familias", p:"Av. Belgrano 687, 8.º piso · C1092AAG · Ciudad Autónoma de Buenos Aires, Argentina", tel:"+541143428431", whatsapp:false, email:"info@asociacionela.org.ar", url:"https://www.asociacionela.org.ar/web/contacto.php", note:"Asociación civil sin fines de lucro. Contacto verificado en su sitio oficial el 29/09/2026. Consultá antes de acercarte."}
@@ -1117,7 +1080,7 @@ var DIRECTORY = [
 /* ---------------- tabs ---------------- */
 var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
 var VIEWS = ["inicio","medicamentos","equipamiento","comunicacion","alimentacion","respiracion","consejos","videos","preguntar","empezar","guias","tramites","directorio","archivo","comunidad","foro","acerca"];
-var TITLES = {foro:"Conversaciones · PreguntELA",videos:"Videos útiles · PreguntELA",inicio:"Inicio · PreguntELA",medicamentos:"Medicamentos · PreguntELA",equipamiento:"Equipamiento · PreguntELA",comunicacion:"Comunicación · PreguntELA",alimentacion:"Alimentación · PreguntELA",respiracion:"Asistencia respiratoria · PreguntELA",consejos:"Consejos útiles · PreguntELA",preguntar:"PreguntELA", empezar:"Primeros pasos · PreguntELA", guias:"Guías · PreguntELA",
+var TITLES = {foro:"Foro de la comunidad · PreguntELA",videos:"Videos útiles · PreguntELA",inicio:"Inicio · PreguntELA",medicamentos:"Medicamentos · PreguntELA",equipamiento:"Equipamiento · PreguntELA",comunicacion:"Comunicación · PreguntELA",alimentacion:"Alimentación · PreguntELA",respiracion:"Asistencia respiratoria · PreguntELA",consejos:"Consejos útiles · PreguntELA",preguntar:"PreguntELA", empezar:"Primeros pasos · PreguntELA", guias:"Guías · PreguntELA",
   tramites:"Trámites y cartas · PreguntELA", directorio:"Directorio · PreguntELA",
   archivo:"Archivo del grupo · PreguntELA", comunidad:"Comunidad · PreguntELA", acerca:"Acerca de · PreguntELA"};
 function show(v, push){
@@ -2364,7 +2327,7 @@ function salivaHTML(){return `<details class="topic-item" id="consejos-saliva"><
 function redAyudaHTML(){return `<section class="topic-section" id="consejos-red"><h3>Organizaciones y redes de ayuda</h3>
  <p>Podés buscar orientación en una entidad especializada y acompañarte con otras familias. En el Directorio hay más organizaciones y contactos.</p>
  <div class="topic-note"><h4>Fundación Esteban Bullrich</h4><p>Una entidad de referencia para nuestra comunidad: orientación y acompañamiento a pacientes y familias, encuentros y capacitaciones sobre ELA.</p><p>En su espacio para pacientes y familias podés consultar recursos, charlas y actividades.</p><div class="topic-links"><a href="https://fundacionestebanbullrich.com/pacientesyfamilias.html" target="_blank" rel="noopener noreferrer">Fundación Esteban Bullrich · Pacientes y familias</a></div></div>
- <div class="topic-note"><h4>La ELA no nos Define · Grupo de WhatsApp</h4><p>Un espacio de pacientes, familiares y cuidadores que comparten experiencias, responden preguntas y se acompañan durante la enfermedad.</p><p><strong>Es el grupo del que nace la información comunitaria de PreguntELA.</strong> Sus conversaciones son la base del archivo y de las experiencias que organizamos en el sitio, completadas con fuentes confiables y nuevos aportes. Este conocimiento se construye entre todos, para ayudar a quienes ya están y a las nuevas familias.</p>
+ <div class="topic-note"><h4>La ELA no nos Define · Grupo de WhatsApp</h4><p>Un espacio de pacientes, familiares y cuidadores que comparten experiencias, responden preguntas y se acompañan durante la enfermedad.</p><p><strong>Una de las redes que acompañan a pacientes y familias.</strong> PreguntELA agradece las experiencias compartidas y conserva un archivo histórico. Hoy el foro del sitio es otro espacio para encontrarnos, preguntar y seguir ayudándonos.</p>
  <div class="topic-links">${enlaceTema('acerca','Cómo nació PreguntELA')}${enlaceTema('archivo','Consultar el archivo del grupo')}</div></div>
  <div class="topic-note"><h4>Asociación ELA Argentina</h4><p>Asociación civil sin fines de lucro formada por pacientes y familiares. Brinda información, orientación, contención y asesoramiento a personas con ELA y sus familias. Consultá directamente qué ayuda y actividades están disponibles para tu situación.</p>
  <p><strong>Dirección:</strong> Av. Belgrano 687, 8.º piso, C1092AAG, Ciudad Autónoma de Buenos Aires, Argentina.<br><strong>Teléfono:</strong> <a href="tel:+541143428431">(011) 4342-8431</a> · Desde el exterior: +54 11 4342-8431.<br><strong>Correo:</strong> <a href="mailto:info@asociacionela.org.ar">info@asociacionela.org.ar</a>.</p>
@@ -2381,7 +2344,7 @@ function initPatientGuidance(){
  el('v-consejos').querySelector('.topic-community').insertAdjacentHTML('beforebegin',redAyudaHTML());
  var ayuda=CARDS.find(function(c){return c.id==='fundaciones';});ayuda.t='Organizaciones y redes de ayuda';ayuda.k+=' asociacion ela argentina whatsapp la ela no nos define';ayuda.c.splice(1,0,'La ELA no nos Define · Grupo de WhatsApp');ayuda.c.push('Asociación ELA Argentina');
  CARDS.push({id:'asociacion-ela',cat:'Red de ayuda',t:'Asociación ELA Argentina',k:'asociacion ela argentina entidad ayuda orientacion contencion belgrano 687 43428431',p:['asociación ela','asociacion ela argentina'],a:'<p>Entidad sin fines de lucro que ofrece orientación, información, contención y asesoramiento a personas con ELA y sus familias.</p><p>Av. Belgrano 687, 8.º piso, CABA · Teléfono: <a href="tel:+541143428431">(011) 4342-8431</a> · <a href="mailto:info@asociacionela.org.ar">info@asociacionela.org.ar</a>.</p>'+fuenteHTML(['asociacionELA','asociacionELAAyuda']),n:enlaceTema('consejos/red','Ver organizaciones y redes de ayuda →'),g:'consejos/red'});
- CARDS.push({id:'grupo-whatsapp',cat:'Red de ayuda',t:'La ELA no nos Define · Grupo de WhatsApp',k:'la ela no nos define grupo whatsapp familias comunidad origen informacion experiencias',p:['la ela no nos define','grupo de whatsapp','grupo whatsapp'],a:'<p>Grupo de pacientes, familiares y cuidadores que se acompañan y comparten experiencias. Sus conversaciones son la base de la información comunitaria de PreguntELA.</p><p>El sitio organiza ese conocimiento y lo completa con fuentes confiables y nuevos aportes: hecho por todos, para todos.</p>',n:enlaceTema('consejos/red','Conocer el grupo y otras redes de ayuda →'),g:'consejos/red'});
+ CARDS.push({id:'grupo-whatsapp',cat:'Red de ayuda',t:'La ELA no nos Define · Grupo de WhatsApp',k:'la ela no nos define grupo whatsapp familias comunidad origen informacion experiencias',p:['la ela no nos define','grupo de whatsapp','grupo whatsapp'],a:'<p>Grupo de pacientes, familiares y cuidadores que se acompañan y comparten experiencias. Parte de sus experiencias se conserva en el archivo histórico de PreguntELA.</p><p>En el foro de PreguntELA seguimos construyendo una red de ayuda con preguntas, respuestas y nuevos aportes.</p>',n:enlaceTema('consejos/red','Conocer el grupo y otras redes de ayuda →'),g:'consejos/red'});
  el('v-tramites').querySelector('.topic-intro').insertAdjacentHTML('beforeend','<p class="topic-source">Orientación sobre presentaciones: <a href="'+FUENTES.reclamoCobertura[1]+'" target="_blank" rel="noopener noreferrer">Superintendencia de Servicios de Salud</a>. La indicación y el alcance del pedido se justifican con el equipo tratante.</p>');
 }
 
@@ -2903,7 +2866,7 @@ function videoTeaserHTML(tema){
   '<ul class="video-selection-list">'+list.map(function(v){return '<li><a href="'+videoUrl(v)+'" target="_blank" rel="noopener noreferrer">'+esc(v.title)+'</a><span class="video-meta">'+esc(v.org)+(v.time?' · '+esc(v.time):' · Charla para profundizar')+' · '+(v.lang==='es'?'Español':'Inglés')+'</span>'+(expanded?'<p>'+esc(v.text)+'</p>':'')+'</li>';}).join('')+'</ul>'+enlaceTema('videos/'+tema,'Ver todos los videos y filtrar por tema →')+'</section>';
 }
 function initVideos(){
- el('v-videos').innerHTML='<a class="topic-back" href="#/inicio" data-v="inicio">← Inicio</a><div class="topic-intro"><p class="eyebrow">Para mirar con tiempo</p><h2 class="big">Videos útiles, por tema</h2><p class="lede">Una selección pequeña para orientarte y preparar preguntas. Con enlaces al momento útil cuando pudimos revisar la transcripción.</p><p>Las experiencias del grupo se complementan con charlas de profesionales y organizaciones. Los videos externos pueden incluir indicaciones o trámites de otros países.</p></div><div class="video-filters"><label>Tema<select id="videoTema">'+Object.keys(VIDEO_TEMAS).map(function(k){return '<option value="'+k+'">'+esc(VIDEO_TEMAS[k])+'</option>';}).join('')+'</select></label><label>Idioma<select id="videoIdioma"><option value="todos">Todos los idiomas</option><option value="es">Español</option><option value="en">Inglés, con ayuda en español</option></select></label><label>Buscar en los videos<input id="videoBuscar" type="search" placeholder="Voz, gastrostomía, máscaras…"></label></div><p id="videoCount" class="hint" role="status" aria-live="polite"></p><div class="video-grid" id="videoGrid"></div><p id="videoEmpty" class="topic-note" hidden>No hay videos para esos filtros. Probá otro tema o borrá la búsqueda.</p><section class="topic-note" id="videos-tramites"><h3>Trámites y cobertura en Argentina</h3><p>La Fundación Esteban Bullrich reúne una lista específica de temas legales. Para formularios y pasos actuales, usá también nuestra sección de trámites.</p><div class="topic-links"><a href="https://www.youtube.com/playlist?list=PLP4yL8uD4hVw1jKMN6o1ZYksxy-T7vnRE" target="_blank" rel="noopener noreferrer">Videoteca legal de la Fundación ↗</a>'+enlaceTema('tramites','Trámites y cartas')+'</div></section><section class="topic-feature" id="videos-espanol"><h3>Cómo ver los videos de Bridging Voice en español</h3><ol><li>Abrí el video en YouTube y activá los subtítulos (CC).</li><li>Entrá en Configuración ⚙ → Subtítulos. Elegí Español si aparece.</li><li>Si solo aparece inglés, buscá Traducir automáticamente → Español. Si tu app no ofrece esa opción, probá en el navegador de una computadora.</li></ol><p>Los dos videos de Bridging Voice seleccionados tienen transcripción automática en inglés. La traducción depende de las opciones de YouTube y puede equivocarse en términos médicos. Las descripciones en esta página están en español; no son una traducción completa del video.</p>'+fuenteHTML(['youtubeCC','bridging'])+'</section>';
+ el('v-videos').innerHTML='<a class="topic-back" href="#/inicio" data-v="inicio">← Inicio</a><div class="topic-intro"><p class="eyebrow">Para mirar con tiempo</p><h2 class="big">Videos útiles, por tema</h2><p class="lede">Una selección pequeña para orientarte y preparar preguntas. Con enlaces al momento útil cuando pudimos revisar la transcripción.</p><p>Las conversaciones de la comunidad se complementan con charlas de profesionales y organizaciones. Los videos externos pueden incluir indicaciones o trámites de otros países.</p></div><div class="video-filters"><label>Tema<select id="videoTema">'+Object.keys(VIDEO_TEMAS).map(function(k){return '<option value="'+k+'">'+esc(VIDEO_TEMAS[k])+'</option>';}).join('')+'</select></label><label>Idioma<select id="videoIdioma"><option value="todos">Todos los idiomas</option><option value="es">Español</option><option value="en">Inglés, con ayuda en español</option></select></label><label>Buscar en los videos<input id="videoBuscar" type="search" placeholder="Voz, gastrostomía, máscaras…"></label></div><p id="videoCount" class="hint" role="status" aria-live="polite"></p><div class="video-grid" id="videoGrid"></div><p id="videoEmpty" class="topic-note" hidden>No hay videos para esos filtros. Probá otro tema o borrá la búsqueda.</p><section class="topic-note" id="videos-tramites"><h3>Trámites y cobertura en Argentina</h3><p>La Fundación Esteban Bullrich reúne una lista específica de temas legales. Para formularios y pasos actuales, usá también nuestra sección de trámites.</p><div class="topic-links"><a href="https://www.youtube.com/playlist?list=PLP4yL8uD4hVw1jKMN6o1ZYksxy-T7vnRE" target="_blank" rel="noopener noreferrer">Videoteca legal de la Fundación ↗</a>'+enlaceTema('tramites','Trámites y cartas')+'</div></section><section class="topic-feature" id="videos-espanol"><h3>Cómo ver los videos de Bridging Voice en español</h3><ol><li>Abrí el video en YouTube y activá los subtítulos (CC).</li><li>Entrá en Configuración ⚙ → Subtítulos. Elegí Español si aparece.</li><li>Si solo aparece inglés, buscá Traducir automáticamente → Español. Si tu app no ofrece esa opción, probá en el navegador de una computadora.</li></ol><p>Los dos videos de Bridging Voice seleccionados tienen transcripción automática en inglés. La traducción depende de las opciones de YouTube y puede equivocarse en términos médicos. Las descripciones en esta página están en español; no son una traducción completa del video.</p>'+fuenteHTML(['youtubeCC','bridging'])+'</section>';
  ['videoTema','videoIdioma','videoBuscar'].forEach(function(id){el(id).addEventListener(id==='videoBuscar'?'input':'change',filtrarVideos);});filtrarVideos();
  VIDEOS.forEach(function(v){CARDS.push({id:'video-'+v.id,cat:'Videos',t:v.title,k:v.title+' '+v.org+' '+VIDEO_TEMAS[v.tema],p:[v.title],a:'<p>'+esc(v.text)+'</p>',n:'<a href="'+videoUrl(v)+'" target="_blank" rel="noopener noreferrer">'+(v.url?'Ver video en español':'Ver video en YouTube')+' →</a>',g:'videos/'+v.tema});});
 }
@@ -2939,9 +2902,9 @@ function fuenteHTML(keys){
 function enlaceTema(v,text){return '<a href="#/'+attr(v)+'" data-v="'+attr(v)+'">'+esc(text)+'</a>';}
 function introTema(id,body){
   var n=NECESIDADES.find(function(x){return x.id===id;});
-  return '<a class="topic-back" href="#/inicio" data-v="inicio">← Todas las necesidades</a><div class="topic-intro"><p class="eyebrow">'+esc(n.short)+'</p><h2 class="big">'+esc(n.n)+'</h2>'+body+'</div><p class="topic-status" role="status" aria-live="polite"></p>';
+  return '<a class="topic-back" href="#/inicio" data-v="inicio">← Todos los recursos</a><div class="topic-intro"><p class="eyebrow">'+esc(n.short)+'</p><h2 class="big">'+esc(n.n)+'</h2>'+body+'</div><p class="forum-topic-link">¿Te pasa algo parecido o tenés una experiencia para compartir? '+enlaceTema('foro','Encontranos en el foro →')+'</p><p class="topic-status" role="status" aria-live="polite"></p>';
 }
-function filtroTemaHTML(id,placeholder){return '<label class="topic-filter"><span>Buscar en esta sección</span><input type="search" data-topic-search="'+id+'" placeholder="'+attr(placeholder)+'"></label><p class="hint" data-topic-empty hidden>No encontramos coincidencias. Probá otra palabra o '+enlaceTema('preguntar','buscá en todo el archivo')+'.</p>';}
+function filtroTemaHTML(id,placeholder){return '<label class="topic-filter"><span>Buscar en esta sección</span><input type="search" data-topic-search="'+id+'" placeholder="'+attr(placeholder)+'"></label><p class="hint" data-topic-empty hidden>No encontramos coincidencias. Probá otra palabra o '+enlaceTema('preguntar','buscá en todo el sitio')+'.</p>';}
 function itemTemaHTML(i,sec,view){
   var info=sec==='medicacion'?MED_INFO[i.k]:null;
   var sources=info&&info.f?info.f:FUENTES[i.k]?[i.k]:[];
@@ -2986,7 +2949,7 @@ function initPractical(){
     '<div class="topic-links">'+enlaceTema('respiracion/bipap','BiPAP')+enlaceTema('respiracion/traqueostomia','Traqueostomía')+enlaceTema('tramites/electrodependencia','Cortes de luz y electrodependencia')+'</div>'+atajosProfesionales(['Neumonólogo','Kinesiólogo respiratorio'])+filtroTemaHTML('respiracion','BiPAP, máscara, traqueostomía, aspirador…')+
     grupoTemaHTML(INSUMOS.find(function(g){return g.g==='Respiratorio';}),'respiracion')+'<p class="hint">Ante dificultad respiratoria intensa o repentina, contactá al servicio de emergencias. No esperes una respuesta de la comunidad.</p>';
   el('v-consejos').innerHTML=introTema('consejos','<p class="lede">Ideas de familiares para todo lo que no entra en las otras categorías.</p><p>Organizar el día, pedir ayuda, acompañar a quien cuida, compartir actividades y hacer lugar a lo que cada persona disfruta.</p>')+
-    '<div class="topic-section"><h3>Organizar los cuidados</h3><p>Varias familias usan un cuaderno de novedades para los relevos, una lista de contactos y un calendario de turnos. Acordá con el equipo qué tareas requieren personal capacitado y registrá las indicaciones.</p><h3>Armar una red</h3><p>Repartir compras, traslados, trámites y compañía ayuda a sostener los cuidados. En el directorio hay fundaciones y contactos que circularon en el grupo.</p><h3>Experiencias y préstamos</h3><p>Contá qué te ayudó y en qué contexto. Para prestar un equipo, revisá su estado y compatibilidad con el proveedor o profesional. Evitá publicar datos privados de otras personas.</p></div><div class="topic-links">'+enlaceTema('directorio','Profesionales y fundaciones')+enlaceTema('archivo','Leer el archivo del grupo')+enlaceTema('guias','Consultar las guías del archivo')+'</div><div class="topic-community" data-topic-comments data-sec="consejo" data-item="otros"></div>';
+    '<div class="topic-section"><h3>Organizar los cuidados</h3><p>Varias familias usan un cuaderno de novedades para los relevos, una lista de contactos y un calendario de turnos. Acordá con el equipo qué tareas requieren personal capacitado y registrá las indicaciones.</p><h3>Armar una red</h3><p>Repartir compras, traslados, trámites y compañía ayuda a sostener los cuidados. En el directorio hay fundaciones y contactos para ampliar tu red; en el foro podés conversar con otras familias.</p><h3>Experiencias y préstamos</h3><p>Contá qué te ayudó y en qué contexto. Para prestar un equipo, revisá su estado y compatibilidad con el proveedor o profesional. Evitá publicar datos privados de otras personas.</p></div><div class="topic-links">'+enlaceTema('directorio','Profesionales y fundaciones')+enlaceTema('archivo','Leer el archivo del grupo')+enlaceTema('guias','Consultar las guías del archivo')+'</div><div class="topic-community" data-topic-comments data-sec="consejo" data-item="otros"></div>';
   el('modelosCartas').innerHTML=modelosHTML();
   initAdvanceDirectives();initVideos();initResources();initPatientGuidance();
   el('v-equipamiento').insertAdjacentHTML('beforeend',atajosProfesionales(['Fisiatra','Terapista ocupacional']));
@@ -3038,7 +3001,7 @@ function initPractical(){
 function revealRouteAnchor(){
   var bits=(location.hash||'').replace(/^#\/?/,'').split('/');if(bits.length<2)return;
   if(bits[0]==='videos'&&typeof VIDEO_TEMAS!=='undefined'&&VIDEO_TEMAS[bits[1]]){rutaVideos(bits[1]);return;}
-  var target=el(bits[0]+'-'+bits[1]);if(!target)return;
+  var target=bits[0]==='directorio'&&bits[1]==='delamano'?el('delaMano'):el(bits[0]+'-'+bits[1]);if(!target)return;
   var panel=target.closest('.view'),search=panel.querySelector('[data-topic-search]');
   if(search&&(search.value||panel.dataset.symptom)){search.value='';panel.dataset.symptom='';panel.querySelectorAll('[data-med-symptom]').forEach(function(b){b.setAttribute('aria-pressed',String(!b.dataset.medSymptom));});search.dispatchEvent(new Event('input',{bubbles:true}));}
   for(var ancestor=target;ancestor&&ancestor!==panel;ancestor=ancestor.parentElement){if(ancestor.tagName==='DETAILS')ancestor.open=true;}
@@ -3271,14 +3234,14 @@ function renderSearchAnswer(q,chosenId){
 
 /* Participación visible desde Directorio y conversaciones persistentes por tema.
    Reutiliza aportes y sus permisos: no publica datos de miembros en la web abierta. */
-var FORUM_TOPICS={}, FORUM_READY=false, DISCUSSION_DRAFTS={}, DISCUSSION_EXPANDED=new Set();
+var FORUM_TOPICS={}, FORUM_READY=false, FORUM_QUERY='', DISCUSSION_DRAFTS={}, DISCUSSION_EXPANDED=new Set();
 
 function contactContributionHTML(){
  return '<div class="contribution-actions"><button class="btn" type="button" data-add-contact="profesional">+ Agregar profesional o centro</button><button class="btn ghost" type="button" data-add-contact="proveedor">+ Agregar proveedor u otro contacto</button></div>';
 }
 function accessParticipationHTML(){
- var text=ME?(ME.membresia==='suspendida'?'Tu cuenta no tiene acceso para participar. Podés consultar tu situación en Mi cuenta.':'Tu solicitud está pendiente. Cuando se apruebe, vas a poder leer y agregar aportes.'):'Para compartir información y leer los aportes nuevos, entrá con tu correo. Un administrador debe aprobar tu acceso.';
- return '<p>'+text+'</p>'+enlaceTema('comunidad',ME?'Ver mi acceso':'Entrar o solicitar acceso');
+ var text=ME?(ME.membresia==='suspendida'?'Tu cuenta no tiene acceso para participar. Podés consultar tu situación en Mi cuenta.':'Tu solicitud está pendiente. Cuando se apruebe, vas a poder leer las conversaciones, preguntar y responder.'):'Sumate para leer las conversaciones, hacer preguntas y compartir experiencias. Registrate o entrá con tu email y contraseña. Un administrador debe aprobar tu acceso.';
+ return '<p>'+text+'</p>'+enlaceTema('comunidad',ME?'Ver mi acceso':'Ingresar o registrarme');
 }
 function openContactForm(kind,type){
  show('directorio');
@@ -3342,7 +3305,7 @@ function renderDiscussionWidgets(){
  rememberDiscussionForms();
  document.querySelectorAll('[data-discussion]').forEach(function(box){
   var topic=FORUM_TOPICS[box.dataset.discussion];if(!topic)return;
-  var top='<p class="eyebrow">Conversación de la comunidad</p><h3>'+esc(topic.title)+'</h3>';
+  var top='<p class="eyebrow">Foro de la comunidad</p><h3>'+esc(topic.title)+'</h3>';
   if(!aprobado()){box.innerHTML=top+'<p>Los comentarios quedan guardados en este tema, para poder volver y seguir la conversación.</p>'+accessParticipationHTML();return;}
   var entries=discussionEntries(topic),all=DISCUSSION_EXPANDED.has(topic.key),shown=all?entries:entries.slice(-8);
   var form=DISCUSSION_DRAFTS[box.dataset.instance+':'+topic.key];
@@ -3353,10 +3316,14 @@ function renderDiscussionWidgets(){
  });
 }
 function forumIndexHTML(){
+ return (aprobado()?'':'<div class="topic-note">'+accessParticipationHTML()+'</div>')+'<div class="forum-entry-actions"><a class="btn" href="#/'+forumURL(FORUM_TOPICS['consejo:foro/preguntas'])+'" data-v="'+forumURL(FORUM_TOPICS['consejo:foro/preguntas'])+'">Hacer una pregunta a la comunidad →</a>'+enlaceTema('directorio/delamano','Conocer DElaMano')+'</div><label class="forum-topic-search">Encontrá una conversación<input id="forumTopicSearch" type="search" placeholder="Silla, saliva, botón gástrico, cuidados…" value="'+attr(FORUM_QUERY)+'"></label><p id="forumTopicStatus" class="hint" role="status" aria-live="polite"></p><div class="forum-topics" id="forumTopicList">'+forumTopicListHTML()+'</div><p>También podés comentar debajo de las fichas y de las respuestas del buscador. Es la misma conversación, para que los aportes queden juntos.</p>'+enlaceTema('preguntar','Consultar guías y recursos');
+}
+function forumTopicListHTML(){
  var topics=Object.values(FORUM_TOPICS),active=topics.filter(function(t){return discussionEntries(t).length;});
  active.sort(function(a,b){var aa=discussionEntries(a).at(-1),bb=discussionEntries(b).at(-1);return String(bb.creado).localeCompare(String(aa.creado));});
- var list=active.length?active:topics.filter(function(t){return ['insumo:bipap','insumo:silla-postural','medicacion:b12','consejo:foro/consejos/saliva','consejo:foro/preguntas'].includes(t.key);});
- return (aprobado()?'':'<div class="topic-note">'+accessParticipationHTML()+'</div>')+'<p>'+enlaceTema(forumURL(FORUM_TOPICS['consejo:foro/preguntas']),'Hacer una pregunta a la comunidad →')+'</p><div class="forum-topics">'+list.map(function(topic){var count=aprobado()?discussionEntries(topic).length:0;return '<a class="forum-topic" href="#/'+forumURL(topic)+'" data-v="'+forumURL(topic)+'"><strong>'+esc(topic.title)+'</strong><span>'+(aprobado()?count+' comentarios':'Entrá para participar')+' →</span></a>';}).join('')+'</div><p>También podés buscar un tema y comentar directamente debajo de la respuesta.</p>'+enlaceTema('preguntar','Buscar un tema para conversar');
+ var common=topics.filter(function(t){return ['insumo:bipap','insumo:silla-postural','medicacion:b12','consejo:foro/consejos/saliva','consejo:foro/preguntas'].includes(t.key)&&!active.includes(t);});
+ var q=fold(FORUM_QUERY).trim(),list=q?topics.filter(function(t){return q.split(/\s+/).every(function(word){return fold(t.title+' '+t.item).includes(word);});}):active.concat(common);
+ return list.length?list.map(function(topic){var count=aprobado()?discussionEntries(topic).length:0;return '<a class="forum-topic" href="#/'+forumURL(topic)+'" data-v="'+forumURL(topic)+'"><strong>'+esc(topic.title)+'</strong><span>'+(aprobado()?count+' comentarios':'Entrá para participar')+' →</span></a>';}).join(''):'<p>No encontramos ese tema. Podés '+enlaceTema(forumURL(FORUM_TOPICS['consejo:foro/preguntas']),'hacer tu pregunta a la comunidad')+'.</p>';
 }
 function renderForum(){
  if(!FORUM_READY)return;
@@ -3389,6 +3356,7 @@ function initParticipation(){
  });
  FORUM_READY=true;
  el('dirq').addEventListener('input',renderMemberDirectory);
+ document.addEventListener('input',function(ev){if(ev.target.id!=='forumTopicSearch')return;FORUM_QUERY=ev.target.value;el('forumTopicList').innerHTML=forumTopicListHTML();var count=el('forumTopicList').querySelectorAll('.forum-topic').length;el('forumTopicStatus').textContent=count?(count===1?'1 conversación por tema':count+' conversaciones por tema'):'No encontramos coincidencias.';});
  document.addEventListener('click',async function(ev){
   var add=ev.target.closest('[data-add-contact]');if(add){ev.preventDefault();openContactForm(add.dataset.addContact,add.dataset.directoryType);return;}
   var b=ev.target.closest('[data-discussion-reply],[data-discussion-refresh],[data-discussion-older]');if(!b||!aprobado())return;
@@ -3702,9 +3670,11 @@ function pintarEstadoSesion(){
  el('joinLink').textContent=signed?(known&&admin()?'Administrar':'Mi cuenta'):'Ingresar / Registrarme';
  el('headerSignOut').hidden=!signed;
  if(el('homeAccountTitle')){
-  el('homeAccountTitle').textContent=signed?(known?(aprobado()?'Ya podés compartir tu experiencia':ME.membresia==='suspendida'?'Estás dentro de tu cuenta':ME.solicitud_enviada?'Ya ingresaste. Tu solicitud está pendiente':'Ya ingresaste. Completá tu solicitud'):'Estás dentro de tu cuenta'):'Tu experiencia puede ayudar a otra familia';
+  el('homeAccountTitle').textContent=signed?(known?(aprobado()?'Ya podés compartir en el foro':ME.membresia==='suspendida'?'Estás dentro de tu cuenta':ME.solicitud_enviada?'Ya ingresaste. Tu solicitud está pendiente':'Ya ingresaste. Completá tu solicitud'):'Estás dentro de tu cuenta'):'Sumate: tu experiencia tiene un lugar';
   el('homeAccountHelp').innerHTML=signed?(known?(aprobado()?'Contá lo que aprendiste, agregá un contacto o participá en las conversaciones. Los nuevos aportes se revisan antes de mostrarse a los demás miembros.':ME.membresia==='suspendida'?'Tu acceso a los aportes está suspendido. Podés seguir consultando las guías y ver tu situación en Mi cuenta.':ME.solicitud_enviada?'Un administrador revisará tu solicitud. No necesitás registrarte de nuevo ni pedir otro enlace mientras tu sesión siga abierta.':'Falta completar tus datos para que los administradores puedan revisar tu acceso a la comunidad. No necesitás pedir otro enlace.'):(sessionAccessError?'No pudimos comprobar tu acceso a la comunidad. Volvé a intentar desde Mi cuenta.':'Estamos comprobando tu acceso a la comunidad.')):'Podés consultar toda la información pública sin registrarte. <strong>Para agregar información o comentarios, registrate y solicitá acceso.</strong> Un administrador aprobará tu ingreso y revisará tus aportes antes de compartirlos con la comunidad.';
-  el('homeAccountLink').textContent=signed?(known&&aprobado()?'Compartir una experiencia →':'Ir a mi cuenta →'):'Quiero participar →';
+  if(!signed)el('homeAccountHelp').innerHTML='Las guías y los recursos están abiertos a todos. <strong>Para leer y escribir en el foro, registrate y solicitá acceso.</strong> Revisamos las solicitudes y los aportes para cuidar este espacio de encuentro.';
+  el('homeAccountLink').textContent=signed?(known&&aprobado()?'Entrar al foro →':'Ir a mi cuenta →'):'Quiero sumarme →';
+  var destination=signed&&known&&aprobado()?'foro':'comunidad';el('homeAccountLink').href='#/'+destination;el('homeAccountLink').dataset.v=destination;
  }
 }
 
@@ -3832,7 +3802,7 @@ function initCommunityManagement(){
  el('eCob').previousElementSibling.textContent='¿Qué obras sociales o prepagas acepta?';el('eCob').placeholder='Nombres de las coberturas, si los conocés';
  ['espForm','conForm'].forEach(function(id){el(id).querySelector('button[type=submit]').textContent='Enviar para revisión';});
  el('directoryContribute').insertAdjacentHTML('beforebegin','<section class="delamano panel" id="delaMano" data-community-scope><p class="eyebrow">Directorio · Ayuda entre familias</p><h3>DElaMano</h3><p>Personas de la comunidad que se ofrecen a responder por correo sobre temas que conocen por experiencia. Una forma de acompañarnos, de familia a familia.</p><p class="hint">Los contactos solo se muestran a miembros aprobados. Esta ayuda no reemplaza al equipo de salud ni es un servicio de urgencias.</p><button class="btn" type="button" id="offerHelp">Quiero ofrecer mi ayuda</button><div id="helpList"></div><form id="helpForm" hidden><h4>Contá en qué podés ayudar</h4>'+registroCampo('helpName','Nombre para mostrar','text',150)+registroCampo('helpEmail','Correo donde querés recibir consultas','email',254)+registroCampo('helpTopics','Temas que conocés (por ejemplo: botón gástrico, comunicación)','text',500)+'<div class="formrow"><label for="helpExperience">Tu experiencia y cómo te gustaría acompañar</label><textarea id="helpExperience" minlength="10" maxlength="2500" rows="4" required></textarea></div><label class="check"><input id="helpConsent" type="checkbox" required> Acepto que mi nombre, experiencia y correo se compartan con miembros aprobados de PreguntELA para recibir consultas. Podré retirar mi ofrecimiento.</label><p class="hint">La administración revisará tu propuesta antes de mostrarla.</p><div class="askbar"><button class="btn" type="submit">Enviar ofrecimiento</button><button class="btn ghost" id="helpCancel" type="button">Cancelar</button><span role="status" aria-live="polite"></span></div></form></section>');
- el('dirq').closest('.filterbar').insertAdjacentHTML('afterend','<p><a href="#/directorio" id="delaManoJump">DElaMano · Personas del grupo que ofrecen ayuda →</a></p>');
+ el('dirq').closest('.filterbar').insertAdjacentHTML('afterend','<p><a href="#/directorio/delamano" id="delaManoJump">DElaMano · Personas de la comunidad que ofrecen ayuda →</a></p>');
  el('delaManoJump').addEventListener('click',function(ev){ev.preventDefault();el('delaMano').scrollIntoView({block:'start'});el('offerHelp').focus({preventScroll:true});});
  el('mePanel').insertAdjacentHTML('beforeend','<p><button type="button" class="mini" data-withdraw="todos">Retirar mis ofrecimientos de DElaMano</button></p>');
  el('offerHelp').addEventListener('click',function(){if(!aprobado()){show('comunidad');return;}el('helpForm').hidden=false;el('helpName').value=ME.nombre;el('helpName').focus();});
