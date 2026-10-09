@@ -3377,6 +3377,11 @@ function initParticipation(){
  CARDS.forEach(function(card){
   if(!forumTopicForCard(card))registerForumTopic('consejo','foro/'+(card.g||card.id),card.t,card.g);
  });
+ // General conversations also belong to sections without their own search card.
+ ['alimentacion','respiracion'].forEach(function(route){
+  var category=NECESIDADES.find(function(n){return n.id===route;});
+  registerForumTopic('consejo','foro/'+route,category.n,route);
+ });
  MODELOS.forEach(function(model){registerForumTopic('consejo','foro/tramites/'+model.id,model.n,'tramites/'+model.id);});
  // Static guides have the same thread as their search answer. Keep saved keys intact.
  Object.values(FORUM_TOPICS).forEach(function(topic){
