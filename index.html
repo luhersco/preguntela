@@ -1084,9 +1084,8 @@ var DIRECTORY = [
     {n:"Pablo — Diskabus", r:"Transporte de personas con discapacidad", p:"Buenos Aires", tel:"+5491140723867"}
   ]},
   { g:"Organizaciones y redes de ayuda", sub:"Orientación, acompañamiento, experiencias y capacitación.", items:[
-    {n:"Fundación Esteban Bullrich", r:"Medicación, gestión con obras sociales, encuentros mensuales, capacitación", p:"Argentina", note:"La organización más presente en el grupo. Encuentros virtuales por Zoom y gala del 21 de junio, Día Mundial de la ELA."},
+    {n:"Fundación Esteban Bullrich", r:"Orientación, contención y acompañamiento a personas con ELA y sus familias", p:"Todo el país", note:"Ofrece apoyo y asesoramiento, encuentros entre familias y una videoteca sobre cuidados, temas legales y trámites. También forma a profesionales de la salud e impulsa la investigación. Para pedir acompañamiento, escribí al correo general e indicá tu localidad y qué ayuda necesitás.", email:"contacto@fundacionestebanbullrich.org", url:"https://fundacionestebanbullrich.org/", infoRoute:"consejos/red", infoLabel:"Cómo ayuda y contactos"},
     {n:"La ELA no nos Define · Grupo de WhatsApp", r:"Experiencias y acompañamiento entre pacientes, familiares y cuidadores", p:"Comunidad de familias con ELA en Argentina", note:"Una de las redes que nos acompañaron e inspiraron este espacio. Sus experiencias forman parte del archivo histórico; hoy seguimos encontrándonos y compartiendo nuevos aportes en el foro de PreguntELA."},
-    {n:"Cruz Roja Argentina — curso ELA para enfermería", r:"Formación de enfermeros y cuidadores", p:"Virtual", url:"https://capacitacion.cruzroja.org.ar/ela-para-enfermeria", note:"La Fundación Bulrich otorgó becas a equipos del grupo."},
     {n:"Fundación Amparando Tu Salud", r:"Asesoramiento en cobertura", p:"Argentina", tel:"+5491136323660"},
     {n:"Asociación ELA Argentina", r:"Información, orientación, contención y asesoramiento para pacientes y familias", p:"Av. Belgrano 687, 8.º piso · C1092AAG · Ciudad Autónoma de Buenos Aires, Argentina", tel:"+541143428431", whatsapp:false, email:"info@asociacionela.org.ar", url:"https://www.asociacionela.org.ar/web/contacto.php", note:"Asociación civil sin fines de lucro. Contacto verificado en su sitio oficial el 29/09/2026. Consultá antes de acercarte."}
   ]}
@@ -1452,10 +1451,10 @@ var CARDS = [
  n:"Además del grupo, la Fundación Esteban Bullrich gestiona medicación y equipamiento donado.", c:["Fundación Esteban Bullrich","Fundación IAN"], g:"guias"},
 
 {id:"fundaciones", cat:"Red de ayuda", t:"Fundaciones y dónde pedir ayuda",
- k:"fundacion bulrich ian asociacion ayuda apoyo charlas zoom capacitacion cruz roja gala beca asesoramiento",
+ k:"fundacion esteban bullrich bulrich ian asociacion ayuda apoyo charlas encuentros capacitacion asesoramiento contacto email telefono familias",
  p:["fundación","dónde pedir ayuda"],
- a:"<p><strong>Fundación Esteban Bullrich</strong> es la más presente en el grupo: encuentros virtuales mensuales por Zoom (comunicación y deglución, nutrición, cuidadores), gestión de medicación, acompañamiento con obras sociales, capacitación de enfermería junto a la Cruz Roja —con becas— y la gala del 21 de junio, Día Mundial de la ELA, con entradas gratuitas para pacientes y acompañante.</p><p><strong>Fundación IAN</strong> trabaja específicamente comunicación aumentativa. La <strong>Defensoría del Pueblo</strong> resolvió varios amparos sin costo.</p><p>Una advertencia que el grupo repitió: desconfiá de cualquier intermediario que ofrezca «gestionarte» una cobertura que ya es obligatoria a cambio de exposición pública, fotos o testimonios. Lo que te corresponde por ley no se agradece con una foto.</p>",
- n:"La Cruz Roja Argentina dicta el curso «ELA para enfermería»: es el mejor camino para que tu equipo de enfermeros sepa lo que hace falta.", c:["Fundación Esteban Bullrich","Cruz Roja Argentina — curso ELA para enfermería","Fundación Amparando Tu Salud"], g:"guias"},
+ a:"<p><strong>Fundación Esteban Bullrich</strong> acompaña a personas con ELA y sus familias en Argentina: ofrece orientación, contención y encuentros, además de recursos sobre cuidados, temas legales y trámites. También capacita a profesionales e impulsa la investigación.</p><p>Para pedir acompañamiento, escribí a <a href=\"mailto:contacto@fundacionestebanbullrich.org\">contacto@fundacionestebanbullrich.org</a> con tu localidad y la ayuda que necesitás. En Organizaciones y redes de ayuda encontrás más información y contactos.</p>",
+ n:"Consultá con cada organización qué acompañamiento y actividades están disponibles para tu situación.", c:["Fundación Esteban Bullrich","Fundación Amparando Tu Salud"], g:"guias"},
 
 {id:"cuidar", cat:"Cuidados", t:"Cuidar al que cuida",
  k:"cuidador familia agotamiento cansancio solo sola trabajar dejar culpa angustia duelo psicologo apoyo emocional",
@@ -1837,6 +1836,7 @@ function directoryPublicCard(it){
  if(it.tel&&it.tel.indexOf('+')===0&&it.whatsapp!==false)pills+='<a class="pill" href="https://wa.me/'+it.tel.replace(/\D/g,'')+'" target="_blank" rel="noopener">WhatsApp</a>';
  if(it.url)pills+='<a class="pill" href="'+it.url+'" target="_blank" rel="noopener">Sitio</a>';
  if(it.email)pills+='<a class="pill" href="mailto:'+esc(it.email)+'">Enviar correo</a>';
+ if(it.infoRoute)pills+=enlaceTema(it.infoRoute,it.infoLabel||'Más información');
  return '<div class="card">'+html+(pills?'<div class="contact">'+pills+'</div>':'')+'</div>';
 }
 function renderDirectoryGroups(filter){
@@ -2058,6 +2058,8 @@ Object.assign(FUENTES,{
  marisapp:['MarisApp · Abrir la herramienta','https://maris-app.com/'],
  bridging:['Bridging Voice · Capacitaciones de comunicación','https://bridgingvoice.org/trainings-and-education/'],
  bullrichVideos:['Fundación Esteban Bullrich · Videoteca','https://fundacionestebanbullrich.com/pacientesyfamilias.html'],
+ bullrichAyuda:['Fundación Esteban Bullrich · Acompañamiento y actividades','https://fundacionestebanbullrich.org/hacemos.html'],
+ bullrichContacto:['Fundación Esteban Bullrich · Contacto oficial','https://fundacionestebanbullrich.org/contacto.html'],
  elaperu:['ELA Perú · Charlas para pacientes y familias','https://elaperu.org/videos/'],
  youtubeCC:['YouTube · Cómo configurar los subtítulos','https://support.google.com/youtube/answer/100078?hl=es']
 });
@@ -2341,7 +2343,13 @@ function salivaHTML(){return `<details class="topic-item" id="consejos-saliva"><
 
 function redAyudaHTML(){return `<section class="topic-section" id="consejos-red"><h3>Organizaciones y redes de ayuda</h3>
  <p>Podés buscar orientación en una entidad especializada y acompañarte con otras familias. En el Directorio hay más organizaciones y contactos.</p>
- <div class="topic-note"><h4>Fundación Esteban Bullrich</h4><p>Una entidad de referencia para nuestra comunidad: orientación y acompañamiento a pacientes y familias, encuentros y capacitaciones sobre ELA.</p><p>En su espacio para pacientes y familias podés consultar recursos, charlas y actividades.</p><div class="topic-links"><a href="https://fundacionestebanbullrich.com/pacientesyfamilias.html" target="_blank" rel="noopener noreferrer">Fundación Esteban Bullrich · Pacientes y familias</a></div></div>
+ <div class="topic-note"><h4>Fundación Esteban Bullrich</h4>
+ <p>Acompaña a personas con ELA y a sus familias en toda la Argentina. Es un lugar al que podés acudir para buscar orientación, compartir lo que estás atravesando y conocer recursos que ayuden en el día a día.</p>
+ <ul><li><strong>Apoyo y asesoramiento:</strong> orientación y contención para pacientes y sus seres queridos.</li><li><strong>Encuentros entre familias:</strong> espacios virtuales y presenciales, como el programa «Viviendo la ELA en Familia», para intercambiar experiencias y sentirse acompañados.</li><li><strong>Información práctica:</strong> una videoteca con charlas sobre cuidados, alimentación, respiración, comunicación, temas legales y trámites.</li><li><strong>Formación e investigación:</strong> capacita a profesionales de la salud y promueve proyectos para mejorar la atención y la calidad de vida.</li></ul>
+ <p><strong>Para pedir acompañamiento:</strong> escribí al correo general con tu localidad, si sos paciente o familiar y qué ayuda necesitás. Podés pedir que te orienten con el área de Pacientes y Familias y consultar por sus actividades vigentes.</p>
+ <p><strong>Email de contacto:</strong> <a href="mailto:contacto@fundacionestebanbullrich.org">contacto@fundacionestebanbullrich.org</a>.</p>
+ <div class="topic-links"><a href="https://fundacionestebanbullrich.org/contacto.html" target="_blank" rel="noopener noreferrer">Contacto oficial</a><a href="https://fundacionestebanbullrich.com/pacientesyfamilias.html" target="_blank" rel="noopener noreferrer">Recursos para pacientes y familias</a>${enlaceTema('videos','Ver videos útiles por tema')}</div>
+ ${fuenteHTML(['bullrichAyuda','bullrichVideos','bullrichContacto'])}<p class="hint">Contactos verificados en la web oficial el 08/10/2026.</p></div>
  <div class="topic-note"><h4>La ELA no nos Define · Grupo de WhatsApp</h4><p>Un espacio de pacientes, familiares y cuidadores que comparten experiencias, responden preguntas y se acompañan durante la enfermedad.</p><p><strong>Una de las redes que acompañan a pacientes y familias.</strong> PreguntELA agradece las experiencias compartidas y conserva un archivo histórico. Hoy el foro del sitio es otro espacio para encontrarnos, preguntar y seguir ayudándonos.</p>
  <div class="topic-links">${enlaceTema('acerca','Cómo nació PreguntELA')}${enlaceTema('archivo','Consultar el archivo del grupo')}</div></div>
  <div class="topic-note"><h4>Asociación ELA Argentina</h4><p>Asociación civil sin fines de lucro formada por pacientes y familiares. Brinda información, orientación, contención y asesoramiento a personas con ELA y sus familias. Consultá directamente qué ayuda y actividades están disponibles para tu situación.</p>
